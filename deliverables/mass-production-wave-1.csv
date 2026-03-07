@@ -1,0 +1,13 @@
+priority,slug,title,trade,software,owner,status
+P1,/trades/general-contractor/software/procore,Procore for General Contractors: Features, Pros, Cons, and Pricing,General Contractor,Procore,Leslie,queued
+P1,/trades/general-contractor/software/buildertrend,Buildertrend for General Contractors: Features, Pros, Cons, and Pricing,General Contractor,Buildertrend,Leslie,queued
+P1,/trades/electrician/software/servicetitan,ServiceTitan for Electricians: Features, Pros, Cons, and Pricing,Electrician,ServiceTitan,Leslie,queued
+P1,/trades/electrician/software/housecall-pro,Housecall Pro for Electricians: Features, Pros, Cons, and Pricing,Electrician,Housecall Pro,Leslie,queued
+P1,/trades/plumber/software/servicetitan,ServiceTitan for Plumbers: Features, Pros, Cons, and Pricing,Plumber,ServiceTitan,Leslie,queued
+P1,/trades/plumber/software/fieldedge,FieldEdge for Plumbers: Features, Pros, Cons, and Pricing,Plumber,FieldEdge,Leslie,queued
+P1,/trades/hvac/software/servicetitan,ServiceTitan for HVAC: Features, Pros, Cons, and Pricing,HVAC Technician,ServiceTitan,Leslie,queued
+P1,/trades/hvac/software/fieldedge,FieldEdge for HVAC: Features, Pros, Cons, and Pricing,HVAC Technician,FieldEdge,Leslie,queued
+P1,/trades/roofer/software/jobnimbus,JobNimbus for Roofers: Features, Pros, Cons, and Pricing,Roofer,JobNimbus,Leslie,queued
+P1,/trades/roofer/software/acculynx,AccuLynx for Roofers: Features, Pros, Cons, and Pricing,Roofer,AccuLynx,Leslie,queued
+P1,/trades/landscaper/software/lmn,LMN for Landscapers: Features, Pros, Cons, and Pricing,Landscaper / Hardscaper,LMN,Leslie,queued
+P1,/trades/landscaper/software/aspire,Aspire for Landscapers: Features, Pros, Cons, and Pricing,Landscaper / Hardscaper,Aspire,Leslie,queued
