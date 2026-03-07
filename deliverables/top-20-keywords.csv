@@ -1,0 +1,21 @@
+keyword,intent,cluster,priority,ai_answerability,target_url
+best cordless drill for contractors,commercial,drills,P1,high,/guides/best-cordless-drill-contractors
+impact driver vs drill,informational+commercial,drills,P1,high,/compare/impact-driver-vs-drill
+best laser level for construction,commercial,layout,P1,high,/guides/best-laser-level-construction
+best circular saw blade for plywood,informational,saws,P1,high,/guides/circular-saw-blade-plywood
+best oscillating tool blades,commercial,multi-tool,P1,medium,/guides/best-oscillating-tool-blades
+best jobsite vacuum for dust collection,commercial,dust-control,P1,high,/guides/best-jobsite-vacuum-dust-collection
+rotary hammer vs hammer drill,informational+commercial,masonry,P1,high,/compare/rotary-hammer-vs-hammer-drill
+best rotary hammer for concrete,commercial,masonry,P1,high,/guides/best-rotary-hammer-concrete
+best tool belt for electricians,commercial,accessories,P2,medium,/trades/electrician/best-tool-belt
+best plumbing tools for beginners,informational,plumbing,P2,high,/trades/plumber/plumbing-tools-beginners
+best hvac gauges digital vs analog,informational+commercial,hvac,P2,medium,/compare/hvac-gauges-digital-vs-analog
+best framing nailer cordless,commercial,framing,P2,high,/guides/best-cordless-framing-nailer
+best tile saw for large format tile,commercial,tile,P2,high,/guides/best-tile-saw-large-format
+best drywall sander with vacuum,commercial,drywall,P2,high,/guides/best-drywall-sander-with-vacuum
+best angle grinder for metal fabrication,commercial,metal,P2,high,/guides/best-angle-grinder-metal-fabrication
+how to choose ppe for construction,informational,safety,P2,high,/guides/how-to-choose-construction-ppe
+best moisture meter for flooring,commercial,flooring,P2,medium,/guides/best-moisture-meter-flooring
+track saw vs circular saw,informational+commercial,saws,P2,high,/compare/track-saw-vs-circular-saw
+best caulk gun for contractors,commercial,finish,P3,medium,/guides/best-caulk-gun-contractors
+best demolition hammer for concrete removal,commercial,demolition,P3,high,/guides/best-demolition-hammer-concrete-removal
