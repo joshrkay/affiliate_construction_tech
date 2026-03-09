@@ -1,5 +1,5 @@
 # STATUS-BOARD — construction-30
-Updated: 2026-03-09T17:35:37Z
+Updated: 2026-03-08T00:00:00Z
 Pipeline: 3-PHASE
 Wave Plan: 6 tools per wave × 5 waves = 30 tools
 
@@ -10,8 +10,8 @@ estimating, and project management software for contractors and PMs.
 ## Phases
 | Phase | Owner   | Status      | Wave | File | Notes                    |
 |-------|---------|-------------|------|------|--------------------------|
-| 01    | Lisbeth | COMPLETE    | 1    | PHASE-01_LISBETH_research_WAVE-1.md | File written and verified on disk |
-| 02    | Elliot  | IN_PROGRESS | 1    | -    | Delegated 2026-03-09T17:35:37Z |
+| 01    | Lisbeth | NOT_STARTED | 1    | -    | Ready to begin           |
+| 02    | Elliot  | NOT_STARTED | -    | -    | Waiting on Phase 01      |
 | 03    | Olivia  | NOT_STARTED | -    | -    | Waiting on Phase 02      |
 
 ## Status Values
@@ -22,4 +22,4 @@ NOT_STARTED    — waiting for previous phase
 BLOCKED        — cannot proceed, see Notes
 
 ## Last Action
-2026-03-09T17:35:37Z: Wrote and verified PHASE-01_LISBETH_research_WAVE-1.md on disk. Advanced Wave 1 to Phase 02 and delegated Elliot (runId 40d6e532-a114-4e1e-91be-02ccd54f67a3).
+2026-03-08: Project scaffolded by setup script. Awaiting Henry to kick off Wave 1.
