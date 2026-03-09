@@ -67,19 +67,46 @@ export function ToolPage() {
   const companies = [
     "Summit Builders", "Apex Contractors", "North Ridge Construction", "Ironclad GC", "BlueLine Projects", "Pioneer Build Group", "Granite Field Services",
   ];
-  const titles = [
+  const positiveTitles = [
     "Reliable in day-to-day execution",
     "Good fit for our project workflow",
     "Improved coordination across teams",
     "Solid value with a few tradeoffs",
     "Helped us standardize operations",
   ];
-  const snippets = [
-    "The team adopted it quickly after setup and daily coordination improved.",
-    "We use it across active jobs and it has reduced avoidable rework.",
-    "Reporting and visibility are stronger than our previous process.",
-    "There are a few rough edges, but overall outcomes are better.",
-    "Best results came once we standardized our internal workflow.",
+  const neutralTitles = [
+    "Mixed results after rollout",
+    "Works, but needs process discipline",
+    "Decent tool with room to improve",
+  ];
+  const negativeTitles = [
+    "Did not fit our workflow",
+    "Too many friction points for our team",
+    "Not the right choice for our jobs",
+  ];
+
+  const shortPositive = [
+    "Setup took effort, but execution is smoother now.",
+    "Daily coordination improved and field updates are more consistent.",
+    "We reduced rework and handoff confusion after adoption.",
+  ];
+  const longPositive = [
+    "After the first few weeks of setup and training, our team started using it consistently across active jobs. We now have better visibility between office and field, fewer status surprises, and cleaner handoffs during weekly planning.",
+    "We were hesitant at first, but this has become part of our standard workflow. It improved communication, reduced duplicate entry, and gave project leads faster access to the information they actually need to make decisions.",
+  ];
+  const shortNeutral = [
+    "It works for core tasks, but some workflows still feel clunky.",
+    "Useful in parts of our process, though adoption is uneven.",
+  ];
+  const longNeutral = [
+    "The platform helps in several areas, especially visibility and consistency, but we still hit friction in a few workflows. It is usable and has value, but it needs disciplined setup and internal standards to perform well.",
+  ];
+  const shortNegative = [
+    "We had repeated issues and it slowed our team down.",
+    "The workflow did not match how we execute jobs.",
+  ];
+  const longNegative = [
+    "We gave it a fair trial, but the product introduced more process overhead than value for our team. Training burden was high, adoption stayed low, and we saw limited operational improvement compared with our previous workflow.",
   ];
 
   const targetTotal = Math.max(tool.reviewCount, userReviews.length + seedReviews.length);
@@ -91,9 +118,17 @@ export function ToolPage() {
     date.setDate(date.getDate() - (idx % 120));
 
     // Deterministic star distribution centered around tool.rating.
-    const jitter = ((idx % 7) - 3) * 0.1;
-    const base = Math.max(3.5, Math.min(5, tool.rating + jitter));
+    const jitter = ((idx % 9) - 4) * 0.2;
+    const base = Math.max(1, Math.min(5, tool.rating + jitter));
     const rating = Math.round(base * 10) / 10;
+
+    const isLong = idx % 3 === 0;
+    const isNegative = rating < 3;
+    const isNeutral = rating >= 3 && rating < 4;
+
+    const titlePool = isNegative ? negativeTitles : isNeutral ? neutralTitles : positiveTitles;
+    const shortPool = isNegative ? shortNegative : isNeutral ? shortNeutral : shortPositive;
+    const longPool = isNegative ? longNegative : isNeutral ? longNeutral : longPositive;
 
     return {
       id: `${tool.id}-gen-${idx}`,
@@ -104,9 +139,9 @@ export function ToolPage() {
       location: "United States",
       date: date.toISOString().slice(0, 10),
       rating,
-      title: titles[idx % titles.length],
-      content: `${tool.name}: ${snippets[idx % snippets.length]}`,
-      helpful: 2 + (idx % 15),
+      title: titlePool[idx % titlePool.length],
+      content: `${tool.name}: ${isLong ? longPool[idx % longPool.length] : shortPool[idx % shortPool.length]}`,
+      helpful: isNegative ? 1 + (idx % 6) : 2 + (idx % 15),
       avatarColor: tool.logoColor,
     };
   });
