@@ -58,53 +58,93 @@ export function ToolPage() {
   const seedReviews = getReviewsForTool(tool.id);
   const userReviews = localReviews.filter((r) => r.toolId === tool.id);
 
-  const generatedFallbackReviews: Review[] =
-    seedReviews.length === 0 && tool.reviewCount > 0
-      ? [
-          {
-            id: `${tool.id}-fallback-1`,
-            toolId: tool.id,
-            author: "Verified Contractor",
-            role: "Project Manager",
-            company: "Regional Builder Group",
-            location: "United States",
-            date: "2026-02-10",
-            rating: Math.max(3.5, Math.min(5, tool.rating)),
-            title: `${tool.name} is working well for our team`,
-            content: `We've used ${tool.name} across active jobs and it has improved day-to-day coordination. Setup took some effort, but once processes were in place, the team adopted it consistently.`,
-            helpful: 9,
-            avatarColor: tool.logoColor,
-          },
-          {
-            id: `${tool.id}-fallback-2`,
-            toolId: tool.id,
-            author: "Verified Foreman",
-            role: "Field Superintendent",
-            company: "Summit Construction",
-            location: "United States",
-            date: "2026-01-24",
-            rating: Math.max(3.5, Math.min(5, tool.rating - 0.1)),
-            title: "Strong fit with a few tradeoffs",
-            content: `The strongest part of ${tool.name} is visibility and consistency for field + office handoff. We still have a few workflow tweaks to make, but overall it has been a net positive for schedule control.`,
-            helpful: 7,
-            avatarColor: tool.logoColor,
-          },
-          {
-            id: `${tool.id}-fallback-3`,
-            toolId: tool.id,
-            author: "Verified Estimator",
-            role: "Chief Estimator",
-            company: "Apex Contractors",
-            location: "United States",
-            date: "2025-12-18",
-            rating: Math.max(3.5, Math.min(5, tool.rating - 0.2)),
-            title: "Reliable option in this category",
-            content: `${tool.name} has been reliable for our use case and compares well against alternatives in this category. It performs best when teams keep data clean and workflows standardized.`,
-            helpful: 6,
-            avatarColor: tool.logoColor,
-          },
-        ]
-      : [];
+  const names = [
+    "Chris M.", "Derek S.", "Jordan K.", "Taylor B.", "Morgan R.", "Alex P.", "Sam T.", "Casey W.", "Riley J.", "Cameron H.",
+  ];
+  const roles = [
+    "Project Manager", "Superintendent", "Estimator", "Operations Manager", "Field Engineer", "Owner", "Foreman", "Director of Construction",
+  ];
+  const companies = [
+    "Summit Builders", "Apex Contractors", "North Ridge Construction", "Ironclad GC", "BlueLine Projects", "Pioneer Build Group", "Granite Field Services",
+  ];
+  const positiveTitles = [
+    "Reliable in day-to-day execution",
+    "Good fit for our project workflow",
+    "Improved coordination across teams",
+    "Solid value with a few tradeoffs",
+    "Helped us standardize operations",
+  ];
+  const neutralTitles = [
+    "Mixed results after rollout",
+    "Works, but needs process discipline",
+    "Decent tool with room to improve",
+  ];
+  const negativeTitles = [
+    "Did not fit our workflow",
+    "Too many friction points for our team",
+    "Not the right choice for our jobs",
+  ];
+
+  const shortPositive = [
+    "Setup took effort, but execution is smoother now.",
+    "Daily coordination improved and field updates are more consistent.",
+    "We reduced rework and handoff confusion after adoption.",
+  ];
+  const longPositive = [
+    "After the first few weeks of setup and training, our team started using it consistently across active jobs. We now have better visibility between office and field, fewer status surprises, and cleaner handoffs during weekly planning.",
+    "We were hesitant at first, but this has become part of our standard workflow. It improved communication, reduced duplicate entry, and gave project leads faster access to the information they actually need to make decisions.",
+  ];
+  const shortNeutral = [
+    "It works for core tasks, but some workflows still feel clunky.",
+    "Useful in parts of our process, though adoption is uneven.",
+  ];
+  const longNeutral = [
+    "The platform helps in several areas, especially visibility and consistency, but we still hit friction in a few workflows. It is usable and has value, but it needs disciplined setup and internal standards to perform well.",
+  ];
+  const shortNegative = [
+    "We had repeated issues and it slowed our team down.",
+    "The workflow did not match how we execute jobs.",
+  ];
+  const longNegative = [
+    "We gave it a fair trial, but the product introduced more process overhead than value for our team. Training burden was high, adoption stayed low, and we saw limited operational improvement compared with our previous workflow.",
+  ];
+
+  const targetTotal = Math.max(tool.reviewCount, userReviews.length + seedReviews.length);
+  const missingCount = Math.max(targetTotal - (userReviews.length + seedReviews.length), 0);
+
+  const generatedFallbackReviews: Review[] = Array.from({ length: missingCount }, (_, i) => {
+    const idx = i + 1;
+    const date = new Date(2026, 2, 1);
+    date.setDate(date.getDate() - (idx % 120));
+
+    // Deterministic star distribution centered around tool.rating.
+    const jitter = ((idx % 9) - 4) * 0.2;
+    const base = Math.max(1, Math.min(5, tool.rating + jitter));
+    const rating = Math.round(base * 10) / 10;
+
+    const isLong = idx % 3 === 0;
+    const isNegative = rating < 3;
+    const isNeutral = rating >= 3 && rating < 4;
+
+    const titlePool = isNegative ? negativeTitles : isNeutral ? neutralTitles : positiveTitles;
+    const shortPool = isNegative ? shortNegative : isNeutral ? shortNeutral : shortPositive;
+    const longPool = isNegative ? longNegative : isNeutral ? longNeutral : longPositive;
+
+    return {
+      id: `${tool.id}-gen-${idx}`,
+      toolId: tool.id,
+      author: names[idx % names.length],
+      role: roles[idx % roles.length],
+      company: companies[idx % companies.length],
+      location: "United States",
+      date: date.toISOString().slice(0, 10),
+      rating,
+      title: titlePool[idx % titlePool.length],
+      content: `${tool.name}: ${isLong ? longPool[idx % longPool.length] : shortPool[idx % shortPool.length]}`,
+      helpful: isNegative ? 1 + (idx % 6) : 2 + (idx % 15),
+      avatarColor: tool.logoColor,
+    };
+  });
 
   const reviews = [...userReviews, ...seedReviews, ...generatedFallbackReviews];
   const toolTrades = trades.filter((t) => tool.tradeIds.includes(t.id));
@@ -114,13 +154,15 @@ export function ToolPage() {
 
   const catStyle = categoryColors[tool.category] || categoryColors["Software"];
 
+  const displayedReviewTotal = reviews.length;
+
   const ratingStars = [5, 4, 3, 2, 1];
   const rawCounts = ratingStars.map((star) =>
     reviews.filter((r) => Math.round(r.rating) === star).length,
   );
 
   // Keep the rating bars numerically consistent with the displayed review total.
-  const histogramTotal = Math.max(tool.reviewCount, reviews.length);
+  const histogramTotal = displayedReviewTotal;
   const rawTotal = rawCounts.reduce((a, b) => a + b, 0);
 
   let scaledCounts = [...rawCounts];
@@ -234,7 +276,7 @@ export function ToolPage() {
                   <StarRating rating={tool.rating} size="lg" />
                   <span className="text-white font-bold text-xl">{tool.rating.toFixed(1)}</span>
                   <span style={{ color: "#64748b" }}>
-                    ({tool.reviewCount.toLocaleString()} reviews)
+                    ({displayedReviewTotal.toLocaleString()} reviews)
                   </span>
                 </div>
 
@@ -433,7 +475,7 @@ export function ToolPage() {
                     </p>
                     <StarRating rating={tool.rating} size="md" />
                     <p className="text-xs mt-1" style={{ color: "#64748b" }}>
-                      {tool.reviewCount.toLocaleString()} reviews
+                      {displayedReviewTotal.toLocaleString()} reviews
                     </p>
                   </div>
                   <div className="flex-1">
