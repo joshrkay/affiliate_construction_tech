@@ -65,13 +65,30 @@ export function ToolPage() {
 
   const catStyle = categoryColors[tool.category] || categoryColors["Software"];
 
-  const ratingBreakdown = [5, 4, 3, 2, 1].map((star) => ({
+  const ratingStars = [5, 4, 3, 2, 1];
+  const rawCounts = ratingStars.map((star) =>
+    reviews.filter((r) => Math.round(r.rating) === star).length,
+  );
+
+  // Keep the rating bars numerically consistent with the displayed review total.
+  const histogramTotal = Math.max(tool.reviewCount, reviews.length);
+  const rawTotal = rawCounts.reduce((a, b) => a + b, 0);
+
+  let scaledCounts = [...rawCounts];
+  if (rawTotal > 0 && histogramTotal !== rawTotal) {
+    const exact = rawCounts.map((c) => (c / rawTotal) * histogramTotal);
+    scaledCounts = exact.map((n) => Math.floor(n));
+    let remainder = histogramTotal - scaledCounts.reduce((a, b) => a + b, 0);
+    const order = exact
+      .map((n, i) => ({ i, frac: n - Math.floor(n) }))
+      .sort((a, b) => b.frac - a.frac);
+    for (let k = 0; k < remainder; k++) scaledCounts[order[k % order.length].i] += 1;
+  }
+
+  const ratingBreakdown = ratingStars.map((star, idx) => ({
     star,
-    count: reviews.filter((r) => Math.round(r.rating) === star).length,
-    pct:
-      reviews.length > 0
-        ? (reviews.filter((r) => Math.round(r.rating) === star).length / reviews.length) * 100
-        : 0,
+    count: scaledCounts[idx],
+    pct: histogramTotal > 0 ? (scaledCounts[idx] / histogramTotal) * 100 : 0,
   }));
 
   const filteredReviews = reviewFilter
