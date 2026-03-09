@@ -42,6 +42,7 @@ export function HomePage() {
       company: "BuildRight Mechanical",
       rating: 5,
       tool: "Togal.AI",
+      toolSlug: "togal-ai",
       avatarColor: "#7c3aed",
     },
     {
@@ -52,6 +53,7 @@ export function HomePage() {
       company: "Apex General Contractors",
       rating: 5,
       tool: "Procore",
+      toolSlug: "procore",
       avatarColor: "#065f46",
     },
     {
@@ -62,6 +64,7 @@ export function HomePage() {
       company: "Western Infrastructure Partners",
       rating: 5,
       tool: "ALICE Technologies",
+      toolSlug: "alice-technologies",
       avatarColor: "#0f766e",
     },
   ];
@@ -342,10 +345,12 @@ export function HomePage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           {featuredReviews.map((review, idx) => (
-            <div
+            <Link
               key={idx}
-              className="p-6 rounded-2xl bg-white border shadow-sm"
+              to={`/tools/${review.toolSlug}#reviews`}
+              className="block p-6 rounded-2xl bg-white border shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5"
               style={{ borderColor: "#e2e8f0" }}
+              aria-label={`Read ${review.tool} reviews`}
             >
               <StarRating rating={review.rating} size="sm" />
               <p className="mt-4 text-sm leading-relaxed italic" style={{ color: "#374151" }}>
@@ -375,7 +380,7 @@ export function HomePage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
