@@ -332,7 +332,7 @@ export function ToolPage() {
             </section>
 
             {/* Reviews */}
-            <section>
+            <section id="reviews">
               <div className="flex items-center justify-between mb-5">
                 <h2 className="text-lg font-bold" style={{ color: "#0f172a" }}>
                   User Reviews
