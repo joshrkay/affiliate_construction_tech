@@ -199,8 +199,104 @@ export function ToolPage() {
     }
   };
 
+  const currentYear = new Date().getFullYear();
+  const canonicalUrl = `https://bestconstructionapps.com/tools/${slug}`;
+  const metaDescription = `${tool.name} is rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. ${tool.tagline}. Starting at ${tool.price}.`;
+  const tradeNames = toolTrades.map((t) => t.name).join(", ");
+
   return (
     <div>
+      <title>{tool.name} Review ({currentYear}) — Pricing, Features & Ratings | BUILTECH</title>
+      <meta name="description" content={metaDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={`${tool.name} Review (${currentYear}) — Pricing, Features & Ratings`} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="product" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:site_name" content="BUILTECH" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={`${tool.name} Review (${currentYear}) | BUILTECH`} />
+      <meta name="twitter:description" content={metaDescription} />
+
+      {/* SoftwareApplication Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": tool.name,
+          "description": tool.description,
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web, iOS, Android",
+          "url": tool.website,
+          "offers": {
+            "@type": "Offer",
+            "price": tool.price.replace(/[^0-9.]/g, "") || "0",
+            "priceCurrency": "USD",
+            "description": `${tool.price} — ${tool.priceNote}`
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": tool.rating.toFixed(1),
+            "bestRating": "5",
+            "worstRating": "1",
+            "ratingCount": tool.reviewCount
+          },
+          "featureList": tool.features.join(", "),
+          "datePublished": `${tool.yearFounded}`,
+          "publisher": {
+            "@type": "Organization",
+            "name": "BUILTECH"
+          }
+        })}
+      </script>
+
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestconstructionapps.com/" },
+            ...(toolTrades[0] ? [{ "@type": "ListItem", "position": 2, "name": toolTrades[0].name, "item": `https://bestconstructionapps.com/trades/${toolTrades[0].slug}` }] : []),
+            { "@type": "ListItem", "position": toolTrades[0] ? 3 : 2, "name": tool.name, "item": canonicalUrl }
+          ]
+        })}
+      </script>
+
+      {/* FAQPage Schema for common questions */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": `What is ${tool.name}?`,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": tool.description
+              }
+            },
+            {
+              "@type": "Question",
+              "name": `How much does ${tool.name} cost?`,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": `${tool.name} starts at ${tool.price}. ${tool.priceNote}`
+              }
+            },
+            {
+              "@type": "Question",
+              "name": `What trades is ${tool.name} best for?`,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": `${tool.name} is used by contractors in ${tradeNames}. ${tool.tagline}`
+              }
+            }
+          ]
+        })}
+      </script>
+
       {/* Hero */}
       <div style={{ backgroundColor: "#0c1a2e" }} className="border-b" >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -348,6 +444,11 @@ export function ToolPage() {
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Main */}
           <div className="lg:col-span-2 space-y-8">
+            {/* AI-extractable Summary */}
+            <p className="text-sm leading-relaxed mb-6 p-4 rounded-xl" style={{ backgroundColor: "#f8fafc", color: "#475569" }}>
+              {tool.name} is a {tool.category.toLowerCase()} rated {tool.rating.toFixed(1)}/5 by {tool.reviewCount.toLocaleString()}+ contractors. Starting at {tool.price}, it provides {tool.features.slice(0, 3).join(", ").toLowerCase()} for {tradeNames.toLowerCase()} professionals. Founded in {tool.yearFounded}, {tool.name} is used by construction companies with {tool.companySize}+ employees.
+            </p>
+
             {/* Description */}
             <section className="bg-white rounded-2xl border p-7" style={{ borderColor: "#e2e8f0" }}>
               <h2 className="text-lg font-bold mb-4" style={{ color: "#0f172a" }}>

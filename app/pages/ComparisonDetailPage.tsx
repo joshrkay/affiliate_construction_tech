@@ -96,31 +96,77 @@ export function ComparisonDetailPage() {
 
   // Build canonical URL
   const canonicalUrl = `https://bestconstructionapps.com/compare/${slug}`;
+  const higherRatedTool = selectedTools[0].rating >= selectedTools[1].rating ? selectedTools[0] : selectedTools[1];
+  const lowerRatedTool = selectedTools[0].rating >= selectedTools[1].rating ? selectedTools[1] : selectedTools[0];
+  const verdictText = `${higherRatedTool.name} is rated ${higherRatedTool.rating.toFixed(1)}/5 (${higherRatedTool.reviewCount.toLocaleString()} reviews) vs ${lowerRatedTool.name} at ${lowerRatedTool.rating.toFixed(1)}/5 (${lowerRatedTool.reviewCount.toLocaleString()} reviews). ${higherRatedTool.name} starts at ${higherRatedTool.price} while ${lowerRatedTool.name} starts at ${lowerRatedTool.price}.`;
 
   return (
     <>
-      {/* SEO Meta Tags - would need to be added to Head in Root */}
       <title>{comparison.title}</title>
       <meta name="description" content={comparison.description} />
       <meta name="keywords" content={comparison.keywords.join(", ")} />
       <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Structured Data for Comparison */}
+      <meta property="og:title" content={comparison.title} />
+      <meta property="og:description" content={comparison.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:site_name" content="BUILTECH" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={comparison.title} />
+      <meta name="twitter:description" content={comparison.description} />
+
+      {/* WebPage Schema with SoftwareApplication items */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Product",
-          "name": `${selectedTools[0].name} vs ${selectedTools[1].name}`,
+          "@type": "WebPage",
+          "name": comparison.title,
           "description": comparison.description,
-          "brand": [
-            { "@type": "Brand", "name": selectedTools[0].name },
-            { "@type": "Brand", "name": selectedTools[1].name }
-          ],
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": ((selectedTools[0].rating + selectedTools[1].rating) / 2).toFixed(1),
-            "reviewCount": selectedTools[0].reviewCount + selectedTools[1].reviewCount
+          "url": canonicalUrl,
+          "publisher": {
+            "@type": "Organization",
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": selectedTools.length,
+            "itemListElement": selectedTools.map((tool, idx) => ({
+              "@type": "ListItem",
+              "position": idx + 1,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": tool.name,
+                "description": tool.description,
+                "applicationCategory": "BusinessApplication",
+                "url": tool.website,
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": tool.rating.toFixed(1),
+                  "bestRating": "5",
+                  "ratingCount": tool.reviewCount
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "price": tool.price.replace(/[^0-9.]/g, "") || "0",
+                  "priceCurrency": "USD"
+                }
+              }
+            }))
           }
+        })}
+      </script>
+
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestconstructionapps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Compare", "item": "https://bestconstructionapps.com/compare" },
+            { "@type": "ListItem", "position": 3, "name": `${selectedTools[0].name} vs ${selectedTools[1].name}`, "item": canonicalUrl }
+          ]
         })}
       </script>
 
@@ -159,6 +205,15 @@ export function ComparisonDetailPage() {
               )}
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* AI-extractable Verdict Summary */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="p-4 rounded-xl mb-6" style={{ backgroundColor: "#f8fafc" }}>
+          <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>
+            <strong style={{ color: "#0f172a" }}>Quick Verdict:</strong> {verdictText}
+          </p>
         </div>
       </div>
 

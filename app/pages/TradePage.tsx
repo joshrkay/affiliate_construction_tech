@@ -66,8 +66,104 @@ export function TradePage() {
     navigate(`/compare?tools=${toolIds}&trade=${trade.slug}`);
   };
 
+  const currentYear = new Date().getFullYear();
+  const canonicalUrl = `https://bestconstructionapps.com/trades/${slug}`;
+  const metaDescription = `Compare the top ${tradeTools.length} ${trade.name} software tools rated by real contractors. Find AI-powered and traditional solutions for ${trade.name} businesses in ${currentYear}.`;
+
+  // Build FAQ content from trade data
+  const faqItems = [
+    {
+      question: `What is ${trade.name} software?`,
+      answer: trade.overview,
+    },
+    {
+      question: `What are the key challenges in ${trade.name}?`,
+      answer: trade.challenges.join(". ") + ".",
+    },
+    {
+      question: `Why should ${trade.name} companies use AI software?`,
+      answer: trade.whyAI.join(" "),
+    },
+    {
+      question: `What is the best ${trade.name} software in ${currentYear}?`,
+      answer: `The top-rated ${trade.name} software in ${currentYear} is ${topTool?.name} with a ${topTool?.rating.toFixed(1)}/5 rating from ${topTool?.reviewCount.toLocaleString()} reviews. Other top options include ${tradeTools.slice(1, 4).map((t) => t.name).join(", ")}.`,
+    },
+  ];
+
   return (
     <div>
+      <title>Best {trade.name} Software ({currentYear}) — Top AI & Tools | BUILTECH</title>
+      <meta name="description" content={metaDescription} />
+      <link rel="canonical" href={canonicalUrl} />
+      <meta property="og:title" content={`Best ${trade.name} Software (${currentYear}) — Top AI & Tools`} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:site_name" content="BUILTECH" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={`Best ${trade.name} Software (${currentYear}) | BUILTECH`} />
+      <meta name="twitter:description" content={metaDescription} />
+
+      {/* ItemList Schema for ranked tools */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": `Best ${trade.name} Software (${currentYear})`,
+          "description": metaDescription,
+          "numberOfItems": tradeTools.length,
+          "itemListOrder": "https://schema.org/ItemListOrderDescending",
+          "itemListElement": tradeTools
+            .sort((a, b) => b.rating - a.rating)
+            .map((t, idx) => ({
+              "@type": "ListItem",
+              "position": idx + 1,
+              "name": t.name,
+              "url": `https://bestconstructionapps.com/tools/${t.slug}`,
+              "item": {
+                "@type": "SoftwareApplication",
+                "name": t.name,
+                "description": t.tagline,
+                "applicationCategory": "BusinessApplication",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": t.rating.toFixed(1),
+                  "ratingCount": t.reviewCount
+                }
+              }
+            }))
+        })}
+      </script>
+
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestconstructionapps.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Trades", "item": "https://bestconstructionapps.com/" },
+            { "@type": "ListItem", "position": 3, "name": trade.name, "item": canonicalUrl }
+          ]
+        })}
+      </script>
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqItems.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
+        })}
+      </script>
+
       {/* Hero */}
       <div className="relative overflow-hidden" style={{ backgroundColor: "#0c1a2e" }}>
         <div
@@ -376,6 +472,26 @@ export function TradePage() {
                 </div>
               </div>
             )}
+
+            {/* FAQ Section for GEO */}
+            <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>
+              <h3 className="text-sm font-semibold mb-4" style={{ color: "#0f172a" }}>
+                Frequently Asked Questions
+              </h3>
+              <div className="space-y-4">
+                {faqItems.map((item, idx) => (
+                  <details key={idx} className="group">
+                    <summary className="text-sm font-medium cursor-pointer list-none flex items-start gap-2" style={{ color: "#374151" }}>
+                      <ChevronRight className="w-4 h-4 shrink-0 mt-0.5 transition-transform group-open:rotate-90" style={{ color: "#f97316" }} />
+                      {item.question}
+                    </summary>
+                    <p className="text-xs mt-2 ml-6 leading-relaxed" style={{ color: "#64748b" }}>
+                      {item.answer}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </div>
 
             {/* Other Trades */}
             <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>

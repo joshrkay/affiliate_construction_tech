@@ -36,6 +36,27 @@ export function BestForPage() {
   }
 
   const canonicalUrl = `https://bestconstructionapps.com/best/${slug}`;
+  const currentYear = new Date().getFullYear();
+
+  // FAQ items for this best-for page
+  const bestForFaqItems = [
+    {
+      question: `What is the best ${trade.name} software in ${currentYear}?`,
+      answer: tradeTools.length > 0
+        ? `The best ${trade.name} software in ${currentYear} is ${tradeTools[0].name} (rated ${tradeTools[0].rating.toFixed(1)}/5), followed by ${tradeTools.slice(1, 3).map((t) => `${t.name} (${t.rating.toFixed(1)}/5)`).join(" and ")}. Rankings are based on real contractor reviews and ratings.`
+        : page.description,
+    },
+    {
+      question: `How much does ${trade.name} software cost?`,
+      answer: tradeTools.length > 0
+        ? `${trade.name} software pricing varies: ${tradeTools.slice(0, 3).map((t) => `${t.name} starts at ${t.price}`).join(", ")}. Most tools offer free trials or demos.`
+        : "Pricing varies by vendor. Most tools offer free trials.",
+    },
+    {
+      question: `What features should I look for in ${trade.name} software?`,
+      answer: trade.whyAI.slice(0, 3).join(" "),
+    },
+  ];
 
   return (
     <>
@@ -43,8 +64,16 @@ export function BestForPage() {
       <meta name="description" content={page.description} />
       <meta name="keywords" content={page.keywords.join(", ")} />
       <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Structured Data for SEO */}
+      <meta property="og:title" content={page.title} />
+      <meta property="og:description" content={page.description} />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content={canonicalUrl} />
+      <meta property="og:site_name" content="BUILTECH" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:title" content={page.title} />
+      <meta name="twitter:description" content={page.description} />
+
+      {/* Enhanced Article Schema */}
       <script type="application/ld+json">
         {JSON.stringify({
           "@context": "https://schema.org",
@@ -53,9 +82,79 @@ export function BestForPage() {
           "description": page.description,
           "author": {
             "@type": "Organization",
-            "name": "BUILTECH"
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com"
           },
-          "datePublished": "2026-03-11"
+          "publisher": {
+            "@type": "Organization",
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com"
+          },
+          "datePublished": "2026-03-11",
+          "dateModified": "2026-03-13",
+          "mainEntityOfPage": canonicalUrl
+        })}
+      </script>
+
+      {/* ItemList Schema for ranked tools */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": page.title,
+          "description": page.description,
+          "numberOfItems": tradeTools.length,
+          "itemListOrder": "https://schema.org/ItemListOrderDescending",
+          "itemListElement": tradeTools.map((t, idx) => ({
+            "@type": "ListItem",
+            "position": idx + 1,
+            "name": t.name,
+            "url": `https://bestconstructionapps.com/tools/${t.slug}`,
+            "item": {
+              "@type": "SoftwareApplication",
+              "name": t.name,
+              "description": t.tagline,
+              "applicationCategory": "BusinessApplication",
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": t.rating.toFixed(1),
+                "ratingCount": t.reviewCount
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": t.price.replace(/[^0-9.]/g, "") || "0",
+                "priceCurrency": "USD"
+              }
+            }
+          }))
+        })}
+      </script>
+
+      {/* BreadcrumbList Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bestconstructionapps.com/" },
+            { "@type": "ListItem", "position": 2, "name": `Best ${trade.name} Software`, "item": canonicalUrl }
+          ]
+        })}
+      </script>
+
+      {/* FAQPage Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": bestForFaqItems.map((item) => ({
+            "@type": "Question",
+            "name": item.question,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": item.answer
+            }
+          }))
         })}
       </script>
 
@@ -217,6 +316,26 @@ export function BestForPage() {
                 <div className="w-2 h-2 rounded-full mt-1.5" style={{ backgroundColor: "#f97316" }} />
                 <span className="text-sm" style={{ color: "#374151" }}>{challenge}</span>
               </div>
+            ))}
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mt-12 p-6 rounded-2xl bg-white border" style={{ borderColor: "#e2e8f0" }}>
+          <h2 className="text-xl font-bold mb-5" style={{ color: "#0f172a" }}>
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-4">
+            {bestForFaqItems.map((item, idx) => (
+              <details key={idx} className="group border-b pb-4" style={{ borderColor: "#f1f5f9" }}>
+                <summary className="text-sm font-medium cursor-pointer list-none flex items-start gap-2" style={{ color: "#374151" }}>
+                  <ChevronRight className="w-4 h-4 shrink-0 mt-0.5 transition-transform group-open:rotate-90" style={{ color: "#f97316" }} />
+                  {item.question}
+                </summary>
+                <p className="text-sm mt-3 ml-6 leading-relaxed" style={{ color: "#64748b" }}>
+                  {item.answer}
+                </p>
+              </details>
             ))}
           </div>
         </div>
