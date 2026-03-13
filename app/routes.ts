@@ -8,6 +8,8 @@ import { SearchPage } from "./pages/SearchPage";
 import { NotFound } from "./pages/NotFound";
 import { ComparisonDetailPage } from "./pages/ComparisonDetailPage";
 import { BestForPage } from "./pages/BestForPage";
+import { GuidePage } from "./pages/GuidePage";
+import { GuidesIndexPage } from "./pages/GuidesIndexPage";
 
 export const router = createBrowserRouter([
   {
@@ -20,6 +22,8 @@ export const router = createBrowserRouter([
       { path: "compare", Component: ComparePage },
       { path: "compare/:slug", Component: ComparisonDetailPage },
       { path: "best/:slug", Component: BestForPage },
+      { path: "guides", Component: GuidesIndexPage },
+      { path: "guides/:slug", Component: GuidePage },
       { path: "search", Component: SearchPage },
       { path: "*", Component: NotFound },
     ],

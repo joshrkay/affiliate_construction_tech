@@ -64,13 +64,36 @@ export function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">Resources</h4>
             <ul className="space-y-2.5">
-              {["Top Rated Tools", "AI Agents Explained", "Compare Software", "Buyer's Guides", "Industry Reports", "Newsletter"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <Link to="/guides" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  All Guides
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/how-to-choose-construction-software" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  How to Choose Software
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/construction-software-pricing-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Pricing Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/ai-construction-tools-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  AI Tools Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/compare" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Compare Software
+                </Link>
+              </li>
+              <li>
+                <Link to="/guides/construction-software-for-small-contractors" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Small Contractor Guide
+                </Link>
+              </li>
             </ul>
           </div>
 
