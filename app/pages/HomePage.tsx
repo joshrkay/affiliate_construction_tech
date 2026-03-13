@@ -69,8 +69,67 @@ export function HomePage() {
     },
   ];
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <div>
+      <title>BUILTECH — Best AI & Construction Software Directory ({currentYear})</title>
+      <meta name="description" content="Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade." />
+      <link rel="canonical" href="https://bestconstructionapps.com/" />
+      <meta property="og:title" content={`BUILTECH — Best AI & Construction Software Directory (${currentYear})`} />
+      <meta property="og:description" content="Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade." />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://bestconstructionapps.com/" />
+      <meta property="og:site_name" content="BUILTECH" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`BUILTECH — Best AI & Construction Software Directory (${currentYear})`} />
+      <meta name="twitter:description" content="Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade." />
+
+      {/* WebSite Schema with SearchAction for Sitelinks Searchbox */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "BUILTECH",
+          "url": "https://bestconstructionapps.com",
+          "description": "The construction industry's AI & software directory. Compare ratings, read real contractor reviews, and discover the tools transforming every trade.",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://bestconstructionapps.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
+
+      {/* CollectionPage Schema for AI extraction */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": `Best AI & Construction Software Directory (${currentYear})`,
+          "description": "Compare 140+ construction software tools rated by real contractors across 15+ trades.",
+          "url": "https://bestconstructionapps.com/",
+          "publisher": {
+            "@type": "Organization",
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "numberOfItems": tools.length,
+            "itemListElement": tools
+              .sort((a, b) => (a.overallRank ?? 999) - (b.overallRank ?? 999))
+              .slice(0, 10)
+              .map((tool, idx) => ({
+                "@type": "ListItem",
+                "position": idx + 1,
+                "name": tool.name,
+                "url": `https://bestconstructionapps.com/tools/${tool.slug}`
+              }))
+          }
+        })}
+      </script>
+
       {/* Hero */}
       <section
         className="relative overflow-hidden py-20 md:py-28"
