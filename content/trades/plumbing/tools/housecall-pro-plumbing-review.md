@@ -1,6 +1,24 @@
 ---
 title: "Housecall Pro Review: Affordable Plumbing Software for Small Businesses"
 description: "Housecall Pro is popular field service software for plumbers. Learn pricing, features, pros/cons, and if it's right for your plumbing business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Housecall Pro"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.4"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Housecall Pro Review: Field Service Software for Plumbers
@@ -133,3 +151,28 @@ Housecall Pro hits the sweet spot for small to mid-size plumbing contractors. It
 ---
 
 *Compare Housecall Pro vs Jobber for plumbers →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Housecall Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Housecall Pro is an all-in-one field service management platform for plumbing businesses. It includes scheduling, invoicing, customer management, photo documentation, and marketing automation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Housecall Pro cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Housecall Pro pricing ranges from $49/user/month for Essentials to $99/user/month for Enterprise. Most plumbing contractors choose Professional at $79/user/month."
+      }
+    }
+  ]
+}
+</script>

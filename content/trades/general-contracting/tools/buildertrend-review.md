@@ -1,6 +1,24 @@
 ---
 title: "Buildertrend Review: Construction Management for Small Contractors"
 description: "Buildertrend is construction management software designed for small builders and remodelers. Learn pricing, features, pros/cons, and if it's right for you."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Buildertrend"
+    "applicationCategory": "ConstructionManagement"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.5"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Buildertrend Review: Construction Management for Small Contractors
@@ -113,3 +131,28 @@ Buildertrend is the best choice for home builders and remodelers who want compre
 ---
 
 *Compare Buildertrend vs Procore →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Buildertrend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buildertrend is a cloud-based construction management platform designed for home builders, remodelers, and small general contractors. It handles project management, scheduling, customer management, and invoicing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Buildertrend cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Buildertrend pricing ranges from $10-$20/user/month depending on the features selected. Annual billing provides discounts."
+      }
+    }
+  ]
+}
+</script>

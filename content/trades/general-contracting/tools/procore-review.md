@@ -1,6 +1,24 @@
 ---
 title: "Procore Review: Construction Management Software for General Contractors"
 description: "Procore is the #1 construction management platform. Learn pricing, features, pros/cons, and if it's right for your general contracting business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Procore"
+    "applicationCategory": "ConstructionManagement"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.6"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Procore Review: The #1 Construction Management Platform
@@ -109,3 +127,28 @@ Procore is the gold standard for construction management. It's expensive and com
 ---
 
 *Compare Procore vs Buildertrend →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Procore?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Procore is the gold standard construction management platform used on over 3 million projects globally. It provides project management, field productivity, and financial management tools."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Procore cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Procore pricing ranges from $15-$50/user/month plus implementation fees. The exact cost depends on the features and size of your organization."
+      }
+    }
+  ]
+}
+</script>

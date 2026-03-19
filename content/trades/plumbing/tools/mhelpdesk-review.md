@@ -1,6 +1,24 @@
 ---
 title: "mHelpDesk Review: Affordable Field Service Software"
 description: "mHelpDesk is budget-friendly field service software for contractors. Learn pricing, features, pros/cons, and if it's right for your business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "mHelpDesk"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "3.8"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # mHelpDesk Review: Budget-Friendly Field Service Software
@@ -75,3 +93,28 @@ mHelpDesk is a solid budget choice for very small contractors just starting to d
 **Best for:** Small teams, solo contractors, budget-conscious businesses.
 
 **Skip if:** You need advanced features or expect to scale quickly.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is mHelpDesk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "mHelpDesk is an affordable field service management platform for small contractors. It handles scheduling, customer management, and invoicing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does mHelpDesk cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "mHelpDesk pricing starts at $39/user/month for the Basic plan, $59/user/month for Professional, and $89/user/month for Enterprise. Annual billing saves 20%."
+      }
+    }
+  ]
+}
+</script>

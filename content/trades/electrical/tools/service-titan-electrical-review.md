@@ -1,6 +1,24 @@
 ---
 title: "ServiceTitan Review: All-in-One Field Service Software for Electrical Contractors"
 description: "ServiceTitan is a comprehensive field service management platform. Learn pricing, features, pros/cons, and if it's right for your electrical business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "ServiceTitan"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.7"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # ServiceTitan Review: Complete Field Service for Electrical Contractors
@@ -112,3 +130,28 @@ ServiceTitan is the enterprise choice for electrical contractors who need compre
 ---
 
 *Compare ServiceTitan vs Jobber for electrical contractors →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ServiceTitan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ServiceTitan is a comprehensive field service management platform for electrical contractors. It handles scheduling, dispatch, CRM, invoicing, job costing, marketing, and 70+ integrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does ServiceTitan cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ServiceTitan doesn't publish pricing publicly. Expect to budget $50-$150/user/month plus implementation fees of $5,000-$15,000."
+      }
+    }
+  ]
+}
+</script>

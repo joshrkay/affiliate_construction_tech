@@ -1,6 +1,24 @@
 ---
 title: "FieldWire Review: Construction Project Management"
 description: "FieldWire is construction project management software for field teams. Learn pricing, features, pros/cons, and if it's right for your projects."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "FieldWire"
+    "applicationCategory": "ConstructionManagement"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.3"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # FieldWire Review: Construction Project Management
@@ -72,3 +90,28 @@ FieldWire is excellent for contractors who need field-focused project management
 
 **Best for:** Field teams, superintendents, mid-size contractors
 **Skip if:** You need full financials or enterprise scale
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is FieldWire?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FieldWire is a mobile-first construction management platform designed for field teams. It handles task management, photo documentation, RFI workflows, and submittals."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does FieldWire cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FieldWire pricing: Essential ($500/month), Professional ($2,000/month), Enterprise (custom pricing)."
+      }
+    }
+  ]
+}
+</script>
