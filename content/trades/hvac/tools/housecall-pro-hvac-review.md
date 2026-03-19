@@ -1,6 +1,24 @@
 ---
 title: "Housecall Pro Review: HVAC Contractor Software"
 description: "Housecall Pro is popular field service software for HVAC businesses. Learn pricing, features, pros/cons, and if it's right for your company."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Housecall Pro"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.4"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Housecall Pro Review: Field Service Software for HVAC Contractors
@@ -115,3 +133,28 @@ Housecall Pro hits the sweet spot for small to mid-size HVAC contractors. It's m
 ---
 
 *Compare Housecall Pro vs Jobber for HVAC →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Housecall Pro?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Housecall Pro is an all-in-one field service management platform for HVAC and home service businesses. It includes scheduling, invoicing, customer management, photo documentation, and marketing automation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Housecall Pro cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Housecall Pro pricing ranges from $49/user/month for Essentials to $99/user/month for Enterprise. Most HVAC contractors choose the Professional plan at $79/user/month."
+      }
+    }
+  ]
+}
+</script>

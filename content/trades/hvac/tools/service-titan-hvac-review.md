@@ -1,6 +1,24 @@
 ---
 title: "ServiceTitan Review: Complete HVAC Contractor Software"
 description: "ServiceTitan is the leading field service software for HVAC contractors. Learn pricing, features, pros/cons, and if it's right for your HVAC business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "ServiceTitan"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.7"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # ServiceTitan Review: The Gold Standard for HVAC Contractors
@@ -91,3 +109,28 @@ ServiceTitan is the gold standard for HVAC contractors who need enterprise-grade
 ---
 
 *Compare ServiceTitan vs Jobber for HVAC contractors →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is ServiceTitan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ServiceTitan is a comprehensive field service management platform designed for HVAC contractors. It includes scheduling, CRM, invoicing, job costing, marketing automation, and 70+ integrations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does ServiceTitan cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ServiceTitan doesn't publish pricing publicly. Expect to budget $75-$150/user/month plus implementation fees of $5,000-$15,000."
+      }
+    }
+  ]
+}
+</script>

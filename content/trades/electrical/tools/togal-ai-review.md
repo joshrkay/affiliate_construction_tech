@@ -1,6 +1,24 @@
 ---
 title: "Togal.AI Review: AI-Powered Takeoff Software for Electrical Contractors"
 description: "Togal.AI uses AI to automate electrical takeoffs with 98% accuracy. Read our detailed review of features, pricing, and how it compares to competitors."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Togal.AI"
+    "applicationCategory": "DesignApplication"
+    "operatingSystem": "Web"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.5"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Togal.AI Review: AI-Powered Takeoff for Electrical Contractors
@@ -92,3 +110,28 @@ Togal.AI is the real deal for electrical contractors who takeoffs are a bottlene
 ---
 
 *Read our comparison of Togal.AI vs STACK Takeoff for electrical contractors →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Togal.AI?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Togal.AI is AI-powered takeoff software designed specifically for electrical contractors. It uses artificial intelligence to automatically detect, measure, and label electrical components on architectural plans."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Togal.AI cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Togal.AI pricing ranges from $200-$500/month depending on features and team size. Exact pricing requires a sales call."
+      }
+    }
+  ]
+}
+</script>

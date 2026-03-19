@@ -1,6 +1,24 @@
 ---
 title: "Jobber Review: Field Service Software for HVAC Contractors"
 description: "Jobber is affordable field service software for small HVAC businesses. Learn pricing, features, pros/cons, and if it's right for your company."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "Jobber"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.2"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # Jobber Review: Field Service Software for Small HVAC Contractors
@@ -81,3 +99,28 @@ Jobber is the sweet spot for small HVAC contractors who need professional tools 
 ---
 
 *Compare Jobber vs ServiceTitan for HVAC contractors →*
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Jobber?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jobber is field service management software designed for small to mid-size service businesses, including HVAC contractors. It handles scheduling, customer management, quoting, invoicing, and payment processing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Jobber cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jobber pricing starts at $29/user/month for the Core plan, $49/user/month for Grow, and $249/user/month for Scale. Most small HVAC contractors use the Grow plan at $49/user/month."
+      }
+    }
+  ]
+}
+</script>
