@@ -1,6 +1,24 @@
 ---
 title: "SimPRO Review: Field Service Management for Contractors"
 description: "SimPRO is field service management software for contractors. Learn pricing, features, pros/cons, and if it's right for your business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "SimPRO"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.1"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # SimPRO Review: Field Service Management for Contractors
@@ -80,3 +98,28 @@ SimPRO is a strong choice for contractors who need inventory management and job 
 **Best for:** Trade contractors needing inventory tracking, service companies.
 
 **Skip if:** You need marketing features or have limited IT resources.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is SimPRO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SimPRO is a comprehensive field service management platform designed for trade contractors. It handles job management, scheduling, quoting, and inventory tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does SimPRO cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SimPRO pricing is not publicly available. Expect $75-$150/user/month. Contact sales for a quote."
+      }
+    }
+  ]
+}
+</script>

@@ -1,6 +1,24 @@
 ---
 title: "FieldEdge Review: HVAC and Electrical Field Service Software"
 description: "FieldEdge is trade-specific field service software for HVAC and electrical contractors. Learn pricing, features, pros/cons, and if it's right for your business."
+schema:
+  "@context": "https://schema.org"
+  "@type": "Review"
+  "itemReviewed":
+    "@type": "SoftwareApplication"
+    "name": "FieldEdge"
+    "applicationCategory": "BusinessApplication"
+    "operatingSystem": "Web, iOS, Android"
+  "reviewRating":
+    "@type": "Rating"
+    "ratingValue": "4.2"
+    "bestRating": "5"
+  "author":
+    "@type": "Organization"
+    "name": "BUILTECH"
+  "publisher":
+    "@type": "Organization"
+    "name": "BUILTECH"
 ---
 
 # FieldEdge Review: Trade-Specific Field Service Software
@@ -79,3 +97,28 @@ FieldEdge is a solid choice for trade contractors who want software built specif
 **Best for:** HVAC, electrical, plumbing contractors wanting trade-specific features.
 
 **Skip if:** You need many integrations or enterprise scale.
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is FieldEdge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FieldEdge is a trade-specific field service management platform designed for HVAC, electrical, and plumbing contractors. It handles dispatching, service agreements, invoicing, and customer history."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does FieldEdge cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "FieldEdge pricing is not publicly available. Expect $50-$100/user/month based on features. Contact sales for exact pricing."
+      }
+    }
+  ]
+}
+</script>
