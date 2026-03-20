@@ -393,6 +393,177 @@ export const guidePages: GuidePage[] = [
     relatedToolIds: ["procore", "buildertrend", "jobber"],
     relatedTradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
     lastUpdated: "2026-03-20"
+  },
+  // Article 6: Jobber vs Housecall Pro
+  {
+    slug: "jobber-vs-housecall-pro",
+    title: "Jobber vs Housecall Pro: Which is Better? (2026)",
+    description: "Compare Jobber and Housecall Pro for field service management. Features, pricing, pros, cons, and verdict for HVAC, plumbing, and electrical contractors.",
+    keywords: ["jobber vs housecall pro", "housecall pro vs jobber", "field service comparison"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "Jobber is slightly better overall with more integrations and pricing options. Housecall Pro is excellent for ease of use. Both are great choices for small field service businesses."
+      },
+      {
+        heading: "Pricing",
+        content: "Jobber: $29-$249/user/month. Housecall Pro: $49-$99/user/month. Jobber has more pricing tiers, Housecall Pro is simpler."
+      },
+      {
+        heading: "Features",
+        content: "Jobber has 80+ integrations, advanced scheduling. Housecall Pro has excellent marketing automation, simpler interface."
+      },
+      {
+        heading: "Best For",
+        content: "Jobber: Growing companies, those needing integrations. Housecall Pro: Teams prioritizing ease of use, marketing features."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is Jobber cheaper than Housecall Pro?",
+        answer: "Yes, Jobber starts at $29/user/month vs Housecall Pro at $49/user/month."
+      },
+      {
+        question: "Which is easier to learn?",
+        answer: "Housecall Pro is slightly easier to learn with a more intuitive interface."
+      }
+    ],
+    relatedToolIds: ["jobber", "housecall-pro"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 7: How Much Does Jobber Cost?
+  {
+    slug: "how-much-does-jobber-cost",
+    title: "How Much Does Jobber Cost? (2026 Pricing)",
+    description: "Learn the real cost of Jobber field service software. Pricing tiers, what's included, and what to budget.",
+    keywords: ["jobber pricing", "jobber cost", "how much does jobber cost"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Jobber Pricing Tiers",
+        content: "Core: $29/user/month, Grow: $49/user/month, Scale: $249/user/month. Annual billing saves 20%."
+      },
+      {
+        heading: "What's Included",
+        content: "Core: Basic scheduling, invoicing. Grow: Online booking, marketing. Scale: Advanced features, API access."
+      },
+      {
+        heading: "Total Cost Example",
+        content: "5 technicians on Grow plan: $49 x 5 = $245/month = $2,940/year. Plus any add-ons."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is there a free trial?",
+        answer: "Yes, Jobber offers a 14-day free trial."
+      },
+      {
+        question: "Are there setup fees?",
+        answer: "No, Jobber has no setup fees."
+      }
+    ],
+    relatedToolIds: ["jobber"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 8: Best Plumbing Software
+  {
+    slug: "best-plumbing-software-small-business",
+    title: "Best Plumbing Software for Small Business (2026)",
+    description: "Top-rated plumbing software for small businesses. Compare features, pricing, and reviews to find the right tool for your plumbing company.",
+    keywords: ["best plumbing software", "plumbing software small business", "affordable plumbing software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Top Picks",
+        content: "Best Overall: Jobber. Best Value: Housecall Pro. Best Features: ServiceTitan."
+      },
+      {
+        heading: "Jobber",
+        content: "Starting at $29/user/month. Excellent scheduling, invoicing, customer management. 80+ integrations."
+      },
+      {
+        heading: "Housecall Pro",
+        content: "Starting at $49/user/month. Great ease of use, marketing automation. Perfect for small teams."
+      },
+      {
+        heading: "ServiceTitan",
+        content: "Starting at $75/user/month. Enterprise features, 70+ integrations. Best for growing companies."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the cheapest plumbing software?",
+        answer: "Jobber at $29/user/month is the most affordable full-featured option."
+      }
+    ],
+    relatedToolIds: ["jobber", "housecall-pro", "servicetitan"],
+    relatedTradeIds: ["plumbing"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 9: Togal.AI vs STACK
+  {
+    slug: "togal-ai-vs-stack-takeoff",
+    title: "Togal.AI vs STACK Takeoff: Which is Best? (2026)",
+    description: "Compare Togal.AI and STACK for construction takeoff and estimating. AI-powered vs traditional cloud-based.",
+    keywords: ["togal ai vs stack", "ai takeoff software", "construction estimating comparison"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "Togal.AI is better for electrical contractors wanting AI automation. STACK is better for teams wanting cloud collaboration."
+      },
+      {
+        heading: "Technology",
+        content: "Togal.AI uses AI to auto-detect components. STACK uses traditional manual takeoff with cloud collaboration."
+      },
+      {
+        heading: "Pricing",
+        content: "Togal.AI: $200-500/month. STACK: $199-499/month. Similar price points."
+      }
+    ],
+    faqs: [
+      {
+        question: "Which is better for electrical contractors?",
+        answer: "Togal.AI, as it's specifically designed for electrical with AI-powered detection."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "stack-takeoff"],
+    relatedTradeIds: ["electrical", "general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 10: ServiceTitan Pricing
+  {
+    slug: "how-much-does-servicetitan-cost",
+    title: "How Much Does ServiceTitan Cost? (2026 Pricing)",
+    description: "Learn the real cost of ServiceTitan field service software. Pricing tiers, implementation costs, and what to budget.",
+    keywords: ["servicetitan pricing", "how much does servicetitan cost", "servicetitan price"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "ServiceTitan Pricing",
+        content: "ServiceTitan doesn't publish pricing. Expect $75-150/user/month plus implementation fees of $5,000-15,000."
+      },
+      {
+        heading: "Implementation Costs",
+        content: "Implementation typically costs $5,000-15,000 depending on company size and complexity. Includes data migration, setup, training."
+      },
+      {
+        heading: "Total Cost Example",
+        content: "10 technicians: $100 x 10 x 12 = $12,000/year + $10,000 implementation = $22,000 year one."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is ServiceTitan worth the cost?",
+        answer: "For companies with 5+ technicians needing enterprise features, yes. Smaller companies may find Jobber more cost-effective."
+      }
+    ],
+    relatedToolIds: ["servicetitan"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
   }
 ];
 
