@@ -2079,7 +2079,7 @@ export const tools: Tool[] = [
     name: "Accubid",
     tagline: "Electrical estimating software",
     description:
-      "Accubid is专业的电气估算软件，为电气承包商提供准确的估算和投标管理。",
+      "Accubid is professional electrical estimating software that provides electrical contractors with accurate estimating and bid management.",
     category: "Software",
     type: "Estimating",
     price: "$199-$499/month",
