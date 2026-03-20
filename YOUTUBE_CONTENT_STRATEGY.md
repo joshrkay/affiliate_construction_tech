@@ -10,7 +10,7 @@ Drive traffic to bestconstructionapps.com through video content featuring softwa
 ### 1. Comparison Videos (High Value - 8-12 min)
 **Format:** Side-by-side comparison of two tools
 - "Procore vs Buildertrend: Which is Better for Small Contractors?"
-- "ServiceTitan vs Jobber: Full Comparison 2026"
+- "ServiceTitan vs Jobber: Full Comparison"
 - "Togal.AI vs STACK Takeoff: Which AI Estimating Tool Wins?"
 
 **Structure:**
