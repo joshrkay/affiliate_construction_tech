@@ -914,6 +914,376 @@ export const guidePages: GuidePage[] = [
     relatedToolIds: ["jobber", "buildertrend"],
     relatedTradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
     lastUpdated: "2026-03-20"
+  },
+  // Article 21: AI in Construction
+  {
+    slug: "ai-in-construction-2026",
+    title: "How AI is Transforming the Construction Industry (2026)",
+    description: "Discover how artificial intelligence is revolutionizing construction. From AI-powered takeoff to predictive analytics.",
+    keywords: ["ai in construction", "artificial intelligence construction", "ai construction technology"],
+    category: "industry",
+    sections: [
+      {
+        heading: "AI Takeoff Software",
+        content: "AI automatically detects and measures components from plans. Togal.AI claims 98% accuracy, reducing takeoff time by 70%."
+      },
+      {
+        heading: "Predictive Analytics",
+        content: "AI predicts project delays, cost overruns, and risks before they happen. BuiltAI and similar tools analyze historical data."
+      },
+      {
+        heading: "AI Scheduling",
+        content: "AI optimizes schedules considering weather, labor, and materials. ALICE Technologies uses AI for construction scheduling."
+      },
+      {
+        heading: "Computer Vision",
+        content: "AI analyzes site photos to track progress, detect safety issues, and identify defects. drones + AI = powerful site monitoring."
+      }
+    ],
+    faqs: [
+      {
+        question: "How is AI used in construction?",
+        answer: "AI is used for takeoff automation, project scheduling, risk prediction, safety monitoring, and document analysis."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "built-ai", "stack-takeoff"],
+    relatedTradeIds: ["general-contracting", "electrical", "hvac"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 22: Best AI Construction Tools
+  {
+    slug: "best-ai-construction-tools",
+    title: "Best AI Construction Software Tools (2026)",
+    description: "Top artificial intelligence tools for construction. From takeoff to scheduling to project management.",
+    keywords: ["best ai construction software", "ai construction tools", "construction ai software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "AI Takeoff",
+        content: "Togal.AI: AI-powered electrical takeoff. STACK: Cloud estimating with AI features. Bluebeam: AI-assisted document review."
+      },
+      {
+        heading: "AI Scheduling",
+        content: "ALICE: AI construction scheduling. Procore AI: Project insights. BuiltAI: Resource optimization."
+      },
+      {
+        heading: "AI Project Management",
+        content: "Procore AI, Buildertrend AI, and BuiltAI offer predictive insights for project managers."
+      },
+      {
+        heading: "AI Safety",
+        content: "Tools like Safeti use AI for safety monitoring and compliance tracking."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the best AI for construction?",
+        answer: "Depends on your need: Togal.AI for takeoff, ALICE for scheduling, Procore AI for general insights."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "built-ai", "stack-takeoff"],
+    relatedTradeIds: ["general-contracting", "electrical", "hvac"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 23: Construction Tech Trends
+  {
+    slug: "construction-technology-trends-2026",
+    title: "Top 10 Construction Technology Trends (2026)",
+    description: "The latest construction technology trends shaping the industry. From drones to BIM to AI.",
+    keywords: ["construction technology trends", "construction tech trends", "new construction technology"],
+    category: "industry",
+    sections: [
+      {
+        heading: "1. AI-Powered Everything",
+        content: "AI is now in takeoff, scheduling, project management, and safety. Expect more AI tools in 2026."
+      },
+      {
+        heading: "2. Cloud-Based Everything",
+        content: "Cloud construction software is now standard. Access projects from anywhere on any device."
+      },
+      {
+        heading: "3. Mobile-First Field Tools",
+        content: "Field workers use tablets and phones for everything: photos, forms, schedules, communication."
+      },
+      {
+        heading: "4. BIM Adoption",
+        content: "Building Information Modeling is standard on commercial projects. 3D models replace 2D drawings."
+      },
+      {
+        heading: "5. Drones & Robotics",
+        content: "Drones survey sites, monitor progress, and capture aerial imagery. Robotics assist with repetitive tasks."
+      },
+      {
+        heading: "6. Prefab & Modular",
+        content: "Off-site construction grows. Software integrates with prefab workflows for better coordination."
+      },
+      {
+        heading: "7. Sustainability Tracking",
+        content: "New tools track carbon footprint, materials, and waste. Green construction is big business."
+      },
+      {
+        heading: "8. AR/VR",
+        content: "Augmented and virtual reality for training, safety, and visualization. See the building before building."
+      }
+    ],
+    faqs: [
+      {
+        question: "What is the biggest trend in construction technology?",
+        answer: "AI and automation are the biggest trends, followed by cloud-based software and BIM adoption."
+      }
+    ],
+    relatedToolIds: ["procore", "togal-ai", "built-ai"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 24: Construction Industry Statistics
+  {
+    slug: "construction-industry-statistics-2026",
+    title: "Key Construction Industry Statistics (2026)",
+    description: "Important construction industry statistics. Market size, growth, labor trends, and technology adoption.",
+    keywords: ["construction industry statistics", "construction market size", "construction growth"],
+    category: "industry",
+    sections: [
+      {
+        heading: "Market Size",
+        content: "Global construction market: $12 trillion. US construction: $2 trillion annually. Growing 5-10% per year."
+      },
+      {
+        heading: "Labor Shortage",
+        content: "Construction faces critical labor shortage. 80% of contractors report difficulty finding skilled workers."
+      },
+      {
+        heading: "Technology Adoption",
+        content: "65% of contractors now use some construction software. Up from 40% in 2020. Mobile adoption at 80%."
+      },
+      {
+        heading: "Productivity",
+        content: "Construction productivity growth: 1% annually vs 2.8% for overall economy. Technology can close this gap."
+      }
+    ],
+    faqs: [
+      {
+        question: "How big is the construction industry?",
+        answer: "The US construction industry is $2 trillion annually, representing about 4% of GDP."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 25: Construction Safety Technology
+  {
+    slug: "construction-safety-technology",
+    title: "Construction Safety Technology (2026)",
+    description: "How technology is improving construction safety. From wearables to AI monitoring.",
+    keywords: ["construction safety technology", "construction safety software", "ai construction safety"],
+    category: "industry",
+    sections: [
+      {
+        heading: "Wearable Technology",
+        content: "Smart helmets, vests, and watches monitor worker health. Detect fatigue, falls, and hazards in real-time."
+      },
+      {
+        heading: "AI Safety Monitoring",
+        content: "AI analyzes site photos and videos to identify safety violations. Flag hazards before accidents happen."
+      },
+      {
+        heading: "Safety Software",
+        content: "Platforms like Safeti track incidents, inspections, and training. Automate compliance reporting."
+      },
+      {
+        heading: "VR Safety Training",
+        content: "Virtual reality trains workers on dangerous scenarios without real-world risk. Immersive and effective."
+      }
+    ],
+    faqs: [
+      {
+        question: "How does AI improve construction safety?",
+        answer: "AI monitors sites for hazards, predicts safety risks, and automates compliance reporting."
+      }
+    ],
+    relatedToolIds: ["safeti"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 26: Construction Software ROI
+  {
+    slug: "construction-software-roi",
+    title: "Construction Software ROI: Is It Worth It? (2026)",
+    description: "Calculate the return on investment for construction software. How long until it pays for itself?",
+    keywords: ["construction software roi", "software roi construction", "construction software return on investment"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Time Savings",
+        content: "Contractors save 5-15 hours/week on administrative tasks. At $50/hour, that's $130-390/week = $6,500-20,000/year."
+      },
+      {
+        heading: "Revenue Increase",
+        content: "Online booking and better scheduling = 10-30% more jobs. A $500K company could add $50-150K revenue."
+      },
+      {
+        heading: "Error Reduction",
+        content: "Digital processes reduce mistakes. Fewer missed deadlines, lost invoices, and scheduling errors = money saved."
+      },
+      {
+        heading: "ROI Example",
+        content: "$5,000/year software x 3 years = $15,000. Time savings: $15,000. Revenue increase: $30,000. Net: $30,000 profit."
+      }
+    ],
+    faqs: [
+      {
+        question: "How long does it take for construction software to pay for itself?",
+        answer: "Most contractors see ROI within 3-6 months through time savings and increased revenue."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobber"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 27: Construction Project Management
+  {
+    slug: "construction-project-management-guide",
+    title: "Construction Project Management: Complete Guide (2026)",
+    description: "Everything about construction project management. Processes, software, and best practices.",
+    keywords: ["construction project management", "project management construction", "construction pm guide"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "What is Construction PM?",
+        content: "Planning, organizing, and controlling construction projects from start to finish. Includes schedule, budget, quality, safety."
+      },
+      {
+        heading: "Key Processes",
+        content: "1) Initiation, 2) Planning, 3) Execution, 4) Monitoring, 5) Closeout. Each phase has specific tasks and deliverables."
+      },
+      {
+        heading: "Common Challenges",
+        content: "Scope creep, budget overruns, schedule delays, communication gaps, and resource constraints."
+      },
+      {
+        heading: "Software Solutions",
+        content: "Procore: Enterprise PM. Buildertrend: Residential PM. Jobtread: Small GC PM. All offer schedule, budget, and document management."
+      }
+    ],
+    faqs: [
+      {
+        question: "What is the best project management software for construction?",
+        answer: "Procore for commercial, Buildertrend for residential, Jobtread for small GCs."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobtread"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 28: Construction Accounting
+  {
+    slug: "construction-accounting-guide",
+    title: "Construction Accounting: Complete Guide (2026)",
+    description: "Everything about construction accounting. Job costing, progress invoicing, and financial management.",
+    keywords: ["construction accounting", "construction bookkeeping", "construction finance"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "Construction Accounting vs Regular",
+        content: "Construction accounting tracks costs by job (job costing). Regular accounting doesn't need this level of detail."
+      },
+      {
+        heading: "Job Costing",
+        content: "Track labor, materials, and overhead by project. Know profit margins on each job. Essential for success."
+      },
+      {
+        heading: "Progress Invoicing",
+        content: "Bill based on percentage complete. Complex but necessary for long commercial projects. Requires change order tracking."
+      },
+      {
+        heading: "Software Options",
+        content: "QuickBooks Contractors: Standard. Buildertrend: Integrated PM+accounting. Jobtread: All-in-one. Xero: Cloud alternative."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can I use QuickBooks for construction?",
+        answer: "Yes, but get QuickBooks Contractors version with job costing features. Construction-specific software integrates better."
+      }
+    ],
+    relatedToolIds: ["quickbooks-contractors", "buildertrend", "jobtread"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 29: Construction Marketing
+  {
+    slug: "construction-marketing-guide",
+    title: "Marketing for Construction Companies (2026)",
+    description: "How to market a construction company in 2026. Digital strategies that actually work.",
+    keywords: ["construction marketing", "marketing for contractors", "construction company marketing"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "Website First",
+        content: "Every contractor needs a professional website. Showcase projects, services, and testimonials. Mobile-friendly is a must."
+      },
+      {
+        heading: "Google Business Profile",
+        content: "Claim and optimize your Google Business Profile. Reviews drive leads. Respond to every review."
+      },
+      {
+        heading: "Social Media",
+        content: "LinkedIn for B2B. Instagram/ Facebook for residential. Show finished projects. Behind-the-scenes content works."
+      },
+      {
+        heading: "Content Marketing",
+        content: "Blog about your expertise. Best contractor in [city] SEO. Answer common questions. Position as expert."
+      }
+    ],
+    faqs: [
+      {
+        question: "How do construction companies get most leads?",
+        answer: "Google search (SEO + Ads), referrals, and Google Business Profile reviews generate most construction leads."
+      }
+    ],
+    relatedToolIds: [],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 30: Future of Construction
+  {
+    slug: "future-of-construction-industry",
+    title: "The Future of Construction: 2030 and Beyond",
+    description: "What does the future hold for the construction industry? Trends and predictions for the next decade.",
+    keywords: ["future of construction", "construction industry future", "construction 2030"],
+    category: "industry",
+    sections: [
+      {
+        heading: "More Automation",
+        content: "Robotics and AI will handle more construction tasks. Bricklaying robots, drone surveying, AI project management."
+      },
+      {
+        heading: "Sustainable Building",
+        content: "Green construction is the future. Net-zero buildings, sustainable materials, and carbon tracking become standard."
+      },
+      {
+        heading: "Skilled Labor Crisis",
+        content: "Labor shortage continues. Automation helps but doesn't replace skilled workers. Training and recruiting evolve."
+      },
+      {
+        heading: "Digital Twins",
+        content: "Every building will have a digital twin. Virtual representation for operations and maintenance throughout building life."
+      },
+      {
+        heading: "3D Printing",
+        content: "3D printed homes and structures become viable. Dramatically reduces construction time and labor costs."
+      }
+    ],
+    faqs: [
+      {
+        question: "Will robots replace construction workers?",
+        answer: "No, but they'll change the work. Robots handle dangerous and repetitive tasks. Workers focus on skilled work."
+      }
+    ],
+    relatedToolIds: ["procore", "togal-ai"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
   }
 ];
 
