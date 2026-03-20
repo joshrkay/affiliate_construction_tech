@@ -167,47 +167,59 @@ export const guidePages: GuidePage[] = [
   {
     slug: "procore-vs-buildertrend-which-is-better",
     title: "Procore vs Buildertrend: Which is Better for Small Contractors? (2026)",
-    description: "Compare Procore and Buildertrend for small construction businesses. Features, pricing, pros, cons, and verdict to help you choose.",
-    keywords: ["procore vs buildertrend", "buildertrend vs procore", "procore for small contractors", "buildertrend for small business"],
+    description: "Honest comparison of Procore vs Buildertrend for small construction businesses. Based on real user reviews, pricing, features, and recommendations.",
+    keywords: ["procore vs buildertrend", "buildertrend vs procore", "procore for small contractors", "buildertrend for small business", "procore review", "buildertrend review"],
     category: "buying-guide",
     sections: [
       {
-        heading: "Quick Verdict",
-        content: "Procore is better for commercial contractors who need enterprise features and have the budget. Buildertrend is better for small residential contractors who want affordable, easy-to-use software."
+        heading: "Quick Recommendation",
+        content: "For small contractors (under 10 employees): Choose Buildertrend. For commercial GCs (10+ employees): Choose Procore. Here's the detailed breakdown..."
       },
       {
-        heading: "Pricing Comparison",
-        content: "Procore costs $15-$50/user/month plus $5,000+ implementation fees. Buildertrend costs $10-$20/user/month with no implementation fees. For a 5-person team, Procore costs $625+/month vs Buildertrend at $75/month."
+        heading: "Pricing Deep Dive",
+        content: "Procore: $15-50/user/month (Plus to Enterprise) + $5,000-15,000 implementation. Buildertrend: $10-20/user/month, no setup fee. Example: 5-person team = Procore $625+/month vs Buildertrend $75/month. Procore requires 3+ users minimum."
       },
       {
-        heading: "Features Comparison",
-        content: "Procore offers comprehensive project management, field productivity, and financial management. Buildertrend offers project management, scheduling, and customer management with a focus on residential and remodeling."
+        heading: "Real User Feedback",
+        content: "Procore users praise: Comprehensive features, industry standard, excellent integrations. Procore users complain: Expensive, steep learning curve, slow support. Buildertrend users praise: Easy to learn, great support, affordable. Buildertrend users complain: Limited for large projects, occasional sync issues."
       },
       {
-        heading: "Ease of Use",
-        content: "Buildertrend is significantly easier to learn and use. Procore has a steeper learning curve but offers more depth. If your team has limited tech experience, Buildertrend wins."
+        heading: "Feature-by-Feature",
+        content: "Project Management: Procore wins (more advanced). Scheduling: Buildertrend simpler. Field Productivity: Procore has better mobile app. Customer Management: Buildertrend excellent for residential. Integrations: Procore 200+, Buildertrend 80+. Financials: Procore has built-in, Buildertrend integrates with QuickBooks."
       },
       {
-        heading: "Who Should Choose Procore?",
-        content: "Procore is ideal for commercial GCs, construction companies with 10+ employees, companies doing complex projects, and teams willing to invest in training."
+        heading: "Implementation Reality",
+        content: "Buildertrend: 1-2 weeks, mostly self-serve with video training. Procore: 2-6 months, requires dedicated implementation team, professional services fee. If you need to be up fast, Buildertrend wins."
       },
       {
-        heading: "Who Should Choose Buildertrend?",
-        content: "Buildertrend is ideal for home builders, remodelers, small GCs with under 10 employees, companies on a budget, and teams wanting quick setup."
+        heading: "Customer Support",
+        content: "Buildertrend: Responsive, US-based support included. Procore: Support quality varies by tier, can be slow for basic plans. Many users report Buildertrend support is superior for small companies."
+      },
+      {
+        heading: "The Real Question",
+        content: "Don't ask 'which is better' - ask 'which is right for MY company'. Consider: What's your company size? Residential or commercial? How complex are your projects? How tech-savvy is your team? What's your budget?"
       }
     ],
     faqs: [
       {
         question: "Can small contractors use Procore?",
-        answer: "Yes, but it may be overkill. Procore is designed for commercial work and complex projects. Small contractors often find Buildertrend more cost-effective."
+        answer: "Yes, but it's often overkill. Procore shines with 10+ person teams doing complex commercial work. A 3-person GC will struggle with the complexity and cost. Try Buildertrend first."
       },
       {
-        question: "Is Buildertrend as powerful as Procore?",
-        answer: "No, Buildertrend has fewer features than Procore. But for small residential contractors, Buildertrend has all the features needed at a fraction of the cost."
+        question: "Does Buildertrend work for commercial projects?",
+        answer: "Buildertrend can handle commercial but is optimized for residential/remodel. If you're doing $5M+ commercial projects, Procore is typically better."
       },
       {
-        question: "Which is easier to set up?",
-        answer: "Buildertrend. It can be set up in days vs Procore which takes weeks or months and requires professional implementation."
+        question: "Can I switch later?",
+        answer: "Yes, both export data. But switching costs significant time. Choose wisely upfront. Most contractors regret choosing Procore when they're too small, and vice versa."
+      },
+      {
+        question: "Which has better mobile app?",
+        answer: "Procore's mobile app is more feature-rich but harder to learn. Buildertrend's app is simpler but covers essential field functions well."
+      },
+      {
+        question: "Do they integrate with QuickBooks?",
+        answer: "Yes, both integrate with QuickBooks. Buildertrend has native sync. Procore integrates but requires more setup."
       }
     ],
     relatedToolIds: ["procore", "buildertrend"],
@@ -218,35 +230,55 @@ export const guidePages: GuidePage[] = [
   {
     slug: "servicetitan-vs-jobber-comparison",
     title: "ServiceTitan vs Jobber: Full Comparison 2026",
-    description: "Compare ServiceTitan and Jobber for field service management. Features, pricing, pros, cons, and verdict for HVAC, plumbing, and electrical contractors.",
-    keywords: ["servicetitan vs jobber", "jobber vs servicetitan", "serviceTitan pricing", "jobber pricing"],
+    description: "Honest comparison of ServiceTitan vs Jobber for HVAC, plumbing, and electrical contractors. Based on real user reviews and pricing.",
+    keywords: ["servicetitan vs jobber", "jobber vs servicetitan", "serviceTitan pricing", "jobber pricing", "field service software comparison"],
     category: "buying-guide",
     sections: [
       {
-        heading: "Quick Verdict",
-        content: "ServiceTitan is better for growing companies needing enterprise features. Jobber is better for small businesses wanting affordable, easy-to-use software."
+        heading: "The Real Answer",
+        content: "ServiceTitan: Best for 10+ tech companies with $1M+ revenue. Jobber: Best for 1-10 tech companies. Don't overpay for features you won't use. Here's the detailed breakdown..."
       },
       {
-        heading: "Pricing",
-        content: "ServiceTitan costs $75-$150/user/month plus $5,000-$15,000 implementation. Jobber costs $29-$249/user/month with no implementation fees. ServiceTitan requires 3+ users minimum."
+        heading: "What Nobody Tells You About Pricing",
+        content: "ServiceTitan: $75-150/user/month + $5,000-15,000 implementation + requires 3-5 tech minimum. Jobber: $29-249/user/month, no setup fee, can start with 1 tech. Hidden costs: ServiceTitan charges for training, extras add up fast."
       },
       {
-        heading: "Features",
-        content: "ServiceTitan offers comprehensive FSM with 70+ integrations, marketing automation, and advanced job costing. Jobber offers core FSM with 80+ integrations, easier learning curve."
+        heading: "What Users Actually Say",
+        content: "ServiceTitan praise: Enterprise features, powerful, great for scaling. ServiceTitan complaints: Expensive, slow support, implementation hell, lots of hidden costs. Jobber praise: Easy to use, great support, affordable. Jobber complaints: Limited enterprise features, occasional app glitches."
       },
       {
-        heading: "Best For",
-        content: "ServiceTitan: 5+ technician companies, commercial work, enterprise needs. Jobber: 1-10 technician companies, residential service, small teams."
+        heading: "Features That Actually Matter",
+        content: "Daily Operations: Both handle scheduling, invoicing, dispatch. Job costing: ServiceTitan more advanced. Marketing: ServiceTitan has built-in CRM. Integrations: Jobber 80+, ServiceTitan 70+. Both have mobile apps - Jobber's is more intuitive."
+      },
+      {
+        heading: "The Truth About Implementation",
+        content: "Jobber: Self-serve, videos, up in 1 week. ServiceTitan: 3-6 month implementation, dedicated team, lots of meetings. If you want fast setup, Jobber wins. If you need enterprise rollout, ServiceTitan."
+      },
+      {
+        heading: "Support Reality",
+        content: "Jobber: Fast US-based support included. ServiceTitan: Support quality depends on your tier. Many users report long wait times and inconsistent support. For small companies, Jobber support is notably better."
+      },
+      {
+        heading: "Make the Right Choice",
+        content: "Choose Jobber if: Under 10 techs, budget-conscious, want fast setup, need great support. Choose ServiceTitan if: 10+ techs, need enterprise features, have dedicated IT, budget for implementation."
       }
     ],
     faqs: [
       {
         question: "Is ServiceTitan worth the cost?",
-        answer: "For companies with 5+ technicians needing enterprise features, yes. For small teams, Jobber provides better value."
+        answer: "Only if you have 10+ techs and $1M+ revenue. Most companies under that don't need ServiceTitan's features and will waste money. Jobber handles 90% of what ServiceTitan does at 30% of the cost."
       },
       {
         question: "Can I start with Jobber and switch to ServiceTitan?",
-        answer: "Yes, both can handle the transition. Jobber is great to start with and you can migrate to ServiceTitan as you grow."
+        answer: "Yes, but it's painful. Both store data differently. If you KNOW you'll scale fast, start with ServiceTitan. If not, start with Jobber - you can likely stay there."
+      },
+      {
+        question: "Which is easier to use?",
+        answer: "Jobber. Significantly. ServiceTitan has a learning curve. Your office staff and techs will adapt faster to Jobber."
+      },
+      {
+        question: "Do they do invoicing and payments?",
+        answer: "Both handle invoicing, accept payments (Stripe/Square integration). Jobber's payments are simpler to set up."
       }
     ],
     relatedToolIds: ["servicetitan", "jobber"],
