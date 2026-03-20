@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npx tsx scripts/prerender.ts && npx tsx scripts/generate-sitemap.ts && npx tsx scripts/generate-llms-full.ts && npx tsx scripts/generate-feed.ts",
     "preview": "vite preview"
   },
   "dependencies": {
