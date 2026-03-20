@@ -1,0 +1,33 @@
+# BUILTECH - Construction Software Directory
+# https://bestconstructionapps.com
+
+User-agent: *
+Allow: /
+
+# AI Search Engine Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://bestconstructionapps.com/sitemap.xml
+
+# AI Discoverability
+# llms.txt: https://bestconstructionapps.com/llms.txt
+# llms-full.txt: https://bestconstructionapps.com/llms-full.txt
