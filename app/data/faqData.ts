@@ -221,3 +221,105 @@ export function getFAQsByKeyword(keyword: string): FAQ[] {
       faq.answer.toLowerCase().includes(keyword.toLowerCase())
   );
 }
+
+// AI Search Optimized FAQs - These are designed to appear in AI Overviews
+export const aiSearchFAQs = [
+  // Pricing questions
+  {
+    question: "How much does construction software cost?",
+    answer: "Construction software costs range from $0 to $150+/user/month. Budget options start at $0 (free tiers), mid-range at $29-75/user/month, and enterprise at $100+/user/month. Most small businesses spend $50-100/month.",
+    slug: "general",
+  },
+  {
+    question: "Is there free construction software?",
+    answer: "Yes, some construction software offers free tiers or trials. QuickBooks Free has basic accounting. Many tools offer 14-30 day free trials. However, most professional construction software requires a paid subscription.",
+    slug: "general",
+  },
+  {
+    question: "What's the best free construction software?",
+    answer: "The best free options include: QuickBooks Online Free (accounting), Trello (project management), and Google Sheets (basic tracking). For full features, expect to pay $29-100/month.",
+    slug: "general",
+  },
+  // Choosing questions
+  {
+    question: "How do I choose construction software?",
+    answer: "Start by: 1) List your pain points, 2) Set a budget, 3) Identify must-have features, 4) Check integrations, 5) Get references, 6) Use free trials. Choose software that fits your trade, company size, and growth plans.",
+    slug: "general",
+  },
+  {
+    question: "What software do most contractors use?",
+    answer: "Most contractors use: Procore (commercial GC), Buildertrend (residential GC), Jobber (field service), QuickBooks (accounting), and Excel (basic tracking). The right choice depends on your trade and company size.",
+    slug: "general",
+  },
+  // Procore questions
+  {
+    question: "Is Procore worth the cost?",
+    answer: "Procore is worth it for commercial GCs with 5+ projects and $1M+ revenue. At $15-50/user/month plus implementation, it delivers ROI through better project tracking, reduced RFIs, and improved communication. Small contractors may find it expensive.",
+    slug: "procore",
+  },
+  {
+    question: "Can Procore be used for residential?",
+    answer: "Yes, Procore can be used for residential projects but is optimized for commercial. Residential builders and remodelers often prefer Buildertrend or CoConstruct which are more affordable and easier to use.",
+    slug: "procore",
+  },
+  // Jobber questions
+  {
+    question: "Is Jobber good for small business?",
+    answer: "Yes, Jobber is excellent for small businesses with 1-10 technicians. Starting at $29/user/month, it offers scheduling, invoicing, and customer management. It's easy to learn and scales as you grow.",
+    slug: "jobber",
+  },
+  {
+    question: "Does Jobber do invoicing?",
+    answer: "Yes, Jobber includes full invoicing features: create invoices, send automatically, accept online payments, track payment history, and send reminders. Integrated with Stripe and Square.",
+    slug: "jobber",
+  },
+  // ServiceTitan questions
+  {
+    question: "Does ServiceTitan require a minimum number of users?",
+    answer: "Yes, ServiceTitan typically requires a minimum of 3 users. This makes it better suited for growing companies rather than solo contractors or very small teams.",
+    slug: "servicetitan",
+  },
+  {
+    question: "Is ServiceTitan hard to learn?",
+    answer: "ServiceTitan has a moderate learning curve. Most teams need 2-4 weeks to get comfortable. They offer training and implementation support. Smaller companies may find Jobber or Housecall Pro easier to learn.",
+    slug: "servicetitan",
+  },
+  // AI/Technology questions
+  {
+    question: "Does construction software include AI?",
+    answer: "Yes, newer construction software includes AI features. Examples: Togal.AI (AI takeoff), Procore AI (project insights), ServiceTitan AI (dispatch optimization), and ALICE (AI scheduling). Expect more AI features in 2026.",
+    slug: "general",
+  },
+  {
+    question: "What is AI takeoff software?",
+    answer: "AI takeoff software uses artificial intelligence to automatically measure and count items from digital plans (PDFs). It can identify electrical components, HVAC ductwork, and materials. Popular options: Togal.AI, STACK, and PlanSwift.",
+    slug: "general",
+  },
+  // Trade-specific
+  {
+    question: "What software do HVAC contractors use?",
+    answer: "Top HVAC software includes: ServiceTitan (enterprise), Jobber (small business), Housecall Pro (value), FieldEdge (trade-specific), and SimPRO (trade-focused). Choice depends on company size and budget.",
+    slug: "hvac",
+  },
+  {
+    question: "What software do plumbers use?",
+    answer: "Popular plumbing software: Jobber, Housecall Pro, ServiceTitan, and mHelpDesk. Most offer scheduling, invoicing, and customer management. Prices range from $29-150/user/month.",
+    slug: "plumbing",
+  },
+  {
+    question: "What software do electricians use?",
+    answer: "Electricians use: Togal.AI (AI takeoff), STACK (estimating), Accubid (electrical estimating), Procore (project management), and Jobber (field service). For accounting: QuickBooks is standard.",
+    slug: "electrical",
+  },
+  // Implementation questions
+  {
+    question: "How long does it take to implement construction software?",
+    answer: "Implementation time varies: Simple cloud software (Jobber, Housecall Pro): 1-7 days. Mid-range (Buildertrend): 2-4 weeks. Enterprise (Procore): 1-6 months. Factor in training time.",
+    slug: "general",
+  },
+  {
+    question: "Can I import data from my current software?",
+    answer: "Most modern construction software imports data from CSV, Excel, or directly from other platforms. QuickBooks integration is common. Check with your software provider about migration support.",
+    slug: "general",
+  },
+];

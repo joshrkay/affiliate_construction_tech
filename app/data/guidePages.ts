@@ -162,6 +162,408 @@ export const guidePages: GuidePage[] = [
     relatedToolIds: ["procore", "jobtread", "buildertrend"],
     relatedTradeIds: ["general-contracting", "electrical", "plumbing", "hvac"],
     lastUpdated: "2026-03-08"
+  },
+  // Article 1: Procore vs Buildertrend
+  {
+    slug: "procore-vs-buildertrend-which-is-better",
+    title: "Procore vs Buildertrend: Which is Better for Small Contractors? (2026)",
+    description: "Compare Procore and Buildertrend for small construction businesses. Features, pricing, pros, cons, and verdict to help you choose.",
+    keywords: ["procore vs buildertrend", "buildertrend vs procore", "procore for small contractors", "buildertrend for small business"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "Procore is better for commercial contractors who need enterprise features and have the budget. Buildertrend is better for small residential contractors who want affordable, easy-to-use software."
+      },
+      {
+        heading: "Pricing Comparison",
+        content: "Procore costs $15-$50/user/month plus $5,000+ implementation fees. Buildertrend costs $10-$20/user/month with no implementation fees. For a 5-person team, Procore costs $625+/month vs Buildertrend at $75/month."
+      },
+      {
+        heading: "Features Comparison",
+        content: "Procore offers comprehensive project management, field productivity, and financial management. Buildertrend offers project management, scheduling, and customer management with a focus on residential and remodeling."
+      },
+      {
+        heading: "Ease of Use",
+        content: "Buildertrend is significantly easier to learn and use. Procore has a steeper learning curve but offers more depth. If your team has limited tech experience, Buildertrend wins."
+      },
+      {
+        heading: "Who Should Choose Procore?",
+        content: "Procore is ideal for commercial GCs, construction companies with 10+ employees, companies doing complex projects, and teams willing to invest in training."
+      },
+      {
+        heading: "Who Should Choose Buildertrend?",
+        content: "Buildertrend is ideal for home builders, remodelers, small GCs with under 10 employees, companies on a budget, and teams wanting quick setup."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can small contractors use Procore?",
+        answer: "Yes, but it may be overkill. Procore is designed for commercial work and complex projects. Small contractors often find Buildertrend more cost-effective."
+      },
+      {
+        question: "Is Buildertrend as powerful as Procore?",
+        answer: "No, Buildertrend has fewer features than Procore. But for small residential contractors, Buildertrend has all the features needed at a fraction of the cost."
+      },
+      {
+        question: "Which is easier to set up?",
+        answer: "Buildertrend. It can be set up in days vs Procore which takes weeks or months and requires professional implementation."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 2: ServiceTitan vs Jobber
+  {
+    slug: "servicetitan-vs-jobber-comparison",
+    title: "ServiceTitan vs Jobber: Full Comparison 2026",
+    description: "Compare ServiceTitan and Jobber for field service management. Features, pricing, pros, cons, and verdict for HVAC, plumbing, and electrical contractors.",
+    keywords: ["servicetitan vs jobber", "jobber vs servicetitan", "serviceTitan pricing", "jobber pricing"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "ServiceTitan is better for growing companies needing enterprise features. Jobber is better for small businesses wanting affordable, easy-to-use software."
+      },
+      {
+        heading: "Pricing",
+        content: "ServiceTitan costs $75-$150/user/month plus $5,000-$15,000 implementation. Jobber costs $29-$249/user/month with no implementation fees. ServiceTitan requires 3+ users minimum."
+      },
+      {
+        heading: "Features",
+        content: "ServiceTitan offers comprehensive FSM with 70+ integrations, marketing automation, and advanced job costing. Jobber offers core FSM with 80+ integrations, easier learning curve."
+      },
+      {
+        heading: "Best For",
+        content: "ServiceTitan: 5+ technician companies, commercial work, enterprise needs. Jobber: 1-10 technician companies, residential service, small teams."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is ServiceTitan worth the cost?",
+        answer: "For companies with 5+ technicians needing enterprise features, yes. For small teams, Jobber provides better value."
+      },
+      {
+        question: "Can I start with Jobber and switch to ServiceTitan?",
+        answer: "Yes, both can handle the transition. Jobber is great to start with and you can migrate to ServiceTitan as you grow."
+      }
+    ],
+    relatedToolIds: ["servicetitan", "jobber"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 3: How Much Does Procore Cost?
+  {
+    slug: "how-much-does-procore-cost",
+    title: "How Much Does Procore Cost? (2026 Pricing)",
+    description: "Learn the real cost of Procore construction management software. Pricing tiers, hidden costs, and what to budget for implementation.",
+    keywords: ["procore pricing", "how much does procore cost", "procore cost per user", "procore implementation cost"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Procore Pricing Tiers",
+        content: "Procore offers three tiers: Plus ($15/user/month), Preferred ($35/user/month), and Enterprise ($50+/user/month). All tiers require a minimum of 3 users."
+      },
+      {
+        heading: "Implementation Costs",
+        content: "Procore implementation typically costs $5,000-$15,000 depending on company size and complexity. This includes data migration, setup, and training."
+      },
+      {
+        heading: "Total Cost Example",
+        content: "For a 10-person construction company on Preferred tier: $35 x 10 x 12 = $4,200/year + $10,000 implementation = $14,200 year one. Subsequent years: $4,200/year."
+      },
+      {
+        heading: "What's Included",
+        content: "All plans include project management, field productivity, and basic integrations. Higher tiers include more advanced features like BIM, portfolio management, and custom workflows."
+      }
+    ],
+    faqs: [
+      {
+        question: "Does Procore charge per project?",
+        answer: "No, Procore charges per user per month. There's no per-project fee."
+      },
+      {
+        question: "Are there discounts for annual billing?",
+        answer: "Yes, Procore typically offers 10-20% discount for annual billing."
+      },
+      {
+        question: "Is there a free trial?",
+        answer: "Procore offers demos but not free trials. Most companies use the sales process to evaluate."
+      }
+    ],
+    relatedToolIds: ["procore"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 4: Best HVAC Software for Small Business
+  {
+    slug: "best-hvac-software-small-business",
+    title: "Best HVAC Software for Small Business (2026)",
+    description: "Top-rated HVAC software for small businesses. Compare features, pricing, and reviews to find the right tool for your HVAC company.",
+    keywords: ["best hvac software small business", "hvac software for small companies", "affordable hvac software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Top Picks",
+        content: "Our top picks for small HVAC businesses: Jobber (best overall value), Housecall Pro (best for ease of use), and ServiceTitan (best for growth)."
+      },
+      {
+        heading: "Jobber",
+        content: "Starting at $29/user/month, Jobber offers scheduling, invoicing, customer management, and online booking. Great for teams under 10."
+      },
+      {
+        heading: "Housecall Pro",
+        content: "Starting at $49/user/month, Housecall Pro offers similar features to Jobber with a focus on home service businesses. Easy to learn and use."
+      },
+      {
+        heading: "ServiceTitan",
+        content: "Starting at $75/user/month, ServiceTitan offers enterprise features but requires 3+ users. Best for growing companies ready to invest."
+      },
+      {
+        heading: "How to Choose",
+        content: "Consider your team size, budget, and growth plans. Start with Jobber if under 5 technicians. Choose Housecall Pro if ease of use is priority. Choose ServiceTitan if you need enterprise features."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the cheapest HVAC software?",
+        answer: "Jobber starts at $29/user/month, making it the most affordable option with full features."
+      },
+      {
+        question: "Do I need HVAC software?",
+        answer: "Yes, HVAC software pays for itself by reducing admin time, improving scheduling, and increasing revenue through better customer communication."
+      }
+    ],
+    relatedToolIds: ["jobber", "servicetitan", "housecall-pro"],
+    relatedTradeIds: ["hvac"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 5: How to Choose Construction Software
+  {
+    slug: "how-to-choose-construction-software",
+    title: "How to Choose Construction Software in 2026",
+    description: "A step-by-step guide to choosing the right construction software for your business. What to look for, questions to ask, and common mistakes to avoid.",
+    keywords: ["how to choose construction software", "choosing construction software", "construction software buying guide"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "Assess Your Needs",
+        content: "Start by listing your pain points: What tasks take too long? What information is hard to track? What processes are broken? This becomes your requirements list."
+      },
+      {
+        heading: "Set a Budget",
+        content: "Construction software ranges from $0 to $100+/user/month. Factor in implementation costs, training, and ongoing fees. Budget for growth - cheaper options may cost more in the long run."
+      },
+      {
+        heading: "Evaluate Features",
+        content: "Must-have features: Project management, scheduling, invoicing, customer management. Nice-to-have: Job costing, CRM, integrations, mobile app. Don't pay for features you won't use."
+      },
+      {
+        heading: "Consider Ease of Use",
+        content: "Complex software with more features often has a steeper learning curve. Consider your team's tech experience. Sometimes simpler software is more effective."
+      },
+      {
+        heading: "Check Integrations",
+        content: "Make sure the software integrates with your existing tools: QuickBooks, Xero, email, calendar, etc. Manual data entry costs time and causes errors."
+      },
+      {
+        heading: "Get References",
+        content: "Talk to contractors similar to you who use the software. Ask about real-world experience, challenges, and whether they'd recommend it."
+      },
+      {
+        heading: "Start with a Trial",
+        content: "Most software offers free trials. Use them! Test with real data and workflows. Involve your team in the evaluation."
+      }
+    ],
+    faqs: [
+      {
+        question: "How long does it take to implement construction software?",
+        answer: "Simple cloud software can be set up in days. Enterprise systems like Procore can take weeks to months. Plan for training time."
+      },
+      {
+        question: "Can I switch software later?",
+        answer: "Yes, but it's costly and time-consuming. Choose wisely upfront to avoid switching costs."
+      },
+      {
+        question: "What if I choose wrong?",
+        answer: "Most software offers money-back guarantees or free trials. Use these to validate your choice before committing."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobber"],
+    relatedTradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 6: Jobber vs Housecall Pro
+  {
+    slug: "jobber-vs-housecall-pro",
+    title: "Jobber vs Housecall Pro: Which is Better? (2026)",
+    description: "Compare Jobber and Housecall Pro for field service management. Features, pricing, pros, cons, and verdict for HVAC, plumbing, and electrical contractors.",
+    keywords: ["jobber vs housecall pro", "housecall pro vs jobber", "field service comparison"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "Jobber is slightly better overall with more integrations and pricing options. Housecall Pro is excellent for ease of use. Both are great choices for small field service businesses."
+      },
+      {
+        heading: "Pricing",
+        content: "Jobber: $29-$249/user/month. Housecall Pro: $49-$99/user/month. Jobber has more pricing tiers, Housecall Pro is simpler."
+      },
+      {
+        heading: "Features",
+        content: "Jobber has 80+ integrations, advanced scheduling. Housecall Pro has excellent marketing automation, simpler interface."
+      },
+      {
+        heading: "Best For",
+        content: "Jobber: Growing companies, those needing integrations. Housecall Pro: Teams prioritizing ease of use, marketing features."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is Jobber cheaper than Housecall Pro?",
+        answer: "Yes, Jobber starts at $29/user/month vs Housecall Pro at $49/user/month."
+      },
+      {
+        question: "Which is easier to learn?",
+        answer: "Housecall Pro is slightly easier to learn with a more intuitive interface."
+      }
+    ],
+    relatedToolIds: ["jobber", "housecall-pro"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 7: How Much Does Jobber Cost?
+  {
+    slug: "how-much-does-jobber-cost",
+    title: "How Much Does Jobber Cost? (2026 Pricing)",
+    description: "Learn the real cost of Jobber field service software. Pricing tiers, what's included, and what to budget.",
+    keywords: ["jobber pricing", "jobber cost", "how much does jobber cost"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Jobber Pricing Tiers",
+        content: "Core: $29/user/month, Grow: $49/user/month, Scale: $249/user/month. Annual billing saves 20%."
+      },
+      {
+        heading: "What's Included",
+        content: "Core: Basic scheduling, invoicing. Grow: Online booking, marketing. Scale: Advanced features, API access."
+      },
+      {
+        heading: "Total Cost Example",
+        content: "5 technicians on Grow plan: $49 x 5 = $245/month = $2,940/year. Plus any add-ons."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is there a free trial?",
+        answer: "Yes, Jobber offers a 14-day free trial."
+      },
+      {
+        question: "Are there setup fees?",
+        answer: "No, Jobber has no setup fees."
+      }
+    ],
+    relatedToolIds: ["jobber"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 8: Best Plumbing Software
+  {
+    slug: "best-plumbing-software-small-business",
+    title: "Best Plumbing Software for Small Business (2026)",
+    description: "Top-rated plumbing software for small businesses. Compare features, pricing, and reviews to find the right tool for your plumbing company.",
+    keywords: ["best plumbing software", "plumbing software small business", "affordable plumbing software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Top Picks",
+        content: "Best Overall: Jobber. Best Value: Housecall Pro. Best Features: ServiceTitan."
+      },
+      {
+        heading: "Jobber",
+        content: "Starting at $29/user/month. Excellent scheduling, invoicing, customer management. 80+ integrations."
+      },
+      {
+        heading: "Housecall Pro",
+        content: "Starting at $49/user/month. Great ease of use, marketing automation. Perfect for small teams."
+      },
+      {
+        heading: "ServiceTitan",
+        content: "Starting at $75/user/month. Enterprise features, 70+ integrations. Best for growing companies."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the cheapest plumbing software?",
+        answer: "Jobber at $29/user/month is the most affordable full-featured option."
+      }
+    ],
+    relatedToolIds: ["jobber", "housecall-pro", "servicetitan"],
+    relatedTradeIds: ["plumbing"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 9: Togal.AI vs STACK
+  {
+    slug: "togal-ai-vs-stack-takeoff",
+    title: "Togal.AI vs STACK Takeoff: Which is Best? (2026)",
+    description: "Compare Togal.AI and STACK for construction takeoff and estimating. AI-powered vs traditional cloud-based.",
+    keywords: ["togal ai vs stack", "ai takeoff software", "construction estimating comparison"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Quick Verdict",
+        content: "Togal.AI is better for electrical contractors wanting AI automation. STACK is better for teams wanting cloud collaboration."
+      },
+      {
+        heading: "Technology",
+        content: "Togal.AI uses AI to auto-detect components. STACK uses traditional manual takeoff with cloud collaboration."
+      },
+      {
+        heading: "Pricing",
+        content: "Togal.AI: $200-500/month. STACK: $199-499/month. Similar price points."
+      }
+    ],
+    faqs: [
+      {
+        question: "Which is better for electrical contractors?",
+        answer: "Togal.AI, as it's specifically designed for electrical with AI-powered detection."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "stack-takeoff"],
+    relatedTradeIds: ["electrical", "general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 10: ServiceTitan Pricing
+  {
+    slug: "how-much-does-servicetitan-cost",
+    title: "How Much Does ServiceTitan Cost? (2026 Pricing)",
+    description: "Learn the real cost of ServiceTitan field service software. Pricing tiers, implementation costs, and what to budget.",
+    keywords: ["servicetitan pricing", "how much does servicetitan cost", "servicetitan price"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "ServiceTitan Pricing",
+        content: "ServiceTitan doesn't publish pricing. Expect $75-150/user/month plus implementation fees of $5,000-15,000."
+      },
+      {
+        heading: "Implementation Costs",
+        content: "Implementation typically costs $5,000-15,000 depending on company size and complexity. Includes data migration, setup, training."
+      },
+      {
+        heading: "Total Cost Example",
+        content: "10 technicians: $100 x 10 x 12 = $12,000/year + $10,000 implementation = $22,000 year one."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is ServiceTitan worth the cost?",
+        answer: "For companies with 5+ technicians needing enterprise features, yes. Smaller companies may find Jobber more cost-effective."
+      }
+    ],
+    relatedToolIds: ["servicetitan"],
+    relatedTradeIds: ["hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
   }
 ];
 
