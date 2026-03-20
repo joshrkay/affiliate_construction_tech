@@ -582,6 +582,46 @@ export const bestForPages: BestForPage[] = [
     toolIds: ["jobber", "mhelpdesk"],
     keywords: ["jobber vs mhelpdesk", "mhelpdesk vs jobber", "budget fsm software"],
   },
+  {
+    slug: "stack-vs-proest",
+    title: "STACK vs ProEst: Takeoff & Estimating Comparison",
+    description: "Compare STACK and ProEst for construction takeoff and estimating. Cloud vs features.",
+    tradeIds: ["general-contracting", "electrical", "hvac"],
+    toolIds: ["stack-takeoff", "pro-estimate"],
+    keywords: ["stack vs proest", "proest vs stack", "estimating software comparison"],
+  },
+  {
+    slug: "togal-ai-vs-stack",
+    title: "Togal.AI vs STACK: AI Takeoff Comparison",
+    description: "Compare Togal.AI and STACK for construction takeoff. AI-powered vs traditional cloud.",
+    tradeIds: ["electrical", "general-contracting"],
+    toolIds: ["togal-ai", "stack-takeoff"],
+    keywords: ["togal ai vs stack", "stack vs tog", "ai takeoff software"],
+  },
+  {
+    slug: "procore-vs-sage-100",
+    title: "Procore vs Sage 100 Contractor: Management Comparison",
+    description: "Compare Procore and Sage 100 for construction management. Cloud vs desktop, features.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["procore", "sage-100"],
+    keywords: ["procore vs sage 100", "sage 100 vs procore", "construction software comparison"],
+  },
+  {
+    slug: "jobber-vs-housecall-pro",
+    title: "Jobber vs Housecall Pro: FSM Comparison",
+    description: "Compare Jobber and Housecall Pro for field service management. Features and pricing.",
+    tradeIds: ["hvac", "plumbing", "electrical"],
+    toolIds: ["jobber", "housecall-pro"],
+    keywords: ["jobber vs housecall pro", "housecall pro vs jobber", "fsm comparison"],
+  },
+  {
+    slug: "buildertrend-vs-coconstruct",
+    title: "Buildertrend vs CoConstruct: Home Builder Comparison",
+    description: "Compare Buildertrend and CoConstruct for home building and remodeling.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["buildertrend", "coconstruct"],
+    keywords: ["buildertrend vs coconstruct", "coconstruct vs buildertrend", "home builder software"],
+  },
 ];
 
 // Helper functions
