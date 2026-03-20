@@ -1,0 +1,66 @@
+# BUILTECH
+
+> The construction industry's AI & software directory. Compare 140+ tools rated by real contractors across 16 trades.
+
+BUILTECH at bestconstructionapps.com helps construction professionals find and compare the best software and AI tools for their trade. We cover project management, estimating, field service, scheduling, document management, BIM, and more.
+
+## Tools Directory
+
+Over 140 construction software tools with ratings, reviews, pricing, features, pros, and cons. Each tool is categorized as Software, AI Agent, or Platform.
+
+- [Browse all tools](https://bestconstructionapps.com/search)
+- [Full tool data](/llms-full.txt)
+
+## Trades
+
+Software recommendations organized by 16 construction trades:
+
+- [General Contracting](https://bestconstructionapps.com/trades/general-contracting)
+- [Electrical](https://bestconstructionapps.com/trades/electrical)
+- [Plumbing](https://bestconstructionapps.com/trades/plumbing)
+- [HVAC](https://bestconstructionapps.com/trades/hvac)
+- [Roofing](https://bestconstructionapps.com/trades/roofing)
+- [Concrete & Masonry](https://bestconstructionapps.com/trades/concrete-masonry)
+- [Carpentry & Framing](https://bestconstructionapps.com/trades/carpentry-framing)
+- [Estimating & Bidding](https://bestconstructionapps.com/trades/estimating-bidding)
+- [Painting & Coatings](https://bestconstructionapps.com/trades/painting-coatings)
+- [Flooring](https://bestconstructionapps.com/trades/flooring)
+- [Drywall & Insulation](https://bestconstructionapps.com/trades/drywall-insulation)
+- [Landscaping & Irrigation](https://bestconstructionapps.com/trades/landscaping-irrigation)
+- [Windows & Doors](https://bestconstructionapps.com/trades/windows-doors)
+- [Solar & Renewable Energy](https://bestconstructionapps.com/trades/solar-renewable)
+- [Cabinetry & Countertops](https://bestconstructionapps.com/trades/cabinetry-countertops)
+- [Tile & Stone](https://bestconstructionapps.com/trades/tile-stone)
+
+## Comparisons
+
+26 side-by-side software comparisons targeting the most searched matchups:
+
+- [Procore vs ServiceTitan](https://bestconstructionapps.com/compare/procore-vs-servicetitan)
+- [Procore vs Buildertrend](https://bestconstructionapps.com/compare/procore-vs-buildertrend)
+- [Jobber vs ServiceTitan](https://bestconstructionapps.com/compare/jobber-vs-servicetitan)
+- [Togal.AI vs STACK Takeoff](https://bestconstructionapps.com/compare/togal-ai-vs-stack-takeoff)
+- [View all comparisons](https://bestconstructionapps.com/compare)
+
+## Best-For Pages
+
+34 curated "best software for" pages organized by trade and use case:
+
+- [Best Software for General Contractors](https://bestconstructionapps.com/best/best-construction-software-general-contractors)
+- [Best Software for HVAC Contractors](https://bestconstructionapps.com/best/best-hvac-software-contractors)
+- [Best Software for Electricians](https://bestconstructionapps.com/best/best-software-electricians)
+- [Browse all best-for pages](https://bestconstructionapps.com/search)
+
+## Guides
+
+25+ in-depth guides on construction technology topics:
+
+- [Complete Guide to Construction Project Management Software](https://bestconstructionapps.com/guides/construction-project-management-software-guide)
+- [How AI Is Transforming Construction in 2026](https://bestconstructionapps.com/guides/ai-in-construction-industry)
+- [How to Choose Construction Estimating Software](https://bestconstructionapps.com/guides/how-to-choose-estimating-software)
+- [Browse all guides](https://bestconstructionapps.com/guides)
+
+## Full Content
+
+For complete structured data about all tools, trades, and guides:
+- [llms-full.txt](https://bestconstructionapps.com/llms-full.txt): Complete tool database with ratings, pricing, features, pros, and cons

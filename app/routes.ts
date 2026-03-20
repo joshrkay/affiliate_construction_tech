@@ -1,33 +1,40 @@
 import { createBrowserRouter } from "react-router";
+import { lazy, Suspense, createElement } from "react";
 import { Root } from "./Root";
-import { HomePage } from "./pages/HomePage";
-import { TradePage } from "./pages/TradePage";
-import { ToolPage } from "./pages/ToolPage";
-import { ComparePage } from "./pages/ComparePage";
-import { SearchPage } from "./pages/SearchPage";
-import { NotFound } from "./pages/NotFound";
-import { ComparisonDetailPage } from "./pages/ComparisonDetailPage";
-import { BestForPage } from "./pages/BestForPage";
-import { GuidePage } from "./pages/GuidePage";
-import { GuidesIndexPage } from "./pages/GuidesIndexPage";
-import { TopRatedPage } from "./pages/TopRatedPage";
+
+// Lazy-load page components for code splitting
+const HomePage = lazy(() => import("./pages/HomePage").then(m => ({ default: m.HomePage })));
+const TradePage = lazy(() => import("./pages/TradePage").then(m => ({ default: m.TradePage })));
+const ToolPage = lazy(() => import("./pages/ToolPage").then(m => ({ default: m.ToolPage })));
+const ComparePage = lazy(() => import("./pages/ComparePage").then(m => ({ default: m.ComparePage })));
+const SearchPage = lazy(() => import("./pages/SearchPage").then(m => ({ default: m.SearchPage })));
+const NotFound = lazy(() => import("./pages/NotFound").then(m => ({ default: m.NotFound })));
+const ComparisonDetailPage = lazy(() => import("./pages/ComparisonDetailPage").then(m => ({ default: m.ComparisonDetailPage })));
+const BestForPage = lazy(() => import("./pages/BestForPage").then(m => ({ default: m.BestForPage })));
+const GuidePage = lazy(() => import("./pages/GuidePage").then(m => ({ default: m.GuidePage })));
+const GuidesIndexPage = lazy(() => import("./pages/GuidesIndexPage").then(m => ({ default: m.GuidesIndexPage })));
+
+function withSuspense(Component: React.LazyExoticComponent<React.ComponentType>) {
+  return function SuspenseWrapper() {
+    return createElement(Suspense, { fallback: null }, createElement(Component));
+  };
+}
 
 export const router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: HomePage },
-      { path: "trades/:slug", Component: TradePage },
-      { path: "tools/:slug", Component: ToolPage },
-      { path: "compare", Component: ComparePage },
-      { path: "compare/:slug", Component: ComparisonDetailPage },
-      { path: "best/:slug", Component: BestForPage },
-      { path: "guides", Component: GuidesIndexPage },
-      { path: "guides/:slug", Component: GuidePage },
-      { path: "top-rated", Component: TopRatedPage },
-      { path: "search", Component: SearchPage },
-      { path: "*", Component: NotFound },
+      { index: true, Component: withSuspense(HomePage) },
+      { path: "trades/:slug", Component: withSuspense(TradePage) },
+      { path: "tools/:slug", Component: withSuspense(ToolPage) },
+      { path: "compare", Component: withSuspense(ComparePage) },
+      { path: "compare/:slug", Component: withSuspense(ComparisonDetailPage) },
+      { path: "best/:slug", Component: withSuspense(BestForPage) },
+      { path: "guides", Component: withSuspense(GuidesIndexPage) },
+      { path: "guides/:slug", Component: withSuspense(GuidePage) },
+      { path: "search", Component: withSuspense(SearchPage) },
+      { path: "*", Component: withSuspense(NotFound) },
     ],
   },
 ]);

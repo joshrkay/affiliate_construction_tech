@@ -81,9 +81,13 @@ export function HomePage() {
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://bestconstructionapps.com/" />
       <meta property="og:site_name" content="BUILTECH" />
+      <meta property="og:image" content="https://bestconstructionapps.com/og-default.png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={`BUILTECH — Best AI & Construction Software Directory (${currentYear})`} />
       <meta name="twitter:description" content="Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade." />
+      <meta name="twitter:image" content="https://bestconstructionapps.com/og-default.png" />
 
       {/* WebSite Schema with SearchAction for Sitelinks Searchbox */}
       <script type="application/ld+json">

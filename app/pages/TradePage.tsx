@@ -100,9 +100,11 @@ export function TradePage() {
       <meta property="og:type" content="website" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content="BUILTECH" />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:image" content="https://bestconstructionapps.com/og-default.png" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={`Best ${trade.name} Software (${currentYear}) | BUILTECH`} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:image" content="https://bestconstructionapps.com/og-default.png" />
 
       {/* ItemList Schema for ranked tools */}
       <script type="application/ld+json">
