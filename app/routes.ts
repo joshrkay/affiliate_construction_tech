@@ -10,6 +10,7 @@ import { ComparisonDetailPage } from "./pages/ComparisonDetailPage";
 import { BestForPage } from "./pages/BestForPage";
 import { GuidePage } from "./pages/GuidePage";
 import { GuidesIndexPage } from "./pages/GuidesIndexPage";
+import { TopRatedPage } from "./pages/TopRatedPage";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ export const router = createBrowserRouter([
       { path: "best/:slug", Component: BestForPage },
       { path: "guides", Component: GuidesIndexPage },
       { path: "guides/:slug", Component: GuidePage },
+      { path: "top-rated", Component: TopRatedPage },
       { path: "search", Component: SearchPage },
       { path: "*", Component: NotFound },
     ],

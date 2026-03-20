@@ -298,6 +298,18 @@ export function HomePage() {
       </section>
 
       {/* Top Rated Tools */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <div className="flex items-center justify-between">
+          <div></div>
+          <Link
+            to="/top-rated"
+            className="flex items-center gap-1 text-sm font-medium hover:text-orange-500 transition-colors"
+            style={{ color: "#f97316" }}
+          >
+            View All Top Rated <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </div>
       <TopRatedThisMonth />
 
       {/* AI Spotlight */}
