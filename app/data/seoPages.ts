@@ -493,6 +493,55 @@ export const bestForPages: BestForPage[] = [
     description: "The best construction software tools rated by contractors. Compare features, pricing, and reviews.",
     keywords: ["best construction software 2026", "top construction software", "construction software reviews"],
   },
+  // New comparison pages
+  {
+    slug: "jobber-vs-housecall-pro",
+    title: "Jobber vs Housecall Pro: Complete Comparison 2026",
+    description: "Compare Jobber and Housecall Pro for field service management. Features, pricing, pros, cons, and verdict.",
+    tradeIds: ["hvac", "plumbing", "electrical"],
+    toolIds: ["jobber", "housecall-pro"],
+    keywords: ["jobber vs housecall pro", "jobber vs housecall", "field service software comparison"],
+  },
+  {
+    slug: "procore-vs-fieldwire",
+    title: "Procore vs Fieldwire: Construction Management Comparison",
+    description: "Procore vs Fieldwire for construction management. Find the right tool for your team.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["procore", "fieldwire"],
+    keywords: ["procore vs fieldwire", "construction management comparison", "fieldwire vs procore"],
+  },
+  {
+    slug: "servicetitan-vs-housecall-pro",
+    title: "ServiceTitan vs Housecall Pro: FSM Comparison",
+    description: "Compare ServiceTitan and Housecall Pro for field service management. Pricing, features, and more.",
+    tradeIds: ["hvac", "plumbing"],
+    toolIds: ["servicetitan", "housecall-pro"],
+    keywords: ["servicetitan vs housecall pro", "housecall pro vs servicetitan", "field service comparison"],
+  },
+  {
+    slug: "buildertrend-vs-jobtread",
+    title: "Buildertrend vs JobTread: Construction Management Comparison",
+    description: "Compare Buildertrend and JobTread for construction project management. Features, pricing, and verdict.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["buildertrend", "jobtread"],
+    keywords: ["buildertrend vs jobtread", "jobtread vs buildertrend", "construction software comparison"],
+  },
+  {
+    slug: "togal-ai-vs-bluebeam",
+    title: "Togal.AI vs Bluebeam: Takeoff Software Comparison",
+    description: "Compare Togal.AI and Bluebeam for construction takeoff and estimating. AI vs traditional.",
+    tradeIds: ["electrical", "general-contracting"],
+    toolIds: ["togal-ai", "bluebeam-revu"],
+    keywords: ["togal ai vs bluebeam", "ai takeoff vs pdf", "estimating software comparison"],
+  },
+  {
+    slug: "stack-vs-planSwift",
+    title: "STACK vs PlanSwift: Takeoff Software Comparison",
+    description: "Compare STACK and PlanSwift for construction takeoff. Cloud vs desktop, features, pricing.",
+    tradeIds: ["electrical", "general-contracting"],
+    toolIds: ["stack-takeoff", "planswift-review"],
+    keywords: ["stack vs planswift", "takeoff software comparison", "cloud takeoff vs desktop"],
+  },
 ];
 
 // Helper functions
