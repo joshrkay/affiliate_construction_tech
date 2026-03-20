@@ -444,6 +444,55 @@ export const bestForPages: BestForPage[] = [
     description: "Top takeoff and estimating tools for flooring contractors. Measure areas, calculate materials, win more bids.",
     keywords: ["flooring estimating software", "flooring takeoff", "carpet measuring software"],
   },
+  {
+    slug: "best-construction-software-small-business",
+    tradeId: "general-contracting",
+    title: "Best Construction Software for Small Business (2026)",
+    description: "Affordable construction software designed for small contractors and small businesses. Budget-friendly options with essential features.",
+    keywords: ["construction software for small business", "affordable construction software", "small contractor software"],
+  },
+  {
+    slug: "best-construction-software-free",
+    tradeId: "general-contracting",
+    title: "Best Free Construction Software (2026)",
+    description: "Free construction software options for contractors. No-cost tools for budgeting, scheduling, and project management.",
+    keywords: ["free construction software", "free construction management", "free contractor software"],
+  },
+  {
+    slug: "best-hvac-software-small-business",
+    tradeId: "hvac",
+    title: "Best HVAC Software for Small Business (2026)",
+    description: "Affordable HVAC software designed for small companies. Easy to use, budget-friendly pricing, essential features.",
+    keywords: ["hvac software for small business", "affordable hvac software", "hvac app for small company"],
+  },
+  {
+    slug: "best-plumbing-software-small-business",
+    tradeId: "plumbing",
+    title: "Best Plumbing Software for Small Business (2026)",
+    description: "Affordable plumbing software for small contractors. Simple to use, great features, no enterprise pricing.",
+    keywords: ["plumbing software for small business", "affordable plumbing software", "plumbing app for contractors"],
+  },
+  {
+    slug: "best-field-service-software",
+    tradeId: "hvac",
+    title: "Best Field Service Management Software (2026)",
+    description: "Top-rated field service management software for contractors. Schedule jobs, manage technicians, grow your business.",
+    keywords: ["field service management software", "field service software", "FSM software"],
+  },
+  {
+    slug: "best-ai-construction-software",
+    tradeId: "general-contracting",
+    title: "Best AI Construction Software (2026)",
+    description: "Top AI-powered construction tools. AI estimating, scheduling, project management, and more.",
+    keywords: ["ai construction software", "artificial intelligence construction", "ai estimating software"],
+  },
+  {
+    slug: "best-construction-software-2026",
+    tradeId: "general-contracting",
+    title: "Best Construction Software 2026",
+    description: "The best construction software tools rated by contractors. Compare features, pricing, and reviews.",
+    keywords: ["best construction software 2026", "top construction software", "construction software reviews"],
+  },
 ];
 
 // Helper functions
