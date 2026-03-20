@@ -163,3 +163,61 @@ export function getToolFAQs(slug: string): FAQ[] {
 export function getTradeFAQs(slug: string): FAQ[] {
   return tradeFAQs.filter(faq => faq.slug === slug);
 }
+
+// AI Search - Question keywords to target
+export const aiSearchQuestions = {
+  // Questions starting with "what is"
+  "what-is": [
+    "What is the best construction software?",
+    "What is Procore used for?",
+    "What is Jobber software?",
+    "What is ServiceTitan?",
+    "What is field service management?",
+    "What is construction estimating software?",
+    "What is AI takeoff software?",
+    "What is project management software?",
+  ],
+  // Questions starting with "how much"
+  "how-much": [
+    "How much does Procore cost?",
+    "How much does Jobber cost?",
+    "How much does ServiceTitan cost?",
+    "How much does construction software cost?",
+    "How much does takeoff software cost?",
+    "How much is field service software?",
+  ],
+  // Questions starting with "best"
+  "best": [
+    "Best construction software for small business",
+    "Best HVAC software",
+    "Best plumbing software",
+    "Best estimating software for contractors",
+    "Best free construction software",
+    "Best project management software",
+  ],
+  // Questions starting with "vs"
+  "vs": [
+    "Procore vs Buildertrend",
+    "ServiceTitan vs Jobber",
+    "Togal.AI vs STACK",
+    "Jobber vs Housecall Pro",
+    "Procore vs CoConstruct",
+  ],
+  // Questions starting with "how to"
+  "how-to": [
+    "How to choose construction software",
+    "How to switch construction software",
+    "How to estimate construction jobs",
+    "How to use Procore",
+    "How to get started with Jobber",
+  ],
+};
+
+export function getFAQsByKeyword(keyword: string): FAQ[] {
+  const allFAQs = [...toolFAQs, ...tradeFAQs];
+  return allFAQs.filter(
+    (faq) =>
+      faq.question.toLowerCase().includes(keyword.toLowerCase()) ||
+      faq.answer.toLowerCase().includes(keyword.toLowerCase())
+  );
+}
