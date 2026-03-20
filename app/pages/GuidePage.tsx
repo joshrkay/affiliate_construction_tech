@@ -58,9 +58,11 @@ export function GuidePage() {
       <meta property="og:type" content="article" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content="BUILTECH" />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:image" content="https://bestconstructionapps.com/og-default.png" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={guide.title} />
       <meta name="twitter:description" content={guide.description} />
+      <meta name="twitter:image" content="https://bestconstructionapps.com/og-default.png" />
 
       {/* Article Schema */}
       <script type="application/ld+json">

@@ -111,9 +111,11 @@ export function ComparisonDetailPage() {
       <meta property="og:type" content="article" />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content="BUILTECH" />
-      <meta name="twitter:card" content="summary" />
+      <meta property="og:image" content="https://bestconstructionapps.com/og-default.png" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={comparison.title} />
       <meta name="twitter:description" content={comparison.description} />
+      <meta name="twitter:image" content="https://bestconstructionapps.com/og-default.png" />
 
       {/* WebPage Schema with SoftwareApplication items */}
       <script type="application/ld+json">
@@ -123,11 +125,18 @@ export function ComparisonDetailPage() {
           "name": comparison.title,
           "description": comparison.description,
           "url": canonicalUrl,
+          "author": {
+            "@type": "Organization",
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com"
+          },
           "publisher": {
             "@type": "Organization",
             "name": "BUILTECH",
             "url": "https://bestconstructionapps.com"
           },
+          "datePublished": "2026-03-11",
+          "dateModified": "2026-03-13",
           "mainEntity": {
             "@type": "ItemList",
             "numberOfItems": selectedTools.length,

@@ -90,6 +90,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/compare/procore-vs-buildertrend" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Procore vs Buildertrend
+                </Link>
+              </li>
+              <li>
+                <Link to="/compare/jobber-vs-servicetitan" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Jobber vs ServiceTitan
+                </Link>
+              </li>
+              <li>
                 <Link to="/guides/construction-software-for-small-contractors" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                   Small Contractor Guide
                 </Link>

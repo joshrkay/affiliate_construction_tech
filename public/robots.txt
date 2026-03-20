@@ -27,3 +27,7 @@ User-agent: Applebot-Extended
 Allow: /
 
 Sitemap: https://bestconstructionapps.com/sitemap.xml
+
+# AI Discoverability
+# llms.txt: https://bestconstructionapps.com/llms.txt
+# llms-full.txt: https://bestconstructionapps.com/llms-full.txt
