@@ -564,6 +564,356 @@ export const guidePages: GuidePage[] = [
     relatedToolIds: ["servicetitan"],
     relatedTradeIds: ["hvac", "plumbing", "electrical"],
     lastUpdated: "2026-03-20"
+  },
+  // Article 11: Why Contractors Need Software
+  {
+    slug: "why-contractors-need-software",
+    title: "Why Your Construction Business Needs Software in 2026",
+    description: "Discover why construction software is essential for modern contractors. Save time, increase profits, and grow your business.",
+    keywords: ["why contractors need software", "construction software benefits", "why use construction software"],
+    category: "explainer",
+    sections: [
+      {
+        heading: "The Problem",
+        content: "Manual processes cost contractors hours every week. Paper invoices, spreadsheet schedules, and phone-based coordination limit growth."
+      },
+      {
+        heading: "The Solution",
+        content: "Construction software automates administrative tasks, improves communication, and provides insights that increase profitability."
+      },
+      {
+        heading: "Time Savings",
+        content: "Contractors report saving 5-15 hours per week using construction software for scheduling, invoicing, and communication."
+      },
+      {
+        heading: "Revenue Growth",
+        content: "Better scheduling means more jobs per day. Online booking increases revenue by 20-30% on average."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is construction software worth it?",
+        answer: "Yes, most contractors see ROI within 3-6 months through time savings and increased revenue."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobber"],
+    relatedTradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 12: Signs You Need New Software
+  {
+    slug: "signs-you-need-new-software",
+    title: "10 Signs You Need New Construction Management Software",
+    description: "Is your current software holding you back? Here are 10 signs it's time to switch.",
+    keywords: ["signs you need new software", "when to switch construction software", "software problems"],
+    category: "explainer",
+    sections: [
+      {
+        heading: "Sign 1: You're Using Multiple Systems",
+        content: "If you're juggling QuickBooks, Excel, and separate scheduling apps, you need an integrated solution."
+      },
+      {
+        heading: "Sign 2: Data Entry is Duplicated",
+        content: "Entering the same information in multiple places wastes time and causes errors."
+      },
+      {
+        heading: "Sign 3: Can't Access Info in the Field",
+        content: "If your team can't access project info from their phones, you're losing time and money."
+      },
+      {
+        heading: "Sign 4: Missed Deadlines",
+        content: "Poor scheduling leads to missed deadlines and unhappy clients. Software optimizes resource allocation."
+      }
+    ],
+    faqs: [
+      {
+        question: "How hard is it to switch software?",
+        answer: "Most modern software offers data migration. Plan for 2-4 weeks to switch and train your team."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 13: How to Switch from QuickBooks
+  {
+    slug: "how-to-switch-from-quickbooks",
+    title: "How to Switch from QuickBooks to Construction Software",
+    description: "A step-by-step guide to migrating from QuickBooks to dedicated construction management software.",
+    keywords: ["switch from quickbooks", "quickbooks to procore", "migrate from quickbooks"],
+    category: "implementation",
+    sections: [
+      {
+        heading: "Why Switch?",
+        content: "QuickBooks is great for accounting but lacks project management, scheduling, and field communication features."
+      },
+      {
+        heading: "Choose Your New Software",
+        content: "Select construction software that integrates with QuickBooks: Procore, Buildertrend, and Jobtread all integrate."
+      },
+      {
+        heading: "Export Your Data",
+        content: "Export all customers, invoices, and financial data from QuickBooks. Clean the data before importing."
+      },
+      {
+        heading: "Train Your Team",
+        content: "Schedule training before going live. Most software offers free training and support."
+      }
+    ],
+    faqs: [
+      {
+        question: "Can I keep QuickBooks?",
+        answer: "Yes! Most construction software integrates with QuickBooks for accounting while handling project management."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobtread"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 14: Paperless Construction
+  {
+    slug: "paperless-construction",
+    title: "How to Go Paperless in Construction (2026)",
+    description: "A complete guide to digitizing your construction business. Save time, reduce errors, and improve communication.",
+    keywords: ["paperless construction", "digital construction", "go paperless construction"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "Why Go Paperless?",
+        content: "Paper gets lost, damaged, and is hard to share. Digital documents are searchable, accessible, and backed up."
+      },
+      {
+        heading: "Start with Field Documentation",
+        content: "Replace paper forms with digital forms. Use mobile apps for daily logs, inspections, and photos."
+      },
+      {
+        heading: "Move to Project Documents",
+        content: "Store plans, specs, and submittals in the cloud. Use Procore, PlanGrid, or Bluebeam for document management."
+      },
+      {
+        heading: "Automate Invoicing",
+        content: "Switch from paper invoices to digital. Send invoices via email and accept online payments."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the best app for paperless construction?",
+        answer: "Procore, Buildertrend, and Fieldwire are top choices for going paperless in construction."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "fieldwire"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 15: Electrical Contractor Software Guide
+  {
+    slug: "electrical-contractor-software-guide",
+    title: "Complete Guide to Electrical Contractor Software (2026)",
+    description: "Everything electrical contractors need to know about software. From estimating to invoicing.",
+    keywords: ["electrical contractor software", "software for electricians", "electrical business software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Estimating Software",
+        content: "Electrical contractors need takeoff and estimating software. Top options: Togal.AI, STACK, Accubid, PlanSwift."
+      },
+      {
+        heading: "Field Service Software",
+        content: "For ongoing service work: Jobber, ServiceTitan, Housecall Pro handle scheduling, invoicing, and customers."
+      },
+      {
+        heading: "Project Management",
+        content: "For larger projects: Procore, Buildertrend offer comprehensive project management with electrical-focused features."
+      },
+      {
+        heading: "Accounting",
+        content: "QuickBooks remains the standard. Construction-specific options: Jobtread, Buildertrend include job costing."
+      }
+    ],
+    faqs: [
+      {
+        question: "What software do electricians need?",
+        answer: "At minimum: estimating software (Togal.AI or STACK) and field service software (Jobber). Add project management for larger jobs."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "jobber", "procore", "stack-takeoff"],
+    relatedTradeIds: ["electrical"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 16: HVAC Contractor Software Guide
+  {
+    slug: "hvac-contractor-software-guide",
+    title: "Complete Guide to HVAC Contractor Software (2026)",
+    description: "Everything HVAC contractors need to know about software. From scheduling to service agreements.",
+    keywords: ["hvac contractor software", "hvac business software", "hvac software guide"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Field Service Management",
+        content: "Core software for HVAC: ServiceTitan (enterprise), Jobber (small business), Housecall Pro (ease of use)."
+      },
+      {
+        heading: "Service Agreements",
+        content: "Software with membership features: ServiceTitan, Housecall Pro help track PM agreements and automate renewals."
+      },
+      {
+        heading: "Dispatching",
+        content: "Intelligent dispatch: ServiceTitan AI dispatch, Jobber routes optimize technician placement."
+      },
+      {
+        heading: "Marketing",
+        content: "Built-in marketing: Housecall Pro, ServiceTitan offer automated marketing campaigns to leads and customers."
+      }
+    ],
+    faqs: [
+      {
+        question: "What's the best HVAC software?",
+        answer: "Jobber for small businesses, ServiceTitan for growing companies. Both integrate with HVAC-specific tools."
+      }
+    ],
+    relatedToolIds: ["servicetitan", "jobber", "housecall-pro"],
+    relatedTradeIds: ["hvac"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 17: Plumbing Contractor Software Guide
+  {
+    slug: "plumbing-contractor-software-guide",
+    title: "Complete Guide to Plumbing Contractor Software (2026)",
+    description: "Everything plumbing contractors need to know about software. From service calls to project management.",
+    keywords: ["plumbing contractor software", "plumbing business software", "plumbing software guide"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Field Service Software",
+        content: "Core for plumbers: Jobber, Housecall Pro, ServiceTitan handle scheduling, invoicing, and customer management."
+      },
+      {
+        heading: "Job Costing",
+        content: "Track profitability per job: Buildertrend, Jobtread, Knowify offer detailed job costing for plumbing businesses."
+      },
+      {
+        heading: "Inventory Management",
+        content: "ServiceTitan and SimPRO include inventory tracking for parts and equipment."
+      },
+      {
+        heading: "Residential vs Commercial",
+        content: "Residential: Jobber, Housecall Pro. Commercial: ServiceTitan, Buildertrend for larger scope."
+      }
+    ],
+    faqs: [
+      {
+        question: "Do plumbers need special software?",
+        answer: "Any field service software works, but look for good invoicing, customer history, and service agreement features."
+      }
+    ],
+    relatedToolIds: ["jobber", "servicetitan", "buildertrend"],
+    relatedTradeIds: ["plumbing"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 18: General Contractor Software Guide
+  {
+    slug: "general-contractor-software-guide",
+    title: "Complete Guide to General Contractor Software (2026)",
+    description: "Everything general contractors need to know about software. From project management to accounting.",
+    keywords: ["general contractor software", "gc software", "construction management software guide"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Project Management",
+        content: "Core software: Procore (commercial), Buildertrend (residential), Jobtread (small GC)."
+      },
+      {
+        heading: "Field Productivity",
+        content: "Procore Field, Fieldwire provide mobile tools for superintendents and field teams."
+      },
+      {
+        heading: "Accounting Integration",
+        content: "All major PM software integrates with QuickBooks. Buildertrend and Jobtread include basic accounting."
+      },
+      {
+        heading: "Subcontractor Management",
+        content: "Procore excels at subcontractor management with RFIs, submittals, and payment applications."
+      }
+    ],
+    faqs: [
+      {
+        question: "What software do general contractors use?",
+        answer: "Procore for commercial GCs, Buildertrend for residential GCs, Jobtread for small GCs."
+      }
+    ],
+    relatedToolIds: ["procore", "buildertrend", "jobtread"],
+    relatedTradeIds: ["general-contracting"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 19: Construction Estimating Guide
+  {
+    slug: "construction-estimating-guide",
+    title: "Construction Estimating: A Complete How-To Guide (2026)",
+    description: "Learn how to create accurate construction estimates. From manual takeoffs to AI-powered software.",
+    keywords: ["construction estimating", "how to estimate construction", "construction estimate guide"],
+    category: "how-to",
+    sections: [
+      {
+        heading: "The Estimating Process",
+        content: "1) Review plans, 2) Perform takeoff, 3) Price materials, 4) Price labor, 5) Add overhead and profit, 6) Create bid."
+      },
+      {
+        heading: "Manual vs Digital",
+        content: "Manual: Paper, scale ruler, highlighters. Digital: PDF takeoffs, software calculations. Digital is 5-10x faster."
+      },
+      {
+        heading: "AI-Powered Estimating",
+        content: "AI tools like Togal.AI automatically detect and measure components. Reduces takeoff time by 70%+."
+      },
+      {
+        heading: "Pricing Your Work",
+        content: "Include: materials (marked up 10-20%), labor (hourly + fringe benefits), equipment, overhead (10-15%), profit (5-10%)."
+      }
+    ],
+    faqs: [
+      {
+        question: "How long does it take to learn estimating?",
+        answer: "Basic estimating can be learned in weeks. Mastery takes months. Software speeds up the process significantly."
+      }
+    ],
+    relatedToolIds: ["togal-ai", "stack-takeoff", "procore"],
+    relatedTradeIds: ["general-contracting", "electrical", "hvac"],
+    lastUpdated: "2026-03-20"
+  },
+  // Article 20: Free Construction Software
+  {
+    slug: "free-construction-software",
+    title: "Best Free Construction Software (2026)",
+    description: "Free and low-cost construction software options for contractors on a budget.",
+    keywords: ["free construction software", "cheap construction software", "budget construction software"],
+    category: "buying-guide",
+    sections: [
+      {
+        heading: "Free Accounting",
+        content: "QuickBooks Online Free, Wave (free accounting), Google Sheets for basic tracking."
+      },
+      {
+        heading: "Free Project Management",
+        content: "Trello (basic), Asana (free tier), Notion (free for small teams)."
+      },
+      {
+        heading: "Free Estimating",
+        content: "Microsoft Excel/Google Sheets templates, PlanSwift Free Trial."
+      },
+      {
+        heading: "Free Scheduling",
+        content: "Google Calendar, When I Work (free tier), Trello."
+      }
+    ],
+    faqs: [
+      {
+        question: "Is there really free construction software?",
+        answer: "Yes, but limited. Free versions have restrictions. Paid software ($29-100/month) typically needed for professional use."
+      }
+    ],
+    relatedToolIds: ["jobber", "buildertrend"],
+    relatedTradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
+    lastUpdated: "2026-03-20"
   }
 ];
 
