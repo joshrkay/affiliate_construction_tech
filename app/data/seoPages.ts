@@ -542,6 +542,46 @@ export const bestForPages: BestForPage[] = [
     toolIds: ["stack-takeoff", "planswift-review"],
     keywords: ["stack vs planswift", "takeoff software comparison", "cloud takeoff vs desktop"],
   },
+  {
+    slug: "jobber-vs-fieldedge",
+    title: "Jobber vs FieldEdge: Field Service Comparison",
+    description: "Compare Jobber and FieldEdge for field service management. Pricing, features, and trade focus.",
+    tradeIds: ["hvac", "plumbing", "electrical"],
+    toolIds: ["jobber", "field-edge"],
+    keywords: ["jobber vs fieldedge", "fieldedge vs jobber", "field service software comparison"],
+  },
+  {
+    slug: "buildertrend-vs-knowify",
+    title: "Buildertrend vs Knowify: Construction Management Comparison",
+    description: "Compare Buildertrend and Knowify for construction job costing and project management.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["buildertrend", "knowify"],
+    keywords: ["buildertrend vs knowify", "knowify vs buildertrend", "job costing software"],
+  },
+  {
+    slug: "procore-vs-construction-cloud",
+    title: "Procore vs Autodesk Construction Cloud: Enterprise Comparison",
+    description: "Compare Procore and Autodesk Construction Cloud for enterprise construction management.",
+    tradeIds: ["general-contracting"],
+    toolIds: ["procore", "autodesk-construction-cloud"],
+    keywords: ["procore vs autodesk", "construction cloud comparison", "enterprise construction software"],
+  },
+  {
+    slug: "servicetitan-vs-simpro",
+    title: "ServiceTitan vs SimPRO: FSM Comparison",
+    description: "Compare ServiceTitan and SimPRO for field service management. Features and trade focus.",
+    tradeIds: ["hvac", "plumbing"],
+    toolIds: ["servicetitan", "simpro"],
+    keywords: ["servicetitan vs simpro", "simpro vs servicetitan", "field service comparison"],
+  },
+  {
+    slug: "jobber-vs-mhelpdesk",
+    title: "Jobber vs mHelpDesk: Budget FSM Comparison",
+    description: "Compare Jobber and mHelpDesk for affordable field service management.",
+    tradeIds: ["hvac", "plumbing"],
+    toolIds: ["jobber", "mhelpdesk"],
+    keywords: ["jobber vs mhelpdesk", "mhelpdesk vs jobber", "budget fsm software"],
+  },
 ];
 
 // Helper functions
