@@ -38,6 +38,7 @@ If you change this file, tell the user — it's your soul, and they should know.
 **To become THE definitive resource for everything construction technology.**
 
 ### What We Cover
+- Construction Software News (releases, updates, pricing, company news)
 - Construction Software (all categories, all trades)
 - AI in Construction (tools, trends, automation)
 - Trade-Specific Solutions (HVAC, Plumbing, Electrical, GC)

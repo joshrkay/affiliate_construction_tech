@@ -8,7 +8,16 @@
 
 ## What We Cover
 
-### 1. Construction Software
+### 1. Construction Software News
+| Type | Content |
+|------|---------|
+| New Releases | Latest software launches |
+| Updates | Feature releases, version updates |
+| Pricing Changes | New pricing, promotions |
+| Company News | Funding, acquisitions, partnerships |
+| Industry Moves | Leadership changes, expansions |
+
+### 2. Construction Software
 | Category | Coverage |
 |----------|----------|
 | Field Service | Jobber, ServiceTitan, Housecall Pro |
@@ -77,7 +86,14 @@
 - Automation guides
 - Future of construction
 
-### Pillar 5: Industry News
+### Pillar 5: Construction Software News
+- Software updates and releases
+- Pricing changes
+- New tool launches
+- Company news
+- Industry announcements
+
+### Pillar 6: Industry News
 - Software updates
 - New releases
 - Pricing changes
