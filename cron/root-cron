@@ -1,0 +1,2 @@
+# Cron job for status updates - every 2 hours
+0 */2 * * * /root/.openclaw/workspace/affiliate_construction_tech/scripts/status-update.sh >> /root/.openclaw/workspace/affiliate_construction_tech/cron/status-updates.log 2>&1
