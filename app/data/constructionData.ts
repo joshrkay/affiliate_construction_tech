@@ -31,6 +31,7 @@ export interface Tool {
   pros: string[];
   cons: string[];
   website: string;
+  affiliateUrl?: string;
   logoColor: string;
   logoInitials: string;
   overallRank?: number;
@@ -586,6 +587,7 @@ export const tools: Tool[] = [
       "Support quality can vary by issue complexity and account tier",
     ],
     website: "https://procore.com",
+    affiliateUrl: "https://www.procore.com/partners/affiliate",
     logoColor: "#e63b2e",
     logoInitials: "PC",
     overallRank: 1,
@@ -631,6 +633,7 @@ export const tools: Tool[] = [
       "Accounting depth may still require tighter processes in QuickBooks or ERP",
     ],
     website: "https://buildertrend.com",
+    affiliateUrl: "https://buildertrend.com/partners/affiliate",
     logoColor: "#0e7490",
     logoInitials: "BT",
     overallRank: 4,
@@ -775,6 +778,7 @@ export const tools: Tool[] = [
       "Frequent product updates require ongoing retraining",
     ],
     website: "https://servicetitan.com",
+    affiliateUrl: "https://www.servicetitan.com/referral-program",
     logoColor: "#ff6900",
     logoInitials: "ST",
     overallRank: 5,
@@ -1243,6 +1247,7 @@ export const tools: Tool[] = [
       "GPS tracking requires higher tier",
     ],
     website: "https://getjobber.com",
+    affiliateUrl: "https://getjobber.com/partners/affiliate",
     logoColor: "#f97316",
     logoInitials: "JB",
     overallRank: 15,
@@ -1569,6 +1574,7 @@ export const tools: Tool[] = [
       "Limited integrations",
     ],
     website: "https://housecallpro.com",
+    affiliateUrl: "https://housecallpro.com/affiliates",
     logoColor: "#10b981",
     logoInitials: "HC",
     overallRank: 22,
