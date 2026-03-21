@@ -3874,7 +3874,7 @@ export const tools: Tool[] = [
     companySize: "11-50",
   },
   {
-    id: "clear Structures",
+    id: "clear-structures",
     slug: "clear-structures",
     name: "Clear Structures",
     tagline: "Construction estimating and bidding",
