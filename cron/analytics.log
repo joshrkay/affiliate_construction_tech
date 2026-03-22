@@ -1,0 +1,100 @@
+=== Analytics Check: Sun Mar 22 00:08:26 UTC 2026 ===
+=== BUILTECH Analytics Report ===
+
+Top Pages (Last 30 Days):
+
+1. /
+   Sessions: 131 | Users: 110 | Views: 134
+2. /index.html
+   Sessions: 11 | Users: 11 | Views: 11
+3. /trades/electrical
+   Sessions: 4 | Users: 3 | Views: 4
+4. /trades/general-contracting
+   Sessions: 4 | Users: 4 | Views: 4
+5. /tools/jobtread
+   Sessions: 3 | Users: 2 | Views: 2
+6. /tools/bluebeam-revu
+   Sessions: 2 | Users: 1 | Views: 2
+7. /tools/servicetitan
+   Sessions: 2 | Users: 2 | Views: 2
+8. /trades/carpentry-framing
+   Sessions: 2 | Users: 1 | Views: 1
+9. /trades/estimating-bidding
+   Sessions: 2 | Users: 2 | Views: 2
+10. /trades/tile-stone
+   Sessions: 2 | Users: 2 | Views: 2
+11. /compare
+   Sessions: 1 | Users: 1 | Views: 1
+12. /tools/autodesk-construction-cloud
+   Sessions: 1 | Users: 1 | Views: 1
+13. /trades/flooring
+   Sessions: 1 | Users: 1 | Views: 1
+14. /trades/roofing
+   Sessions: 1 | Users: 1 | Views: 1
+Error: 7 PERMISSION_DENIED: Google Analytics Data API has not been used in project 552131901526 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=552131901526 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+    at callErrorFromStatus (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/call.js:32:19)
+    at Object.onReceiveStatus (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/client.js:193:76)
+    at Object.onReceiveStatus (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:367:141)
+    at Object.onReceiveStatus (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/client-interceptors.js:327:181)
+    at /root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/resolving-call.js:135:78
+    at process.processTicksAndRejections (node:internal/process/task_queues:84:11)
+for call at
+    at ServiceClientImpl.makeUnaryRequest (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/client.js:161:32)
+    at ServiceClientImpl.<anonymous> (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/@grpc/grpc-js/build/src/make-client.js:105:19)
+    at /root/.openclaw/workspace/affiliate_construction_tech/node_modules/@google-analytics/data/build/src/v1beta/beta_analytics_data_client.js:232:29
+    at /root/.openclaw/workspace/affiliate_construction_tech/node_modules/google-gax/build/src/normalCalls/timeout.js:44:16
+    at OngoingCallPromise.call (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/google-gax/build/src/call.js:70:27)
+    at NormalApiCaller.call (/root/.openclaw/workspace/affiliate_construction_tech/node_modules/google-gax/build/src/normalCalls/normalApiCaller.js:34:19)
+    at /root/.openclaw/workspace/affiliate_construction_tech/node_modules/google-gax/build/src/createApiCall.js:110:30 {
+  code: 7,
+  details: 'Google Analytics Data API has not been used in project 552131901526 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=552131901526 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.',
+  metadata: Metadata {
+    internalRepr: Map(7) {
+      'endpoint-load-metrics-bin' => [Array],
+      'grpc-server-stats-bin' => [Array],
+      'pcx-high-bwd-bin' => [Array],
+      'google.rpc.errorinfo-bin' => [Array],
+      'google.rpc.help-bin' => [Array],
+      'google.rpc.localizedmessage-bin' => [Array],
+      'grpc-status-details-bin' => [Array]
+    },
+    opaqueData: Map(0) {},
+    options: {}
+  },
+  statusDetails: [
+    ErrorInfo {
+      metadata: [Object],
+      reason: 'SERVICE_DISABLED',
+      domain: 'googleapis.com'
+    },
+    LocalizedMessage {
+      locale: 'en-US',
+      message: 'Google Analytics Data API has not been used in project 552131901526 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=552131901526 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.'
+    },
+    Help { links: [Array] }
+  ],
+  reason: 'SERVICE_DISABLED',
+  domain: 'googleapis.com',
+  errorInfoMetadata: {
+    serviceTitle: 'Google Analytics Data API',
+    containerInfo: '552131901526',
+    activationUrl: 'https://console.developers.google.com/apis/api/analyticsdata.googleapis.com/overview?project=552131901526',
+    service: 'analyticsdata.googleapis.com',
+    consumer: 'projects/552131901526'
+  }
+}
+
+=== Engagement Analysis ===
+Weekly Top Pages:
+1. / - 68 views, 66 sessions
+2. /index.html - 9 views, 9 sessions
+3. /trades/general-contracting - 3 views, 3 sessions
+4. /tools/bluebeam-revu - 2 views, 2 sessions
+5. /tools/servicetitan - 2 views, 2 sessions
+6. /trades/electrical - 2 views, 2 sessions
+7. /trades/estimating-bidding - 2 views, 2 sessions
+8. /compare - 1 views, 1 sessions
+9. /trades/roofing - 1 views, 1 sessions
+10. /trades/carpentry-framing - 0 views, 1 sessions
+
+---

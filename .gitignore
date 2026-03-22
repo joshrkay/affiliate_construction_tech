@@ -1,5 +1,21 @@
+# Dependencies
 node_modules/
-.npm-cache/
+
+# Build output
 dist/
+
+# Environment
+.env
+.env.local
+
+# Credentials (keep local only!)
+config/ga-credentials.json
+config/*.json
+
+# Logs
+logs/
+*.log
+
+# OS
 .DS_Store
-_incoming/
+Thumbs.db
