@@ -109,7 +109,7 @@
 | Indexed Pages | 200+ |
 | Keywords Ranked | 500+ |
 | Backlinks | 100+ |
-| Social Following | 1,000+ |
+| X/Twitter Followers | **10,000** (4 months) |
 
 ---
 
