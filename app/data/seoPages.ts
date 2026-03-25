@@ -220,6 +220,30 @@ export const comparisonPages: ComparisonPage[] = [
     keywords: ["measuresquare vs stack", "flooring takeoff software", "carpet measuring software"],
     tradeId: "flooring",
   },
+  {
+    slug: "servicetitan-vs-housecall-pro",
+    title: "ServiceTitan vs Housecall Pro (2026) – Which is Best for Field Service?",
+    description: "Comprehensive comparison of ServiceTitan vs Housecall Pro for HVAC, plumbing, and electrical contractors. Features, pricing, pros, cons, and which field service software wins in 2026.",
+    tools: ["servicetitan", "housecall-pro"],
+    keywords: ["servicetitan vs housecall pro", "field service software comparison", "HVAC software comparison", "plumbing software comparison"],
+    tradeId: "hvac",
+  },
+  {
+    slug: "jobber-vs-housecall-pro",
+    title: "Jobber vs Housecall Pro (2026) – Compare Field Service Software",
+    description: "Side-by-side comparison of Jobber vs Housecall Pro. Which affordable field service software is right for small contractors? Pricing, features, and reviews.",
+    tools: ["jobber", "housecall-pro"],
+    keywords: ["jobber vs housecall pro", "affordable field service software", "small business HVAC software"],
+    tradeId: "hvac",
+  },
+  {
+    slug: "buildertrend-vs-jobber",
+    title: "Buildertrend vs Jobber (2026) – Construction vs Field Service",
+    description: "Compare Buildertrend vs Jobber – one for general contractors, one for field service. Which fits your trade business? Full comparison with pricing.",
+    tools: ["buildertrend", "jobber"],
+    keywords: ["buildertrend vs jobber", "construction software comparison", "field service vs project management"],
+    tradeId: "general-contracting",
+  },
 ];
 
 // SEO-friendly "Best X for Y" pages
