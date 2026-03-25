@@ -646,6 +646,27 @@ export const bestForPages: BestForPage[] = [
     toolIds: ["buildertrend", "coconstruct"],
     keywords: ["buildertrend vs coconstruct", "coconstruct vs buildertrend", "home builder software"],
   },
+  {
+    slug: "best-free-construction-software",
+    title: "Best Free Construction Software (2026)",
+    description: "Top free construction software options for small contractors. Free project management, estimating, and invoicing tools.",
+    keywords: ["free construction software", "free project management construction", "free construction estimating"],
+    tradeId: "general-contracting",
+  },
+  {
+    slug: "best-hvac-software-small-business",
+    title: "Best HVAC Software for Small Business (2026)",
+    description: "Top-rated HVAC software for small businesses. Affordable, easy to use, and built for HVAC contractors.",
+    keywords: ["best HVAC software small business", "affordable HVAC software", "HVAC software for small contractors"],
+    tradeId: "hvac",
+  },
+  {
+    slug: "best-plumbing-software-under-50",
+    title: "Best Plumbing Software Under $50/Month (2026)",
+    description: "Affordable plumbing business software under $50/month. Service management, invoicing, and scheduling for plumbers.",
+    keywords: ["plumbing software under $50", "affordable plumbing software", "best plumbing software budget"],
+    tradeId: "plumbing",
+  },
 ];
 
 // Helper functions
