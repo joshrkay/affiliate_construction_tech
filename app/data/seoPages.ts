@@ -1,17 +1,3 @@
-// Pre-defined comparison pages for SEO
-// Each comparison targets specific keyword searches
-
-export interface ComparisonPage {
-  slug: string;
-  title: string;
-  description: string;
-  tools: [string, string]; // tool IDs
-  keywords: string[];
-  tradeId?: string;
-}
-
-export const comparisonPages: ComparisonPage[] = [
-  // Original comparisons
   {
     slug: "procore-vs-servicetitan",
     title: "Procore vs ServiceTitan (2026) – Which is Better for Construction?",
@@ -91,7 +77,6 @@ export const comparisonPages: ComparisonPage[] = [
     keywords: ["aurora solar vs opensolar", "solar design software", "solar proposal software"],
     tradeId: "solar-renewable",
   },
-  // NEW: More comparison pages
   {
     slug: "procore-vs-buildertrend",
     title: "Procore vs Buildertrend (2026) – Which is Better?",
@@ -245,14 +230,6 @@ export const comparisonPages: ComparisonPage[] = [
     tradeId: "general-contracting",
   },
   {
-    slug: "procore-vs-buildertrend",
-    title: "Procore vs Buildertrend (2026) – GC Software Comparison",
-    description: "Compare Procore vs Buildertrend for general contractors. Features, pricing, pros, cons. Which construction management software is right for you?",
-    tools: ["procore", "buildertrend"],
-    keywords: ["procore vs buildertrend", "construction management software comparison", "GC software"],
-    tradeId: "general-contracting",
-  },
-  {
     slug: "servicetitan-vs-jobber",
     title: "ServiceTitan vs Jobber (2026) – Field Service Giants",
     description: "ServiceTitan vs Jobber - two giants in field service. Compare pricing, features, and which is better for HVAC, plumbing, and electrical contractors.",
@@ -275,14 +252,6 @@ export const comparisonPages: ComparisonPage[] = [
     tools: ["procore", "knowify"],
     keywords: ["procore vs knowify", "construction software enterprise", "SMB construction software"],
     tradeId: "general-contracting",
-  },
-  {
-    slug: "fieldedge-vs-servicetitan",
-    title: "FieldEdge vs ServiceTitan (2026) – HVAC Focus",
-    description: "Compare FieldEdge vs ServiceTitan specifically for HVAC contractors. Features, pricing, and which wins for heating and cooling businesses.",
-    tools: ["fieldedge", "servicetitan"],
-    keywords: ["fieldedge vs servicetitan", "HVAC software comparison", "heating cooling software"],
-    tradeId: "hvac",
   },
   {
     slug: "jobber-vs-knowify",
@@ -325,27 +294,11 @@ export const comparisonPages: ComparisonPage[] = [
     tradeId: "hvac",
   },
   {
-    slug: "jobber-vs-fieldedge",
-    title: "Jobber vs FieldEdge (2026) – Value Comparison",
-    description: "Jobber vs FieldEdge - value-focused field service software. Which gives you more bang for your buck? Full comparison.",
-    tools: ["jobber", "fieldedge"],
-    keywords: ["jobber vs fieldedge", "affordable field service software", "value software"],
-    tradeId: "hvac",
-  },
-  {
     slug: "simpro-vs-servicetitan",
     title: "Simpro vs ServiceTitan (2026) – Field Service",
     description: "Simpro vs ServiceTitan - compare two major field service platforms. Features, pricing, and which wins for contractors.",
     tools: ["simpro", "servicetitan"],
     keywords: ["simpro vs servicetitan", "field service software comparison", "contractor software"],
-    tradeId: "general-contracting",
-  },
-  {
-    slug: "companycam-vs-procore",
-    title: "CompanyCam vs Procore (2026) – Visual Documentation",
-    description: "CompanyCam vs Procore for construction photos and visual documentation. Which tool is better for project photo management?",
-    tools: ["companycam", "procore"],
-    keywords: ["companycam vs procore", "construction photo software", "project documentation"],
     tradeId: "general-contracting",
   },
   {
@@ -377,19 +330,6 @@ export const comparisonPages: ComparisonPage[] = [
     tradeId: "hvac",
     keywords: ["HVAC software comparison", "best HVAC software", "HVAC business software"],
   },
-];
-
-// SEO-friendly "Best X for Y" pages
-export interface BestForPage {
-  slug: string;
-  title: string;
-  description: string;
-  tradeId: string;
-  keywords: string[];
-}
-
-export const bestForPages: BestForPage[] = [
-  // Original pages
   {
     slug: "best-construction-software-general-contractors",
     tradeId: "general-contracting",
@@ -446,7 +386,6 @@ export const bestForPages: BestForPage[] = [
     description: "Top solar design and proposal software for solar contractors. AI-powered design, sales tools, and project management.",
     keywords: ["best solar software", "solar design software", "solar proposal software"],
   },
-  // NEW: Trade-specific "Best for" pages
   {
     slug: "best-construction-software-small-business",
     tradeId: "general-contracting",
@@ -602,13 +541,6 @@ export const bestForPages: BestForPage[] = [
     keywords: ["flooring estimating software", "flooring takeoff", "carpet measuring software"],
   },
   {
-    slug: "best-construction-software-small-business",
-    tradeId: "general-contracting",
-    title: "Best Construction Software for Small Business (2026)",
-    description: "Affordable construction software designed for small contractors and small businesses. Budget-friendly options with essential features.",
-    keywords: ["construction software for small business", "affordable construction software", "small contractor software"],
-  },
-  {
     slug: "best-construction-software-free",
     tradeId: "general-contracting",
     title: "Best Free Construction Software (2026)",
@@ -630,13 +562,6 @@ export const bestForPages: BestForPage[] = [
     keywords: ["plumbing software for small business", "affordable plumbing software", "plumbing app for contractors"],
   },
   {
-    slug: "best-field-service-software",
-    tradeId: "hvac",
-    title: "Best Field Service Management Software (2026)",
-    description: "Top-rated field service management software for contractors. Schedule jobs, manage technicians, grow your business.",
-    keywords: ["field service management software", "field service software", "FSM software"],
-  },
-  {
     slug: "best-ai-construction-software",
     tradeId: "general-contracting",
     title: "Best AI Construction Software (2026)",
@@ -650,15 +575,6 @@ export const bestForPages: BestForPage[] = [
     description: "The best construction software tools rated by contractors. Compare features, pricing, and reviews.",
     keywords: ["best construction software 2026", "top construction software", "construction software reviews"],
   },
-  // New comparison pages
-  {
-    slug: "jobber-vs-housecall-pro",
-    title: "Jobber vs Housecall Pro: Complete Comparison 2026",
-    description: "Compare Jobber and Housecall Pro for field service management. Features, pricing, pros, cons, and verdict.",
-    tradeIds: ["hvac", "plumbing", "electrical"],
-    toolIds: ["jobber", "housecall-pro"],
-    keywords: ["jobber vs housecall pro", "jobber vs housecall", "field service software comparison"],
-  },
   {
     slug: "procore-vs-fieldwire",
     title: "Procore vs Fieldwire: Construction Management Comparison",
@@ -666,14 +582,6 @@ export const bestForPages: BestForPage[] = [
     tradeIds: ["general-contracting"],
     toolIds: ["procore", "fieldwire"],
     keywords: ["procore vs fieldwire", "construction management comparison", "fieldwire vs procore"],
-  },
-  {
-    slug: "servicetitan-vs-housecall-pro",
-    title: "ServiceTitan vs Housecall Pro: FSM Comparison",
-    description: "Compare ServiceTitan and Housecall Pro for field service management. Pricing, features, and more.",
-    tradeIds: ["hvac", "plumbing"],
-    toolIds: ["servicetitan", "housecall-pro"],
-    keywords: ["servicetitan vs housecall pro", "housecall pro vs servicetitan", "field service comparison"],
   },
   {
     slug: "buildertrend-vs-jobtread",
@@ -698,14 +606,6 @@ export const bestForPages: BestForPage[] = [
     tradeIds: ["electrical", "general-contracting"],
     toolIds: ["stack-takeoff", "planswift-review"],
     keywords: ["stack vs planswift", "takeoff software comparison", "cloud takeoff vs desktop"],
-  },
-  {
-    slug: "jobber-vs-fieldedge",
-    title: "Jobber vs FieldEdge: Field Service Comparison",
-    description: "Compare Jobber and FieldEdge for field service management. Pricing, features, and trade focus.",
-    tradeIds: ["hvac", "plumbing", "electrical"],
-    toolIds: ["jobber", "field-edge"],
-    keywords: ["jobber vs fieldedge", "fieldedge vs jobber", "field service software comparison"],
   },
   {
     slug: "buildertrend-vs-knowify",
@@ -764,14 +664,6 @@ export const bestForPages: BestForPage[] = [
     keywords: ["procore vs sage 100", "sage 100 vs procore", "construction software comparison"],
   },
   {
-    slug: "jobber-vs-housecall-pro",
-    title: "Jobber vs Housecall Pro: FSM Comparison",
-    description: "Compare Jobber and Housecall Pro for field service management. Features and pricing.",
-    tradeIds: ["hvac", "plumbing", "electrical"],
-    toolIds: ["jobber", "housecall-pro"],
-    keywords: ["jobber vs housecall pro", "housecall pro vs jobber", "fsm comparison"],
-  },
-  {
     slug: "buildertrend-vs-coconstruct",
     title: "Buildertrend vs CoConstruct: Home Builder Comparison",
     description: "Compare Buildertrend and CoConstruct for home building and remodeling.",
@@ -787,26 +679,9 @@ export const bestForPages: BestForPage[] = [
     tradeId: "general-contracting",
   },
   {
-    slug: "best-hvac-software-small-business",
-    title: "Best HVAC Software for Small Business (2026)",
-    description: "Top-rated HVAC software for small businesses. Affordable, easy to use, and built for HVAC contractors.",
-    keywords: ["best HVAC software small business", "affordable HVAC software", "HVAC software for small contractors"],
-    tradeId: "hvac",
-  },
-  {
     slug: "best-plumbing-software-under-50",
     title: "Best Plumbing Software Under $50/Month (2026)",
     description: "Affordable plumbing business software under $50/month. Service management, invoicing, and scheduling for plumbers.",
     keywords: ["plumbing software under $50", "affordable plumbing software", "best plumbing software budget"],
     tradeId: "plumbing",
   },
-];
-
-// Helper functions
-export function getComparisonBySlug(slug: string): ComparisonPage | undefined {
-  return comparisonPages.find((c) => c.slug === slug);
-}
-
-export function getBestForBySlug(slug: string): BestForPage | undefined {
-  return bestForPages.find((b) => b.slug === slug);
-}
