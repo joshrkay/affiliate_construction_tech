@@ -356,6 +356,27 @@ export const comparisonPages: ComparisonPage[] = [
     keywords: ["jobtread vs jobber", "construction CRM comparison", "contractor CRM"],
     tradeId: "general-contracting",
   },
+  {
+    slug: "electrician-estimating-software",
+    title: "Best Electrician Estimating Software (2026)",
+    description: "Top estimating software for electrical contractors. Features, pricing, and reviews to help electricians bid faster and more accurately.",
+    tradeId: "electrical",
+    keywords: ["electrician estimating software", "electrical contractor estimating", "electrical takeoff software"],
+  },
+  {
+    slug: "plumbing-software-comparison",
+    title: "Plumbing Software Comparison (2026) – Top Picks",
+    description: "Compare top plumbing business software – Jobber, Housecall Pro, ServiceTitan, and more. Find the best fit for your plumbing company.",
+    tradeId: "plumbing",
+    keywords: ["plumbing software comparison", "best plumbing software", "plumbing business management software"],
+  },
+  {
+    slug: "hvac-software-comparison",
+    title: "HVAC Software Comparison (2026) – Best Picks",
+    description: "Compare top HVAC software for contractors – ServiceTitan, FieldEdge, Housecall Pro, and more. Find the right fit for your heating/cooling business.",
+    tradeId: "hvac",
+    keywords: ["HVAC software comparison", "best HVAC software", "HVAC business software"],
+  },
 ];
 
 // SEO-friendly "Best X for Y" pages
