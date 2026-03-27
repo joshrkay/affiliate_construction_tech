@@ -1,0 +1,1 @@
+0 9 * * 6 /usr/bin/node /root/.openclaw/workspace/affiliate_construction_tech/scripts/serp-tracker.cjs >> /root/.openclaw/workspace/affiliate_construction_tech/cron/serp-tracking.log 2>&1

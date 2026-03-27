@@ -331,6 +331,27 @@
     keywords: ["HVAC software comparison", "best HVAC software", "HVAC business software"],
   },
   {
+    slug: "hvac-business-software",
+    title: "HVAC Business Software (2026) – Complete Guide",
+    description: "Top HVAC business software for heating and cooling companies. Scheduling, invoicing, dispatch, and CRM for HVAC contractors.",
+    tradeId: "hvac",
+    keywords: ["HVAC business software", "HVAC company software", "HVAC business management software"],
+  },
+  {
+    slug: "plumbing-business-software",
+    title: "Plumbing Business Software (2026) – Top Picks",
+    description: "Top plumbing business software for plumbers. Scheduling, invoicing, dispatch, and job costing tools for plumbing companies.",
+    tradeId: "plumbing",
+    keywords: ["plumbing business software", "plumbing company software", "plumbing business management software"],
+  },
+  {
+    slug: "electrical-business-software",
+    title: "Electrical Business Software (2026) – Best Tools",
+    description: "Top electrical business software for electricians. Project management, estimating, and business tools for electrical contractors.",
+    tradeId: "electrical",
+    keywords: ["electrical business software", "electrical company software", "electrical business management software"],
+  },
+  {
     slug: "best-construction-software-general-contractors",
     tradeId: "general-contracting",
     title: "Best Construction Management Software for General Contractors (2026)",
