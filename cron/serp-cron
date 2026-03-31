@@ -1,1 +1,3 @@
-0 9 * * 6 /usr/bin/node /root/.openclaw/workspace/affiliate_construction_tech/scripts/serp-tracker.cjs >> /root/.openclaw/workspace/affiliate_construction_tech/cron/serp-tracking.log 2>&1
+# SERP Tracking - Weekly (Every Saturday 9 AM)
+# Uses 40 searches per week = ~160/month of 250 available
+0 9 * * 6 /usr/bin/node /root/.openclaw/workspace/affiliate_construction_tech/scripts/serp-weekly.cjs >> /root/.openclaw/workspace/affiliate_construction_tech/cron/serp-tracking.log 2>&1
