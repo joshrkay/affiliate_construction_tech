@@ -3,6 +3,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "trailingSlash": false,
+  "rewrites": [
+    { "source": "/tools/:path*", "destination": "/tools/:path*/index.html" },
+    { "source": "/best/:path*", "destination": "/best/:path*/index.html" },
+    { "source": "/compare/:path*", "destination": "/compare/:path*/index.html" },
+    { "source": "/trades/:path*", "destination": "/trades/:path*/index.html" },
+    { "source": "/guides/:path*", "destination": "/guides/:path*/index.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
   "headers": [
     {
       "source": "/llms.txt",
