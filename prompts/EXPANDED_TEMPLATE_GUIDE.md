@@ -26,19 +26,21 @@ This approach:
 
 ## Structure Overview
 
-### 7 Core Sections (In Order)
+### 7 Core Sections (Refined Order)
 
 | Section | Buyer Stage | Word Count | Purpose |
 |---------|-------------|-----------|---------|
 | 1. What Is [Category]? | Awareness | 250-400 | Answer "what is this?" Define the category. Show difference from manual/outdated approach. |
 | 2. The Real Cost of [Manual/Old Way] | Awareness→Consideration | 300-400 | Show business impact. Numbers: time wasted, money lost, stress. Make it relatable. |
-| 3. How to Choose [Category] Software | Consideration | 400-500 | Decision framework. 4-5 criteria to evaluate. Tradeoffs explained. When you DON'T need software. |
-| 4. [Category] vs [Old Way] | Objection Handling | 250-350 | Address "do I really need this?" Head-to-head comparison. Break-even point. |
-| 5. Key Features to Compare | Decision (Pre-tool) | 300-400 | Educate on what matters. 4-5 features, why each matters, contractor examples. |
+| 3. [Category] vs [Old Way] | Objection Handling | 250-350 | Address "do I really need this?" Head-to-head comparison. Break-even point. |
+| 4. Key Features to Compare | Decision (Pre-tool) | 300-400 | Educate on what matters. 4-5 features, why each matters, contractor examples. |
+| 5. How to Choose [Category] Software | Consideration→Decision | 400-500 | Decision framework. 4-5 criteria to evaluate. Tradeoffs explained. When you DON'T need software. (Moved later for context) |
 | 6. Top [Category] Software (2025) | Decision | 400-600 | 3-4 tool recommendations. Who it's best for, pricing, honest limitations. |
 | 7. Pricing & ROI | Decision (Late Stage) | 250-400 | Cost breakdown. ROI calculation. Hidden costs. Payback period. |
 
 **Total target: 2,500-3,500 words**
+
+**Reordering Rationale**: Moving "How to Choose" (Section 5) later allows reader to have context before evaluating criteria. They've already decided whether they need software, understand what's possible, and know the costs. The decision framework feels more relevant in this order.
 
 ---
 
@@ -104,38 +106,7 @@ That's $10,000+ per year in pure overhead. Invoicing software costs $100-300/mon
 
 ---
 
-### Section 3: How to Choose [Category] Software
-
-**Purpose**: Consideration stage. Create a decision framework contractors can reuse.
-
-**Formula**:
-1. Intro: "Not all [category] software is built for construction"
-2. List 4-5 evaluation criteria (in priority order)
-3. For each criterion: What it is (1 sentence) + Why it matters (1-2 sentences) + Contractor example
-4. End with actionable checkpoint
-
-**Word Count**: 400-500 words
-
-**Example (Customer-Invoicing)**:
-```
-1. Can it handle progress billing? Most construction projects have multiple billing events (25% down payment, 50% at frame-up, 25% at close). If your software forces you to create separate jobs instead of phases, it's wrong.
-
-2. Does it integrate with your accounting system? If you use QuickBooks, does the invoicing software sync automatically? Or do you hand-enter invoices twice? Manual entry = wasted time + errors.
-
-3. Can customers pay online? This single feature cuts payment time by 5-10 days. Non-negotiable.
-
-[etc. for 4-5 criteria]
-```
-
-**Key Requirements**:
-- ✅ Criteria are construction-specific (not generic "reporting" or "automation")
-- ✅ Each criterion explains trade-offs (what you lose if you skip it)
-- ✅ Practical examples contractors relate to
-- ✅ Prioritized by importance (most critical first)
-
----
-
-### Section 4: [Category] vs [Old Way]
+### Section 3: [Category] vs [Old Way]
 
 **Purpose**: Objection handling. Address "do I really need this?" directly.
 
@@ -165,13 +136,13 @@ The breaking point: Most contractors switch to invoicing software once they hit 
 ```
 
 **Key Requirements**:
-- ✅ Be brutally honest (spreadsheets ARE fine in some cases)
+- ✅ Be brutally honest (old way IS fine in some cases)
 - ✅ Clear break-even point (volume, complexity, frequency)
 - ✅ Tells reader exactly when to switch
 
 ---
 
-### Section 5: Key Features to Compare
+### Section 4: Key Features to Compare
 
 **Purpose**: Pre-tool education. Teach readers what matters before showing specific tools.
 
@@ -199,6 +170,37 @@ Contractor example: You invoice for phase 1, customer pays, then you move on to 
 - ✅ Explains trade-offs (what you lose without it)
 - ✅ Real contractor use-case for each feature
 - ✅ Reader understands feature importance before seeing tool comparison
+
+---
+
+### Section 5: How to Choose [Category] Software
+
+**Purpose**: Consideration→Decision stage. Create a decision framework contractors can reuse.
+
+**Formula**:
+1. Intro: "Not all [category] software is built for construction"
+2. List 4-5 evaluation criteria (in priority order)
+3. For each criterion: What it is (1 sentence) + Why it matters (1-2 sentences) + Contractor example
+4. End with actionable checkpoint
+
+**Word Count**: 400-500 words
+
+**Example (Customer-Invoicing)**:
+```
+1. Can it handle progress billing? Most construction projects have multiple billing events (25% down payment, 50% at frame-up, 25% at close). If your software forces you to create separate jobs instead of phases, it's wrong.
+
+2. Does it integrate with your accounting system? If you use QuickBooks, does the invoicing software sync automatically? Or do you hand-enter invoices twice? Manual entry = wasted time + errors.
+
+3. Can customers pay online? This single feature cuts payment time by 5-10 days. Non-negotiable.
+
+[etc. for 4-5 criteria]
+```
+
+**Key Requirements**:
+- ✅ Criteria are construction-specific (not generic "reporting" or "automation")
+- ✅ Each criterion explains trade-offs (what you lose if you skip it)
+- ✅ Practical examples contractors relate to
+- ✅ Prioritized by importance (most critical first)
 
 ---
 
@@ -240,6 +242,8 @@ Limitation: Overkill for service contractors doing 50 small jobs monthly. Better
 ### Section 7: Pricing & ROI
 
 **Purpose**: Late-stage decision. Address "how much will this cost?" and "will it pay for itself?"
+
+**Note**: This section remains last to build trust and ROI case after tool comparison.
 
 **Formula**:
 1. Cost breakdown table (3-4 tools, annual cost)
@@ -433,13 +437,15 @@ Define 5 columns specific to this category (not generic "pricing" or "support").
 
 ## Quality Checklist Before Publishing
 
-Every expanded page should pass:
+Every expanded page should pass all **19 checks** (16 original + 3 new categories):
+
+### Original 16 Checks
 
 - [ ] **Section 1**: Answers "what is this?" with real scenario
 - [ ] **Section 2**: Shows specific dollar impact ($X saved/lost)
-- [ ] **Section 3**: Decision framework is practical, 4-5 criteria
-- [ ] **Section 4**: Honest about when old way is fine
-- [ ] **Section 5**: Features explained with contractor examples
+- [ ] **Section 3**: Honest about when old way is fine, clear break-even point
+- [ ] **Section 4**: Features explained with contractor examples
+- [ ] **Section 5**: Decision framework is practical, 4-5 criteria
 - [ ] **Section 6**: 3-4 tools, each with honest limitation
 - [ ] **Section 7**: ROI calculation with concrete payback period
 - [ ] **Intro**: Hooks with real problem, not generic opening
@@ -451,6 +457,24 @@ Every expanded page should pass:
 - [ ] **Contractor Language**: Would a field contractor reading this say "yep, that's right"?
 - [ ] **Honest Limitations**: Each tool has a real limitation, not just pros
 - [ ] **CTAs**: Benefit-focused, not generic "Learn More"
+
+### New: Contractor Credibility Checks (3 new)
+
+- [ ] **Authentic Examples**: Examples feel authentic to real construction workflows
+- [ ] **Realistic Numbers**: Numbers cited match actual contractor experiences (e.g., "5 hours/week," "$75K in unpaid invoices")
+- [ ] **Real Pain Points**: Pain points described match real job site challenges (not theoretical)
+
+### New: Comparison Fairness Checks (3 new)
+
+- [ ] **Balanced Strengths & Limitations**: Each tool has both strengths AND honest limitations
+- [ ] **Real Limitations**: Limitations are substantial and real, not nitpicking minor features
+- [ ] **Accurate Positioning**: "Best for" positioning is specific and matches tool strengths
+
+### New: SEO Structure Validation (3 new)
+
+- [ ] **Keyword-Aligned Headings**: H2 headings match target keywords where appropriate
+- [ ] **Keyword Density**: ~1-2% for primary keyword, ~0.5-1% for secondary keywords
+- [ ] **Clean Hierarchy**: H2→H3 hierarchy is logical; meta description is compelling and accurate
 
 ---
 
