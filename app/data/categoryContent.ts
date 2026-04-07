@@ -2339,5 +2339,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["project-estimating", "financial-management", "field-time-tracking"],
     relatedTools: ["procore", "zapier", "make"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "mobile-field-apps", categoryId: "mobile-field-apps", language: "en",
+    title: "Best Mobile Apps for Construction Field Teams (2025)",
+    metaDescription: "Compare the best mobile apps for construction field workers. CompanyCam, Raken, and Fieldwire reviewed — photo documentation, daily reports, and field management that crews actually use.",
+    h1: "Best Mobile Apps for Construction Field Teams (2025)",
+    introduction: "Your superintendent is 40 feet up with dirty gloves trying to log a daily report before the PM asks why it's not in the system. If the app requires 12 taps, a login, and wifi, it doesn't get used. Field app adoption is the metric that matters — a platform with 20% crew adoption isn't an app, it's expensive shelf-ware.",
+    whyItMatters: "Purpose-built field apps win on adoption because they were designed for someone in boots, not at a desk. Three distinct workflows need three different tool types: photo documentation (CompanyCam), daily reporting (Raken), and plan access with task management (Fieldwire). Forcing one platform to do all three usually means none of them work well.",
+
+    toolsToCompare: ["companycam", "raken", "fieldwire"],
+    comparisonTableColumns: [
+      { key: "photo-documentation", label: "Photo Documentation" },
+      { key: "daily-reports", label: "Daily Reports" },
+      { key: "plan-access", label: "Plan Access" },
+      { key: "offline-capability", label: "Offline Mode" },
+      { key: "punch-list", label: "Punch Lists" }
+    ],
+
+    sections: [
+      {
+        heading: "Three Different Jobs, Three Different Apps",
+        content: "<p>Field mobile apps cover distinct workflows that get conflated:</p><p><strong>Photo documentation</strong> — capturing, organizing, and sharing job site photos with location, timestamp, and annotation. CompanyCam is purpose-built for this.</p><p><strong>Daily reporting</strong> — logging crew counts, weather, work performed, equipment, and issues. Raken is the specialist.</p><p><strong>Full field management</strong> — plans, RFIs, punch lists, submittals, and issue tracking from mobile. Fieldwire and Procore Mobile compete here.</p>",
+        type: "text"
+      },
+      {
+        heading: "Choosing the Right Combination",
+        content: "<p><strong>Commercial GC ($2M+ project):</strong> Fieldwire for plan access and punch lists, Raken for daily reports.</p><p><strong>Residential remodeler or specialty contractor:</strong> CompanyCam for job site documentation, Raken for daily logs if managing multiple crews.</p><p><strong>Service company (HVAC, plumbing, electrical):</strong> CompanyCam is the highest-value tool — photo documentation before and after every service call protects you from disputes and speeds up billing.</p><p><strong>Small GC under $1M:</strong> Raken's entry tier for daily reporting. Test CompanyCam's free trial before committing.</p>",
+        type: "text"
+      },
+      {
+        heading: "Getting Field Workers to Actually Use the App",
+        content: "<p><strong>Remove the alternative first.</strong> If paper daily report forms still exist alongside the app, supers use paper. Remove the paper.</p><p><strong>Start with one workflow.</strong> Don't roll out all three apps simultaneously. Get daily reporting habitual before adding photo documentation.</p><p><strong>Make it count for something.</strong> If the PM never looks at the daily reports, supers stop filing them. Close the loop — acknowledge what field workers capture and they keep capturing it.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Get your field team documenting from day one",
+    primaryToolId: "companycam",
+    secondaryToolIds: ["raken", "fieldwire"],
+
+    keywords: [
+      "mobile apps for construction field teams",
+      "construction field app",
+      "construction daily report app",
+      "best construction app iPhone",
+      "job site app"
+    ],
+
+    faqs: [
+      { question: "What is the best construction app for an iPhone?", answer: "CompanyCam for photo documentation, Raken for daily reports, and Fieldwire for plan access are the top purpose-built field apps for iPhone. All three have strong iOS apps with offline capability and have been optimized for field conditions — large tap targets, minimal typing, and fast photo workflows." },
+      { question: "Can field workers use construction apps without wifi or cell service?", answer: "Yes — all three apps have genuine offline capability. CompanyCam stores photos locally and syncs on reconnect. Raken daily reports work fully offline. Fieldwire lets you download full plan sets before going on-site and work without any connection. Sync happens automatically when connectivity returns." },
+      { question: "What's the difference between CompanyCam and just using iPhone photos?", answer: "iPhone photos are unorganized, mixed with personal photos, and have no project tagging. CompanyCam automatically tags every photo with the project, GPS location, timestamp, and photographer, then syncs to a shared team timeline. You can generate a photo report in one tap. For dispute protection and client communication, the organization difference is significant." },
+      { question: "Does Raken replace my project management software's daily log?", answer: "It depends on your PM platform. Raken's daily report is faster and more field-friendly than Procore or Buildertrend's built-in daily log. If your PM platform's daily log takes 15 minutes, Raken at 5 minutes will get better adoption. Some contractors use Raken for field collection and sync it to their PM platform; others run them separately." },
+      { question: "How much does it cost to equip a crew of 10 with field apps?", answer: "CompanyCam + Raken at $39/user/month for 10 users = $390/month. Adding Fieldwire at $54/user brings the full stack to $93/user/month or $930/month for 10. In practice, most crews need 1–2 of these tools, not all three. Service companies can often get by with CompanyCam alone." },
+      { question: "¿Cuál es la mejor aplicación móvil para trabajadores de construcción en campo?", answer: "Para documentación fotográfica, CompanyCam ($24-49/usuario/mes) es la mejor opción con etiquetado automático de GPS y sincronización sin conexión. Para reportes diarios y registros de seguridad, Raken ($15-50/usuario/mes) tiene el flujo de trabajo más rápido con dictado por voz. Para acceso a planos y gestión de tareas, Fieldwire (gratis hasta $99/usuario/mes) permite descargar planos completos para trabajar sin conexión." }
+    ],
+
+    relatedCategories: ["photo-documentation", "field-crew-scheduling", "field-time-tracking"],
+    relatedTools: ["companycam", "raken", "fieldwire"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
