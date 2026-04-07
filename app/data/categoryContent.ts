@@ -2217,5 +2217,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["field-crew-scheduling", "photo-documentation", "project-document-management"],
     relatedTools: ["procore", "iauditor", "assignar"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "lien-contract-management", categoryId: "lien-contract-management", language: "en",
+    title: "Best Lien and Contract Management Software for Contractors (2025)",
+    metaDescription: "Compare lien management software for contractors. Levelset, DocuSign CLM, and LienItNow reviewed — preliminary notices, lien filing deadlines, and contract management for GCs and subs.",
+    h1: "Best Lien and Contract Management Software for Contractors (2025)",
+    introduction: "Miss a preliminary notice deadline by one day and you've waived your lien rights in most states. Miss the lien filing window and you become an unsecured creditor — last in line if the owner doesn't pay. Lien and contract management software tracks these non-negotiable deadlines automatically so you stop losing six-figure receivables to paperwork errors.",
+    whyItMatters: "Lien law varies by state, claimant tier, and project type in ways that catch contractors off guard. Preliminary notice requirements, lien filing windows, and bond claim deadlines are all different. Manual tracking across multiple active projects is where money gets lost.",
+
+    toolsToCompare: ["levelset", "docusign", "lienitnnow"],
+    comparisonTableColumns: [
+      { key: "preliminary-notice-tracking", label: "Preliminary Notices" },
+      { key: "lien-filing", label: "Lien Filing" },
+      { key: "waiver-management", label: "Waiver Management" },
+      { key: "contract-management", label: "Contract Management" },
+      { key: "payment-dispute-tools", label: "Payment Disputes" }
+    ],
+
+    sections: [
+      {
+        heading: "The Deadline Problem Is Worse Than You Think",
+        content: "<p>Preliminary notices are required before you can file a lien in most states — and must be sent within a specific window after first furnishing labor or materials, often 20 days in California, Texas, and Florida. Miss it, and you've forfeited lien rights for all work delivered before the notice.</p><p>Sub-tier requirements add another layer: first-tier subs, material suppliers, and sub-subs each have different notice requirements. Lien filing windows vary by state (60–90 days is common), and public projects replace liens with bond claims that often have shorter deadlines.</p>",
+        type: "text"
+      },
+      {
+        heading: "Lien Management vs. Contract Management",
+        content: "<p><strong>Lien management</strong> covers preliminary notices, lien filings, lien waivers, and bond claims. The goal is protecting your right to get paid.</p><p><strong>Contract management</strong> covers contract creation, review, execution, change orders, and compliance tracking. The goal is clear scope, clear terms, and a documented record when disputes arise.</p><p>Levelset handles lien management. DocuSign CLM handles contract management. They solve different problems — knowing which is costing you more money determines where to start.</p>",
+        type: "text"
+      },
+      {
+        heading: "Decision Framework",
+        content: "<p><strong>Fewer than 10 liens per year:</strong> LienItNow's pay-per-filing model. No monthly commitment.</p><p><strong>Multi-state work or regular preliminary notices:</strong> Levelset. Missing one preliminary notice in California on a $200K job costs more than a year of the subscription.</p><p><strong>Biggest problem is subcontract disputes, not collections:</strong> DocuSign CLM. If you're losing money to scope creep and expired insurance certificates, CLM solves that.</p><p><strong>GC collecting waivers from 20+ subs per project:</strong> Levelset's waiver module eliminates hours of manual follow-up before each draw.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Stop losing receivables to missed deadlines",
+    primaryToolId: "levelset",
+    secondaryToolIds: ["docusign", "lienitnnow"],
+
+    keywords: [
+      "lien management software contractors",
+      "preliminary notice software",
+      "mechanics lien software",
+      "construction contract management",
+      "lien waiver management software"
+    ],
+
+    faqs: [
+      { question: "What is a preliminary notice and do I need to send one?", answer: "A preliminary notice (also called Notice to Owner, Notice to Contractor, or Pre-Lien Notice depending on the state) preserves your right to file a mechanic's lien if unpaid. It's mandatory in California, Texas, Florida, Colorado, Arizona, and most other states. Missing a mandatory preliminary notice deadline waives your lien rights for work done before the notice." },
+      { question: "How long do I have to file a mechanic's lien?", answer: "The window varies by state. Common windows: 60 days (California for subs and suppliers on private projects), 90 days (Texas for most claimants), 120 days (Florida). The clock typically starts from your last day furnishing labor or materials — not from when payment was due. Public projects have bond claim deadlines instead, which are often shorter." },
+      { question: "Do lien rights apply to public projects?", answer: "Mechanics liens cannot be filed against public property. Subcontractors and suppliers on public projects have rights against the contractor's payment bond instead — required by the Miller Act on federal projects and state Little Miller Acts on state/local projects. Bond claim deadlines are often 90 days from last furnishing and must be strictly observed." },
+      { question: "What's the difference between conditional and unconditional lien waivers?", answer: "A conditional waiver takes effect only when payment actually clears — if the check bounces, your lien rights are preserved. An unconditional waiver takes effect immediately upon signing, regardless of whether payment clears. Never sign an unconditional waiver until payment has fully cleared. Levelset and LienItNow both provide state-compliant waiver templates." },
+      { question: "Can a GC prevent subs from filing liens?", answer: "A GC can require no-lien agreements as a contract condition in some states, but many states (including California, Texas, and most major construction states) prohibit these clauses in private project subcontracts as contrary to public policy. No-lien clauses are generally unenforceable for private work in most states." },
+      { question: "¿Qué software es mejor para gestionar avisos previos y gravámenes mecánicos en Estados Unidos?", answer: "Para contratistas que trabajan en múltiples estados o en mercados de alto riesgo como California, Texas o Florida, Levelset ($699+/mes) es la mejor opción por su seguimiento automatizado de plazos y envío de avisos previos. Para contratistas que presentan gravámenes ocasionalmente, LienItNow ofrece preparación de documentos por presentación ($50-150) sin compromiso mensual. Para gestión de contratos de subcontratistas, DocuSign CLM es la herramienta adecuada." }
+    ],
+
+    relatedCategories: ["bid-management", "project-document-management", "financial-management"],
+    relatedTools: ["levelset", "docusign", "lienitnnow"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
