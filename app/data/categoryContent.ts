@@ -2473,5 +2473,183 @@ export const categoryPages: CategoryPage[] = [
     published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "ai-document-processing", categoryId: "ai-document-processing", language: "en",
+    title: "Best AI Document Processing Tools for Construction (2025)",
+    metaDescription: "Compare AI document processing tools for construction. Procore Copilot, Document Crunch, and Corecon reviewed — RFI automation, submittal review, and contract risk analysis for GCs.",
+    h1: "Best AI Document Processing Tools for Construction (2025)",
+    introduction: "A PM on a $10M commercial project spends 10–15 hours per week on document processing: reading submittals, cross-referencing specs, drafting RFI responses, reviewing plan revisions. Most of that time is mechanical work AI can accelerate — extracting data, flagging conflicts, drafting first-pass responses. The best tools turn a 45-minute submittal review into a 10-minute approval.",
+    whyItMatters: "Construction AI is genuinely useful for specific tasks today: document search across large project archives, first-draft generation for standard documents, structured data extraction, and contract clause flagging. It still requires human review before acting on outputs — use it to go faster, not to remove the human from decisions.",
+
+    toolsToCompare: ["procore", "document-crunch", "corecon"],
+    comparisonTableColumns: [
+      { key: "document-search", label: "Doc Search" },
+      { key: "submittal-review", label: "Submittal Review" },
+      { key: "contract-analysis", label: "Contract Analysis" },
+      { key: "rfi-drafting", label: "RFI Drafting" },
+      { key: "pm-integration", label: "PM Integration" }
+    ],
+
+    sections: [
+      {
+        heading: "What AI Document Processing Can (and Can't) Do Today",
+        content: "<p><strong>Works well now:</strong> Structured data extraction from consistently formatted documents, natural language search across project archives, first-draft generation for standard RFIs and daily logs, contract clause identification and risk flagging.</p><p><strong>Still maturing:</strong> Complex multi-document cross-referencing, handwritten document processing, design intent interpretation requiring engineering judgment, and plan analysis for constructability issues.</p><p><strong>The hallucination rule:</strong> Any AI-extracted data that will affect a decision needs human verification. AI output in construction accelerates human review — it doesn't replace it.</p>",
+        type: "text"
+      },
+      {
+        heading: "Three Tools for Three Different AI Needs",
+        content: "<p><strong>Procore Copilot</strong> is the right choice if you're already on Procore. Natural language document search alone — asking \"what does the spec say about waterproofing membrane thickness?\" and getting the relevant section in seconds — delivers ROI on large projects.</p><p><strong>Document Crunch</strong> solves contract review specifically. For GCs reviewing 10+ subcontracts per year, it provides a fast first-pass risk assessment that surfaces bad indemnification language and missing insurance requirements without reading every contract from scratch.</p><p><strong>Corecon</strong> targets the mid-market GC drowning in document entry. AI extraction reduces manual data entry on RFI logs, submittal logs, and change order requests.</p>",
+        type: "text"
+      },
+      {
+        heading: "Where to Start with Construction AI",
+        content: "<p><strong>On Procore:</strong> Enable Copilot document search first. It's the highest-adoption feature and requires no workflow change — PMs search naturally and build the habit gradually.</p><p><strong>Not on Procore, reviewing 10+ subcontracts per year:</strong> Document Crunch. The first contract it catches a bad indemnification clause on pays for months of subscription.</p><p><strong>Mid-market GC overwhelmed by document entry:</strong> Corecon's AI extraction reduces the manual burden on project administrators for RFI and submittal log population.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Cut your document processing time in half",
+    primaryToolId: "procore",
+    secondaryToolIds: ["document-crunch", "corecon"],
+
+    keywords: [
+      "AI document processing construction",
+      "AI for construction RFIs",
+      "construction document automation",
+      "Procore AI features",
+      "submittal review software"
+    ],
+
+    faqs: [
+      { question: "Does Procore have AI features?", answer: "Yes — Procore Copilot includes natural language document search, RFI response drafting, daily log summarization, and submittal review assistance. Copilot features are rolling out across plan tiers through 2025. Confirm which features are live on your specific plan before buying specifically for AI capability." },
+      { question: "Can AI read construction drawings and plans?", answer: "AI can identify elements in plan sets — rooms, dimensions, symbols, annotations — with improving accuracy. Tools like Procore Copilot can search drawing notes. However, complex plan analysis (identifying constructability issues, verifying coordination between mechanical and structural drawings) still requires human review. Drawing AI is improving but isn't ready for autonomous analysis." },
+      { question: "What is Document Crunch and what does it do?", answer: "Document Crunch is an AI platform that analyzes construction contracts and flags high-risk clauses. Upload a subcontract and it identifies indemnification language, pay-if-paid clauses, waiver of consequential damages provisions, and missing insurance requirements — in plain language, in minutes. It's not a substitute for legal review on high-value contracts, but it provides a fast first-pass risk assessment for standard subcontracts." },
+      { question: "Is AI document processing reliable enough to use on real projects?", answer: "For specific, well-defined tasks — extracting data from standard form documents, searching project archives, flagging contract clauses — yes. For tasks requiring judgment — interpreting design intent, evaluating constructability, making contract decisions — AI output requires human review. Use it to go faster, not to remove the human from decisions." },
+      { question: "How does AI handle non-standard or project-specific document formats?", answer: "AI tools perform best on documents they've been trained on at scale: AIA contracts, CSI-formatted specs, standard submittal covers, RFI log formats. Non-standard, project-specific formats perform worse. If your company uses heavily customized templates, expect a longer period before AI extraction accuracy reaches useful levels." },
+      { question: "¿Pueden las herramientas de inteligencia artificial procesar documentos de construcción en español?", answer: "La mayoría de las herramientas actuales están optimizadas para inglés. Procore Copilot tiene capacidad multilingüe limitada. Para contratistas con documentación en español, la extracción de datos estructurados (campos de formularios, números de referencia) es más confiable que el análisis de texto libre. Se espera que el soporte multilingüe mejore significativamente en 2025-2026." }
+    ],
+
+    relatedCategories: ["ai-powered-project-management", "project-document-management", "bid-management"],
+    relatedTools: ["procore", "document-crunch", "corecon"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "tax-reporting", categoryId: "tax-reporting", language: "en",
+    title: "Best Tax Reporting Software for Construction Contractors (2025)",
+    metaDescription: "Compare tax and payroll compliance software for construction. QuickBooks, Sage 300, and LCP Tracker reviewed — 1099 tracking, certified payroll, and construction-specific tax compliance.",
+    h1: "Best Tax Reporting Software for Construction Contractors (2025)",
+    introduction: "Construction tax compliance has layers generic accounting software doesn't handle: certified payroll on prevailing wage jobs, 1099-NEC filing for every sub over $600, sales tax rules that vary by state and project type, and revenue recognition methods that affect your tax bill by tens of thousands. The tools in this guide reduce the manual work and give your CPA cleaner data.",
+    whyItMatters: "Most construction companies manage tax compliance with QuickBooks, a spreadsheet for certified payroll, and a CPA who asks the same questions every March. The right software stack eliminates the certified payroll hours, catches the 1099 problems before January, and ensures your job cost data maps correctly to your tax categories.",
+
+    toolsToCompare: ["quickbooks", "sage-300", "lcp-tracker"],
+    comparisonTableColumns: [
+      { key: "1099-tracking", label: "1099 Tracking" },
+      { key: "certified-payroll", label: "Certified Payroll" },
+      { key: "job-cost-reporting", label: "Job Cost Reporting" },
+      { key: "aia-billing", label: "AIA Billing" },
+      { key: "sales-tax", label: "Sales Tax" }
+    ],
+
+    sections: [
+      {
+        heading: "The Four Tax Compliance Problems Specific to Construction",
+        content: "<p><strong>Certified payroll:</strong> Federal Form WH-347 required weekly on every prevailing wage job — matching actual payroll to the correct trade classification and wage rate for each worker. Missing a submission triggers back pay liability.</p><p><strong>1099-NEC filing:</strong> Every sub paid $600+ in a calendar year requires a 1099-NEC by January 31. The most common failure is not collecting W-9 forms before paying — fix this by making W-9 collection part of subcontract onboarding.</p><p><strong>Revenue recognition:</strong> Percentage-of-completion vs. completed-contract method affects when income is recognized. The Tax Cuts and Jobs Act (2017) changed who qualifies for completed-contract. Consult a construction CPA.</p><p><strong>Sales tax on materials:</strong> Most states exempt materials installed into real property but the rules differ by state, project type, and whether you're doing service work or new construction.</p>",
+        type: "text"
+      },
+      {
+        heading: "Decision Framework by Revenue and Prevailing Wage Exposure",
+        content: "<p><strong>Under $1M, no prevailing wage:</strong> QuickBooks at $30–60/month. Track subs as 1099 vendors from day one. Collect W-9 before first payment.</p><p><strong>$1M–$5M, occasional prevailing wage:</strong> QuickBooks + LCP Tracker on public jobs only. Add LCP Tracker when you win a prevailing wage contract.</p><p><strong>$5M–$10M, multiple prevailing wage jobs:</strong> QuickBooks + LCP Tracker as a permanent stack.</p><p><strong>$10M+:</strong> Evaluate Sage 300 CRE. Certified payroll, AIA billing, and percentage-of-completion accounting in one platform justifies the implementation cost at this scale.</p>",
+        type: "text"
+      },
+      {
+        heading: "The W-9 Problem Every Contractor Should Fix Now",
+        content: "<p>The most common 1099 failure: not collecting W-9 forms before paying subs. At year-end you need the sub's legal name, address, and EIN to file the 1099-NEC. Chase it in January when they're not responsive and you're filing late or incomplete.</p><p><strong>Fix:</strong> No W-9 on file = no payment issued. Make it a policy before the next sub starts work. QuickBooks lets you flag vendors as 1099-required and track whether a W-9 has been received.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Get your construction books tax-ready",
+    primaryToolId: "quickbooks",
+    secondaryToolIds: ["sage-300", "lcp-tracker"],
+
+    keywords: [
+      "tax reporting software construction contractors",
+      "certified payroll software construction",
+      "1099 software for contractors",
+      "construction accounting software taxes",
+      "prevailing wage software"
+    ],
+
+    faqs: [
+      { question: "What is certified payroll and when is it required?", answer: "Certified payroll is a weekly payroll report (federal Form WH-347) required on federally funded and most state-funded public projects under the Davis-Bacon Act. It documents that every worker was paid at least the prevailing wage for their trade classification in that county. Required for every week any worker is on the job, submitted to the contracting agency within the required timeframe." },
+      { question: "Does QuickBooks handle certified payroll for construction?", answer: "Not natively. QuickBooks handles standard W-2 payroll, 941 filings, and 1099-NEC preparation well, but it doesn't generate the WH-347 certified payroll report. For certified payroll you need a separate tool like LCP Tracker or B2W Compliance, or a construction-specific platform like Sage 300 CRE with a certified payroll module." },
+      { question: "How do I track 1099s for subcontractors in QuickBooks?", answer: "Set up each subcontractor as a vendor and mark them as a 1099 vendor. Collect their W-9 before issuing the first payment. QuickBooks tracks all payments to 1099-marked vendors throughout the year. At year-end, use the 1099 wizard to review payments and generate 1099-NEC forms for e-filing. The process takes a few hours if data has been entered correctly throughout the year." },
+      { question: "Is sales tax charged on construction contracts?", answer: "It depends on the state and project type. Most states treat construction contractors as the end consumer of materials — you pay sales tax when you buy materials and don't charge it on the contract price. Some states (Washington, New Mexico, Hawaii) have different rules. Service work vs. new construction is often treated differently. Get a definitive answer from a construction CPA licensed in your state." },
+      { question: "What is the percentage-of-completion method and do I have to use it?", answer: "Percentage-of-completion recognizes revenue as work progresses based on project completion percentage. Under the Tax Cuts and Jobs Act (2017), contractors with average annual gross receipts under $26 million (2024 threshold, indexed for inflation) can use the completed-contract method, which defers revenue recognition until project completion. The choice has significant tax timing implications — consult a construction CPA before deciding." },
+      { question: "¿Qué software es mejor para la nómina certificada y los impuestos en proyectos de construcción pública en Estados Unidos?", answer: "Para nómina certificada (Formulario WH-347), LCP Tracker ($150-500+/mes) es la opción más utilizada — se integra con QuickBooks y genera los reportes semanales automáticamente. Para empresas con ingresos superiores a $10M, Sage 300 CRE incluye módulos de nómina certificada con contabilidad de costos de trabajo y facturación AIA. Para seguimiento de 1099, QuickBooks es el estándar — configure cada subcontratista como proveedor con requisito de 1099 desde el primer pago." }
+    ],
+
+    relatedCategories: ["financial-management", "payroll-management", "field-time-tracking"],
+    relatedTools: ["quickbooks", "sage-300", "lcp-tracker"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "contractor-back-office", categoryId: "contractor-back-office", language: "en",
+    title: "Best Back Office Software for Construction Contractors (2025)",
+    metaDescription: "Compare back office tools for construction contractors. Gusto, Rippling, and DocuSign reviewed — HR compliance, employee onboarding, insurance certificate tracking, and admin software for GCs.",
+    h1: "Best Back Office Software for Construction Contractors (2025)",
+    introduction: "The back office is everything that isn't building: hiring paperwork, I-9 compliance, insurance certificate collection, new hire onboarding, and vendor credentialing. For most contractors under $5M, this lands on one person also doing estimating and project management. The cost of back-office chaos isn't visible until it is — an ICE audit finds I-9 errors at $272–$2,701 per violation, or a sub's certificate lapsed and you don't know it.",
+    whyItMatters: "Four back-office problems specific to construction: I-9 compliance (higher ICE audit rate than most industries), insurance certificate tracking (subs let policies lapse and work continues), field worker onboarding without computer access, and workers' comp audit preparation. The right tools make compliance automatic and paperwork fast.",
+
+    toolsToCompare: ["gusto", "rippling", "docusign"],
+    comparisonTableColumns: [
+      { key: "payroll-processing", label: "Payroll" },
+      { key: "electronic-i9", label: "Electronic I-9" },
+      { key: "mobile-onboarding", label: "Mobile Onboarding" },
+      { key: "e-signature", label: "E-Signature" },
+      { key: "workflow-automation", label: "Automation" }
+    ],
+
+    sections: [
+      {
+        heading: "The Four Back-Office Problems Construction Gets Wrong",
+        content: "<p><strong>I-9 compliance:</strong> Required within 3 business days of first day of work. Construction has a higher ICE audit rate than most industries. Paper binders in job trailers get wet, go missing, and can't be audited. Electronic I-9 systems enforce the rules and store records with an audit trail.</p><p><strong>Insurance certificate tracking:</strong> COIs expire. Most contractors collect the certificate at contract signing and never look at it again. If an uninsured sub causes an accident, the GC's policy pays. myCOI and Procore's compliance module send renewal reminders and block payment to subs with lapsed certificates.</p><p><strong>Field worker onboarding:</strong> Field workers don't have company email or regular computer access. Mobile-first onboarding (Gusto, Rippling) lets new hires complete W-4, I-9 Section 1, direct deposit, and required notices from their phone before their first day.</p><p><strong>Workers' comp audit prep:</strong> Clean payroll records by job classification, organized by project, produce audit-ready documentation automatically. Poor classification documentation means you pay the rate difference retroactively.</p>",
+        type: "text"
+      },
+      {
+        heading: "The Back-Office Stack That Works",
+        content: "<p>Most contractors under $10M need three tools: <strong>Gusto</strong> for HR, payroll, and onboarding (handles compliance workflows automatically), <strong>DocuSign</strong> for subcontracts and any document requiring signature, and <strong>myCOI or Procore</strong> for insurance certificate tracking if you manage multiple active subs.</p><p>That stack costs roughly $150–300/month for a 10–20 employee contractor. Contractors scaling past 20 employees with dedicated HR staff should evaluate Rippling over Gusto for the workflow automation and reporting depth.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Get your back office out of the filing cabinet",
+    primaryToolId: "gusto",
+    secondaryToolIds: ["rippling", "docusign"],
+
+    keywords: [
+      "back office software construction contractors",
+      "HR software for contractors",
+      "construction employee onboarding",
+      "subcontractor insurance tracking",
+      "contractor admin software"
+    ],
+
+    faqs: [
+      { question: "What is the penalty for I-9 errors on a construction company?", answer: "As of 2024, paperwork violations on Form I-9 carry penalties of $272–$2,701 per violation for first offenses. Knowingly hiring unauthorized workers carries $698–$5,579 per worker for first offenses, scaling to $16,733+ per worker for third offenses. Construction has a higher ICE audit rate than most industries — electronic I-9 systems with complete records and audit trails reduce both the error rate and the exposure." },
+      { question: "How do I track subcontractor insurance certificates?", answer: "Require a current certificate of insurance before any sub starts work, enter the expiration date into a tracking system, and set reminders 30 days before expiration. myCOI automates renewal requests and blocks payment to subs with lapsed certificates. Procore's compliance module handles this for GCs already on the platform. A spreadsheet with calendar reminders is the minimum viable approach if you manage fewer than 10 active subs." },
+      { question: "Can field workers complete onboarding paperwork from their phone?", answer: "Yes — both Gusto and Rippling have mobile-optimized onboarding flows for workers without computer access. New hires complete W-4, I-9 Section 1, direct deposit authorization, and required notices from their phone. The employer completes Section 2 of the I-9 in person when reviewing documents. This works better than paper for most field workers because it doesn't require a trip to the office." },
+      { question: "What's the difference between Gusto and Rippling for a construction company?", answer: "Gusto is simpler and less expensive — covers core HR and payroll well for contractors with 5–50 employees. Rippling adds IT management (email and software provisioning), more advanced workflow automation, and more detailed reporting. Worth the additional cost once you're past 20 employees with dedicated HR staff. For most contractors under $3M, Gusto handles everything you need." },
+      { question: "Do I need HR software if I use QuickBooks for payroll?", answer: "QuickBooks Payroll handles payroll processing and tax filing well. It doesn't handle new hire onboarding, electronic I-9, benefits administration, or HR compliance workflows. For contractors under $1M with 1–3 employees, QuickBooks Payroll alone is sufficient. Above that, the compliance overhead of I-9 records, state new hire reporting, and onboarding documentation makes a dedicated HR platform worth the cost." },
+      { question: "¿Cuál es el mejor software de recursos humanos para contratistas de construcción en Estados Unidos?", answer: "Para contratistas con 5 a 100 empleados, Gusto ($46+/mes base más $6-12/persona) es la mejor opción por su incorporación móvil para trabajadores de campo, cumplimiento automático de nómina y proceso electrónico de I-9. Para empresas con más de 20 empleados que necesitan automatización de flujos de trabajo, Rippling ($8+/persona/mes) ofrece más capacidades. Para firma de subcontratos y documentos, DocuSign ($15-40+/usuario/mes) es el estándar de la industria." }
+    ],
+
+    relatedCategories: ["payroll-management", "tax-reporting", "field-time-tracking"],
+    relatedTools: ["gusto", "rippling", "docusign"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
