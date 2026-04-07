@@ -8,14 +8,18 @@
 /**
  * Category Page - The main content structure for each category landing page
  * Holds all content, metadata, and configuration for a single category page
+ *
+ * Supports bilingual content (English + Spanish)
  */
 export interface CategoryPage {
   slug: string
   categoryId: string                   // Reference to Category in categoryTaxonomy
+  language: 'en' | 'es'               // Language version
   title: string                        // SEO title (target 50-60 characters)
   metaDescription: string              // SEO description (target 150-160 characters)
   h1: string                           // Page heading
   introduction: string                 // Lead paragraph (SEO-optimized)
+  whyItMatters?: string                // Why this category matters (business impact)
 
   // Dynamic comparison configuration
   toolsToCompare: string[]             // Tool IDs most relevant to this category (2-5 recommended)
