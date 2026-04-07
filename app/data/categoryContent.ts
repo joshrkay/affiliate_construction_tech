@@ -2400,5 +2400,78 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["photo-documentation", "field-crew-scheduling", "field-time-tracking"],
     relatedTools: ["companycam", "raken", "fieldwire"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  // ========== LANDSCAPE MANAGEMENT ==========
+  {
+    slug: "landscape-management",
+    categoryId: "landscape-management",
+    language: "en",
+    title: "Best Landscape Business Management Software for 2025",
+    metaDescription: "Compare the top 4 landscape business management platforms for 2025. Real pricing ($29–$400/month), honest limitations, and ROI math for landscape contractors running 1–5 crews.",
+    h1: "Best Landscape Business Management Software for 2025",
+    introduction: "<p>Running a landscape company on paper or spreadsheets starts falling apart the moment you have more than a handful of recurring clients. Crews miss stops because the schedule changed and no one got the memo. You invoice a client twice for the same job, or worse, forget to invoice them at all. A commercial account with 40 properties needs a weekly mow but your foreman is working off a printed sheet from last Monday.</p><p>Landscape business management software puts scheduling, crew dispatch, invoicing, and customer communication on one platform — and you and your crew access it from the field, not from a desk. This page breaks down what these tools do, what to look for when comparing them, and which platforms are worth considering in 2025.</p>",
+    whyItMatters: "<p>Running landscape routes on paper or spreadsheets has real dollar costs — most just haven't run the numbers. The losses show up in three places: missed revenue, labor waste, and client churn.</p><p><strong>Missed revenue from billing gaps:</strong> Per Jobber's 2024 State of Home Service Trades report, 5–15% of completed work at field service companies is never invoiced. On a $600K landscape business, that's $30,000–$90,000 in annual revenue that walks out the door.</p><p><strong>Labor waste from poor routing:</strong> A crew spending 90 minutes in a truck that could be 45 minutes burns about $35–50/hour in driver wages and fuel. Over a 200-job week, bad routing costs a 3-truck operation $15,000–$25,000 per season.</p><p><strong>Client churn from service inconsistencies:</strong> A commercial maintenance client paying $3,000/month expects consistent service. If a crew misses a stop and the client notices, you get a complaint call. Two or three of those and you're at risk of losing the account.</p>",
+    toolsToCompare: ["jobber", "housecallpro", "servicetitan", "buildertrend"],
+    comparisonTableColumns: [
+      { key: "pricing", label: "Monthly Price" },
+      { key: "best_for", label: "Best For" },
+      { key: "mobile_app", label: "Mobile App" },
+      { key: "route_optimization", label: "Route Optimization" },
+      { key: "recurring_jobs", label: "Recurring Jobs" }
+    ],
+    sections: [
+      {
+        heading: "What Is Landscape Business Management Software?",
+        content: "<p>Landscape business management software is a platform designed for the operational demands of landscape and grounds maintenance contractors. A mid-size landscape operation with 3 crews typically manages 150–300 recurring service stops per week — that's too many jobs to track reliably on a whiteboard or spreadsheet. At a minimum, the software handles scheduling recurring jobs, dispatching crews to job sites, generating invoices, and collecting payments. Better platforms add route optimization, client portals, chemical/material tracking, and crew time cards.</p><p>The defining feature for landscape work is <strong>recurring job management</strong>. Unlike a remodel or a build-out, landscape contracts repeat weekly, biweekly, or monthly for months or years. The software needs to manage that cadence automatically — rescheduling for weather, tracking which properties are done and which aren't, and handling temporary holds without losing the recurrence pattern.</p><p>When it works well, your office manager books a new maintenance contract, the system slots it into the right crew's route, and the platform invoices that client automatically after the first completed service — without you touching it again until renewal.</p>",
+        type: "text"
+      },
+      {
+        heading: "Landscape Software vs. Spreadsheets and Paper",
+        content: "<p>Spreadsheets work fine when you're running 15–20 recurring clients with a single crew. You know the clients, you know the routes, and billing twice a month is manageable. There's no shame in using Excel if your operation genuinely fits that profile. It breaks down at around 30+ recurring clients or 2+ crews.</p><p><strong>The honest case for staying on spreadsheets:</strong> If you're running fewer than 25 recurring clients and you already know your routes cold, the learning curve of new software may not be worth it. Spend your time on sales instead.</p><p><strong>The clear signal you need software:</strong> You've spent 4+ hours in the last month rebuilding a schedule because of weather, crew changes, or new clients. You've had at least one billing dispute because a client said work wasn't done. Or you're adding a second crew and the coordination overhead is starting to eat your mornings.</p>",
+        type: "text"
+      },
+      {
+        heading: "Key Features to Compare in Landscape Management Software",
+        content: "<p>The five features that matter most for landscape work are recurring job management, route optimization, client/property management, mobile app reliability, and automated invoicing. Most field service platforms cover some of these — but not all are built for the recurring, geography-based workflow landscape contractors depend on.</p><p><strong>Recurring Job Management:</strong> You need to set a job once — mow this property every Thursday, apply fertilizer on the first service of each month, skip the week of Thanksgiving — and have the system handle it automatically. Weak platforms make you recreate the job every cycle. Avoid those.</p><p><strong>Route Optimization and Crew Dispatch:</strong> A 3-truck operation can typically cut 30–45 minutes of drive time per truck per day with proper route sequencing, adding up to 90+ hours per season in recovered crew time. The platform should allow you to split commercial accounts across crews and track progress in real time.</p><p><strong>Client and Property Management:</strong> Landscape clients often have multiple properties, gate codes, and specific instructions. The platform should store all of this at the property level, accessible to the crew from their phone before they arrive.</p><p><strong>Mobile App Reliability:</strong> Everything happens in the field on a phone, often with spotty cell service. The app needs to work offline and sync when connected. An app that crashes or loses data in the field is worse than no app.</p><p><strong>Automated Invoicing:</strong> After a crew completes a job, an invoice should generate and send automatically. Platforms that still require you to manually create each invoice eliminate most of the time savings.</p>",
+        type: "text"
+      },
+      {
+        heading: "How to Choose Landscape Business Management Software",
+        content: "<p><strong>Match the platform to your client mix:</strong> If you're mostly residential — individual homeowners, weekly mow and blow, seasonal cleanups — you want a platform built for high-volume, lower-dollar-value recurring jobs. Jobber and HouseCall Pro are built for this model. If you're running commercial maintenance contracts, you need stronger account management, service agreements, and reporting.</p><p><strong>Evaluate the mobile app before you commit:</strong> Ask for a 30-day trial and have your foreman use it for two weeks of real jobs. Most crews resist new apps for the first 2 weeks — that's normal. If they're still fighting it at week 3, the app is the problem.</p><p><strong>Check integration with your accounting software:</strong> If you're already using QuickBooks Online or Xero, confirm the platform syncs invoices and payments without manual entry. Duplicate data entry between two systems kills the time savings.</p><p><strong>Understand the pricing model before scaling:</strong> Some platforms charge per user. At 5 crew members that's manageable; at 20 it gets expensive fast. Map out what you'd pay at your current size and projected size in 2 years.</p><p><strong>When you DON'T need dedicated landscape software:</strong> You run fewer than 25 active clients, use a single crew, and your routes are stable week-to-week. A simple invoicing app plus your phone calendar handles operations adequately.</p>",
+        type: "text"
+      },
+      {
+        heading: "Landscape Software Pricing and ROI",
+        content: "<p>Annual costs across the three primary options: Jobber (Grow) at $49/month ($588/year for up to 5 users); HouseCall Pro (Essentials) at $65/month ($780/year, $30/month per additional user); ServiceTitan at $250–$400/month ($3,000–$4,800/year, per-tech pricing).</p><p><strong>ROI scenario for a $750K landscape company:</strong> Assume 5% of jobs were previously unbilled — that's $37,500 in recovered revenue in year one. Routing optimization saving 30 minutes per truck per day across 3 trucks adds roughly $18,000/season at $35/hour fully loaded. Combined, that's $55,500 in recoverable value against a $780/year software cost. The payback period is about 5 days of operation.</p><p><strong>Hidden costs to budget for:</strong> Onboarding and data migration takes 8–12 hours of your time; crew training runs 2–4 hours per person; QuickBooks or Xero integration setup costs $0–$200. Expect 30–60 days before the system is running smoothly and the time savings are fully realized.</p>",
+        type: "text"
+      }
+    ],
+    primaryCTA: "See Jobber pricing and start a free trial",
+    primaryToolId: "jobber",
+    secondaryToolIds: ["housecallpro", "servicetitan"],
+    keywords: [
+      "landscape business management software",
+      "landscaping scheduling software",
+      "grounds maintenance app",
+      "landscape contractor software",
+      "best landscape software 2025",
+      "Jobber vs HouseCall Pro landscape",
+      "landscape crew scheduling app"
+    ],
+    faqs: [
+      { question: "What is landscape business management software?", answer: "It's a platform that combines job scheduling, crew dispatch, client management, invoicing, and payment collection specifically for landscape contractors. The key capability for landscape is recurring job management — automatically scheduling and tracking weekly or monthly service contracts across multiple properties." },
+      { question: "Do I need dedicated landscape software, or can I use generic job management apps?", answer: "Generic apps work at small scale (under 20 clients, 1 crew). Once you're managing 30+ recurring properties or 2+ crews, generic tools create too much manual overhead. Dedicated landscape platforms handle recurring job scheduling, route optimization, and client portals in ways that generic apps don't." },
+      { question: "How long does it take to set up landscape management software?", answer: "Budget 2–3 weeks for a basic setup. You'll need to import your client list, set up recurring jobs, and train your crew on the mobile app. Most platforms offer onboarding support. Expect full operational efficiency after 4–6 weeks of regular use." },
+      { question: "What's the difference between Jobber and ServiceTitan for landscape?", answer: "Jobber is built for smaller residential-focused operations where simplicity and ease of use matter most. ServiceTitan is built for larger operations with commercial accounts, service agreements, and complex reporting needs. Jobber starts at $29/month; ServiceTitan starts at $200+/month. Most landscape companies under $800K in revenue do better with Jobber." },
+      { question: "Can landscape software handle commercial property maintenance contracts?", answer: "Yes, but the platform needs to support multi-property accounts — one client billed under a service agreement with multiple addresses, each tracked separately. Jobber and HouseCall Pro handle this adequately for mid-size commercial accounts. ServiceTitan handles it better for large commercial portfolios." },
+      { question: "How much does landscape business management software cost?", answer: "Entry-level platforms (Jobber, HouseCall Pro) run $29–$150/month depending on user count and features. Enterprise platforms like ServiceTitan are $200–$400+/month. Annual costs range from $600 to $5,000+ depending on your operation size." },
+      { question: "Which landscape software is best for a solo operator?", answer: "Jobber's Core plan at $29/month is the best value for solo operators. It handles recurring jobs, invoicing, and a basic client portal with minimal complexity. If mobile-first operations are the priority — running everything from your phone — HouseCall Pro is a close second at $50/month." }
+    ],
+    relatedCategories: ["field-crew-scheduling", "customer-invoicing", "field-time-tracking"],
+    relatedTools: ["jobber", "housecallpro", "servicetitan", "buildertrend"],
+    published: true,
+    featured: false,
+    lastUpdated: new Date().toISOString()
   }
 ];
