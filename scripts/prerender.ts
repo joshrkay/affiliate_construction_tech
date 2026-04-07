@@ -10,6 +10,8 @@ import { resolve, dirname } from "path";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
 import { guidePages } from "../app/data/guidePages";
+import { categories } from "../app/data/categoryTaxonomy";
+import { categoryPages } from "../app/data/categoryContent";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
@@ -222,6 +224,30 @@ for (const page of bestForPages) {
         "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
         "datePublished": "2026-03-11",
         "dateModified": "2026-03-13"
+      }
+    ]
+  });
+}
+
+// Category pages
+for (const page of categoryPages) {
+  pages.push({
+    path: `/categories/${page.slug}`,
+    title: page.title,
+    description: page.metaDescription,
+    ogType: "article",
+    canonical: `${BASE_URL}/categories/${page.slug}`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": page.title,
+        "description": page.metaDescription,
+        "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
+        "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
+        "datePublished": page.lastUpdated,
+        "dateModified": page.lastUpdated,
+        "keywords": page.keywords.join(", ")
       }
     ]
   });
