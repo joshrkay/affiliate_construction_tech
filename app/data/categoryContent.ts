@@ -2651,5 +2651,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["payroll-management", "tax-reporting", "field-time-tracking"],
     relatedTools: ["gusto", "rippling", "docusign"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "business-analytics-reporting", categoryId: "business-analytics-reporting", language: "en",
+    title: "Best Business Analytics Software for Construction Companies (2025)",
+    metaDescription: "Compare business analytics tools for construction. Procore Analytics, Sage Intelligence, and Power BI reviewed — job cost reporting, KPI dashboards, and profitability tracking for GCs.",
+    h1: "Best Business Analytics Software for Construction Companies (2025)",
+    introduction: "Most construction companies have the data — job costs in Procore, labor hours in the time tracking app, bid history in estimating. The problem is it lives in four systems and the only combined report is a Friday spreadsheet already a week stale by Monday. Business analytics tools pull that data into dashboards that answer which project types are actually profitable, which PMs consistently overrun budgets, and where your bid-to-win ratio is falling.",
+    whyItMatters: "Without analytics visibility, you're making million-dollar project selection and pricing decisions based on gut feeling and month-old numbers. The KPIs that separate profitable construction companies from unprofitable ones — gross margin by project type, estimated vs. actual cost variance, days sales outstanding, revenue per field worker — require cross-system data that spreadsheets can't sustain.",
+
+    toolsToCompare: ["procore", "sage-300", "power-bi"],
+    comparisonTableColumns: [
+      { key: "cross-project-analysis", label: "Cross-Project Analysis" },
+      { key: "wip-reports", label: "WIP Reports" },
+      { key: "pm-performance", label: "PM Performance" },
+      { key: "cross-system-data", label: "Multi-System Data" },
+      { key: "setup-complexity", label: "Setup" }
+    ],
+
+    sections: [
+      {
+        heading: "The Construction KPIs That Actually Matter",
+        content: "<p><strong>Project profitability:</strong> Gross margin by project type, estimated vs. actual cost variance by phase, change order capture rate.</p><p><strong>Operational performance:</strong> Revenue per field worker, labor efficiency ratio (budgeted vs. actual hours), equipment utilization.</p><p><strong>Sales and pipeline:</strong> Bid-to-win ratio by project type and size, pipeline value by stage, average bid prep time vs. win rate.</p><p><strong>Financial health:</strong> Days sales outstanding, backlog by month, cash flow forecast accuracy.</p>",
+        type: "text"
+      },
+      {
+        heading: "Decision Framework by Revenue and Platform",
+        content: "<p><strong>Under $3M:</strong> Start with reporting built into your existing PM or accounting software. Fix data quality first — analytics doesn't improve bad data.</p><p><strong>$3M–$10M on Procore:</strong> Procore Analytics. Pre-built dashboards, live data, no integration work.</p><p><strong>$5M–$20M on Sage:</strong> Sage Intelligence for WIP schedules, bonding reports, and job cost reporting.</p><p><strong>$10M+ with multiple data sources:</strong> Power BI with a dedicated BI resource. The multi-system connection capability only exists here.</p>",
+        type: "text"
+      },
+      {
+        heading: "The Data Quality Problem That Kills Analytics ROI",
+        content: "<p>Two failures that make construction analytics useless: inconsistent cost code use (PMs dumping costs into miscellaneous codes makes margin-by-phase analysis meaningless) and lagged data entry (batch-entered labor hours make your 'current' job cost report last week's reality).</p><p>Most companies that buy analytics and don't get ROI have a data discipline problem, not a software problem. If PMs won't enter data consistently in the tool you have, they won't in the new one either.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Know which projects are making you money",
+    primaryToolId: "procore",
+    secondaryToolIds: ["sage-300", "power-bi"],
+
+    keywords: [
+      "business analytics software construction",
+      "construction KPI dashboard",
+      "Procore analytics",
+      "construction reporting software",
+      "job cost analytics construction"
+    ],
+
+    faqs: [
+      { question: "What KPIs should a construction company track?", answer: "The most valuable construction KPIs: gross margin by project type (which work is profitable), estimated vs. actual cost variance by PM (who runs over budget), bid-to-win ratio (are you chasing the right work), days sales outstanding (how fast you're collecting), revenue per field worker (labor productivity), and backlog by month (forward revenue visibility)." },
+      { question: "Does Procore have analytics and reporting features?", answer: "Procore has standard project-level reports included with all plans. Procore Analytics is a separate paid add-on enabling cross-project analysis — PM performance comparison, portfolio-level financial dashboards, and subcontractor scorecards. The add-on costs significantly more than the base platform and is best justified at 10+ active projects." },
+      { question: "Can I use Power BI for construction reporting?", answer: "Yes — Power BI connects to QuickBooks, Procore, Sage, and most construction platforms via native connectors or marketplace templates. The practical limitation is that building useful dashboards requires BI skills. Without someone internally who can build data models, budget for a consultant or choose a purpose-built construction analytics tool instead." },
+      { question: "What is a WIP schedule and why does it matter?", answer: "A Work-in-Progress (WIP) schedule shows the status of all open contracts — revenue earned vs. billed, and whether projects are over- or under-billed relative to completion. Banks and bonding companies require WIP schedules for construction credit. Sage Intelligence generates these automatically from Sage data. For QuickBooks users, WIP schedules typically require manual spreadsheet work." },
+      { question: "How do I measure project manager performance in construction?", answer: "The most reliable PM performance metrics: budget variance (estimated vs. actual cost at completion), schedule variance (planned vs. actual completion date), change order rate (value of change orders as percentage of contract), and safety incident rate. Procore Analytics has built-in PM performance comparison dashboards." },
+      { question: "¿Cuál es el mejor software de análisis de negocios para empresas de construcción en Estados Unidos?", answer: "Para contratistas que ya usan Procore, Procore Analytics ($5,000-15,000+/año adicional) ofrece paneles entre proyectos sin infraestructura adicional. Para contratistas en Sage 300 CRE o Sage 100, Sage Intelligence ($1,500-3,000+/año) genera cronogramas WIP y reportes de costos automáticamente. Para empresas con $10M+ que necesitan combinar datos de múltiples sistemas, Microsoft Power BI ($10-20/usuario/mes) es la opción más flexible, aunque requiere recursos técnicos para configurar." }
+    ],
+
+    relatedCategories: ["financial-management", "project-estimating", "field-time-tracking"],
+    relatedTools: ["procore", "sage-300", "power-bi"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
