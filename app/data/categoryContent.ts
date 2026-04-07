@@ -2278,5 +2278,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["bid-management", "project-document-management", "financial-management"],
     relatedTools: ["levelset", "docusign", "lienitnnow"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "construction-software-integrations", categoryId: "construction-software-integrations", language: "en",
+    title: "Best Construction Software Integration Tools for 2025",
+    metaDescription: "Connect your construction tools and stop re-entering data. Zapier, Make, and Procore's integration marketplace compared — honest guide for GCs running 3+ software platforms.",
+    h1: "Best Construction Software Integration Tools for 2025",
+    introduction: "Every Friday, someone at your company reconciles job costs between your PM software and QuickBooks. The numbers don't match. A change order got entered in one system but not the other. This is the integration problem — you have the right software for each job, but none of it talks to each other. Construction software integrations fix that.",
+    whyItMatters: "Manual data re-entry between systems doesn't just waste time — it creates two versions of the truth. When PM and accounting show different job costs, your project managers stop trusting the numbers and build their own spreadsheets. Integration tools eliminate re-entry and establish a single source of truth across your stack.",
+
+    toolsToCompare: ["procore", "zapier", "make"],
+    comparisonTableColumns: [
+      { key: "native-integrations", label: "Native Connectors" },
+      { key: "no-code-setup", label: "No-Code Setup" },
+      { key: "complex-workflows", label: "Complex Logic" },
+      { key: "accounting-sync", label: "Accounting Sync" },
+      { key: "error-handling", label: "Error Handling" }
+    ],
+
+    sections: [
+      {
+        heading: "Three Types of Integration — And When to Use Each",
+        content: "<p><strong>Native integrations</strong> are built directly by the software vendor (e.g., Procore's QuickBooks connector). Most reliable, least flexible — they cover only the fields the vendor chose to sync.</p><p><strong>API integrations via middleware</strong> use platforms like Zapier or Make to connect tools. More flexible, requires more setup, and can break when vendors change their APIs.</p><p><strong>File-based integrations</strong> (CSV export/import) are manual and slow. Avoid if a better option exists.</p>",
+        type: "text"
+      },
+      {
+        heading: "The Integrations That Break Most Often",
+        content: "<p><strong>Procore ↔ QuickBooks:</strong> Cost code mismatch is the most common failure — Procore and QuickBooks use different structures by default. Map them carefully during setup. Duplicate invoices happen when someone also manually enters in QuickBooks what already synced from Procore. Pick one data entry point and enforce it.</p><p><strong>Buildertrend ↔ QuickBooks:</strong> Deposit schedules and draw-based billing sometimes require manual reconciliation. Test with a pilot project before rolling out across all active jobs.</p><p><strong>Time tracking → Payroll:</strong> Entries that cross midnight, multiple cost codes on the same day, and state-specific overtime rules are the most common sync failures. Build test cases for these edge cases before go-live.</p>",
+        type: "text"
+      },
+      {
+        heading: "Integration Strategy: Four Steps",
+        content: "<p><strong>1. Map your data flows.</strong> Write down every place you enter the same data twice. Each duplicate entry is a candidate for automation.</p><p><strong>2. Identify your source of truth.</strong> Job cost budgets: Procore or QuickBooks? Pick one system per data type and make the other read-only.</p><p><strong>3. Start with native integrations.</strong> If a certified connector exists, use it before building middleware workflows.</p><p><strong>4. Use Zapier for simple gaps, Make for complex ones.</strong> Simple trigger-action flows go to Zapier. Multi-step conditional workflows go to Make.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Stop re-entering data between systems",
+    primaryToolId: "procore",
+    secondaryToolIds: ["zapier", "make"],
+
+    keywords: [
+      "construction software integrations",
+      "connect construction software",
+      "Procore QuickBooks integration",
+      "Zapier construction",
+      "construction API integration"
+    ],
+
+    faqs: [
+      { question: "Does Procore integrate with QuickBooks?", answer: "Yes — Procore has a certified QuickBooks Online and Desktop connector in the Procore Marketplace. It syncs job costs, vendor invoices, committed costs, and client billing. Setup requires careful cost code mapping between Procore's WBS structure and QuickBooks' chart of accounts — budget 4–8 hours for initial configuration and testing." },
+      { question: "Can I connect Buildertrend to QuickBooks?", answer: "Yes — Buildertrend has a native QuickBooks Online integration that syncs customers, vendors, invoices, and payments. It works well for straightforward residential billing. Complex billing scenarios like deposit schedules and draw-based billing sometimes require manual reconciliation." },
+      { question: "What is Zapier and how does it work for construction?", answer: "Zapier is a no-code tool that connects apps via their APIs. You create automated workflows called Zaps: when a new lead is added in your CRM, automatically create a project in your PM software; when a job is marked complete, send a review request. It works with most major construction SaaS tools and can be set up in hours without developer help." },
+      { question: "When should I use Make instead of Zapier?", answer: "Use Make when your workflow has conditional logic (different paths for different data types), requires data transformation between incompatible formats, or has multiple steps that need error handling between them. Zapier is better for simple two-step trigger-action workflows. Make's pricing is also more cost-effective at higher task volumes." },
+      { question: "What construction software has the best API for custom integrations?", answer: "Procore has the most mature and documented API in construction software, with a large developer community. Buildertrend, Jobber, and ServiceTitan also have well-documented APIs. For custom integration work, verify that the specific endpoints you need are available and actively maintained before committing to a custom build." },
+      { question: "¿Cómo puedo conectar mi software de construcción con QuickBooks sin re-ingresar datos manualmente?", answer: "La mayoría de las plataformas principales tienen integraciones nativas con QuickBooks: Procore, Buildertrend y Jobber tienen conectores certificados. Para herramientas sin integración nativa, Zapier ($19.99-69+/mes) permite conectarlas sin código en pocas horas. Para flujos de trabajo más complejos con lógica condicional, Make (desde $9/mes) es una alternativa más potente." }
+    ],
+
+    relatedCategories: ["project-estimating", "financial-management", "field-time-tracking"],
+    relatedTools: ["procore", "zapier", "make"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
