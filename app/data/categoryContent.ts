@@ -2156,5 +2156,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["hvac-management", "electrical-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
     published: true, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "safety-compliance", categoryId: "safety-compliance", language: "en",
+    title: "Best Construction Safety Compliance Software for 2025",
+    metaDescription: "Compare construction safety software for 2025. Procore Safety, iAuditor, and Assignar reviewed — OSHA recordkeeping, inspection checklists, and incident management for GCs.",
+    h1: "Best Construction Safety Compliance Software for 2025",
+    introduction: "An OSHA willful violation costs up to $156,259 per incident as of 2024. The difference between that and a simple citation often comes down to documentation — did you inspect the worksite, conduct training, and can you prove both when the compliance officer shows up? Construction safety software makes your documentation defensible.",
+    whyItMatters: "Safety compliance software covers three distinct problems: inspection tools, incident management, and training records. The platforms below differ significantly in which of these they handle well — understanding that distinction is the key to choosing the right tool.",
+
+    toolsToCompare: ["procore", "iauditor", "assignar"],
+    comparisonTableColumns: [
+      { key: "mobile-inspection", label: "Mobile Inspections" },
+      { key: "osha-300-log", label: "OSHA 300 Log" },
+      { key: "incident-management", label: "Incident Management" },
+      { key: "worker-certifications", label: "Worker Certifications" },
+      { key: "project-integration", label: "Project Integration" }
+    ],
+
+    sections: [
+      {
+        heading: "Three Separate Problems, Often Confused",
+        content: "<p>Safety compliance software covers three distinct functions: <strong>inspection tools</strong> (digital checklists with timestamped photo documentation), <strong>incident management</strong> (near-miss reporting, OSHA 300 log, corrective action tracking), and <strong>training records</strong> (toolbox talk sign-offs, OSHA 10/30 certification tracking). Most platforms do one or two of these well. Knowing which gap you need to fill first determines which tool to buy.</p>",
+        type: "text"
+      },
+      {
+        heading: "The Documentation Gap That Costs Contractors",
+        content: "<p>Most construction companies conduct safety inspections and run toolbox talks. The problem is documentation: the inspection happened but the form is in a truck, the toolbox talk happened but nobody signed in. When an OSHA inspection or lawsuit happens, you're reconstructing records from memory.</p><p>Digital safety software creates a timestamped paper trail automatically — photos, GPS location, employee signatures, corrective actions. That trail is what protects you.</p>",
+        type: "text"
+      },
+      {
+        heading: "Decision Framework by Company Size",
+        content: "<p><strong>Under 10 employees:</strong> iAuditor's free tier covers inspection documentation and toolbox talk records without cost.</p><p><strong>10–50 employees:</strong> iAuditor paid tier ($24–45/user/month). Manage OSHA 300 log separately.</p><p><strong>50+ employees on Procore:</strong> Procore Safety for incident management and sub coordination, iAuditor for field inspections.</p><p><strong>Subcontractors with large workforces:</strong> Assignar for worker-level certification tracking and pre-task qualification verification.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Get your safety documentation defensible",
+    primaryToolId: "procore",
+    secondaryToolIds: ["iauditor", "assignar"],
+
+    keywords: [
+      "construction safety compliance software",
+      "OSHA compliance software construction",
+      "construction safety app",
+      "safety inspection software",
+      "construction safety management"
+    ],
+
+    faqs: [
+      { question: "What OSHA records are required for construction contractors?", answer: "OSHA requires employers with 10 or more employees to maintain an OSHA 300 log (injury and illness log), OSHA 300A (annual summary), and OSHA 301 (incident reports), retained for five years. Procore Safety includes OSHA 300 log management. iAuditor handles inspection documentation but not the OSHA 300 log directly." },
+      { question: "Do I need safety software if I have fewer than 10 employees?", answer: "The OSHA 300 log requirement applies at 10+ employees, but the obligation to document training and inspections applies regardless of company size. iAuditor's free tier covers inspection documentation and toolbox talk records for small contractors without cost." },
+      { question: "Can safety software reduce my workers' compensation premiums?", answer: "Some insurers offer experience modification rate (EMR) credits for documented safety programs. The documentation that safety software creates — inspections, training records, incident investigations — is what your broker needs to argue for a better rate. Results vary by insurer and state." },
+      { question: "How do I track OSHA 10 and OSHA 30 certifications for my crew?", answer: "Assignar has the most complete certification tracking — log each worker's OSHA certifications, expiration dates, and required courses, then set alerts before certificates expire. Procore Safety has basic credential tracking. iAuditor doesn't manage worker certifications natively." },
+      { question: "What's the best safety software for a roofing contractor?", answer: "iAuditor with a fall protection inspection template is the starting point for most roofing contractors. Pre-built fall protection audit templates, good mobile UX for rooftop work, and automatic PDF reports document that pre-work inspections happened. For roofing contractors with 20+ employees, Assignar handles worker-level OSHA 1926.502 compliance documentation." },
+      { question: "¿Cuál es el mejor software de seguridad para contratistas de construcción en Estados Unidos?", answer: "Para contratistas con menos de 50 empleados, iAuditor ($24-45/usuario/mes, con nivel gratuito disponible) es la mejor opción por su facilidad de uso y biblioteca de plantillas OSHA preconfiguradas. Para contratistas generales que ya usan Procore, Procore Safety integra la gestión de seguridad directamente con la gestión de proyectos. Assignar es la mejor opción para subcontratistas con grandes fuerzas laborales que necesitan rastrear certificaciones individuales." }
+    ],
+
+    relatedCategories: ["field-crew-scheduling", "photo-documentation", "project-document-management"],
+    relatedTools: ["procore", "iauditor", "assignar"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
