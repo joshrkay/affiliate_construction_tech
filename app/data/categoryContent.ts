@@ -12,6 +12,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "project-estimating",
     categoryId: "project-estimating",
+    language: "en",
     title: "Best Construction Estimating Software for Accurate Bids",
     metaDescription: "Compare top construction estimating software. Find tools for takeoffs, labor estimates, and proposal generation rated by real contractors.",
     h1: "Best Construction Estimating Software for 2025",
@@ -80,6 +81,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "field-crew-scheduling",
     categoryId: "field-crew-scheduling",
+    language: "en",
     title: "Best Field Crew Scheduling Software for Construction",
     metaDescription: "Compare crew scheduling apps for construction. Dispatch workers, manage availability, and optimize field labor with top-rated platforms.",
     h1: "Best Field Crew Scheduling Software for 2025",
@@ -236,6 +238,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "financial-management",
     categoryId: "financial-management",
+    language: "en",
     title: "Best Accounting Software for Construction Contractors",
     metaDescription: "Compare construction accounting software. Manage P&L, job costing, tax reporting, and financial reporting for contractors.",
     h1: "Best Construction Accounting Software for 2025",
@@ -836,6 +839,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "customer-relationship-management",
     categoryId: "customer-relationship-management",
+    language: "en",
     title: "Best CRM for Construction Contractors",
     metaDescription: "Compare construction CRM software. Manage leads, opportunities, and customer relationships for contractors and home service businesses.",
     h1: "Best Construction CRM Software for 2025",
@@ -876,6 +880,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "project-scheduling",
     categoryId: "project-scheduling",
+    language: "en",
     title: "Best Project Scheduling Software for Construction",
     metaDescription: "Compare construction project scheduling software. Create timelines, gantt charts, and manage dependencies for projects.",
     h1: "Best Project Scheduling Software for 2025",
@@ -915,6 +920,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "project-budget-tracking",
     categoryId: "project-budget-tracking",
+    language: "en",
     title: "Best Project Budget Tracking Software for Construction",
     metaDescription: "Compare construction budget tracking software. Monitor project costs, prevent overruns, and improve profitability.",
     h1: "Best Project Budget Tracking Software for 2025",
@@ -954,6 +960,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "payroll-management",
     categoryId: "payroll-management",
+    language: "en",
     title: "Best Payroll Software for Construction Contractors",
     metaDescription: "Compare construction payroll software. Manage payroll, tax compliance, and labor compliance for contractors.",
     h1: "Best Construction Payroll Software for 2025",
@@ -993,6 +1000,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "hvac-management",
     categoryId: "hvac-management",
+    language: "en",
     title: "Best HVAC Business Management Software",
     metaDescription: "Compare HVAC software. All-in-one platforms for HVAC contractors including scheduling, invoicing, and service management.",
     h1: "Best HVAC Business Management Software for 2025",
@@ -1033,6 +1041,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "residential-estimating",
     categoryId: "residential-estimating",
+    language: "en",
     title: "Best Residential Estimating Software for Remodelers",
     metaDescription: "Compare estimating software for residential contractors. Tools for remodeling bids, takeoffs, and proposals.",
     h1: "Best Residential Estimating Software for 2025",
@@ -1073,6 +1082,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "team-collaboration",
     categoryId: "team-collaboration",
+    language: "en",
     title: "Best Team Collaboration Software for Construction",
     metaDescription: "Compare team communication platforms for construction. Internal messaging, file sharing, and project coordination tools.",
     h1: "Best Team Collaboration Software for 2025",
@@ -1112,6 +1122,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "project-document-management",
     categoryId: "project-document-management",
+    language: "en",
     title: "Best Document Management Software for Construction Projects",
     metaDescription: "Compare construction document management software. Store, organize, and share blueprints, specs, and project documents.",
     h1: "Best Project Document Management Software for 2025",
@@ -1152,6 +1163,7 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "change-order-management",
     categoryId: "change-order-management",
+    language: "en",
     title: "Best Change Order Software for Construction",
     metaDescription: "Compare change order management software. Create, track, and approve change orders for construction projects.",
     h1: "Best Change Order Management Software for 2025",
@@ -1415,7 +1427,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["financial-management", "project-budget-tracking"],
     relatedTools: ["procore", "quickbooks", "zoho-books", "primavera-p6"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
   },
@@ -1524,7 +1536,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["field-crew-scheduling", "payroll-management"],
     relatedTools: ["deputy", "freshbooks", "quickbooks-construction", "procore"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
   },
@@ -1619,7 +1631,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["supply-chain-management", "project-estimating"],
     relatedTools: ["procore", "buildertrend", "stack"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
   },
@@ -1728,7 +1740,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["photo-documentation", "project-document-management"],
     relatedTools: ["fieldwire", "plangrid", "procore", "jobber"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
   },
@@ -1823,7 +1835,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["project-scheduling", "ai-document-processing", "team-collaboration"],
     relatedTools: ["procore", "monday-construction", "clickup"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
   },
@@ -1932,8 +1944,156 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["customer-invoicing", "financial-management"],
     relatedTools: ["square", "stripe", "housecallpro", "quickbooks-construction"],
-    published: false,
+    published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
+  },
+
+  // ========== MATERIAL TAKEOFF ==========
+  {
+    slug: "material-takeoff", categoryId: "material-takeoff", language: "en",
+    title: "Best Construction Material Takeoff Software for 2025",
+    metaDescription: "Compare digital takeoff tools for contractors. Accurate quantity extraction from blueprints — real pricing and workflow comparison for estimators running $250K–$5M+ projects.",
+    h1: "Best Construction Material Takeoff Software for 2025",
+    introduction: "<p>Manual takeoffs introduce errors on every measurement. When you're counting fixtures, measuring linear feet, and calculating square footage by hand from a PDF, you're doing math that software handles in seconds — and you're doing it wrong often enough to hurt your margins.</p><p>Digital takeoff software extracts quantities directly from your plans: click a line, count a symbol, measure a room. For contractors doing more than $250K in annual bids, the time savings alone justifies the cost. The accuracy improvement is what protects your margin.</p>",
+    whyItMatters: "<p>Industry estimating studies consistently show that manual quantity takeoffs carry a 5–15% error rate compared to digital methods. On a $500K project, a 10% quantity error means your material order is wrong, your labor estimate is wrong, and your bid is either too high (you lose the job) or too low (you win and lose money).</p><p>Digital takeoff prevents the specific errors that kill margins: miscounting repetitive items, scale errors from non-standard PDF printing, version errors from old plan revisions, and double-counting across elevation views. Good takeoff software sets the scale once, auto-counts symbols, and ties every quantity to a specific plan view with a full audit trail.</p>",
+    toolsToCompare: ["stack", "bluebeam", "procore"],
+    comparisonTableColumns: [
+      { key: "native-takeoff", label: "Native Takeoff" },
+      { key: "symbol-counting", label: "Symbol Auto-Count" },
+      { key: "revision-tracking", label: "Plan Revision Tracking" },
+      { key: "collaboration", label: "Multi-User Collaboration" },
+      { key: "pm-integration", label: "PM Integration" }
+    ],
+    sections: [
+      { heading: "Stack — Best Dedicated Digital Takeoff Platform", content: "<p><strong>Pricing:</strong> Custom pricing (typically $1,500–4,000/year)</p><p>Stack is the market-standard digital takeoff platform for contractors who do their own estimating. Experienced estimators report completing takeoffs 60–80% faster than manual methods after a 2-week learning period. The plan set management tracks revisions and flags outdated sheets.</p><ul><li>Fast, accurate measurement on PDF plan sets of any size</li><li>Automatic symbol counting across all plan sheets — assign once, count everywhere</li><li>Plan revision tracking — always measuring from the current version</li><li>Quantities export directly into cost estimate templates</li></ul><p><strong>Limitations:</strong> Pricing requires a custom quote. Learning curve is real — budget 2 weeks to reach full efficiency. Not a full estimating platform.</p><p><strong>Best for:</strong> Contractors with a dedicated estimator doing $500K+ in annual bids.</p>", type: "text" },
+      { heading: "Bluebeam Revu — Best for Teams Already in the PDF Workflow", content: "<p><strong>Pricing:</strong> $255/year individual; custom for teams</p><p>Bluebeam Revu is primarily a PDF collaboration and markup tool that many commercial GCs already use. Its takeoff tools are solid, and Studio Sessions allow multiple estimators to work on the same plan set simultaneously — useful when coordinating takeoffs across disciplines.</p><ul><li>Integrated into existing PDF workflow with no new platform adoption</li><li>Multi-user Studio Sessions for simultaneous takeoff</li><li>Wide industry adoption — subs often have Bluebeam already</li><li>Low per-user cost for the full estimating team</li></ul><p><strong>Limitations:</strong> Takeoff tools are less streamlined than Stack. Symbol auto-counting is more manual. Not designed primarily as a takeoff tool.</p><p><strong>Best for:</strong> Commercial GCs already using Bluebeam for document management.</p>", type: "text" },
+      { heading: "Procore — Best for Connecting Takeoff to Full PM Workflow", content: "<p><strong>Pricing:</strong> $8,500+/year</p><p>Procore integrates with Stack and Bluebeam and pulls quantities into Procore's estimating and budget modules. If you're already on Procore, the integration gives you a direct line from measured quantity to project budget without re-entering data.</p><ul><li>Takeoff data flows directly into project budgets and cost codes</li><li>Eliminates manual re-entry between estimating and project management</li><li>Full audit trail from takeoff measurement to approved budget</li><li>Connects to bid management for scoped RFQs to subs</li></ul><p><strong>Limitations:</strong> Not a takeoff tool itself — requires a separate platform. High cost for contractors only needing takeoff.</p><p><strong>Best for:</strong> Commercial GCs already on Procore who want takeoff connected to project management.</p>", type: "text" },
+      { heading: "Choosing the Right Tool for Your Volume", content: "<p><strong>Under $250K annual bids:</strong> Manual takeoff with a digital ruler plugin is probably sufficient.</p><p><strong>$250K–$1M:</strong> Stack or Bluebeam measurement tools both work. Start with Bluebeam if your team already uses it.</p><p><strong>$1M–$5M:</strong> Stack is worth the investment. Takeoff errors at this volume cost more than the software.</p><p><strong>$5M+:</strong> Stack plus Procore integration is the standard commercial setup — quantities flow directly into Procore budgets, eliminating data entry risk.</p>", type: "text" }
+    ],
+    primaryCTA: "See Stack Takeoff Pricing", primaryToolId: "stack", secondaryToolIds: ["bluebeam", "procore"],
+    keywords: ["construction material takeoff software", "digital takeoff software", "blueprint quantity estimation", "takeoff app construction", "construction quantity surveying software"],
+    faqs: [
+      { question: "Is digital takeoff software accurate enough to base bids on?", answer: "Yes — digital takeoff is more accurate than manual for most measurements. The tools measure directly from scaled PDFs without rounding errors or counting mistakes. The exception is when plan quality is poor (low-resolution scans, inconsistent scales)." },
+      { question: "How long does it take to learn digital takeoff software?", answer: "Most estimators are functional within 3–5 days and efficient within 2–3 weeks. Stack has a steeper learning curve than Bluebeam for new users. Bluebeam's measurement tools are more intuitive for estimators already using it for document review." },
+      { question: "What format do I need my plans in?", answer: "Both Stack and Bluebeam work with PDF plans. Vector PDFs (from architectural CAD files) give the most accurate scaling. Most drawings delivered today are vector PDFs." },
+      { question: "Can I use digital takeoff for subcontractor coordination?", answer: "Takeoff software generates the quantities you use to scope subcontractor RFQs. Stack lets you export quantities directly into scoped packages. It doesn't manage bid collection — for that you need a bid management tool like Procore's bid module." },
+      { question: "Does digital takeoff work offline?", answer: "Bluebeam has offline capability for downloaded files. Stack is primarily cloud-based. Confirm offline capability before choosing if you frequently work in areas with poor internet." },
+      { question: "¿Vale la pena el software de cubicación digital para contratistas pequeños?", answer: "Para contratistas que licitan más de $250,000 al año, sí. Los errores en la cubicación manual cuestan más que el software — una ventana olvidada o un error de escala en un proyecto de $300,000 puede representar $3,000-$8,000 en costos adicionales." }
+    ],
+    relatedCategories: ["project-estimating", "bid-management", "commercial-estimating"],
+    relatedTools: ["stack", "bluebeam", "procore"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  // ========== COMMERCIAL ESTIMATING ==========
+  {
+    slug: "commercial-estimating", categoryId: "commercial-estimating", language: "en",
+    title: "Best Commercial Construction Estimating Software for 2025",
+    metaDescription: "Compare commercial construction estimating software. Procore, Stack, and Bluebeam compared for GCs bidding $1M+ projects — honest pricing and workflow trade-offs.",
+    h1: "Best Commercial Construction Estimating Software for 2025",
+    introduction: "<p>Commercial estimating is a different discipline than residential. You're managing complex CSI cost code structures, prevailing wage requirements on public jobs, union labor rates that vary by county, and bid packages spanning 40+ trade packages — each with different scope, exclusions, and bond requirements.</p><p>The software that works for a residential remodeler building kitchen bids won't cut it when you're bidding a $4M office fit-out against three other GCs with dedicated estimating staff. Commercial estimating requires tools built for depth: precise quantity takeoff, detailed labor productivity data, and audit-ready documentation from bid to award.</p>",
+    whyItMatters: "<p>Commercial projects introduce layers that residential tools can't manage: prevailing wage compliance, CSI MasterFormat cost code structure, multi-package bid management, and owner-level reporting. Missing any of these creates compliance risk, margin errors, or credibility problems with commercial owners.</p><p>The tools worth paying for do four things spreadsheets can't: accurate digital takeoff, labor productivity integration, multi-package bid organization with scope leveling, and owner-ready reporting by division.</p>",
+    toolsToCompare: ["procore", "stack", "bluebeam"],
+    comparisonTableColumns: [
+      { key: "digital-takeoff", label: "Digital Takeoff" },
+      { key: "csi-cost-codes", label: "CSI Cost Codes" },
+      { key: "bid-packages", label: "Bid Package Mgmt" },
+      { key: "sub-leveling", label: "Sub Bid Leveling" },
+      { key: "pm-integration", label: "PM Integration" }
+    ],
+    sections: [
+      { heading: "Procore — Best for Integrated Estimating and Project Management", content: "<p><strong>Pricing:</strong> $8,500+/year</p><p>Procore's estimating module is built for commercial GCs who want bid data in the same platform as project management. Build your estimate, send bid invitations, level received quotes, and convert the accepted bid into a project budget — all without exporting and re-importing data.</p><ul><li>Estimating connects directly to bid management and project budget</li><li>CSI cost code structure supported natively</li><li>Sub-level scope tracking and bid leveling in the same platform</li><li>Full audit trail from estimate to awarded contract</li></ul><p><strong>Limitations:</strong> Expensive — requires the full Procore platform. Setup takes 2–4 weeks. Takeoff requires a separate tool.</p><p><strong>Best for:</strong> Commercial GCs running $2M+ who want an integrated estimating-to-PM workflow.</p>", type: "text" },
+      { heading: "Stack — Best Dedicated Estimating and Takeoff Platform", content: "<p><strong>Pricing:</strong> Custom pricing (typically $1,500–4,000/year)</p><p>Stack is purpose-built for estimating: digital takeoff from PDFs, cost estimate building with productivity data, and bid assembly. Build templates for your common project types and bid setup time drops from days to hours. Experienced Stack users create draft estimates 70% faster than starting from scratch.</p><ul><li>Fast, accurate digital takeoff — best in this comparison for takeoff speed</li><li>Estimate templates dramatically reduce setup time on repeat project types</li><li>Built-in labor productivity data for cost building</li><li>Quantities export directly to bid packages for sub RFQs</li></ul><p><strong>Limitations:</strong> Not a full PM platform — separate tool needed after bid award. Less suited for managing the full sub bid process than Procore.</p><p><strong>Best for:</strong> Commercial estimators who self-perform significant work and need best-in-class takeoff alongside a separate PM platform.</p>", type: "text" },
+      { heading: "Bluebeam Revu — Best for Estimate Review and Plan Collaboration", content: "<p><strong>Pricing:</strong> $255/year individual; custom for teams</p><p>Bluebeam Revu is the PDF markup standard in commercial construction. Its measurement tools are good and its ability to support multiple estimators reviewing the same plan set simultaneously is unmatched. For estimating teams coordinating takeoffs across disciplines, Bluebeam reduces coordination overhead significantly.</p><ul><li>Industry-standard PDF markup — every commercial GC already has it</li><li>Multi-user Studio Sessions for collaborative plan review</li><li>Low per-user cost for the full estimating team</li></ul><p><strong>Limitations:</strong> Not a full estimating platform. Takeoff requires more manual steps than Stack. No bid management features.</p><p><strong>Best for:</strong> Commercial estimating teams needing collaborative plan review alongside a dedicated estimating tool.</p>", type: "text" },
+      { heading: "Decision Framework by Project Size", content: "<p><strong>$250K–$1M projects:</strong> Stack or Bluebeam measurement tools with a structured spreadsheet for cost building.</p><p><strong>$1M–$3M projects:</strong> Stack as your primary estimating tool. Consider Procore when complexity justifies the cost.</p><p><strong>$3M–$10M projects:</strong> Procore or Stack plus a dedicated bid management tool. The integrated Procore workflow delivers ROI through error prevention at this scale.</p><p><strong>$10M+ projects:</strong> Procore with Stack integration. Quantities from Stack flow into Procore budgets, eliminating data entry risk.</p>", type: "text" }
+    ],
+    primaryCTA: "See Procore Commercial Estimating", primaryToolId: "procore", secondaryToolIds: ["stack", "bluebeam"],
+    keywords: ["commercial construction estimating software", "commercial bid software", "large project estimating", "commercial takeoff tool", "CSI estimating software"],
+    faqs: [
+      { question: "What's the difference between commercial and residential estimating software?", answer: "Commercial estimating software handles CSI cost codes, prevailing wage compliance, multi-package bid management, and owner-level reporting. Residential tools like Buildertrend are built around proposal generation and client communication — the right workflow for homeowners but not for commercial owners reviewing a line-item bid." },
+      { question: "Do I need RSMeans data integration?", answer: "RSMeans provides published labor and material costs by region useful as a baseline. It's a good sanity check, but your own historical productivity data is more accurate for repeat project types." },
+      { question: "How long does it take to build a commercial estimate in software vs spreadsheet?", answer: "For an estimator new to dedicated software, the first 5 projects take longer than a spreadsheet. After a template library is built, experienced users report 40–60% time savings on repeat project types. Breakeven is typically 8–12 projects after full implementation." },
+      { question: "Can one person manage commercial estimating for a $5M GC?", answer: "Yes, with the right tools. A dedicated estimator using Stack for takeoff and Procore for bid management can handle the estimating workload for a contractor doing $5M–$10M annually. Above $10M, most commercial GCs add a second estimator or coordinator." },
+      { question: "Is Oracle Primavera used for commercial estimating?", answer: "Primavera P6 is primarily a project scheduling and controls tool, not an estimating platform. It's widely used for schedule management on complex commercial projects but doesn't replace a dedicated estimating tool." },
+      { question: "¿Cuál es el mejor software para contratistas generales comerciales que licitan proyectos de más de $1M?", answer: "Para proyectos comerciales grandes, Procore ofrece la integración más completa entre estimación, gestión de ofertas y controles de proyecto. Para contratistas que realizan cubicación propia, Stack es la mejor herramienta dedicada. Muchos usan Stack para la cubicación y Procore para gestión y ejecución." }
+    ],
+    relatedCategories: ["project-estimating", "material-takeoff", "bid-management"],
+    relatedTools: ["procore", "stack", "bluebeam"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  // ========== SALES LEAD GENERATION ==========
+  {
+    slug: "sales-lead-generation", categoryId: "sales-lead-generation", language: "en",
+    title: "Best Construction Lead Generation Software for 2025",
+    metaDescription: "Compare CRM and lead generation tools for contractors. Find, track, and close more construction leads — honest pricing for GCs and specialty contractors scaling past $1M.",
+    h1: "Best Construction Lead Generation Software for 2025",
+    introduction: "<p>Most contractors got their first 10 jobs from referrals. Most contractors who plateaued at $1M are still trying to run a $5M business on the same referral strategy.</p><p>Lead generation software doesn't replace the phone calls, follow-ups, and relationship work that construction sales requires. It organizes them — so when a prospect you met 6 months ago is finally ready to move, you're the one they remember to call. And when someone asks how many bids are in the pipeline, you have an answer that isn't a guess.</p>",
+    whyItMatters: "<p>A 2023 Procore contractor survey found that <strong>contractors with formal lead tracking processes closed 31% more bids</strong> than contractors without one at equivalent bid volumes. If you're sending 50 bids per year and closing 20, improving your close rate to 26 is worth $300K in additional revenue at a $500K average project size.</p><p>A CRM does what a spreadsheet can't: automated follow-up reminders, pipeline visibility across every active lead, lead source tracking to know where your best opportunities come from, and complete contact history so you pick up every conversation where it left off.</p>",
+    toolsToCompare: ["salesforce-construction", "pipedrive", "zoho-crm"],
+    comparisonTableColumns: [
+      { key: "pipeline-view", label: "Pipeline View" },
+      { key: "follow-up-automation", label: "Follow-up Automation" },
+      { key: "lead-source-tracking", label: "Lead Source Tracking" },
+      { key: "reporting-depth", label: "Reporting Depth" },
+      { key: "construction-specific", label: "Construction-Specific" }
+    ],
+    sections: [
+      { heading: "Salesforce Construction Cloud — Best for Large GCs with Dedicated Sales Teams", content: "<p><strong>Pricing:</strong> $165–330+/month per user</p><p>Salesforce Construction Cloud is built for companies large enough to have a BD team, a marketing function, and a dedicated CRM admin. Its strength is data: the best reporting and analytics in this category, highly configurable to your workflow, and deep integration with marketing and accounting platforms.</p><ul><li>Most powerful reporting and analytics in this comparison</li><li>Construction-specific configuration for bid pipeline and opportunity tracking</li><li>Integration with marketing, email, and accounting platforms</li><li>Handles complex bid pipelines with multiple contacts and decision-makers</li></ul><p><strong>Limitations:</strong> Expensive and complex — requires a dedicated admin. Long implementation (4–8 weeks). Overkill without a dedicated sales function.</p><p><strong>Best for:</strong> Commercial GCs running $10M+ with a dedicated business development function.</p>", type: "text" },
+      { heading: "Pipedrive — Best Mid-Market CRM for Growing Contractors", content: "<p><strong>Pricing:</strong> $14–99+/month per user</p><p>Pipedrive is the most contractor-friendly CRM in this comparison. The pipeline view is intuitive enough for an owner-operator to run without a dedicated sales manager. It's designed to minimize data entry and maximize time spent talking to prospects.</p><ul><li>Clean pipeline view — immediately shows where every active lead stands</li><li>Low-friction data entry — quick to log a call or note</li><li>Follow-up automation that handles reminder scheduling</li><li>Affordable starting price with no required annual commitment</li><li>Good mobile app for logging from the job site</li></ul><p><strong>Limitations:</strong> Less construction-specific than Salesforce. No native integration with construction PM platforms.</p><p><strong>Best for:</strong> Contractors running $1M–$10M with 1–3 people in business development who want a CRM they'll actually use.</p>", type: "text" },
+      { heading: "Zoho CRM — Best Entry-Level Option for Contractors Starting with CRM", content: "<p><strong>Pricing:</strong> $12–100/month per user (free tier for up to 3 users)</p><p>Zoho CRM is the most affordable entry point. For a contractor just building their first systematic sales process, especially if already using Zoho Books or Zoho Projects, CRM data flows between tools without middleware.</p><ul><li>Free tier for small teams (up to 3 users)</li><li>Affordable paid tiers with solid core CRM functionality</li><li>Strong integration with Zoho ecosystem (Books, Projects)</li><li>Enough features for a contractor building their first lead tracking system</li></ul><p><strong>Limitations:</strong> More complex interface than Pipedrive. Slower customer support. Mobile app less polished.</p><p><strong>Best for:</strong> Contractors just starting to formalize their sales process, especially if already using Zoho tools.</p>", type: "text" },
+      { heading: "Why CRM Fails for Contractors — and How to Prevent It", content: "<p>The most common CRM failure mode isn't the software — it's adoption. Top adoption killers: too many required fields per lead, no clear data owner, and no visible value in the first 30 days.</p><p>The contractors who get ROI from CRM in the first 90 days set up the system before they have active leads in it — clean pipeline stages, configured automations, mobile app installed for everyone — then migrate existing leads on day one. Don't go live with an empty system and hope the team fills it in.</p>", type: "text" }
+    ],
+    primaryCTA: "Try Pipedrive Free for 14 Days", primaryToolId: "pipedrive", secondaryToolIds: ["salesforce-construction", "zoho-crm"],
+    keywords: ["construction lead generation software", "homeowner leads software", "sales prospecting app", "lead tracking construction", "contractor CRM software"],
+    faqs: [
+      { question: "Is CRM software worth it for a one-person GC operation?", answer: "If you're a solo operator doing under $500K and most business comes from referrals, probably not. The ROI kicks in when you have enough new leads that manual tracking creates missed follow-ups — typically around $500K–$1M in annual revenue." },
+      { question: "What's the difference between CRM and estimating software?", answer: "Estimating software manages building and submitting a bid. CRM manages the relationship before and after: tracking prospects, logging follow-ups, managing the decision process, and maintaining client relationships for repeat business. Most growing construction companies need both." },
+      { question: "Can I use my project management software for lead tracking?", answer: "Some PM platforms (Procore, Buildertrend) have basic CRM features. They work for light tracking but lack the follow-up automation and reporting of a dedicated CRM. Try your PM software's CRM features first before buying a separate tool." },
+      { question: "How do I track where my leads are coming from?", answer: "Set up a lead source field in your CRM: referral (who referred them), website, Google, home show, repeat client. Review the distribution quarterly. Most contractors find 2–3 sources produce 80% of their leads — that's where to invest more." },
+      { question: "Which CRM integrates best with QuickBooks?", answer: "Pipedrive and Zoho CRM both integrate with QuickBooks via Zapier or native connectors. For most contractors, the integration is less important than consistently using the CRM — start with what gets adopted, then optimize integrations." },
+      { question: "¿Cuál es el mejor CRM para contratistas que buscan crecer en el mercado residencial?", answer: "Para contratistas residenciales entre $500K y $5M, Pipedrive es la opción más equilibrada: fácil de usar, precio accesible ($14–$49/mes por usuario) y con automatización de seguimiento. Zoho CRM es buena opción si ya usas otras herramientas de Zoho. Salesforce solo se justifica si tienes un equipo de ventas dedicado." }
+    ],
+    relatedCategories: ["customer-relationship-management", "customer-retention-retention", "business-analytics-reporting"],
+    relatedTools: ["salesforce-construction", "pipedrive", "zoho-crm"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  // ========== ELECTRICAL MANAGEMENT ==========
+  {
+    slug: "electrical-management", categoryId: "electrical-management", language: "en",
+    title: "Best Electrical Business Management Software for 2025",
+    metaDescription: "Compare electrical contractor software for 2025. ServiceTitan, Jobber, and HouseCall Pro compared — pricing, dispatch, and what electricians actually need to run their business.",
+    h1: "Best Electrical Business Management Software for 2025",
+    introduction: "<p>Electrical contractors have specific software needs that generic field service platforms often miss: permit tracking across multiple jurisdictions, panel inspection documentation, code compliance records, and the fact that diagnostic calls take longer and are harder to price than most other trades.</p><p>The right software for an electrical company isn't just job scheduling and invoicing — it's a platform that handles the full workflow from dispatch to permit close-out, with pricing tools that help your techs sell service upgrades without underselling complex work.</p>",
+    whyItMatters: "<p>Electrical work has workflow requirements general service software wasn't built for: permit management across city and county jurisdictions, inspection scheduling for rough-in and final inspections, code compliance documentation on panel upgrades, and equipment history records that protect you when work is questioned years later.</p><p>The three roles electrical software plays: dispatch and scheduling (getting the right tech to the right job with the right parts), customer and job records (complete histories of every customer and service call), and financial management (quoting, invoicing, and collecting efficiently). The tools below differ significantly in how well they handle each role.</p>",
+    toolsToCompare: ["servicetitan", "housecallpro", "jobber"],
+    comparisonTableColumns: [
+      { key: "price-book", label: "Price Book Mgmt" },
+      { key: "dispatch", label: "Dispatch Optimization" },
+      { key: "service-agreements", label: "Service Agreements" },
+      { key: "online-booking", label: "Online Booking" },
+      { key: "revenue-reporting", label: "Revenue Per Tech" }
+    ],
+    sections: [
+      { heading: "ServiceTitan — Best for Electrical Companies Running 5+ Technicians", content: "<p><strong>Pricing:</strong> $200–400+/month per technician</p><p>ServiceTitan was built with electrical, HVAC, and plumbing contractors as the primary target. The dispatch board gives real-time visibility into every tech's location and job status. The price book enforces consistent pricing on common electrical work — panel upgrades, outlet additions, circuit breakers — so techs aren't quoting the same job five different ways.</p><ul><li>Dispatch optimization with real-time tech location and job status</li><li>Price book management — consistent pricing across all techs</li><li>Service agreement and maintenance plan management</li><li>Revenue-per-tech reporting and CSR performance tools</li></ul><p><strong>Limitations:</strong> A 5-tech shop pays $1,000–2,000/month. Long implementation (4–8 weeks). Per-tech pricing makes growth expensive.</p><p><strong>Best for:</strong> Electrical contractors running 5+ techs focused on systematic service business with consistent pricing and recurring revenue.</p>", type: "text" },
+      { heading: "HouseCall Pro — Best Mid-Market Option for 2–8 Tech Shops", content: "<p><strong>Pricing:</strong> $50–150+/month (flat rate, not per-tech)</p><p>HouseCall Pro sits between Jobber and ServiceTitan in price and capability. The flat monthly pricing model is a significant advantage — you can grow from 3 to 6 techs without your software bill doubling. For electrical shops in the $500K–$3M range, HouseCall Pro covers most needs: online booking, dispatch board, mobile invoicing, customer history, and payment collection.</p><ul><li>Flat monthly pricing — no per-tech cost escalation as you grow</li><li>Online booking integration for customer self-scheduling</li><li>Fast to set up (1–2 weeks vs ServiceTitan's 4–8 weeks)</li><li>Good customer communication tools and automated review requests</li></ul><p><strong>Limitations:</strong> Less deep than ServiceTitan on price book management and service agreement complexity.</p><p><strong>Best for:</strong> Residential electrical contractors running 2–8 techs who want a full-featured platform without ServiceTitan's cost.</p>", type: "text" },
+      { heading: "Jobber — Best for Small Electrical Shops and Solo Operators", content: "<p><strong>Pricing:</strong> $29–99/month (flat rate)</p><p>Jobber is the simplest, most affordable option in this comparison. The core workflow covers what small shops need: scheduling, dispatching, mobile invoicing, and payment collection. Techs can view their schedule, close jobs, and collect payment from their phone without a training session.</p><ul><li>Fast setup — most small shops are running in a day or two</li><li>Simple enough for the whole team without formal training</li><li>Client hub for quote approvals and online payment</li><li>Flat pricing with no per-tech escalation</li></ul><p><strong>Limitations:</strong> No price book management. Basic service agreement tools. No dispatch optimization.</p><p><strong>Best for:</strong> Solo operators and small shops with 1–4 techs running $150K–$1M who want simple, reliable job management.</p>", type: "text" },
+      { heading: "Choosing the Right Platform for Your Shop Size", content: "<p><strong>Solo operator (1 tech):</strong> Jobber at $29/month — scheduling, invoicing, and payment is all you need.</p><p><strong>2–4 techs ($300K–$1M):</strong> HouseCall Pro entry tier or Jobber mid-tier. HouseCall Pro's flat pricing is better as you add techs.</p><p><strong>4–8 techs ($1M–$3M):</strong> HouseCall Pro is the right fit. ServiceTitan's cost isn't justified until pricing inconsistency is measurably costing you margin.</p><p><strong>8+ techs ($3M+):</strong> Evaluate ServiceTitan seriously. At 8 techs with inconsistent pricing, you're losing $2,000–5,000/month in margin that ServiceTitan's price book prevents.</p>", type: "text" }
+    ],
+    primaryCTA: "Try HouseCall Pro Free", primaryToolId: "housecallpro", secondaryToolIds: ["servicetitan", "jobber"],
+    keywords: ["electrical business management software", "electrician software", "electrical job scheduling app", "electrical contractor software", "field service software electricians"],
+    faqs: [
+      { question: "Does electrical software handle permit tracking?", answer: "ServiceTitan and HouseCall Pro both have permit tracking features — you can log permit numbers, track inspection status, and set reminders. Jobber's permit tracking is basic (notes fields rather than structured workflow). If permit management is a priority, ServiceTitan has the most complete implementation." },
+      { question: "Which platform is best for commercial electrical work?", answer: "ServiceTitan is the strongest for commercial electrical — it handles multi-site customers, complex service agreements, and project-level tracking. HouseCall Pro and Jobber are better suited for primarily residential electrical work." },
+      { question: "Can I track material costs per job?", answer: "Yes — all three platforms allow logging materials used on a job. ServiceTitan's inventory management is the most complete. HouseCall Pro and Jobber handle per-job material logging but have limited truck stock management." },
+      { question: "How much does ServiceTitan cost for a 5-tech electrical shop?", answer: "At $300/month per tech, a 5-tech shop pays $1,500/month or $18,000/year, plus onboarding fees ($1,000–3,000) and an annual contract. Verify that revenue improvement from consistent pricing and service agreements justifies the cost vs. HouseCall Pro at $100–150/month." },
+      { question: "Which integrates best with QuickBooks?", answer: "All three integrate with QuickBooks. HouseCall Pro and Jobber have the most seamless sync for residential operations. ServiceTitan's integration works well but requires more configuration to match your chart of accounts." },
+      { question: "¿Cuál es el mejor software para contratistas eléctricos pequeños en Estados Unidos?", answer: "Para negocios eléctricos de 1 a 4 técnicos, Jobber ($29-99/mes) es la mejor opción por su simplicidad y precio. Para talleres de 4 a 8 técnicos, HouseCall Pro ($50-150/mes) ofrece más funciones sin el costo por técnico de ServiceTitan. ServiceTitan se justifica para contratistas con 8 o más técnicos." }
+    ],
+    relatedCategories: ["hvac-management", "plumbing-management", "field-crew-scheduling"],
+    relatedTools: ["servicetitan", "housecallpro", "jobber"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
