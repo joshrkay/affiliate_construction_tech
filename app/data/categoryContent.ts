@@ -125,43 +125,109 @@ export const categoryPages: CategoryPage[] = [
   {
     slug: "customer-invoicing",
     categoryId: "customer-invoicing",
-    title: "Best Invoicing Software for Construction Contractors",
-    metaDescription: "Compare construction invoicing software. Create professional invoices, progress billing, and payment tracking for contractors.",
-    h1: "Best Construction Invoicing Software for 2025",
-    introduction: "Fast, accurate invoicing is critical to cash flow. Compare platforms that help contractors create professional invoices, manage progress billing, and track payments—from simple invoicing to comprehensive financial management.",
+    language: "en",
+    title: "Construction Invoicing Software: Complete Guide for Contractors",
+    metaDescription: "Complete guide to construction invoicing software. Learn how to choose, compare pricing, and implement invoicing for faster payments.",
+    h1: "Construction Invoicing Software: How to Get Paid Faster",
+    introduction: "<p>Getting paid on time is the difference between profitable jobs and cash flow problems. Yet contractors spend hours each week creating invoices, chasing customers for payment, and updating spreadsheets to track who owes what. By the time a check arrives, you've forgotten the job details.</p><p>Invoicing software automates this. Instead of manual spreadsheets, you get:</p><ul><li>Invoices created in minutes from your job data (no retyping)</li><li>Automatic payment reminders when invoices are overdue</li><li>Online payment options (customers pay directly from the invoice)</li><li>Instant visibility into who's paid, who owes, and how much cash is coming</li></ul><p>The result? Faster payments, fewer follow-ups, and money in your account instead of stuck in \"pending\" invoices.</p>",
+    whyItMatters: "<p>Most contractors lose 15-20% of potential income because of slow invoice collection and forgotten overdue payments. That's real money. If you invoice $500,000 annually, that's $75,000-$100,000 sitting in unpaid invoices.</p><p>Beyond cash flow, invoicing software gives you visibility. You can see at a glance which customers are slow to pay, which projects are still waiting for final invoices, and when the next check is due. This is critical for managing working capital—you can't run jobs without cash on hand.</p><p>For contractors operating on thin margins, the difference between invoicing today and invoicing three weeks later is the difference between making payroll and scrambling.</p>",
 
     toolsToCompare: ["buildertrend", "freshbooks", "quickbooks-construction"],
     comparisonTableColumns: [
-      { key: "progress-billing", label: "Progress Billing" },
-      { key: "invoice-customization", label: "Invoice Customization" },
+      { key: "progress-invoicing", label: "Progress Invoicing" },
+      { key: "automatic-reminders", label: "Automatic Reminders" },
+      { key: "online-payment", label: "Online Payment" },
       { key: "payment-tracking", label: "Payment Tracking" },
-      { key: "integration-with-accounting", label: "Accounting Integration" },
-      { key: "mobile-invoicing", label: "Mobile Invoicing" }
+      { key: "integration", label: "Accounting Integration" }
     ],
 
     sections: [
       {
-        heading: "Why Dedicated Invoicing Software Matters",
-        content: "<p>While spreadsheets can work for small businesses, they lack automation, create errors, and provide poor visibility into who's paid and who owes you money. Invoicing software automates the billing process, provides instant payment status, and integrates with your accounting system.</p>",
+        heading: "What Is Construction Invoicing Software?",
+        content: "<p>Construction invoicing software creates and sends bills to your customers for completed work. It replaces the manual process of creating invoices in Word or Excel, manually tracking payments, and chasing customers for payment.</p><p>Here's the difference: With spreadsheets, you spend 30 minutes per invoice creating entries, copying costs from job data, calculating totals, and manually emailing PDFs. With invoicing software, you click a button and it pulls your job data automatically.</p><p><strong>Real scenario:</strong> You finish a remodeling job Friday afternoon. With invoicing software, you create an invoice in 5 minutes, email it instantly, and the customer can pay online immediately. With spreadsheets, you create the invoice Saturday night, email it Monday, and wait 3 weeks for a check.</p>",
         type: "text"
       },
       {
-        heading: "Key Features for Construction Invoicing",
-        content: "<p><strong>Progress Billing:</strong> Create multiple invoices for a single project as work progresses (e.g., 25% at excavation, 50% at framing).</p><p><strong>Invoice Customization:</strong> Branded invoices with your logo, terms, and payment methods.</p><p><strong>Payment Reminders:</strong> Automated follow-ups for overdue invoices.</p><p><strong>Online Payment:</strong> Allow customers to pay directly from their invoice with credit card or ACH.</p>",
+        heading: "The Real Cost of Manual Invoicing",
+        content: "<p>If you're still using spreadsheets, here's what it costs you:</p><p><strong>Time cost:</strong> A contractor invoicing $500,000 annually spends 4-6 hours/week creating invoices and tracking payments. That's $10,000-15,000/year in lost labor—time you could spend on jobs or new business.</p><p><strong>Money cost:</strong> 15-20% of invoices paid late, averaging 30 days late = $75,000-100,000 tied up in pending invoices. That's cash you can't use to pay crews, buy materials, or cover payroll.</p><p><strong>Stress cost:</strong> 2-3 payment follow-ups per month = 10+ hours/month of unpaid admin work chasing customers.</p><p><strong>The math:</strong> Invoicing software costs $100-300/month ($1,200-3,600/year). You save $10,000+ in labor alone. The ROI is immediate.</p><p>Put another way: Every week you wait to switch to invoicing software, you're leaving $200-400 on the table in unpaid invoices and wasted time.</p>",
+        type: "highlight"
+      },
+      {
+        heading: "How to Choose Construction Invoicing Software",
+        content: "<p>Not all invoicing software is built for construction. Here's how to evaluate:</p><p><strong>1. Can it handle progress billing?</strong> Most construction projects have multiple billing events (25% down payment, 50% at frame-up, 25% at close). If your software forces you to create separate jobs instead of phases, it's wrong. You need software that templates progress billing automatically.</p><p><strong>2. Does it integrate with your accounting system?</strong> If you use QuickBooks, does the invoicing software sync automatically? Or do you hand-enter invoices twice? Manual entry = wasted time + errors. Integration is worth paying extra for.</p><p><strong>3. Can customers pay online?</strong> This single feature cuts payment time by 5-10 days. This is non-negotiable. If customers have to write a check, you're leaving money on the table.</p><p><strong>4. How much setup?</strong> If it takes 3 weeks of setup, you're out $500+ in lost time before you send your first invoice. Simpler tools (FreshBooks) need 1-2 days. Complex tools (QuickBooks) need 2-3 weeks. Choose based on your tolerance.</p><p><strong>5. What's the switching cost?</strong> Can you export historical invoices? Or are you locked in? Ask this before committing.</p>",
+        type: "text"
+      },
+      {
+        heading: "Construction Invoicing Software vs. Spreadsheets",
+        content: "<p>Be honest: Do you actually need software?</p><p><strong>Spreadsheets are fine if you:</strong></p><ul><li>Invoice fewer than 5 customers/month</li><li>All jobs finish in one billing cycle (no progress invoicing)</li><li>Customers always pay on time</li><li>You don't need payment reminders</li><li>Your accountant doesn't mind manually entering invoices</li></ul><p><strong>Spreadsheets break down when you:</strong></p><ul><li>Invoice 10+ customers/month (admin overhead explodes)</li><li>Do progress billing (tracking phases in Excel = nightmare)</li><li>Customers regularly pay late (no automatic reminders)</li><li>You need to see cash flow instantly (Excel takes 20 minutes to update)</li><li>You integrate with accounting software (manual entry = errors)</li></ul><p><strong>The breaking point:</strong> Most contractors switch to invoicing software once they hit $300,000+ annual invoicing. Before that, it's optional. After that, spreadsheets start costing more time than software costs money.</p>",
+        type: "text"
+      },
+      {
+        heading: "Key Features to Compare",
+        content: "<p><strong>Progress Invoicing</strong> — Create multiple invoices for the same project as work completes (25% at excavation, 50% at framing, 25% at close). Most contractor jobs don't finish in one billing cycle, so you need software that handles this automatically. Good tools let you template these stages so you don't manually recreate them every time.</p><p><strong>Automatic Reminders</strong> — Set the software to automatically email customers about overdue invoices. This removes the awkward \"hey, you forgot to pay\" conversation. Most contractors see payment speeds improve by 5-10 days when reminders are automated. This feature alone often pays for the software.</p><p><strong>Online Payment</strong> — Let customers pay directly from the invoice with a credit card or ACH transfer. This removes friction. Customers don't have to write a check, find your address, or ask where to send payment. One-click payment = faster money.</p><p><strong>Payment Tracking</strong> — See which invoices are paid, pending, or overdue at a glance. No more guessing. Good tools show aging reports (invoices 0-30 days, 30-60 days, 60+ days overdue). This tells you exactly how much cash is coming and when.</p><p><strong>Integration with Accounting</strong> — When you create an invoice, does it automatically update your books? Or do you hand-enter everything twice? Integration eliminates duplicate entry and errors.</p>",
+        type: "text"
+      },
+      {
+        heading: "Top Construction Invoicing Software (2025)",
+        content: "<p><strong>Buildertrend for Residential & Remodeling</strong></p><p>Best for: Residential contractors and remodelers doing $500K-5M annually</p><p>Why: Buildertrend is built specifically for residential. It pulls job data (costs, labor, materials) and auto-populates invoices. Progress billing is built-in for phased projects. For residential contractors, this eliminates the most painful part—manually creating invoices from job data. Setup takes 1-2 weeks if you're importing job data.</p><p>Pricing: $99-299/month depending on users and integrations</p><p>Limitation: Overkill for service contractors doing 50 small jobs monthly. Better for contractors doing 10-20 larger residential projects per year.</p><p><strong>FreshBooks for Simplicity</strong></p><p>Best for: Contractors new to invoicing software, solo contractors, small crews</p><p>Why: FreshBooks is simple. Create an invoice in 2 minutes, send it, and FreshBooks tracks payment. Time tracking is built in (so you can invoice by hours worked). For contractors switching from spreadsheets, it's the easiest on-ramp. Setup is 1-2 days maximum.</p><p>Pricing: $15-55/month</p><p>Limitation: Limited job costing and progress billing. If you need detailed breakdown by phase or tracking costs per project, you'll outgrow it quickly.</p><p><strong>QuickBooks Online for Full Integration</strong></p><p>Best for: Contractors who want invoicing + accounting + job costing in one system</p><p>Why: QuickBooks connects invoicing to accounting automatically. When you create an invoice, it updates your P&L and job profitability instantly. No separate systems, no duplicate entry. If you're already in QuickBooks for accounting, this eliminates a major pain point.</p><p>Pricing: $90-350+/month depending on features</p><p>Limitation: Steeper learning curve. Setup can take 2-3 weeks to get your chart of accounts and job structure right. Not a good fit if you want simple.</p>",
+        type: "text"
+      },
+      {
+        heading: "Invoicing Software Pricing & ROI",
+        content: "<p><strong>Cost comparison:</strong></p><ul><li>FreshBooks: $15-55/month = $180-660/year</li><li>Buildertrend: $99-299/month = $1,188-3,588/year</li><li>QuickBooks: $90-350/month = $1,080-4,200/year</li></ul><p><strong>ROI calculation:</strong></p><p>If you're invoicing $500,000 annually and currently spending 5 hours/week on manual invoicing:</p><ul><li>Hours wasted: 260 hours/year</li><li>Cost of labor: $5,000-10,000/year (@ $20-40/hr)</li><li>Cost of late payments: $75,000-100,000 tied up (at 15-20% late rate, avg 30 days)</li><li>Total cost: $80,000-110,000/year</li><li>Invoicing software cost: $1,200-3,600/year</li><li>Net savings: $76,400-108,800/year</li></ul><p>Even the most expensive option (QuickBooks) pays for itself in the first month.</p><p><strong>Hidden costs to consider:</strong></p><ul><li>Setup/onboarding: FreshBooks ($0-200), Buildertrend ($500-1,000), QuickBooks ($1,000-2,000)</li><li>Training: Most vendors offer free training; budget 4-8 hours of your time</li><li>Integrations: If you use other software, check compatibility (most popular tools integrate with top invoicing platforms)</li></ul>",
         type: "text"
       }
     ],
 
-    primaryCTA: "Get paid faster",
+    primaryCTA: "Start invoicing faster",
     primaryToolId: "buildertrend",
+    secondaryToolIds: ["freshbooks", "quickbooks-construction"],
 
     keywords: [
       "construction invoicing software",
-      "contractor invoicing app",
-      "progress billing software",
+      "best construction invoicing software",
+      "contractor billing software",
+      "construction invoice templates",
+      "how to invoice customers in construction",
+      "construction invoicing software vs spreadsheets",
+      "invoicing software for small contractors",
+      "free construction invoicing software",
+      "project invoicing app",
       "payment tracking construction"
     ],
 
+    faqs: [
+      {
+        question: "How much faster will I get paid if I use invoicing software?",
+        answer: "Contractors with online payment and automatic reminders typically see payment speeds improve by 5-10 days. Automated reminders alone cut overdue invoices by 30-40% because customers see the reminder and pay immediately."
+      },
+      {
+        question: "Can I create invoices on my phone?",
+        answer: "Most invoicing software has mobile apps. You can create invoices from the job site. Some contractors take a photo of completed work, immediately invoice the customer, and have payment by the next day."
+      },
+      {
+        question: "What if my customer doesn't want to pay online?",
+        answer: "No problem. They can pay by check, ACH, or you can take their card over the phone. Online payment is an option, not a requirement."
+      },
+      {
+        question: "How long does setup take?",
+        answer: "FreshBooks: 1-2 days. Buildertrend: 1-2 weeks if importing job data. QuickBooks: 2-3 weeks to set up correctly. Most have free onboarding support."
+      },
+      {
+        question: "Can I use this for multiple projects?",
+        answer: "Yes. Create separate invoices per project, track which customer owes what, and see total outstanding invoices across all projects."
+      },
+      {
+        question: "What happens if I switch software later?",
+        answer: "Most invoicing software lets you export historical invoices. Check this before signing up. You won't be locked in."
+      },
+      {
+        question: "Will my accountant accept invoices from this software?",
+        answer: "Yes. All major invoicing software exports in formats accountants understand. Integrated software like QuickBooks is actually preferred because it eliminates manual data entry."
+      }
+    ],
+
+    relatedCategories: ["customer-payment-collection", "financial-management", "project-budget-tracking"],
     published: true,
     featured: true,
     lastUpdated: new Date().toISOString()
