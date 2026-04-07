@@ -59,6 +59,13 @@ const client = new OpenAI({
   baseURL: OLLAMA_URL,
 });
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/^```(?:json|javascript)?\n?/, "")
+    .replace(/\n?```$/, "")
+    .trim();
+}
+
 async function callOllama(prompt: string): Promise<string> {
   try {
     const response = await client.chat.completions.create({
@@ -115,7 +122,17 @@ Return valid JSON only:
 }
 `);
 
-    const titleObj = JSON.parse(titleMeta);
+    let titleObj;
+    try {
+      titleObj = JSON.parse(stripMarkdown(titleMeta));
+    } catch (e) {
+      console.warn("Failed to parse title/meta, using defaults");
+      titleObj = {
+        title: `${categoryName} Software: Complete Guide for Contractors`,
+        metaDescription: `Complete guide to ${categoryName.toLowerCase()} software for contractors.`,
+        h1: `${categoryName} Software: Improve Your Operations`,
+      };
+    }
 
     // Generate introduction
     console.log("  → Introduction");
@@ -278,7 +295,9 @@ Repeat 7 times.
 `);
 
     // Parse FAQs
-    const faqLines = faqsText.split("\n").filter((l) => l.trim());
+    const faqLines = stripMarkdown(faqsText)
+      .split("\n")
+      .filter((l) => l.trim());
     const faqs = [];
     for (let i = 0; i < faqLines.length; i += 2) {
       if (faqLines[i] && faqLines[i + 1]) {
