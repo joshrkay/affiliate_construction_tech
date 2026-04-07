@@ -2473,5 +2473,66 @@ export const categoryPages: CategoryPage[] = [
     published: true,
     featured: false,
     lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "ai-document-processing", categoryId: "ai-document-processing", language: "en",
+    title: "Best AI Document Processing Tools for Construction (2025)",
+    metaDescription: "Compare AI document processing tools for construction. Procore Copilot, Document Crunch, and Corecon reviewed — RFI automation, submittal review, and contract risk analysis for GCs.",
+    h1: "Best AI Document Processing Tools for Construction (2025)",
+    introduction: "A PM on a $10M commercial project spends 10–15 hours per week on document processing: reading submittals, cross-referencing specs, drafting RFI responses, reviewing plan revisions. Most of that time is mechanical work AI can accelerate — extracting data, flagging conflicts, drafting first-pass responses. The best tools turn a 45-minute submittal review into a 10-minute approval.",
+    whyItMatters: "Construction AI is genuinely useful for specific tasks today: document search across large project archives, first-draft generation for standard documents, structured data extraction, and contract clause flagging. It still requires human review before acting on outputs — use it to go faster, not to remove the human from decisions.",
+
+    toolsToCompare: ["procore", "document-crunch", "corecon"],
+    comparisonTableColumns: [
+      { key: "document-search", label: "Doc Search" },
+      { key: "submittal-review", label: "Submittal Review" },
+      { key: "contract-analysis", label: "Contract Analysis" },
+      { key: "rfi-drafting", label: "RFI Drafting" },
+      { key: "pm-integration", label: "PM Integration" }
+    ],
+
+    sections: [
+      {
+        heading: "What AI Document Processing Can (and Can't) Do Today",
+        content: "<p><strong>Works well now:</strong> Structured data extraction from consistently formatted documents, natural language search across project archives, first-draft generation for standard RFIs and daily logs, contract clause identification and risk flagging.</p><p><strong>Still maturing:</strong> Complex multi-document cross-referencing, handwritten document processing, design intent interpretation requiring engineering judgment, and plan analysis for constructability issues.</p><p><strong>The hallucination rule:</strong> Any AI-extracted data that will affect a decision needs human verification. AI output in construction accelerates human review — it doesn't replace it.</p>",
+        type: "text"
+      },
+      {
+        heading: "Three Tools for Three Different AI Needs",
+        content: "<p><strong>Procore Copilot</strong> is the right choice if you're already on Procore. Natural language document search alone — asking \"what does the spec say about waterproofing membrane thickness?\" and getting the relevant section in seconds — delivers ROI on large projects.</p><p><strong>Document Crunch</strong> solves contract review specifically. For GCs reviewing 10+ subcontracts per year, it provides a fast first-pass risk assessment that surfaces bad indemnification language and missing insurance requirements without reading every contract from scratch.</p><p><strong>Corecon</strong> targets the mid-market GC drowning in document entry. AI extraction reduces manual data entry on RFI logs, submittal logs, and change order requests.</p>",
+        type: "text"
+      },
+      {
+        heading: "Where to Start with Construction AI",
+        content: "<p><strong>On Procore:</strong> Enable Copilot document search first. It's the highest-adoption feature and requires no workflow change — PMs search naturally and build the habit gradually.</p><p><strong>Not on Procore, reviewing 10+ subcontracts per year:</strong> Document Crunch. The first contract it catches a bad indemnification clause on pays for months of subscription.</p><p><strong>Mid-market GC overwhelmed by document entry:</strong> Corecon's AI extraction reduces the manual burden on project administrators for RFI and submittal log population.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Cut your document processing time in half",
+    primaryToolId: "procore",
+    secondaryToolIds: ["document-crunch", "corecon"],
+
+    keywords: [
+      "AI document processing construction",
+      "AI for construction RFIs",
+      "construction document automation",
+      "Procore AI features",
+      "submittal review software"
+    ],
+
+    faqs: [
+      { question: "Does Procore have AI features?", answer: "Yes — Procore Copilot includes natural language document search, RFI response drafting, daily log summarization, and submittal review assistance. Copilot features are rolling out across plan tiers through 2025. Confirm which features are live on your specific plan before buying specifically for AI capability." },
+      { question: "Can AI read construction drawings and plans?", answer: "AI can identify elements in plan sets — rooms, dimensions, symbols, annotations — with improving accuracy. Tools like Procore Copilot can search drawing notes. However, complex plan analysis (identifying constructability issues, verifying coordination between mechanical and structural drawings) still requires human review. Drawing AI is improving but isn't ready for autonomous analysis." },
+      { question: "What is Document Crunch and what does it do?", answer: "Document Crunch is an AI platform that analyzes construction contracts and flags high-risk clauses. Upload a subcontract and it identifies indemnification language, pay-if-paid clauses, waiver of consequential damages provisions, and missing insurance requirements — in plain language, in minutes. It's not a substitute for legal review on high-value contracts, but it provides a fast first-pass risk assessment for standard subcontracts." },
+      { question: "Is AI document processing reliable enough to use on real projects?", answer: "For specific, well-defined tasks — extracting data from standard form documents, searching project archives, flagging contract clauses — yes. For tasks requiring judgment — interpreting design intent, evaluating constructability, making contract decisions — AI output requires human review. Use it to go faster, not to remove the human from decisions." },
+      { question: "How does AI handle non-standard or project-specific document formats?", answer: "AI tools perform best on documents they've been trained on at scale: AIA contracts, CSI-formatted specs, standard submittal covers, RFI log formats. Non-standard, project-specific formats perform worse. If your company uses heavily customized templates, expect a longer period before AI extraction accuracy reaches useful levels." },
+      { question: "¿Pueden las herramientas de inteligencia artificial procesar documentos de construcción en español?", answer: "La mayoría de las herramientas actuales están optimizadas para inglés. Procore Copilot tiene capacidad multilingüe limitada. Para contratistas con documentación en español, la extracción de datos estructurados (campos de formularios, números de referencia) es más confiable que el análisis de texto libre. Se espera que el soporte multilingüe mejore significativamente en 2025-2026." }
+    ],
+
+    relatedCategories: ["ai-powered-project-management", "project-document-management", "bid-management"],
+    relatedTools: ["procore", "document-crunch", "corecon"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
