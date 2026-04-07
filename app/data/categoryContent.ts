@@ -1731,5 +1731,209 @@ export const categoryPages: CategoryPage[] = [
     published: false,
     featured: false,
     lastUpdated: new Date().toISOString()
+  },
+
+  // ========== AI-POWERED PROJECT MANAGEMENT ==========
+  {
+    slug: "ai-powered-project-management",
+    categoryId: "ai-powered-project-management",
+    language: "en",
+    title: "Best AI Construction Project Management Software for 2025",
+    metaDescription: "Compare AI-powered project management tools for contractors. Honest breakdown of what AI actually does, what it doesn't, and which tools are worth paying for.",
+    h1: "Best AI Construction Project Management Software for 2025",
+    introduction: "<p>Most software vendors slapped \"AI\" on their product between 2023 and 2025. Some of it is real. Most of it is a chatbot wrapper around features that already existed, or automation they're now calling intelligence.</p><p>That distinction matters because you're deciding whether to pay more for AI features — or switch platforms to get them. This guide cuts through the marketing and tells you which AI capabilities in construction project management are actually saving contractors time right now, which ones are still too immature to rely on, and which tools are doing it best.</p>",
+
+    whyItMatters: "<p>A 2024 Dodge Construction Network report found that construction project managers spend <strong>35% of their time on administrative tasks</strong> — status updates, document routing, meeting summaries, and data entry. That's more than a third of your PM's day on work that doesn't require judgment.</p><p>AI tools that target this 35% — document summarization, automated status updates, meeting transcription — deliver measurable ROI. A project manager spending 3 fewer hours per week on admin at $75/hour is worth $11,700/year against a $500/month software fee.</p><p>Before evaluating tools, it helps to separate what AI actually does in this space: document and drawing analysis, schedule prediction and risk flagging, meeting summarization, natural language queries against project data, and rules-based automation that vendors are labeling as AI. The first three are mature enough to pay for. The last two are improving but depend heavily on your data quality.</p>",
+
+    toolsToCompare: ["procore", "monday-construction", "clickup"],
+    comparisonTableColumns: [
+      { key: "construction-specific-ai", label: "Construction AI" },
+      { key: "document-analysis", label: "Document Analysis" },
+      { key: "schedule-risk-flagging", label: "Schedule Risk" },
+      { key: "ai-automation", label: "AI Automation" },
+      { key: "meeting-summarization", label: "Meeting Summary" }
+    ],
+
+    sections: [
+      {
+        heading: "Procore — Best AI Features for Commercial GCs Already on the Platform",
+        content: "<p><strong>Pricing:</strong> $8,500+/year</p><p>Procore's AI capabilities, marketed as Procore Copilot, are the most construction-specific of any platform in this list. They're built on top of Procore's existing data infrastructure — which means they actually work when you've been running projects in Procore consistently.</p><p>The strongest AI features are in document review: Procore's AI can analyze submittals, flag deviations from spec, and summarize RFI responses without someone reading every line. On a commercial project with 400+ submittals, that's a meaningful time reduction.</p><ul><li>Submittal and document analysis — flags spec deviations and missing information automatically</li><li>Risk identification — surfaces schedule and budget anomalies based on project data patterns</li><li>Meeting transcription and action item extraction via Zoom and Teams integrations</li><li>Natural language queries against your project data</li></ul><p><strong>Limitations:</strong> AI features require clean, consistent project data — new Procore users won't see benefits immediately. Predictive scheduling is still early. Price means you're bundling AI into an already expensive platform with no standalone AI tier.</p><p><strong>Best for:</strong> Commercial GCs already on Procore who want to extract more value from the platform they're already paying for.</p>",
+        type: "text"
+      },
+      {
+        heading: "monday.com — Best AI Automation for Smaller Teams and Mixed Workflows",
+        content: "<p><strong>Pricing:</strong> $9–16/month per user</p><p>monday.com's AI features are less construction-specific than Procore's but more accessible and genuinely useful for teams running mixed workflows — project management, client communication, and internal coordination in one place.</p><p>The AI automation builder is the strongest feature: describe what you want to automate in plain English and monday.com generates the automation rule. For contractors who know they want automation but don't have a dedicated ops person to build it, this removes the technical barrier.</p><ul><li>Natural language automation builder — describe the rule, AI writes the logic</li><li>AI-generated project summaries for client updates and internal standups</li><li>Text and email drafting assistance for routine communication</li><li>Workflow templates that adapt to construction project patterns</li></ul><p><strong>Limitations:</strong> No construction-specific document analysis. AI quality depends heavily on how structured your data is. Not designed for large commercial projects with deep document management needs.</p><p><strong>Best for:</strong> Specialty contractors, remodelers, and smaller GCs running $250K–$3M who want AI automation without enterprise pricing.</p>",
+        type: "text"
+      },
+      {
+        heading: "ClickUp — Best AI Assistant for Budget-Conscious Contractors",
+        content: "<p><strong>Pricing:</strong> $7–12/month per user (AI add-on: $5/month per user)</p><p>ClickUp's AI assistant is a general-purpose writing and summarization tool built on top of a solid project management platform. It's not construction-specific — the AI doesn't know what a submittal is — but it's useful for the generic admin tasks that eat time on any project: meeting notes, status summaries, email drafts, and progress reports.</p><ul><li>Meeting note summarization and action item extraction</li><li>Generating progress report drafts from task status data</li><li>Rewriting scope descriptions and client communications for clarity</li><li>Answering questions about tasks and project status in natural language</li></ul><p><strong>Limitations:</strong> No construction domain knowledge — you're providing context every time. AI output requires editing for anything client-facing. Not designed for document-heavy commercial workflows.</p><p><strong>Best for:</strong> Small to mid-size contractors who want AI assistance on communication and reporting without committing to an expensive construction-specific platform.</p>",
+        type: "text"
+      },
+      {
+        heading: "Should You Pay for AI Features Now?",
+        content: "<p><strong>Pay for AI now if:</strong> You're spending 5+ hours per week on meeting summaries, status reports, or document review. Your project data is clean and consistently maintained. You're already on a platform with AI features — you may already be paying for capabilities you haven't enabled.</p><p><strong>Wait on AI if:</strong> Your project data is inconsistent or entered sporadically. You're a solo operator or two-person team. You're evaluating platforms primarily for AI — buy for the core PM features first, AI second. You're in the middle of a busy project season.</p><p><strong>The data discipline problem is real.</strong> Every AI feature in this list relies on your project data being timely and accurate. If your team logs progress weekly instead of daily, if RFIs sit unassigned for days, if your schedule hasn't been updated in two weeks — AI will surface garbage. Fix the process before adding the AI layer.</p>",
+        type: "text"
+      },
+      {
+        heading: "What to Expect in the Next 12–18 Months",
+        content: "<p>AI in construction project management is moving fast. Three things worth watching:</p><ul><li><strong>Autonomous RFI drafting:</strong> Tools that auto-generate RFI responses based on spec and drawing data are in beta at several platforms. Expect production-ready versions by late 2025 or early 2026.</li><li><strong>AI-driven schedule compression:</strong> Predictive scheduling that suggests sequence changes to recover schedule float based on actual crew productivity data. Procore and Oracle Primavera are both working on this.</li><li><strong>Voice-to-action on job sites:</strong> Field supervisors describing issues verbally and having that update the project schedule and trigger notifications automatically. Early tools exist; reliability needs to improve.</li></ul><p>None of these replace an experienced PM. All of them reduce the administrative load on your best people.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Enable Procore Copilot",
+    primaryToolId: "procore",
+    secondaryToolIds: ["monday-construction", "clickup"],
+
+    keywords: [
+      "AI construction project management",
+      "AI for contractors",
+      "construction automation AI",
+      "AI project assistant",
+      "Procore AI Copilot"
+    ],
+
+    faqs: [
+      {
+        question: "Is AI construction project management software ready for real jobs?",
+        answer: "For specific tasks — document analysis, meeting summaries, communication drafting — yes. For anything requiring construction judgment — schedule decisions, subcontractor management, risk assessment — AI is a support tool, not a replacement. Use it where it saves admin time; keep humans in the loop on decisions that affect margin."
+      },
+      {
+        question: "Which AI PM tool works best without a lot of existing project data?",
+        answer: "ClickUp and monday.com work without construction-specific data because their AI is general-purpose. Procore's AI is more powerful but requires you to have been running projects in Procore consistently — new users won't see the same benefits. If you're starting fresh, monday.com or ClickUp is the lower-risk entry point."
+      },
+      {
+        question: "Do I need to switch platforms to get AI features?",
+        answer: "Probably not. If you're already on Procore, monday.com, or ClickUp, check what AI features are available in your current tier. Many contractors are paying for AI capabilities they haven't turned on. Enable existing features and evaluate them for 60 days before considering a platform switch."
+      },
+      {
+        question: "How much time does AI actually save?",
+        answer: "Varies by use case. Meeting summarization and action item extraction: 30–60 minutes per meeting. Document review and submittal analysis: 2–4 hours per week on active commercial projects. Status report drafting: 1–2 hours per week. Total potential: 5–8 hours per week for a PM on a busy commercial project."
+      },
+      {
+        question: "What's the difference between AI and automation in project management software?",
+        answer: "Automation is rule-based: when X happens, do Y. AI learns from data and handles unstructured inputs like documents and natural language. Most 'AI' features in construction PM software are actually automation — useful, but not the same as true machine learning. Procore's document analysis and schedule risk flagging are closer to real AI than most tools in this space."
+      },
+      {
+        question: "¿Vale la pena pagar por herramientas de gestión de proyectos con IA para contratistas pequeños?",
+        answer: "Para contratistas con equipos de 1 a 3 personas, el retorno de inversión en IA es limitado en este momento. Las funciones más útiles están disponibles en ClickUp por $5/mes por usuario. Si ya utilizas monday.com o Procore, activa las funciones de IA que ya tienes antes de pagar por algo nuevo. La IA de construcción específica tiene más valor para contratistas generales con proyectos comerciales de más de $2M."
+      }
+    ],
+
+    relatedCategories: ["project-scheduling", "ai-document-processing", "team-collaboration"],
+    relatedTools: ["procore", "monday-construction", "clickup"],
+    published: false,
+    featured: false,
+    lastUpdated: new Date().toISOString()
+  },
+
+  // ========== CUSTOMER PAYMENT COLLECTION ==========
+  {
+    slug: "customer-payment-collection",
+    categoryId: "customer-payment-collection",
+    language: "en",
+    title: "Best Contractor Payment Collection Software for 2025",
+    metaDescription: "Compare the best contractor payment collection apps for 2025. Credit cards, ACH, mobile readers — real fees, honest tradeoffs, and ROI for contractors chasing invoices.",
+    h1: "Best Contractor Payment Collection Software for 2025",
+
+    introduction: "<p>A painting contractor finished a $28,000 exterior repaint in early October. The homeowner was happy, the job was clean. But the contractor only accepted checks, and the client was traveling. The check arrived November 12th — 6 weeks after completion. He had $12,000 in material invoices due October 30th and had to draw on his line of credit to cover it. The credit card fee to accept payment digitally would have been $812. The line of credit interest cost him $340. He paid more to avoid accepting cards than accepting cards would have cost.</p>",
+
+    whyItMatters: "<p>According to the 2024 Levelset Construction Payment Report, 84% of contractors have experienced slow payment from clients, and the average contractor waits 54 days to collect on completed work. That gap between when you finish and when you get paid is financed by your working capital — or your credit line. Contractors who add digital payment options report reducing average collection time from 45–60 days to 7–14 days, and cutting payment follow-up by 3–5 hours per week.</p>",
+
+    toolsToCompare: ["square", "stripe", "housecallpro", "quickbooks-construction"],
+
+    comparisonTableColumns: [
+      { key: "monthly-fee", label: "Monthly Fee" },
+      { key: "card-rate", label: "Card Rate" },
+      { key: "ach-rate", label: "ACH Rate" },
+      { key: "mobile-reader", label: "Mobile Reader" },
+      { key: "invoice-integration", label: "Invoice Sync" },
+      { key: "progress-billing", label: "Progress Billing" }
+    ],
+
+    sections: [
+      {
+        heading: "The Real Cost of Checks and Cash",
+        content: "<p><strong>Float and opportunity cost.</strong> A check mailed on Friday arrives Tuesday, clears Thursday. That's 6 days of float on every payment. For a contractor doing $1.5M annually with 45-day average collection, $185,000 is tied up in receivables at any given time. If you're borrowing on a line of credit at 8% to cover that gap, the interest cost alone is $14,800 per year.</p><p><strong>Admin time.</strong> Your office manager spends 4–6 hours per week on payment-related tasks: generating invoices, following up on unpaid ones, depositing checks, reconciling the bank, calling clients who haven't responded. At $22/hour, that's $5,000–$6,800 per year in labor — before the cost of missed payments.</p><p><strong>Bad debt.</strong> A 2023 Levelset survey found that 28% of contractors wrote off at least one bad debt in the past year, averaging $6,200. Contractors who collect by credit card have a 60–70% lower bad debt rate — chargebacks are disputable, but they create an enforcement mechanism that a rubber check doesn't.</p><p><strong>The check that never comes.</strong> You finished the job 8 weeks ago. The client says it's in the mail. A payment link sent at job completion, with a 'pay now' button, gets paid at a dramatically higher rate than an invoice mailed a week after the fact.</p>",
+        type: "text"
+      },
+      {
+        heading: "Construction Payment vs. Generic Apps",
+        content: "<table><thead><tr><th>Feature</th><th>Venmo / Zelle</th><th>Generic (PayPal)</th><th>Construction Payment App</th></tr></thead><tbody><tr><td>Invoice integration</td><td>None</td><td>Basic</td><td>Native — payment matches to invoice</td></tr><tr><td>ACH / bank transfer</td><td>Peer-to-peer only</td><td>Limited</td><td>Standard, low fee</td></tr><tr><td>Progress payments</td><td>No</td><td>No</td><td>Built-in milestones</td></tr><tr><td>Retainage tracking</td><td>No</td><td>No</td><td>Yes</td></tr><tr><td>Accounting sync</td><td>No</td><td>Limited</td><td>QuickBooks, Xero native</td></tr><tr><td>Mobile card reader</td><td>No</td><td>Yes (fee)</td><td>Yes</td></tr><tr><td>Reporting</td><td>None</td><td>Basic</td><td>Job-level P&amp;L impact</td></tr></tbody></table><p><strong>When Venmo / Zelle is fine:</strong> Collecting small deposits from clients you know personally, fewer than 5 jobs per year, all jobs under $5,000.</p><p><strong>When you need dedicated payment software:</strong> Regularly waiting 30+ days for final payments, progress billing on jobs over $10,000, payments need to sync to QuickBooks, or more than 3 outstanding invoices at any time.</p>",
+        type: "text"
+      },
+      {
+        heading: "What Contractors Actually Need From Payment Software",
+        content: "<p><strong>1. Text and email payment links.</strong> Send a link when you complete the job. The client clicks it, enters their card or bank info, and you see the payment within minutes. No waiting for a check. No 'I'll drop it off.' This single feature reduces collection time more than any other.</p><p><strong>2. Mobile card readers.</strong> On-site payment at job completion. For service contractors (HVAC, plumbing, electrical), collecting at the door is standard. For remodelers, collecting a completion payment on-site instead of waiting for a mailed check eliminates weeks of float.</p><p><strong>3. ACH bank transfer (low or no fee).</strong> Credit cards cost 2.6–2.9% per transaction. On a $25,000 job, that's $650–$725. ACH transfers cost $0.25–$1.50 flat. For large invoices, ACH is the right option — and your software should make it easy for clients to pay by bank transfer.</p><p><strong>4. Progress payment and retainage tracking.</strong> Billing $40,000 over 4 phases with 10% retainage? Your payment software needs to handle partial payments, track what's been released, and clearly show your client what they owe at each milestone.</p><p><strong>5. QuickBooks or accounting sync.</strong> Payments collected in your payment tool should post to your accounting system automatically. Manual re-entry is exactly what you're trying to eliminate.</p>",
+        type: "text"
+      },
+      {
+        heading: "How to Choose Contractor Payment Collection Software",
+        content: "<p><strong>1. Fee structure — especially ACH.</strong> All tools charge 2.6–2.9% for credit cards. The differentiator is ACH. Stripe caps at $5, QuickBooks caps at $10. For large invoices, that's the number that matters.</p><p><strong>2. Client experience.</strong> Can your client pay by clicking a link in a text? Or do they need to create an account? Friction kills payment speed. The simpler for the client, the faster you collect.</p><p><strong>3. Integration with your invoicing tool.</strong> If you're already invoicing in QuickBooks or Jobber, pick a payment tool that connects directly. Reconciling payments manually is what you're trying to eliminate.</p><p><strong>4. Mobile card reader.</strong> Do you need to accept cards in the field? Square's reader is free; others charge $49–99.</p><p><strong>5. Progress and retainage support.</strong> Multi-phase billing needs partial payment and retainage tracking. Most generic payment processors don't support this — confirm before committing.</p><p><strong>You DON'T need dedicated payment software if:</strong> You collect full payment upfront via cash or check with no collection problems, all clients are commercial with reliable net-30, or you do fewer than 10 jobs per year and admin handles it in under 2 hours per week.</p>",
+        type: "text"
+      },
+      {
+        heading: "Top Contractor Payment Collection Software for 2025",
+        content: "<h3>Square for Contractors — Best for Small Contractors Who Want Simple and Free</h3><p>Square's free tier gives you a card reader, online payment links, and basic invoicing with no monthly fee — you pay only when you collect.</p><ul><li><strong>Best for:</strong> Solo operators and small contractors doing under $500K who want to accept cards without a monthly subscription</li><li><strong>Pricing:</strong> $0/month + 2.6% + $0.10 in-person, 2.9% + $0.30 online</li><li><strong>Key strength:</strong> Zero monthly cost, free card reader, clean client experience. Send a payment link by text, client pays on their phone, money is in your account next business day. Setup takes 20 minutes</li><li><strong>Limitation:</strong> No retainage tracking, no progress payment structure, no deep accounting integration beyond basic sync. Works for simple payment collection — not for complex construction billing</li></ul><p><a href=\"/tools/square\">See Square pricing →</a></p><h3>Stripe — Best for Tech-Savvy Contractors Who Want Maximum Flexibility</h3><p>Stripe is the most powerful payment platform available — best suited to contractors with someone technical on staff or a custom invoicing workflow.</p><ul><li><strong>Best for:</strong> Contractors who bill through a custom website or want to embed payment links in their own client portal</li><li><strong>Pricing:</strong> 2.7% + $0.05 in-person, 2.9% + $0.30 online; ACH at 0.8% capped at $5</li><li><strong>Key strength:</strong> Stripe's ACH pricing is the best available for large invoice collection. A $30,000 final payment costs $5 via ACH vs. $870 via credit card — a difference that adds up to thousands per year for high-volume contractors</li><li><strong>Limitation:</strong> Not built for contractors — no invoice templates, no progress billing, no retainage. Requires integration work to connect to your accounting system</li></ul><p><a href=\"/tools/stripe\">See Stripe pricing →</a></p><h3>HouseCall Pro — Best for Service Contractors Who Want Payment Built Into Job Management</h3><p>HouseCall Pro combines scheduling, dispatching, invoicing, and payment collection in one app designed for home service businesses.</p><ul><li><strong>Best for:</strong> HVAC, plumbing, electrical, and service contractors doing residential jobs who want to collect payment at the door</li><li><strong>Pricing:</strong> $50–150+/month depending on team size</li><li><strong>Key strength:</strong> The complete service workflow in one place — dispatch a tech, they complete the job, collect payment on-site, client gets a receipt, job closes automatically. No separate invoicing app, no separate payment processor</li><li><strong>Limitation:</strong> Monthly cost adds up vs. Square's pay-per-transaction model for lower-volume operators. Built for service work — not suited for multi-phase commercial projects or complex progress billing</li></ul><p><a href=\"/tools/housecallpro\">See HouseCall Pro pricing →</a></p><h3>QuickBooks Payments — Best for Contractors Already on QuickBooks</h3><p>QuickBooks Payments (built into QuickBooks Online) adds a 'Pay Now' button to any invoice, accepts ACH and credit cards, and posts payments directly to your books.</p><ul><li><strong>Best for:</strong> Contractors already using QuickBooks for accounting who want payment collection without adding another tool</li><li><strong>Pricing:</strong> 1% ACH (max $10), 2.5% swipe, 2.99% online; no additional monthly fee beyond QBO subscription</li><li><strong>Key strength:</strong> Zero reconciliation work — payments post directly to the invoice in QuickBooks, bank deposit records automatically, and the job-level P&amp;L updates instantly</li><li><strong>Limitation:</strong> Requires QBO subscription ($90–350+/month). ACH capped at $10 vs. Stripe's $5. No mobile card reader included — you pay extra for the GoPayment reader</li></ul><p><a href=\"/tools/quickbooks-construction\">Compare QuickBooks plans →</a></p><p>For contractors who also need invoicing, see our <a href=\"/categories/customer-invoicing\">construction invoicing software guide</a>. For broader financial management, see <a href=\"/categories/financial-management\">construction financial management tools</a>.</p>",
+        type: "text"
+      },
+      {
+        heading: "Contractor Payment Software Pricing & ROI",
+        content: "<h3>Fee Comparison on a $10,000 Invoice</h3><table><thead><tr><th>Method</th><th>Credit Card Fee</th><th>ACH Fee</th><th>Days to Collect</th></tr></thead><tbody><tr><td>Check</td><td>$0</td><td>$0</td><td>7–45 days</td></tr><tr><td>Square</td><td>$290</td><td>N/A</td><td>Next day</td></tr><tr><td>QuickBooks Payments</td><td>$299</td><td>$10</td><td>Next day</td></tr><tr><td>Stripe</td><td>$290</td><td>$5</td><td>2 days</td></tr><tr><td>HouseCall Pro</td><td>~$265</td><td>N/A</td><td>Next day</td></tr></tbody></table><h3>ROI Scenario: $600K Contractor, 25 Jobs Per Year</h3><p>A contractor doing $600K across 25 jobs, currently collecting by check with 45-day average:</p><ul><li><strong>Software cost:</strong> Square free tier (no monthly fee)</li><li><strong>Collection time improvement:</strong> 45 days → 12 days average = 33 days recovered</li><li><strong>Line of credit savings:</strong> Reduced draws at 8% = $4,400/year in interest</li><li><strong>Admin time saved:</strong> 3 hours/week × 50 weeks × $22/hour = $3,300/year</li><li><strong>Bad debt reduction:</strong> 1 write-off avoided at $4,000 average = $4,000</li><li><strong>Total first-year benefit:</strong> ~$11,700</li></ul><h3>Hidden Costs to Plan For</h3><ul><li><strong>Card fees on large invoices:</strong> 2.9% on a $50,000 progress payment is $1,450 — train clients to pay large invoices via ACH</li><li><strong>Chargeback risk:</strong> Keep signed contracts, completion photos, and written communication as chargeback evidence</li><li><strong>Client resistance:</strong> Offer ACH as the 'no fee' alternative to cards for clients who push back on surcharges</li><li><strong>Setup time:</strong> 2–4 hours to connect to your invoicing and accounting tools</li></ul>",
+        type: "highlight"
+      }
+    ],
+
+    primaryCTA: "See Square pricing — start collecting payments today",
+    primaryToolId: "square",
+    secondaryToolIds: ["stripe", "housecallpro"],
+
+    keywords: [
+      "construction payment processing software",
+      "contractor payment app",
+      "online payment collection",
+      "merchant services construction",
+      "payment gateway contractors",
+      "contractor credit card processing",
+      "construction invoice payment"
+    ],
+
+    faqs: [
+      {
+        question: "What is the best way for contractors to collect payment?",
+        answer: "The fastest way is a payment link sent by text or email at job completion — clients click it, pay by card or ACH, and you see the money within 1–2 business days. For large invoices over $10,000, push clients toward ACH to keep fees under $10. For on-site service work, a mobile card reader at job completion beats chasing a check by weeks."
+      },
+      {
+        question: "How much does it cost contractors to accept credit cards?",
+        answer: "Standard processing fees are 2.6–2.9% plus $0.10–$0.30 per transaction across all major platforms. On a $25,000 invoice, that's $650–$725. ACH bank transfer is far cheaper — Stripe charges 0.8% capped at $5, QuickBooks charges 1% capped at $10. For large invoices, ACH is almost always the right choice."
+      },
+      {
+        question: "Should I pass credit card fees on to clients?",
+        answer: "You can — it's legal in most states with proper disclosure. Most contractors who add a 3% surcharge find that clients choose ACH instead, which costs you almost nothing. If you add a surcharge, disclose it on your contract and invoice before the client pays."
+      },
+      {
+        question: "What's the difference between Square and Stripe for contractors?",
+        answer: "Square is simpler to set up and better for in-person and small-invoice collection — free monthly cost, free card reader, clean client experience. Stripe has better ACH pricing (capped at $5 vs. Square's unavailable ACH) and more flexibility for custom workflows, but requires more technical setup. Most small contractors do better with Square; larger shops collecting big invoices regularly may prefer Stripe's ACH economics."
+      },
+      {
+        question: "How do I get clients to pay faster?",
+        answer: "Send the invoice the day you finish the job, include a payment link in the email and text, and set clear payment terms in your contract (due on receipt or net-7, not net-30). For large projects, use progress billing so you're never chasing one large final payment — you've already collected most of the money before the punch list."
+      },
+      {
+        question: "Can I accept partial payments and retainage with payment apps?",
+        answer: "Square and Stripe handle partial payments by letting clients pay any amount. HouseCall Pro and QuickBooks Payments support partial invoice payments with milestone tracking. For formal retainage management — holding 10% until completion — QuickBooks Online Payments or a construction-specific platform like Procore handles this most cleanly."
+      },
+      {
+        question: "What happens if a client disputes a credit card payment?",
+        answer: "You'll receive a chargeback notice and have the opportunity to respond with documentation. Keep signed contracts, completion photos, client-signed change orders, and written communication. Contractors with strong documentation win the majority of disputes. Digital records from QA software and signed digital invoices are your best evidence in a chargeback."
+      }
+    ],
+
+    relatedCategories: ["customer-invoicing", "financial-management"],
+    relatedTools: ["square", "stripe", "housecallpro", "quickbooks-construction"],
+    published: false,
+    featured: false,
+    lastUpdated: new Date().toISOString()
   }
 ];
