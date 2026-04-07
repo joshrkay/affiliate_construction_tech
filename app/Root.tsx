@@ -24,7 +24,11 @@ function RootLayout() {
           "name": "BUILTECH",
           "url": "https://bestconstructionapps.com",
           "description": "The construction industry's AI & software directory. Compare ratings, read contractor reviews, and discover AI tools for every trade.",
-          "sameAs": [],
+          "sameAs": [
+            "https://twitter.com/BUILTECH",
+            "https://www.linkedin.com/company/builtech",
+            "https://www.youtube.com/@BUILTECH"
+          ],
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",

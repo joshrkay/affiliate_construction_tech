@@ -111,13 +111,11 @@ export function Footer() {
           <div>
             <h4 className="text-white text-sm font-semibold mb-4">Company</h4>
             <ul className="space-y-2.5">
-              {["About Us"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                    {item}
+              <li>
+                  <a href="/about" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                    About Us
                   </a>
                 </li>
-              ))}
               <li>
                 <button onClick={openSubmitModal} className="text-sm hover:text-orange-400 transition-colors text-left" style={{ color: "#64748b" }}>
                   Submit a Tool
@@ -128,10 +126,15 @@ export function Footer() {
                   Write a Review
                 </button>
               </li>
-              {["Advertise", "Review Guidelines", "Privacy Policy", "Terms of Service"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                    {item}
+              {[
+                { label: "Advertise", href: "/advertise" },
+                { label: "Review Guidelines", href: "/review-guidelines" },
+                { label: "Privacy Policy", href: "/privacy" },
+                { label: "Terms of Service", href: "/terms" },
+              ].map(({ label, href }) => (
+                <li key={label}>
+                  <a href={href} className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                    {label}
                   </a>
                 </li>
               ))}

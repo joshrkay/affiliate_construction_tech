@@ -13,7 +13,7 @@ export const organizationSchema = {
   "logo": "https://bestconstructionapps.com/logo.png",
   "sameAs": [
     "https://twitter.com/BUILTECH",
-    "https://www.linkedin.com/company/bUILTECH",
+    "https://www.linkedin.com/company/builtech",
     "https://www.youtube.com/@BUILTECH",
   ],
   "contactPoint": {
