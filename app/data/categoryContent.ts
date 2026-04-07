@@ -1983,7 +1983,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["project-estimating", "bid-management", "commercial-estimating"],
     relatedTools: ["stack", "bluebeam", "procore"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: new Date().toISOString()
   },
 
   // ========== COMMERCIAL ESTIMATING ==========
@@ -2020,7 +2020,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["project-estimating", "material-takeoff", "bid-management"],
     relatedTools: ["procore", "stack", "bluebeam"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: new Date().toISOString()
   },
 
   // ========== SALES LEAD GENERATION ==========
@@ -2057,7 +2057,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["customer-relationship-management", "customer-retention-retention", "business-analytics-reporting"],
     relatedTools: ["salesforce-construction", "pipedrive", "zoho-crm"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: new Date().toISOString()
   },
 
   // ========== ELECTRICAL MANAGEMENT ==========
@@ -2094,7 +2094,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["hvac-management", "plumbing-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: new Date().toISOString()
   },
 
   {
@@ -2155,6 +2155,6 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["hvac-management", "electrical-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
