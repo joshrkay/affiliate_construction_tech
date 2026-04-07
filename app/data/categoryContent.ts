@@ -2534,5 +2534,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["ai-powered-project-management", "project-document-management", "bid-management"],
     relatedTools: ["procore", "document-crunch", "corecon"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "tax-reporting", categoryId: "tax-reporting", language: "en",
+    title: "Best Tax Reporting Software for Construction Contractors (2025)",
+    metaDescription: "Compare tax and payroll compliance software for construction. QuickBooks, Sage 300, and LCP Tracker reviewed — 1099 tracking, certified payroll, and construction-specific tax compliance.",
+    h1: "Best Tax Reporting Software for Construction Contractors (2025)",
+    introduction: "Construction tax compliance has layers generic accounting software doesn't handle: certified payroll on prevailing wage jobs, 1099-NEC filing for every sub over $600, sales tax rules that vary by state and project type, and revenue recognition methods that affect your tax bill by tens of thousands. The tools in this guide reduce the manual work and give your CPA cleaner data.",
+    whyItMatters: "Most construction companies manage tax compliance with QuickBooks, a spreadsheet for certified payroll, and a CPA who asks the same questions every March. The right software stack eliminates the certified payroll hours, catches the 1099 problems before January, and ensures your job cost data maps correctly to your tax categories.",
+
+    toolsToCompare: ["quickbooks", "sage-300", "lcp-tracker"],
+    comparisonTableColumns: [
+      { key: "1099-tracking", label: "1099 Tracking" },
+      { key: "certified-payroll", label: "Certified Payroll" },
+      { key: "job-cost-reporting", label: "Job Cost Reporting" },
+      { key: "aia-billing", label: "AIA Billing" },
+      { key: "sales-tax", label: "Sales Tax" }
+    ],
+
+    sections: [
+      {
+        heading: "The Four Tax Compliance Problems Specific to Construction",
+        content: "<p><strong>Certified payroll:</strong> Federal Form WH-347 required weekly on every prevailing wage job — matching actual payroll to the correct trade classification and wage rate for each worker. Missing a submission triggers back pay liability.</p><p><strong>1099-NEC filing:</strong> Every sub paid $600+ in a calendar year requires a 1099-NEC by January 31. The most common failure is not collecting W-9 forms before paying — fix this by making W-9 collection part of subcontract onboarding.</p><p><strong>Revenue recognition:</strong> Percentage-of-completion vs. completed-contract method affects when income is recognized. The Tax Cuts and Jobs Act (2017) changed who qualifies for completed-contract. Consult a construction CPA.</p><p><strong>Sales tax on materials:</strong> Most states exempt materials installed into real property but the rules differ by state, project type, and whether you're doing service work or new construction.</p>",
+        type: "text"
+      },
+      {
+        heading: "Decision Framework by Revenue and Prevailing Wage Exposure",
+        content: "<p><strong>Under $1M, no prevailing wage:</strong> QuickBooks at $30–60/month. Track subs as 1099 vendors from day one. Collect W-9 before first payment.</p><p><strong>$1M–$5M, occasional prevailing wage:</strong> QuickBooks + LCP Tracker on public jobs only. Add LCP Tracker when you win a prevailing wage contract.</p><p><strong>$5M–$10M, multiple prevailing wage jobs:</strong> QuickBooks + LCP Tracker as a permanent stack.</p><p><strong>$10M+:</strong> Evaluate Sage 300 CRE. Certified payroll, AIA billing, and percentage-of-completion accounting in one platform justifies the implementation cost at this scale.</p>",
+        type: "text"
+      },
+      {
+        heading: "The W-9 Problem Every Contractor Should Fix Now",
+        content: "<p>The most common 1099 failure: not collecting W-9 forms before paying subs. At year-end you need the sub's legal name, address, and EIN to file the 1099-NEC. Chase it in January when they're not responsive and you're filing late or incomplete.</p><p><strong>Fix:</strong> No W-9 on file = no payment issued. Make it a policy before the next sub starts work. QuickBooks lets you flag vendors as 1099-required and track whether a W-9 has been received.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Get your construction books tax-ready",
+    primaryToolId: "quickbooks",
+    secondaryToolIds: ["sage-300", "lcp-tracker"],
+
+    keywords: [
+      "tax reporting software construction contractors",
+      "certified payroll software construction",
+      "1099 software for contractors",
+      "construction accounting software taxes",
+      "prevailing wage software"
+    ],
+
+    faqs: [
+      { question: "What is certified payroll and when is it required?", answer: "Certified payroll is a weekly payroll report (federal Form WH-347) required on federally funded and most state-funded public projects under the Davis-Bacon Act. It documents that every worker was paid at least the prevailing wage for their trade classification in that county. Required for every week any worker is on the job, submitted to the contracting agency within the required timeframe." },
+      { question: "Does QuickBooks handle certified payroll for construction?", answer: "Not natively. QuickBooks handles standard W-2 payroll, 941 filings, and 1099-NEC preparation well, but it doesn't generate the WH-347 certified payroll report. For certified payroll you need a separate tool like LCP Tracker or B2W Compliance, or a construction-specific platform like Sage 300 CRE with a certified payroll module." },
+      { question: "How do I track 1099s for subcontractors in QuickBooks?", answer: "Set up each subcontractor as a vendor and mark them as a 1099 vendor. Collect their W-9 before issuing the first payment. QuickBooks tracks all payments to 1099-marked vendors throughout the year. At year-end, use the 1099 wizard to review payments and generate 1099-NEC forms for e-filing. The process takes a few hours if data has been entered correctly throughout the year." },
+      { question: "Is sales tax charged on construction contracts?", answer: "It depends on the state and project type. Most states treat construction contractors as the end consumer of materials — you pay sales tax when you buy materials and don't charge it on the contract price. Some states (Washington, New Mexico, Hawaii) have different rules. Service work vs. new construction is often treated differently. Get a definitive answer from a construction CPA licensed in your state." },
+      { question: "What is the percentage-of-completion method and do I have to use it?", answer: "Percentage-of-completion recognizes revenue as work progresses based on project completion percentage. Under the Tax Cuts and Jobs Act (2017), contractors with average annual gross receipts under $26 million (2024 threshold, indexed for inflation) can use the completed-contract method, which defers revenue recognition until project completion. The choice has significant tax timing implications — consult a construction CPA before deciding." },
+      { question: "¿Qué software es mejor para la nómina certificada y los impuestos en proyectos de construcción pública en Estados Unidos?", answer: "Para nómina certificada (Formulario WH-347), LCP Tracker ($150-500+/mes) es la opción más utilizada — se integra con QuickBooks y genera los reportes semanales automáticamente. Para empresas con ingresos superiores a $10M, Sage 300 CRE incluye módulos de nómina certificada con contabilidad de costos de trabajo y facturación AIA. Para seguimiento de 1099, QuickBooks es el estándar — configure cada subcontratista como proveedor con requisito de 1099 desde el primer pago." }
+    ],
+
+    relatedCategories: ["financial-management", "payroll-management", "field-time-tracking"],
+    relatedTools: ["quickbooks", "sage-300", "lcp-tracker"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
