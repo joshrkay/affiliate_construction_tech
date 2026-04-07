@@ -2095,5 +2095,66 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["hvac-management", "plumbing-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
     published: false, featured: false, lastUpdated: new Date().toISOString()
+  },
+
+  {
+    slug: "plumbing-management", categoryId: "plumbing-management", language: "en",
+    title: "Best Plumbing Business Management Software for 2025",
+    metaDescription: "Compare plumbing contractor software for 2025. ServiceTitan, Jobber, and HouseCall Pro reviewed — pricing, dispatch, and what plumbers actually need to run their business.",
+    h1: "Best Plumbing Business Management Software for 2025",
+    introduction: "The second truck roll is where plumbing companies lose money. A tech arrives without the right parts, drives back to the supply house, and a customer leaves a 2-star review. The right plumbing software tracks every fixture and service history at every location so your tech walks in prepared.",
+    whyItMatters: "Plumbing businesses run two workflows — residential emergency service and commercial/new construction work — that require different software capabilities. Flat-rate pricing enforcement, equipment history tracking, and dispatch optimization are where the platforms differ most.",
+
+    toolsToCompare: ["servicetitan", "housecallpro", "jobber"],
+    comparisonTableColumns: [
+      { key: "price-book-management", label: "Price Book" },
+      { key: "equipment-history", label: "Equipment History" },
+      { key: "dispatch-optimization", label: "Dispatch" },
+      { key: "service-agreements", label: "Service Agreements" },
+      { key: "online-booking", label: "Online Booking" }
+    ],
+
+    sections: [
+      {
+        heading: "Service vs. Project: Two Different Workflows",
+        content: "<p>Most plumbing companies run two businesses inside one: residential service (leak repairs, water heater replacements, drain cleans, emergency calls) and new construction or commercial work. These require different software capabilities.</p><p><strong>Residential service</strong> needs dispatch optimization, flat-rate pricing, customer history, and same-day invoicing. <strong>Commercial plumbing</strong> needs job costing, backflow inspection documentation, and multi-location customer management. Most field service platforms handle residential service well. Fewer handle commercial plumbing adequately.</p>",
+        type: "text"
+      },
+      {
+        heading: "Flat-Rate Pricing Enforcement",
+        content: "<p>Plumbing work has predictable items (water heater replacement, faucet installation, wax ring replacement) and highly unpredictable ones (slab leak location, drain line scoping). If your techs don't have a price book, they quote from memory and get inconsistent results — a drain clean quoted at $189 from one tech and $140 from another. Price book enforcement is where ServiceTitan pays for itself on volume shops.</p>",
+        type: "text"
+      },
+      {
+        heading: "Choosing the Right Platform for Your Shop Size",
+        content: "<p><strong>Solo operator (1 tech):</strong> Jobber at $29/month. You need scheduling, invoicing, and payment — nothing more complex.</p><p><strong>2–4 techs ($300K–$1M):</strong> HouseCall Pro or Jobber's mid-tier. HouseCall Pro's flat pricing is better as you add techs.</p><p><strong>4–8 techs ($1M–$3M):</strong> HouseCall Pro is the right fit. ServiceTitan's cost isn't justified until pricing inconsistency is measurably hurting margin.</p><p><strong>8+ techs ($3M+):</strong> Evaluate ServiceTitan. At 8 techs with inconsistent pricing, you're losing $3,000–6,000/month in margin from underpriced work.</p>",
+        type: "text"
+      }
+    ],
+
+    primaryCTA: "Stop losing money on second truck rolls",
+    primaryToolId: "servicetitan",
+    secondaryToolIds: ["housecallpro", "jobber"],
+
+    keywords: [
+      "plumbing business management software",
+      "plumber software",
+      "plumbing scheduling app",
+      "plumbing contractor software",
+      "best software for plumbers"
+    ],
+
+    faqs: [
+      { question: "Does plumbing software handle backflow preventer certification tracking?", answer: "ServiceTitan has the most structured approach — you can log backflow preventer locations, certification dates, and set reminders for annual re-certification. HouseCall Pro and Jobber can track this information but use less structured fields. If backflow testing is a significant revenue stream, ServiceTitan handles it properly." },
+      { question: "Which platform is best for commercial plumbing?", answer: "ServiceTitan handles commercial plumbing service work better than the alternatives — it supports multi-site customers, service contracts at the account level, and the documentation commercial clients expect. For new construction project management, Procore or Sage is more appropriate. ServiceTitan covers commercial service; it doesn't replace a project management platform for new construction." },
+      { question: "Can I track material costs per job in plumbing software?", answer: "Yes — all three platforms allow material logging per job. ServiceTitan's inventory management is the most complete, including truck stock tracking. HouseCall Pro and Jobber handle per-job material logging but have limited tools for truck stock replenishment." },
+      { question: "Which integrates best with QuickBooks?", answer: "All three integrate with QuickBooks. HouseCall Pro and Jobber have the most seamless sync for residential-focused operations. ServiceTitan's integration requires more configuration but handles more complex revenue recognition scenarios." },
+      { question: "How much does ServiceTitan cost for a 6-tech plumbing company?", answer: "At $300/month per tech, a 6-tech shop pays $1,800/month or $21,600/year, plus an onboarding fee ($1,000–3,000) and an annual contract. Before signing, calculate what consistent pricing and service agreement capture adds to your revenue. At $2M+ annually, recovering 5% margin from pricing consistency typically exceeds $100K/year." },
+      { question: "¿Cuál es el mejor software para fontaneros pequeños en Estados Unidos?", answer: "Para fontaneros individuales o tiendas con 1 a 4 técnicos, Jobber ($29-99/mes) es la mejor opción. Para tiendas de 4 a 8 técnicos, HouseCall Pro ($50-150/mes) ofrece más funciones sin el costo por técnico de ServiceTitan. ServiceTitan se justifica para contratistas con 8 o más técnicos que buscan optimizar ingresos con tarifas planas y acuerdos de mantenimiento recurrente." }
+    ],
+
+    relatedCategories: ["hvac-management", "electrical-management", "field-crew-scheduling"],
+    relatedTools: ["servicetitan", "housecallpro", "jobber"],
+    published: false, featured: false, lastUpdated: new Date().toISOString()
   }
 ];
