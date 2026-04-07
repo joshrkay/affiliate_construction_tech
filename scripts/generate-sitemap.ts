@@ -7,6 +7,7 @@ import { resolve } from "path";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
 import { guidePages } from "../app/data/guidePages";
+import { categoryPages } from "../app/data/categoryContent";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const today = new Date().toISOString().slice(0, 10);
@@ -60,6 +61,16 @@ for (const page of bestForPages) {
     changefreq: "monthly",
     priority: "0.8",
     lastmod: today,
+  });
+}
+
+// Category pages
+for (const page of categoryPages) {
+  entries.push({
+    loc: `/categories/${page.slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: page.lastUpdated,
   });
 }
 
