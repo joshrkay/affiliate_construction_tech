@@ -1,19 +1,19 @@
 #!/usr/bin/env npx tsx
 /**
- * Generate single category using local Ollama
+ * Generate single category using local Ollama (OpenAI-compatible API)
  *
+ * Uses OpenAI SDK with Ollama's OpenAI-compatible endpoint
  * Optimized prompts for gemma4/llama3.1
- * Outputs TypeScript category object
  *
  * Usage:
  *   npx tsx scripts/generate-single-category.ts \
- *     --category=project-scheduling \
+ *     --category=financial-management \
  *     --language=en \
  *     --model=gemma4 \
- *     --ollama-url=http://localhost:11434
+ *     --ollama-url=http://localhost:11434/v1
  */
 
-import Anthropic from "@anthropic-ai/sdk";
+import OpenAI from "openai";
 
 const args = process.argv.slice(2).reduce(
   (acc, arg) => {
@@ -52,33 +52,33 @@ const categoryName = categoryNames[CATEGORY] || CATEGORY;
 const slug = CATEGORY;
 
 console.log(`\n📝 Generating: ${categoryName} (${LANGUAGE.toUpperCase()})`);
-console.log(`Model: ${MODEL} | Ollama: ${OLLAMA_URL}`);
+console.log(`Model: ${MODEL} | Ollama: ${OLLAMA_URL.replace("/v1", "")}`);
 
-const client = new Anthropic({
-  apiKey: "ollama",
+const client = new OpenAI({
+  apiKey: "ollama", // Ollama doesn't require real API key
   baseURL: OLLAMA_URL,
 });
 
 async function callOllama(prompt: string): Promise<string> {
   try {
-    const response = await client.messages.create({
+    const response = await client.chat.completions.create({
       model: MODEL,
-      max_tokens: 2000,
-      temperature: 0.7,
       messages: [
         {
           role: "user",
           content: prompt,
         },
       ],
+      temperature: 0.7,
+      max_tokens: 2000,
     });
 
-    const content = response.content[0];
-    if (content.type === "text") {
-      return content.text.trim();
+    const content = response.choices[0].message?.content;
+    if (!content) {
+      throw new Error("No content in response");
     }
 
-    throw new Error(`Unexpected response type: ${content.type}`);
+    return content.trim();
   } catch (error) {
     console.error("❌ Ollama error:", error);
     throw error;
@@ -355,7 +355,7 @@ project-scheduling, financial-management, time-tracking
     };
 
     console.log("\n✅ Generated successfully!");
-    console.log(`\nCategory object (copy to categoryContent.ts):\n`);
+    console.log(`\nCategory object for categoryContent.ts:\n`);
     console.log(JSON.stringify(categoryObj, null, 2));
   } catch (error) {
     console.error("\n❌ Generation failed:", error);
