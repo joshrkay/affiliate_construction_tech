@@ -9,6 +9,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
+import { comparisonDetailPages } from "../app/data/comparisonData";
 import { guidePages } from "../app/data/guidePages";
 import { categories } from "../app/data/categoryTaxonomy";
 import { categoryPages } from "../app/data/categoryContent";
@@ -184,8 +185,49 @@ for (const tool of tools) {
   });
 }
 
-// Comparison pages
+// Comparison detail pages (rich schema with FAQPage)
+for (const page of comparisonDetailPages) {
+  const schemas: object[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": page.title,
+      "description": page.metaDescription,
+      "url": `${BASE_URL}/compare/${page.slug}`,
+      "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
+      "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL }
+    }
+  ];
+
+  if (page.faqs && page.faqs.length > 0) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": page.faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer
+        }
+      }))
+    });
+  }
+
+  pages.push({
+    path: `/compare/${page.slug}`,
+    title: page.title,
+    description: page.metaDescription,
+    ogType: "article",
+    canonical: `${BASE_URL}/compare/${page.slug}`,
+    schemas
+  });
+}
+
+// Remaining comparison pages from seoPages (not in comparisonDetailPages)
+const detailSlugs = new Set(comparisonDetailPages.map((p) => p.slug));
 for (const page of comparisonPages) {
+  if (detailSlugs.has(page.slug)) continue;
   pages.push({
     path: `/compare/${page.slug}`,
     title: page.title,

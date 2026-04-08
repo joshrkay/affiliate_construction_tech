@@ -34,13 +34,31 @@ Software recommendations organized by 16 construction trades:
 
 ## Comparisons
 
-26 side-by-side software comparisons targeting the most searched matchups:
+23 side-by-side software comparisons targeting the most searched matchups:
 
-- [Procore vs ServiceTitan](https://bestconstructionapps.com/compare/procore-vs-servicetitan)
 - [Procore vs Buildertrend](https://bestconstructionapps.com/compare/procore-vs-buildertrend)
+- [Procore vs ServiceTitan](https://bestconstructionapps.com/compare/procore-vs-servicetitan)
 - [Jobber vs ServiceTitan](https://bestconstructionapps.com/compare/jobber-vs-servicetitan)
-- [Togal.AI vs STACK Takeoff](https://bestconstructionapps.com/compare/togal-ai-vs-stack-takeoff)
-- [View all comparisons](https://bestconstructionapps.com/compare)
+- [ServiceTitan vs HouseCall Pro](https://bestconstructionapps.com/compare/servicetitan-vs-housecallpro)
+- [Jobber vs HouseCall Pro](https://bestconstructionapps.com/compare/jobber-vs-housecallpro)
+- [Buildertrend vs JobTread](https://bestconstructionapps.com/compare/buildertrend-vs-jobtread)
+- [QuickBooks vs Sage 300 CRE](https://bestconstructionapps.com/compare/quickbooks-vs-sage-300)
+- [Bluebeam vs Procore](https://bestconstructionapps.com/compare/bluebeam-vs-procore)
+- [STACK vs Bluebeam](https://bestconstructionapps.com/compare/stack-vs-bluebeam)
+- [CompanyCam vs Procore](https://bestconstructionapps.com/compare/companycam-vs-procore)
+- [Raken vs Procore](https://bestconstructionapps.com/compare/raken-vs-procore)
+- [Levelset vs LienItNow](https://bestconstructionapps.com/compare/levelset-vs-lienitnnow)
+- [Procore vs Fieldwire](https://bestconstructionapps.com/compare/procore-vs-fieldwire)
+- [Procore vs PlanGrid](https://bestconstructionapps.com/compare/procore-vs-plangrid)
+- [Primavera P6 vs Procore](https://bestconstructionapps.com/compare/primavera-vs-procore)
+- [QuickBooks Construction vs Xero](https://bestconstructionapps.com/compare/quickbooks-construction-vs-xero)
+- [Deputy vs Procore Workforce](https://bestconstructionapps.com/compare/deputy-vs-procore-workforce)
+- [Textura vs Procore Payments](https://bestconstructionapps.com/compare/textura-vs-procore-payments)
+- [Jobber vs Procore](https://bestconstructionapps.com/compare/jobber-vs-procore)
+- [Raken vs Fieldwire](https://bestconstructionapps.com/compare/raken-vs-fieldwire)
+- [CompanyCam vs Raken](https://bestconstructionapps.com/compare/companycam-vs-raken)
+- [Bridgit Bench vs Procore](https://bestconstructionapps.com/compare/bridgit-bench-vs-procore)
+- [TouchPlan vs Procore](https://bestconstructionapps.com/compare/touchplan-vs-procore)
 
 ## Best-For Pages
 

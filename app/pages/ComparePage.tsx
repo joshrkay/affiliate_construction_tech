@@ -17,6 +17,7 @@ import {
   tradeCompareFeatures,
   toolCapabilityMap,
   CompareFeatureGroup,
+  comparisonDetailPages,
 } from "../data/comparisonData";
 import { StarRating } from "../components/StarRating";
 import { useApp } from "../context/AppContext";
@@ -462,6 +463,35 @@ export function ComparePage() {
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
+
+        {/* Featured comparison articles */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <div className="border-t pt-10" style={{ borderColor: "#e2e8f0" }}>
+            <h2 className="text-xl font-bold mb-1" style={{ color: "#0f172a" }}>
+              In-Depth Comparisons
+            </h2>
+            <p className="text-sm mb-6" style={{ color: "#64748b" }}>
+              Side-by-side breakdowns of the most-compared construction software pairs.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {comparisonDetailPages.map((page) => (
+                <Link
+                  key={page.slug}
+                  to={`/compare/${page.slug}`}
+                  className="group flex flex-col gap-1 p-4 rounded-xl border bg-white hover:shadow-md transition-all hover:-translate-y-0.5"
+                  style={{ borderColor: "#e2e8f0" }}
+                >
+                  <span className="text-sm font-semibold leading-snug group-hover:text-orange-600 transition-colors" style={{ color: "#0f172a" }}>
+                    {page.title}
+                  </span>
+                  <span className="text-xs mt-auto pt-2 flex items-center gap-1" style={{ color: "#f97316" }}>
+                    Read comparison <ChevronRight className="w-3 h-3" />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     );
