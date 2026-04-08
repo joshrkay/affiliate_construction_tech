@@ -26,57 +26,54 @@ interface PageMeta {
   ogType?: string;
   canonical: string;
   schemas?: object[];
+  /** Static article body injected before #root for crawler visibility */
+  staticBody?: string;
 }
 
 function buildHtml(meta: PageMeta): string {
   const ogType = meta.ogType || "website";
 
-  const headTags = [
-    `<title>${meta.title}</title>`,
-    `<meta name="description" content="${escHtml(meta.description)}" />`,
+  // Replace the generic title and description with route-specific ones
+  let html = template;
+  html = html.replace(
+    /<title>.*?<\/title>/,
+    `<title>${meta.title}</title>`
+  );
+  html = html.replace(
+    /<meta name="description" content="[^"]*" \/>/,
+    `<meta name="description" content="${escHtml(meta.description)}" />`
+  );
+
+  // Inject additional head tags before </head>
+  const additionalTags = [
     `<link rel="canonical" href="${meta.canonical}" />`,
     `<meta property="og:title" content="${escHtml(meta.title)}" />`,
     `<meta property="og:description" content="${escHtml(meta.description)}" />`,
     `<meta property="og:type" content="${ogType}" />`,
     `<meta property="og:url" content="${meta.canonical}" />`,
-  ];
-
-  if (meta.schemas) {
-    for (const schema of meta.schemas) {
-      headTags.push(
-        `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
-      );
-    }
-  }
-
-  const injection = headTags.join("\n    ");
-
-  // Replace the generic title and description with route-specific ones
-  let html = template;
-  // Replace the existing title
-  html = html.replace(
-    /<title>.*?<\/title>/,
-    `<title>${meta.title}</title>`
-  );
-  // Replace the existing description
-  html = html.replace(
-    /<meta name="description" content="[^"]*" \/>/,
-    `<meta name="description" content="${escHtml(meta.description)}" />`
-  );
-  // Inject additional head tags before </head>
-  const additionalTags = [
-    `<link rel="canonical" href="${meta.canonical}" />`,
     ...(meta.schemas || []).map(
       (s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`
     ),
   ].join("\n    ");
   html = html.replace("</head>", `    ${additionalTags}\n  </head>`);
 
+  // Inject static body content before #root so crawlers see article text without JS
+  if (meta.staticBody) {
+    html = html.replace(
+      '<div id="root"></div>',
+      `<div id="static-content" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap" aria-hidden="true">${meta.staticBody}</div><div id="root"></div>`
+    );
+  }
+
   return html;
 }
 
 function escHtml(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function stripHtmlTags(s: string): string {
+  return s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function writePage(routePath: string, html: string) {
@@ -185,7 +182,9 @@ for (const tool of tools) {
   });
 }
 
-// Comparison detail pages (rich schema with FAQPage)
+// Comparison detail pages — full static body + FAQPage schema
+const detailSlugs = new Set(comparisonDetailPages.map((p) => p.slug));
+
 for (const page of comparisonDetailPages) {
   const schemas: object[] = [
     {
@@ -206,12 +205,32 @@ for (const page of comparisonDetailPages) {
       "mainEntity": page.faqs.map((faq) => ({
         "@type": "Question",
         "name": faq.question,
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": faq.answer
-        }
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
       }))
     });
+  }
+
+  // Build static article body for crawler visibility
+  const bodyParts: string[] = [];
+
+  bodyParts.push(`<h1>${escHtml(page.h1)}</h1>`);
+  bodyParts.push(`<div>${page.introduction}</div>`);
+
+  for (const section of page.sections) {
+    bodyParts.push(`<h2>${escHtml(section.heading)}</h2>`);
+    bodyParts.push(`<div>${section.content}</div>`);
+  }
+
+  const verdictText = typeof page.verdict === "string"
+    ? page.verdict
+    : `${page.verdict.bestFor} ${page.verdict.recommendation}`;
+  bodyParts.push(`<h2>Verdict</h2><p>${escHtml(verdictText)}</p>`);
+
+  if (page.faqs && page.faqs.length > 0) {
+    bodyParts.push("<h2>Frequently Asked Questions</h2>");
+    for (const faq of page.faqs) {
+      bodyParts.push(`<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`);
+    }
   }
 
   pages.push({
@@ -220,12 +239,12 @@ for (const page of comparisonDetailPages) {
     description: page.metaDescription,
     ogType: "article",
     canonical: `${BASE_URL}/compare/${page.slug}`,
-    schemas
+    schemas,
+    staticBody: `<article>${bodyParts.join("\n")}</article>`
   });
 }
 
-// Remaining comparison pages from seoPages (not in comparisonDetailPages)
-const detailSlugs = new Set(comparisonDetailPages.map((p) => p.slug));
+// Remaining comparison pages from seoPages (no detail page)
 for (const page of comparisonPages) {
   if (detailSlugs.has(page.slug)) continue;
   pages.push({
