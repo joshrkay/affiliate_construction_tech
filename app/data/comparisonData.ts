@@ -1527,67 +1527,6 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
     lastUpdated: new Date().toISOString()
   },
 
-  // ========== PIPEDRIVE VS HUBSPOT ==========
-  {
-    slug: "pipedrive-vs-hubspot",
-    toolId1: "pipedrive",
-    toolId2: "hubspot",
-    title: "Pipedrive vs HubSpot for Construction (2025): CRM Compared",
-    metaDescription: "Pipedrive vs HubSpot for construction contractors. Which CRM is better for managing leads, bids, and client relationships for GCs and specialty contractors?",
-    h1: "Pipedrive vs HubSpot for Construction Contractors: CRM Compared (2025)",
-    introduction: "<p>Neither Pipedrive nor HubSpot was built for construction — but both are used effectively by contractors who need systematic lead tracking and pipeline management. The choice comes down to sales process complexity and budget.</p><p>Pipedrive is built around the pipeline view — a visual board of where every active lead stands. It's simple, affordable, and designed for sales teams who want minimum friction between a conversation and a logged follow-up. HubSpot has significantly more depth: marketing automation, email campaigns, detailed analytics, and a free tier that's hard to ignore. For a GC who wants CRM without paying for features they won't use, Pipedrive wins on simplicity. For a contractor investing in systematic marketing as well as sales, HubSpot's breadth is worth the complexity.</p>",
-    comparisonTable: [
-      {
-        category: "Pricing",
-        rows: [
-          { label: "Free tier", tool1: false, tool2: "Yes (limited)" },
-          { label: "Starting paid price", tool1: "$14/user/month", tool2: "$20/user/month" },
-          { label: "Mid-tier price", tool1: "$49/user/month", tool2: "$100/user/month" }
-        ]
-      },
-      {
-        category: "CRM Features",
-        rows: [
-          { label: "Pipeline view", tool1: "Best-in-class", tool2: "Good" },
-          { label: "Contact management", tool1: true, tool2: true },
-          { label: "Follow-up automation", tool1: "Good", tool2: "Advanced" },
-          { label: "Email integration", tool1: true, tool2: true },
-          { label: "Mobile app", tool1: "Best-in-class", tool2: "Good" }
-        ]
-      },
-      {
-        category: "Marketing & Analytics",
-        rows: [
-          { label: "Email marketing", tool1: "Basic", tool2: "Full" },
-          { label: "Lead source tracking", tool1: "Good", tool2: "Best-in-class" },
-          { label: "Reporting depth", tool1: "Good", tool2: "Best-in-class" },
-          { label: "Website integration", tool1: "Basic", tool2: "Full (forms, chat, tracking)" }
-        ]
-      }
-    ],
-    sections: [
-      {
-        heading: "Pipedrive: The CRM That Gets Used",
-        content: "<p><strong>Pricing: $14–99+/user/month</strong></p><p>Pipedrive's design philosophy is minimum friction between field and CRM: log a call in two taps, move a deal to the next stage with one click. The pipeline view — a Kanban board of every active opportunity — gives instant visibility into where leads stand without navigating menus. For a contractor whose sales process lives in their head, Pipedrive makes it visible without demanding significant behavior change.</p><p>The automation features are practical for contractors: when a lead moves from 'Estimate Submitted' to 'Awaiting Decision,' Pipedrive sets a 7-day follow-up reminder automatically. For a contractor who loses deals to slow follow-up, that automation recovers real revenue.</p>"
-      },
-      {
-        heading: "HubSpot: More Depth for Marketing-Driven Contractors",
-        content: "<p><strong>Pricing: Free tier; $20–100+/user/month paid</strong></p><p>HubSpot's free CRM tier is genuinely useful and gets many contractors started. The paid tiers add email marketing, detailed lead source attribution, website forms that feed directly into the CRM, and marketing automation that nurtures leads between touchpoints. For contractors investing in content, Google ads, or trade show follow-up, HubSpot's marketing integration is meaningfully better than Pipedrive's.</p><p>The downside: HubSpot's depth creates complexity. The free tier has significant limitations that push you toward paid plans quickly. Pipedrive is simpler to set up and get the team using consistently — and consistent use is what drives CRM ROI.</p>"
-      }
-    ],
-    verdict: {
-      bestFor: "Pipedrive for contractors wanting a simple, used-consistently pipeline tool. HubSpot for contractors investing in marketing who want CRM and marketing automation in one platform.",
-      recommendation: "Start with Pipedrive if your primary problem is tracking leads and following up systematically. Upgrade to HubSpot when you're investing in content marketing, email campaigns, or paid advertising and need to track which channels drive which revenue."
-    },
-    faqs: [
-      { question: "Is HubSpot free good enough for a construction company?", answer: "HubSpot's free tier covers basic contact management, deal pipeline, and email integration. The limitations (limited automation, basic reporting, HubSpot branding on emails) push most growing construction companies toward the paid starter tier quickly. For a contractor just getting started with CRM and not using email marketing, the free tier is a reasonable starting point." },
-      { question: "Which CRM is easier to get the team using?", answer: "Pipedrive. The mobile app and minimal data entry requirements make it the easier sell to salespeople and owner-operators who are skeptical of CRM overhead. HubSpot's full platform has a steeper learning curve. If consistent adoption is the primary risk, Pipedrive's simplicity wins." },
-      { question: "Does either integrate with Procore or Buildertrend?", answer: "Neither has a native integration with Procore or Buildertrend. Both integrate via Zapier — you can automate the handoff from a won deal in Pipedrive/HubSpot to a new project in Procore. It's a 30-minute Zapier setup, not a seamless native integration." }
-    ],
-    published: false,
-    lastUpdated: new Date().toISOString()
-  },
-
   // ========== LEVELSET VS LIENITNNOW ==========
   {
     slug: "levelset-vs-lienitnnow",
@@ -1970,87 +1909,6 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
     lastUpdated: new Date().toISOString()
   },
 
-  // ─── ClickUp vs Monday Construction ────────────────────────────────────────
-  {
-    slug: "clickup-vs-monday-construction",
-    toolId1: "clickup",
-    toolId2: "monday-construction",
-    title: "ClickUp vs Monday.com for Construction (2025): General PM Tools in Construction Context",
-    metaDescription: "ClickUp vs Monday.com for construction teams compared. Task management, Gantt charts, integrations, and pricing — when general PM tools make sense for construction.",
-    h1: "ClickUp vs Monday.com for Construction: Which General PM Tool Works Better?",
-    introduction: "ClickUp and Monday.com are general-purpose project management platforms that construction teams sometimes use in place of — or alongside — construction-specific software. Neither is built for construction: they lack job costing, RFI workflows, submittal management, or field crew features. But they excel at the office-side operational work that construction-specific tools often handle poorly: cross-functional task management, internal workflows, administrative coordination, and pre-construction planning. This comparison covers what each does well and where they fall short for construction use cases.",
-    comparisonTable: [
-      {
-        category: "Construction Fit",
-        rows: [
-          { feature: "Construction-specific features", tool1Value: "❌ Not built for construction", tool2Value: "⚠️ Construction templates available" },
-          { feature: "Job costing", tool1Value: "❌ No", tool2Value: "❌ No" },
-          { feature: "RFI / submittal workflows", tool1Value: "❌ No", tool2Value: "❌ No" },
-          { feature: "Field crew mobile app", tool1Value: "✅ App available, not field-specific", tool2Value: "✅ App available, not field-specific" },
-          { feature: "Best construction use case", tool1Value: "Internal ops, preconstruction tracking", tool2Value: "Sales pipeline, project coordination" }
-        ]
-      },
-      {
-        category: "Task & Project Management",
-        rows: [
-          { feature: "Task hierarchy", tool1Value: "✅ Spaces → Folders → Lists → Tasks", tool2Value: "✅ Boards → Items → Subitems" },
-          { feature: "Gantt chart", tool1Value: "✅ Full Gantt with dependencies", tool2Value: "✅ Timeline view with dependencies" },
-          { feature: "Automation", tool1Value: "✅ Advanced automation builder", tool2Value: "✅ No-code automation" },
-          { feature: "Custom fields", tool1Value: "✅ Unlimited", tool2Value: "✅ Extensive" },
-          { feature: "Views", tool1Value: "✅ 15+ views (List, Board, Gantt, Calendar, etc.)", tool2Value: "✅ Multiple views" }
-        ]
-      },
-      {
-        category: "Pricing",
-        rows: [
-          { feature: "Free plan", tool1Value: "✅ Yes — unlimited tasks, 5 spaces", tool2Value: "✅ Yes — 2 seats" },
-          { feature: "Business plan", tool1Value: "$12/user/month", tool2Value: "$17/user/month" },
-          { feature: "Enterprise", tool1Value: "Custom pricing", tool2Value: "Custom pricing" },
-          { feature: "Value per dollar", tool1Value: "✅ More features at lower price", tool2Value: "⚠️ Higher cost for comparable features" }
-        ]
-      },
-      {
-        category: "Integrations",
-        rows: [
-          { feature: "Procore integration", tool1Value: "⚠️ Via Zapier", tool2Value: "✅ Native Procore integration" },
-          { feature: "QuickBooks integration", tool1Value: "⚠️ Via Zapier", tool2Value: "✅ Native QuickBooks integration" },
-          { feature: "Slack / Teams", tool1Value: "✅ Native", tool2Value: "✅ Native" }
-        ]
-      }
-    ],
-    sections: [
-      {
-        heading: "How Construction Teams Actually Use These Tools",
-        content: "<p>The construction companies that get the most value from ClickUp and Monday use them for the work that construction-specific platforms handle badly: pre-construction coordination, internal team task management, business development tracking, and administrative workflows. A GC might run Procore for project execution and ClickUp or Monday for tracking the pre-construction checklist — permit applications, subcontractor scoping, value engineering reviews — where Procore's module structure creates friction. These tools are also used for marketing, HR onboarding, and company operations that have nothing to do with the jobsite.</p>",
-        type: "text"
-      },
-      {
-        heading: "Monday.com's Construction Advantage",
-        content: "<p>Monday.com has a dedicated construction solution with pre-built templates and a native Procore integration that ClickUp lacks. If your primary goal is coordinating with teams already in Procore, Monday's native connector is a meaningful advantage — changes in Procore can trigger updates in Monday boards automatically. Monday's visual interface is also simpler to learn, which matters when you're onboarding office staff who haven't used project management software before. The construction templates (project tracker, subcontractor management, bid tracking) give a faster starting point than ClickUp's blank slate.</p>",
-        type: "text"
-      },
-      {
-        heading: "ClickUp's Value Case",
-        content: "<p>ClickUp packs more functionality per dollar than Monday. The free plan is genuinely useful (unlimited tasks, 5 spaces, 100MB storage), and the Business plan at $12/user/month includes Gantt charts, custom automations, and time tracking that cost more in Monday. For construction companies managing large teams with tight software budgets, ClickUp's free and low-cost tiers cover more ground. The automation builder is also more powerful — useful for construction admin workflows that have complex conditional logic (e.g., route a submittal based on spec section, notify the PM when a task's due date changes).</p>",
-        type: "text"
-      },
-      {
-        heading: "Decision Framework",
-        content: "<p><strong>Choose Monday</strong> if you want a construction-flavored general PM tool with native Procore and QuickBooks integrations and pre-built construction templates. Better for teams that prioritize simplicity and existing ecosystem connections.</p><p><strong>Choose ClickUp</strong> if you want maximum features for minimum cost, need extensive automation for internal workflows, or are managing complex internal operations where ClickUp's hierarchy and view flexibility matter more than construction-specific templates.</p><p><strong>Neither replaces construction-specific software</strong> for job costing, RFIs, submittals, or field crew management. Use these tools alongside Procore/Buildertrend, not instead of them.</p>",
-        type: "text"
-      }
-    ],
-    verdict: "Monday.com wins on construction ecosystem fit (Procore integration, construction templates). ClickUp wins on value and automation depth. Neither replaces purpose-built construction software — they're best for office and operational workflows.",
-    faqs: [
-      { question: "Can Monday.com or ClickUp replace Procore?", answer: "No. Monday.com and ClickUp lack the construction-specific functionality Procore provides: job cost tracking, RFI workflows, submittal routing, subcontractor compliance, and field document management. They work well alongside Procore for internal team task management and pre-construction coordination, but cannot replace Procore's project execution capabilities for GCs above $2–3M." },
-      { question: "Does Monday.com have a native Procore integration?", answer: "Yes — Monday.com has a native Procore integration available in its marketplace. It syncs projects, tasks, and people between platforms. The integration allows construction teams to track Procore project milestones in Monday boards without manual updates. ClickUp does not have a native Procore integration as of 2025 and requires Zapier for similar functionality." },
-      { question: "What's the best free project management tool for a small contractor?", answer: "ClickUp's free plan is the most generous — unlimited tasks, unlimited members, 5 workspaces, and 100MB storage. For a contractor with 1–5 office staff who need basic task and project tracking without job costing, ClickUp Free is a strong starting point. Monday.com's free plan is limited to 2 seats, making it less practical for most teams." },
-      { question: "What does Monday.com's construction solution include?", answer: "Monday.com's construction solution includes pre-built templates for project tracking, subcontractor management, bid management, punch lists, and daily logs. It also includes a native Procore connector and QuickBooks integration. The templates give construction teams a faster starting point than building from blank boards. The construction solution is available on Business and Enterprise plans, not the free tier." }
-    ],
-    published: false,
-    lastUpdated: new Date().toISOString()
-  },
-
   // ─── Deputy vs Procore (Workforce Scheduling) ───────────────────────────────
   {
     slug: "deputy-vs-procore-workforce",
@@ -2126,87 +1984,6 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Does Deputy handle prevailing wage and certified payroll?", answer: "Deputy tracks hours and can flag prevailing wage job classifications, but it is not a certified payroll platform. For Davis-Bacon and state prevailing wage certified payroll reporting, contractors need LCP Tracker, Certified Payroll Reporting (CPR), or a payroll platform with certified payroll support. Deputy's value is in scheduling, time capture, and compliance rules — not certified payroll document generation." },
       { question: "What labor compliance rules does Deputy enforce?", answer: "Deputy includes configurable compliance rules for state and local labor laws: California meal and rest break requirements, daily overtime (8-hour rule in CA), weekly overtime (40-hour federal), predictive scheduling ordinances (where applicable), and minor labor restrictions. The rules enforce automatically — a shift that would create a missed meal break gets flagged before it's published. For contractors with California or New York job sites, this automation meaningfully reduces compliance liability." },
       { question: "Can I use Deputy without Procore?", answer: "Yes — Deputy is a standalone workforce management platform. It does not require Procore. Contractors who use QuickBooks and a simpler PM tool (or no PM tool) can use Deputy for scheduling and time tracking, then export hours to QuickBooks Payroll or a third-party payroll platform. Deputy's $4.50–$6/user/month pricing makes it accessible for smaller contractors who don't justify the cost of Procore." }
-    ],
-    published: false,
-    lastUpdated: new Date().toISOString()
-  },
-
-  // ─── Salesforce Construction vs HubSpot ────────────────────────────────────
-  {
-    slug: "salesforce-construction-vs-hubspot",
-    toolId1: "salesforce-construction",
-    toolId2: "hubspot",
-    title: "Salesforce vs HubSpot for Construction (2025): Enterprise CRM vs Growth Platform",
-    metaDescription: "Salesforce vs HubSpot for construction contractors compared. Pipeline management, bid tracking, marketing automation, and pricing for GCs and specialty contractors.",
-    h1: "Salesforce vs HubSpot for Construction: Which CRM Fits Your Sales Process?",
-    introduction: "Salesforce and HubSpot are the two dominant CRM platforms used by construction companies large enough to have a dedicated business development function. Salesforce is the enterprise standard — infinitely customizable, deeply integrated with other enterprise systems, and expensive. HubSpot is the mid-market growth platform — CRM, marketing automation, and sales pipeline in a single product with a faster implementation timeline and accessible pricing. For construction companies, the decision typically comes down to complexity, budget, and whether you need marketing automation alongside CRM.",
-    comparisonTable: [
-      {
-        category: "Construction Use Case",
-        rows: [
-          { feature: "Bid tracking", tool1Value: "✅ Custom objects for opportunities", tool2Value: "✅ Pipeline deals with custom properties" },
-          { feature: "Relationship management (GC/owner)", tool1Value: "✅ Account/contact hierarchy", tool2Value: "✅ Company/contact structure" },
-          { feature: "Proposal tracking", tool1Value: "✅ Via custom workflows", tool2Value: "✅ Built-in deal tracking" },
-          { feature: "Construction-specific templates", tool1Value: "⚠️ Via AppExchange", tool2Value: "⚠️ Via marketplace" },
-          { feature: "Subcontractor/vendor CRM", tool1Value: "✅ Fully customizable", tool2Value: "✅ Via contact management" }
-        ]
-      },
-      {
-        category: "CRM Features",
-        rows: [
-          { feature: "Pipeline management", tool1Value: "✅ Full", tool2Value: "✅ Full" },
-          { feature: "Contact/account management", tool1Value: "✅ Advanced", tool2Value: "✅ Strong" },
-          { feature: "Activity logging", tool1Value: "✅ Calls, emails, meetings", tool2Value: "✅ Calls, emails, meetings" },
-          { feature: "Reporting & dashboards", tool1Value: "✅ Advanced Analytics", tool2Value: "✅ Good — less flexible than SFDC" },
-          { feature: "AI/forecasting", tool1Value: "✅ Einstein AI", tool2Value: "✅ Breeze AI" }
-        ]
-      },
-      {
-        category: "Marketing Automation",
-        rows: [
-          { feature: "Email marketing", tool1Value: "⚠️ Via Pardot/Marketing Cloud (expensive)", tool2Value: "✅ Included in Marketing Hub" },
-          { feature: "Lead nurturing workflows", tool1Value: "⚠️ Additional cost", tool2Value: "✅ Included" },
-          { feature: "Website tracking", tool1Value: "⚠️ Via separate product", tool2Value: "✅ Built-in" }
-        ]
-      },
-      {
-        category: "Pricing",
-        rows: [
-          { feature: "Starting price", tool1Value: "$25/user/month (Starter)", tool2Value: "Free CRM (unlimited users)" },
-          { feature: "Sales automation", tool1Value: "$75/user/month (Professional)", tool2Value: "$90/user/month (Sales Hub Pro)" },
-          { feature: "Enterprise", tool1Value: "$150+/user/month", tool2Value: "$150/user/month (Enterprise)" },
-          { feature: "Total cost (10-person BD team)", tool1Value: "$1,500–$18,000+/year", tool2Value: "$0–$10,800+/year" }
-        ]
-      }
-    ],
-    sections: [
-      {
-        heading: "Why Large GCs Use Salesforce",
-        content: "<p>Salesforce's primary advantage in construction is customization depth and enterprise integration. A $100M+ GC can build a Salesforce org that tracks bid opportunities, owner relationships, subcontractor qualifications, and project history in a single system — with automated workflows, approval processes, and integration with Procore, their ERP, and their document management system. Salesforce's contract, proposal, and CPQ (Configure-Price-Quote) modules support complex enterprise sales processes. The tradeoff is implementation cost: building a Salesforce org that actually serves construction sales processes requires a Salesforce administrator and often a consulting partner — a $50,000–$200,000+ implementation investment on top of license costs.</p>",
-        type: "text"
-      },
-      {
-        heading: "Why Mid-Market Contractors Choose HubSpot",
-        content: "<p>HubSpot's free CRM tier includes unlimited users, contacts, and basic pipeline management — the right starting point for a contractor who currently manages business development in spreadsheets. The transition path is low-risk: implement HubSpot CRM for free, validate that the team uses it, then add Sales Hub automation and Marketing Hub email campaigns as you grow. For contractors under $30M with a 2–5 person BD team, HubSpot covers the CRM and marketing workflow at a cost Salesforce can't approach. The marketing automation — email sequences, lead tracking, content analytics — is particularly valuable for contractors building inbound lead generation alongside traditional relationship-based business development.</p>",
-        type: "text"
-      },
-      {
-        heading: "The Construction Sales Process Fit",
-        content: "<p>Construction business development has long sales cycles (6–18 months from first contact to contract award), relationship-heavy processes (staying in front of the same owners and GCs for years), and bid-specific tracking needs (who solicited you, what you bid, whether you won). Both Salesforce and HubSpot handle this well with custom pipeline stages and opportunity records. HubSpot's sequence feature (automated follow-up email cadences) is specifically valuable for maintaining relationships during long pre-award periods without manual follow-up.</p>",
-        type: "text"
-      },
-      {
-        heading: "Decision Framework",
-        content: "<p><strong>Choose HubSpot</strong> if you're under $30M, have a small BD team (1–5 people), want marketing automation included without additional cost, or are transitioning from spreadsheets and need fast adoption. Start with the free CRM tier.</p><p><strong>Choose Salesforce</strong> if you're above $50M with complex BD workflows, need deep ERP or Procore integration, have an IT team or admin to manage the platform, or are building a sales infrastructure that needs to scale to enterprise complexity.</p>",
-        type: "text"
-      }
-    ],
-    verdict: "HubSpot wins for mid-market contractors under $30M — faster to implement, lower cost, and marketing automation included. Salesforce is the enterprise choice for large GCs with complex BD workflows and IT resources to manage the platform.",
-    faqs: [
-      { question: "Does HubSpot integrate with Procore?", answer: "HubSpot does not have a native Procore integration as of 2025. Contractors who use both typically connect them via Zapier or a custom integration. Common workflow: when a Procore project is created, a HubSpot deal moves to 'Awarded' stage and the contact record is updated with project details. The lack of a native connector is a limitation for GCs who want bidirectional data sync." },
-      { question: "Does Salesforce have a construction-specific CRM?", answer: "Salesforce itself is industry-agnostic, but there are construction-specific Salesforce apps on the AppExchange. CRMIT Solutions, Cosential (now Unanet CRM), and other vendors build construction-specific CRM functionality on top of the Salesforce platform. Unanet CRM is specifically built for A/E/C firms on a Salesforce-based architecture. These solutions provide pre-built construction objects, workflows, and reports rather than requiring a ground-up custom build." },
-      { question: "What CRM do most ENR 400 contractors use?", answer: "Large ENR-ranked contractors typically use either Salesforce (often customized or via Unanet CRM) or Cosential/Unanet for business development. Microsoft Dynamics is also common in firms using the broader Microsoft 365 ecosystem. HubSpot is more common at regional mid-market contractors ($10–100M) where implementation speed and marketing automation matter more than enterprise integration depth." },
-      { question: "Is a CRM worth it for a contractor under $5M?", answer: "Yes — even simple CRM use (logging calls, tracking bid status, setting follow-up reminders) meaningfully improves BD pipeline visibility for small contractors. HubSpot's free tier covers this without cost. The real question isn't whether to use a CRM, but whether to use a purpose-built construction BD platform like Unanet CRM or a general CRM. For contractors under $5M, HubSpot or Pipedrive's simplicity usually wins over construction-specific platforms that cost more and require more setup." }
     ],
     published: false,
     lastUpdated: new Date().toISOString()
@@ -2292,164 +2069,299 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
     lastUpdated: new Date().toISOString()
   },
 
-  // ─── Freshbooks vs Xero (Small Contractor Accounting) ──────────────────────
+  // ─── Jobber vs Procore ─────────────────────────────────────────────────────
   {
-    slug: "freshbooks-vs-xero",
-    toolId1: "freshbooks",
-    toolId2: "xero",
-    title: "FreshBooks vs Xero for Contractors (2025): Small Contractor Accounting Compared",
-    metaDescription: "FreshBooks vs Xero for small contractors compared. Invoicing, time tracking, project expenses, and pricing for sole proprietors and contractors under $1M.",
-    h1: "FreshBooks vs Xero for Contractors: Which Accounting Platform Fits Small Construction Businesses?",
-    introduction: "FreshBooks and Xero both target small business owners who need accounting without an accounting degree. For contractors under $1M — sole proprietors, owner-operators, small residential contractors — the choice comes down to what your primary accounting bottleneck is. FreshBooks is invoice-first: it's designed for service businesses that bill clients by project or time, and the client-facing invoice and payment experience is its strongest feature. Xero is more complete as a double-entry accounting platform with stronger bank reconciliation and multi-user access. Neither has the construction-specific job costing that QuickBooks provides.",
+    slug: "jobber-vs-procore",
+    toolId1: "jobber",
+    toolId2: "procore",
+    title: "Jobber vs Procore (2025): Field Service Management vs Construction Project Management",
+    metaDescription: "Jobber vs Procore compared for contractors. Service scheduling, quoting, invoicing, and job management — which platform fits your business model?",
+    h1: "Jobber vs Procore: Field Service Software vs Construction Project Management",
+    introduction: "Jobber and Procore both call themselves contractor software, but they are built for different businesses. Jobber is a field service platform designed for service contractors — HVAC, plumbing, landscaping, painting, electrical service — who schedule recurring or on-demand service calls, quote jobs on site, and invoice the same day. Procore is a construction project management platform for GCs and specialty contractors who manage projects over weeks or months with subcontractors, RFIs, submittals, and job cost budgets. If your work is service calls and small jobs, Jobber. If your work is construction projects, Procore.",
     comparisonTable: [
       {
-        category: "Core Accounting",
+        category: "Business Model Fit",
         rows: [
-          { feature: "Double-entry accounting", tool1Value: "✅ Yes (newer versions)", tool2Value: "✅ Full double-entry" },
-          { feature: "Bank reconciliation", tool1Value: "✅ Available", tool2Value: "✅ Best-in-class" },
-          { feature: "Accounts payable", tool1Value: "⚠️ Basic bill tracking", tool2Value: "✅ Full AP workflow" },
-          { feature: "Payroll", tool1Value: "⚠️ Via Gusto integration", tool2Value: "⚠️ Via Gusto integration" },
-          { feature: "Tax preparation export", tool1Value: "✅ CPA-friendly reports", tool2Value: "✅ Full tax reports" }
+          { feature: "Best for", tool1Value: "Service contractors, recurring work, small jobs", tool2Value: "GCs, specialty subs, project-based construction" },
+          { feature: "Job duration", tool1Value: "Hours to days", tool2Value: "Weeks to years" },
+          { feature: "Subcontractor management", tool1Value: "Not designed for subs", tool2Value: "Full subcontractor portal" },
+          { feature: "Service scheduling", tool1Value: "Calendar, dispatch, recurring jobs", tool2Value: "Not a service scheduling tool" },
+          { feature: "Construction RFIs/submittals", tool1Value: "No", tool2Value: "Full workflow" }
         ]
       },
       {
-        category: "Invoicing & Client Experience",
+        category: "Core Features",
         rows: [
-          { feature: "Invoice creation", tool1Value: "✅ Best-in-class, beautiful templates", tool2Value: "✅ Good" },
-          { feature: "Online payment acceptance", tool1Value: "✅ Stripe, PayPal built-in", tool2Value: "✅ Stripe, PayPal" },
-          { feature: "Retainer billing", tool1Value: "✅ Yes", tool2Value: "⚠️ Via workarounds" },
-          { feature: "Client portal", tool1Value: "✅ Client-facing portal", tool2Value: "❌ No client portal" },
-          { feature: "Automated payment reminders", tool1Value: "✅ Built-in", tool2Value: "✅ Via Xero" }
-        ]
-      },
-      {
-        category: "Project & Time Tracking",
-        rows: [
-          { feature: "Time tracking", tool1Value: "✅ Built-in, mobile app", tool2Value: "⚠️ Via Projects add-on" },
-          { feature: "Project expense tracking", tool1Value: "✅ Expenses tied to projects", tool2Value: "✅ Via Projects" },
-          { feature: "Job profitability", tool1Value: "✅ Project-level P&L", tool2Value: "✅ Via Projects" },
-          { feature: "Multi-phase projects", tool1Value: "⚠️ Limited", tool2Value: "⚠️ Limited" }
+          { feature: "Quoting/estimating", tool1Value: "On-site quote creation, approval", tool2Value: "Via estimating module" },
+          { feature: "Job scheduling", tool1Value: "Drag-and-drop dispatch calendar", tool2Value: "Project schedule/Gantt" },
+          { feature: "Invoicing", tool1Value: "Same-day, auto-invoice options", tool2Value: "Progress billing, AIA" },
+          { feature: "Job costing", tool1Value: "Basic job profitability", tool2Value: "Full job cost tracking by cost code" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Starting price", tool1Value: "$19/month (Lite — 5 clients)", tool2Value: "$15/month (Early — 5 invoices)" },
-          { feature: "Best-fit small contractor plan", tool1Value: "$55/month (Premium — unlimited clients)", tool2Value: "$42/month (Growing — unlimited invoices)" },
-          { feature: "Multi-user access", tool1Value: "⚠️ Additional users = extra cost", tool2Value: "✅ Unlimited users all plans" },
-          { feature: "Bank transaction limit", tool1Value: "No limit", tool2Value: "20/month on Early; unlimited on Growing+" }
+          { feature: "Starting price", tool1Value: "$49/month (Core — 1 user)", tool2Value: "$9,000–$15,000+/year" },
+          { feature: "5-user team", tool1Value: "$149–$249/month", tool2Value: "$9,000–$15,000+/year (unlimited users)" },
+          { feature: "Free trial", tool1Value: "14-day free trial", tool2Value: "Demo available" }
         ]
       }
     ],
     sections: [
-      {
-        heading: "Who Should Use FreshBooks",
-        content: "<p>FreshBooks is the right choice for small contractors who prioritize invoicing and getting paid. If you bill clients directly — time and materials, flat-fee projects, change order invoices — FreshBooks' invoice creation, payment acceptance, and client communication features are better than Xero's. The client portal lets customers see their invoice history, approve estimates, and pay online without a phone call. For a sole proprietor doing residential work, remodeling, or service contracting, FreshBooks handles the billing workflow more smoothly than Xero's more accounting-forward interface. The built-in time tracking is also a genuine advantage for contractors billing hourly.</p>",
-        type: "text"
-      },
-      {
-        heading: "Who Should Use Xero",
-        content: "<p>Xero wins when accounting completeness matters more than invoicing experience. If you have a bookkeeper or accountant working in your accounting software, Xero's double-entry foundation, bank reconciliation, and financial reporting are more robust than FreshBooks. The unlimited user model ($42/month for the Growing plan) means your bookkeeper, accountant, and business partner can all access the same data without per-user cost. Xero also scales better as your business grows — transitioning from Xero to QuickBooks as you cross $1M is a much smaller operational disruption than transitioning from FreshBooks.</p>",
-        type: "text"
-      },
-      {
-        heading: "The QuickBooks Question",
-        content: "<p>The honest advice for most contractors: if you're growing past $250K in revenue and expect to have multiple employees within 2 years, start with QuickBooks rather than FreshBooks or Xero. QuickBooks' job costing and contractor ecosystem integrations are superior, and switching accounting platforms later disrupts workflow and requires data migration. FreshBooks and Xero make most sense for contractors who are genuinely small and simple — service-focused businesses without complex job cost tracking needs.</p>",
-        type: "text"
-      },
-      {
-        heading: "Decision Framework",
-        content: "<p><strong>Choose FreshBooks</strong> if you're a sole proprietor or owner-operator who sends a lot of client invoices, bills time and materials, and wants the best invoice-to-payment experience at the lowest price point.</p><p><strong>Choose Xero</strong> if you have (or plan to have) a bookkeeper, want clean double-entry accounting, need unlimited user access, or expect your business to grow past the $500K mark where Xero's accounting foundation will serve you better.</p><p><strong>Consider QuickBooks instead</strong> if you plan to hire employees, need job costing, or want integrations with construction PM tools.</p>",
-        type: "text"
-      }
+      { heading: "The Business Type Determines the Answer", content: "<p>The Jobber vs. Procore decision is almost always determined by the type of work, not feature preferences. A plumbing company doing service calls needs Jobber — dispatching, same-day invoicing, and customer communication are built for that workflow. A plumbing subcontractor taking on commercial projects with GCs, managing a crew across multiple job sites, and submitting monthly pay applications needs Procore. The wrong tool for the work type creates friction no amount of configuration resolves.</p>", type: "text" },
+      { heading: "Where Jobber Wins", content: "<p>Jobber's dispatch calendar, online booking, and automated follow-up workflows are purpose-built for high-volume, short-cycle service work. At $149–$249/month for a 5-person team, the cost is a fraction of Procore's. Jobber's client portal handles online booking, quote approvals, and payment collection — the full customer communication cycle for service-based contractors.</p>", type: "text" },
+      { heading: "Where Procore Wins", content: "<p>Procore's document management, subcontractor coordination, and financial controls are built for construction project complexity. RFI management, submittal logs, contract administration, and budget tracking by cost code do not exist in Jobber. A specialty contractor managing commercial projects simultaneously, coordinating with a GC via RFIs and submittals, and billing monthly progress applications needs Procore's project-level infrastructure.</p>", type: "text" },
+      { heading: "Contractors Who Do Both", content: "<p>Plumbing, HVAC, and electrical contractors often do both service work and construction projects. Many run both platforms — Jobber for service dispatch and invoicing, Procore for construction project management. Others choose based on revenue mix: if 80% of revenue is service calls, Jobber is primary; if 80% is commercial construction, Procore is.</p>", type: "text" }
     ],
-    verdict: "FreshBooks wins on invoicing and client experience for simple service-focused contractors. Xero wins on accounting completeness and multi-user access. For contractors expecting growth, QuickBooks remains the more scalable choice.",
+    verdict: "Jobber is built for service contractors; Procore is built for construction project management. If your work is service calls and small jobs, Jobber. If your work is multi-week construction projects with subs and GC coordination, Procore.",
     faqs: [
-      { question: "Does FreshBooks have job costing?", answer: "FreshBooks has project-level expense and time tracking that gives you a rough view of project profitability — not equivalent to QuickBooks job costing. You can see total revenue and expenses per project, but FreshBooks doesn't support cost code tracking, estimated vs. actual variance analysis, or the phased job cost reporting that construction accounting requires. For T&M billing and simple flat-fee projects, FreshBooks' project tracking is adequate. For multi-phase construction projects, it falls short." },
-      { question: "Can I switch from FreshBooks to QuickBooks later?", answer: "Yes, but it requires migration work. FreshBooks allows data export (customers, invoices, expenses), and QuickBooks has import tools. A bookkeeper or accountant familiar with both can typically handle the migration. The disruption is manageable, but it's real — your chart of accounts, transaction history, and open invoices need to transfer correctly. If you expect to need QuickBooks within 2 years, starting there avoids the migration." },
-      { question: "Does Xero work with Procore or construction PM tools?", answer: "Xero does not have native integrations with Procore, Buildertrend, or most construction-specific PM tools. Connections exist via Zapier or third-party middleware, but the construction software ecosystem has primarily built around QuickBooks. If you expect to use construction PM software, QuickBooks is the lower-friction choice for integration." },
-      { question: "Which is better for a contractor who does both residential and commercial work?", answer: "For mixed residential/commercial contractors, QuickBooks is typically the better foundation — job costing that separates commercial from residential profitability, plus the integrations needed for commercial project management. FreshBooks and Xero both struggle with the cost tracking complexity that comes with commercial work (billing applications, retainage, change order management). If you're genuinely small with simple billing across both segments, FreshBooks works, but plan the QuickBooks transition as you grow." }
+      { question: "Can Jobber handle construction project management?", answer: "Jobber handles simple project tracking for smaller jobs but lacks RFIs, submittals, change order workflows, subcontractor portals, job cost tracking by cost code, and progress billing. For projects involving GC coordination, multiple subcontractors, or monthly pay applications, Jobber is not the right tool." },
+      { question: "Can Procore handle service dispatch and scheduling?", answer: "Procore has no dispatch calendar, route optimization, automated service reminders, or recurring job scheduling. It is designed around projects with defined scopes, schedules, and budgets — not recurring service visits. Procore would be overkill for a service contractor running daily service calls." },
+      { question: "What is the best software for a plumbing company doing both service and commercial construction?", answer: "Many plumbing contractors run both platforms: Jobber for the service division and Procore for construction projects. ServiceTitan is an alternative for plumbing/HVAC companies with significant commercial construction volume — it handles both service dispatch and commercial project management in a single platform." },
+      { question: "Does Jobber integrate with QuickBooks?", answer: "Yes — Jobber has a native QuickBooks Online integration that syncs invoices, clients, and payments bidirectionally. Invoices created in Jobber flow to QuickBooks automatically, and payment records sync back, eliminating double-entry." }
     ],
     published: false,
     lastUpdated: new Date().toISOString()
   },
 
-  // ─── Zoho CRM vs Pipedrive (Construction) ──────────────────────────────────
+  // ─── Raken vs Fieldwire ────────────────────────────────────────────────────
   {
-    slug: "zoho-crm-vs-pipedrive",
-    toolId1: "zoho-crm",
-    toolId2: "pipedrive",
-    title: "Zoho CRM vs Pipedrive for Construction (2025): Affordable CRM Options for Contractors",
-    metaDescription: "Zoho CRM vs Pipedrive for construction compared. Pipeline management, contact tracking, bid tracking, and pricing for small and mid-size contractors.",
-    h1: "Zoho CRM vs Pipedrive for Construction: Budget CRM Options Compared",
-    introduction: "Zoho CRM and Pipedrive are the two most common CRM platforms for construction companies that want pipeline management without Salesforce's cost and complexity. Zoho CRM is the more feature-complete option — it includes marketing automation, telephony, inventory, and analytics in a broad platform at a low price point. Pipedrive is the focused sales pipeline tool — it does one thing exceptionally well and deliberately stays out of everything else. For construction companies managing bid pipelines, owner relationships, and business development, the choice comes down to whether you want a broad platform or a streamlined sales tool.",
+    slug: "raken-vs-fieldwire",
+    toolId1: "raken",
+    toolId2: "fieldwire",
+    title: "Raken vs Fieldwire (2025): Daily Reports vs Task and Plan Management",
+    metaDescription: "Raken vs Fieldwire compared for construction field teams. Daily reporting, task management, plan markup, and mobile field tools for GCs and subs.",
+    h1: "Raken vs Fieldwire: Construction Field Tools Compared",
+    introduction: "Raken and Fieldwire are both mobile-first field tools for construction, but they solve different problems. Raken is a daily reporting platform: it captures what happened on site today — labor hours, equipment, work performed, weather, safety observations, and subcontractor activity. Fieldwire is a task and plan management platform: it coordinates what happens on site tomorrow — task assignments, drawing markups, punch items, and RFI lookups. Many field teams use both.",
     comparisonTable: [
       {
-        category: "Sales Pipeline",
+        category: "Primary Function",
         rows: [
-          { feature: "Visual pipeline management", tool1Value: "✅ Multiple pipeline views", tool2Value: "✅ Best-in-class visual pipeline" },
-          { feature: "Custom pipeline stages", tool1Value: "✅ Yes", tool2Value: "✅ Yes" },
-          { feature: "Deal/bid tracking", tool1Value: "✅ Full opportunity tracking", tool2Value: "✅ Deal tracking purpose-built" },
-          { feature: "Activity reminders", tool1Value: "✅ Yes", tool2Value: "✅ Yes — core feature" },
-          { feature: "Pipeline forecasting", tool1Value: "✅ Advanced analytics", tool2Value: "✅ Revenue forecasting" }
+          { feature: "Core use case", tool1Value: "Daily reporting and documentation", tool2Value: "Task management and plan access" },
+          { feature: "Daily logs/reports", tool1Value: "Purpose-built — 5-min daily reports", tool2Value: "Basic daily reports" },
+          { feature: "Task management", tool1Value: "Limited", tool2Value: "Purpose-built task boards" },
+          { feature: "Plan/drawing access", tool1Value: "Not a plan tool", tool2Value: "Full plan markup and versioning" },
+          { feature: "Punch list", tool1Value: "Via observation tool", tool2Value: "Dedicated punch list workflow" }
         ]
       },
       {
-        category: "Feature Breadth",
+        category: "Daily Reporting",
         rows: [
-          { feature: "Marketing automation", tool1Value: "✅ Included", tool2Value: "❌ Not included" },
-          { feature: "Email campaigns", tool1Value: "✅ Built-in", tool2Value: "⚠️ Via integration" },
-          { feature: "Social media CRM", tool1Value: "✅ Yes", tool2Value: "❌ No" },
-          { feature: "Inventory/product catalog", tool1Value: "✅ Yes", tool2Value: "❌ No" },
-          { feature: "Telephony integration", tool1Value: "✅ Built-in VOIP", tool2Value: "⚠️ Via third-party" }
+          { feature: "Report completion time", tool1Value: "~5 minutes via mobile voice/text", tool2Value: "~10-15 minutes" },
+          { feature: "Manpower tracking", tool1Value: "Headcount by trade, hours", tool2Value: "Basic" },
+          { feature: "Equipment tracking", tool1Value: "Equipment on site log", tool2Value: "Not available" },
+          { feature: "Weather auto-fill", tool1Value: "Automatic weather data", tool2Value: "Manual entry" },
+          { feature: "Subcontractor daily reports", tool1Value: "Sub-facing reporting portal", tool2Value: "Limited" }
         ]
       },
       {
-        category: "Ease of Use",
+        category: "Field Coordination",
         rows: [
-          { feature: "Setup time", tool1Value: "⚠️ Moderate — many features to configure", tool2Value: "✅ Fast — focused interface" },
-          { feature: "Sales rep adoption", tool1Value: "⚠️ Can overwhelm non-technical users", tool2Value: "✅ High — simple pipeline focus" },
-          { feature: "Mobile app quality", tool1Value: "✅ Full featured", tool2Value: "✅ Excellent" }
+          { feature: "Drawing markup", tool1Value: "No", tool2Value: "Full markup suite" },
+          { feature: "Offline plan access", tool1Value: "No", tool2Value: "Yes" },
+          { feature: "Photo documentation", tool1Value: "Tied to daily report", tool2Value: "Tied to tasks/issues" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Free plan", tool1Value: "✅ Yes (3 users)", tool2Value: "❌ No (14-day trial)" },
-          { feature: "Starting paid plan", tool1Value: "$14/user/month (Standard)", tool2Value: "$14/user/month (Essential)" },
-          { feature: "Full-featured plan", tool1Value: "$35/user/month (Professional)", tool2Value: "$49/user/month (Professional)" },
-          { feature: "Value at low user count", tool1Value: "✅ Better value (free tier + low pricing)", tool2Value: "⚠️ Comparable at paid tiers" }
+          { feature: "Starting price", tool1Value: "Free plan; paid from ~$15/user/mo", tool2Value: "Free (5 users, 3 projects); Pro $54/user/mo" },
+          { feature: "Procore integration", tool1Value: "Native", tool2Value: "Native" },
+          { feature: "Free tier", tool1Value: "Limited free plan", tool2Value: "Yes — up to 5 users" }
         ]
       }
     ],
     sections: [
+      { heading: "What Raken Does Best", content: "<p>Raken reduces daily report completion to under 5 minutes using voice-to-text entry, pre-populated weather data, and a mobile workflow designed for foremen who hate paperwork. The daily log captures manpower by trade, equipment on site, work performed, deliveries, and safety observations — all the data needed for delay claims, OSHA compliance, and owner reporting. The subcontractor daily reporting feature collects sub-level daily logs without GC staff having to collect them manually.</p>", type: "text" },
+      { heading: "What Fieldwire Does Best", content: "<p>Fieldwire coordinates the daily work of field crews: creating tasks for specific crew members, attaching them to plan locations, tracking completion, and managing punch items through closeout. Foremen can pull up the latest set, mark up an issue directly on the plan, and assign a task to the responsible sub in under two minutes — replacing the printed plan sets and hand-annotated punch lists that still circulate on many job sites.</p>", type: "text" },
+      { heading: "Why Many Teams Use Both", content: "<p>Raken and Fieldwire solve different field problems and do not significantly overlap. A GC can use Raken for daily logs and documentation and Fieldwire for task coordination and plan access. Both integrate with Procore so data flows to the central PM platform without re-entry.</p>", type: "text" },
+      { heading: "Decision Framework", content: "<p><strong>Choose Raken</strong> if daily report quality is your primary problem — delay claims, owner reporting, or public contract compliance. <strong>Choose Fieldwire</strong> if field coordination is your primary problem — plans on paper, punch lists in email, foremen needing better task assignment tools. <strong>Use both</strong> if you are on Procore and can budget for it.</p>", type: "text" }
+    ],
+    verdict: "Raken is the daily documentation tool; Fieldwire is the field coordination tool. They solve different problems and work better together than either works alone.",
+    faqs: [
+      { question: "Does Raken replace Procore daily log?", answer: "Raken produces more detailed and faster-to-complete daily logs than Procore's daily log module. The Raken-Procore integration syncs Raken daily reports into Procore's daily log automatically — so you get Raken's fast entry experience with Procore's centralized record." },
+      { question: "Does Fieldwire replace Procore plan management?", answer: "Fieldwire's plan management is comparable to Procore's for basic use cases. For GCs on Procore who want better field adoption, Fieldwire's native Procore integration lets crews use Fieldwire's simpler interface while keeping Procore as the master document repository." },
+      { question: "What is Raken's free plan?", answer: "Raken's free plan includes basic daily reporting for unlimited users on a single project. Paid plans unlock multiple projects, subcontractor reporting, custom templates, and Procore integration." },
+      { question: "Can subs use Raken without the GC requiring it?", answer: "Yes — subcontractors can use Raken independently for their own daily reports and documentation regardless of what the GC uses. Many specialty subs use Raken for delay claim protection and T&M documentation even when the GC is on a different platform." }
+    ],
+    published: false,
+    lastUpdated: new Date().toISOString()
+  },
+
+  // ─── CompanyCam vs Raken ───────────────────────────────────────────────────
+  {
+    slug: "companycam-vs-raken",
+    toolId1: "companycam",
+    toolId2: "raken",
+    title: "CompanyCam vs Raken (2025): Photo Documentation vs Daily Reporting",
+    metaDescription: "CompanyCam vs Raken for construction field documentation compared. Photo management, daily reports, and job site documentation for GCs and specialty contractors.",
+    h1: "CompanyCam vs Raken: Job Site Documentation Tools Compared",
+    introduction: "CompanyCam and Raken both document what is happening on the job site — but through different lenses. CompanyCam is a photo documentation platform: every photo is GPS-stamped, time-stamped, tagged to a project, and instantly available to everyone on the team. Raken is a daily reporting platform: it structures the end-of-day narrative — labor, equipment, work performed, weather, issues — into a defensible daily log. CompanyCam shows what happened on site. Raken documents it formally.",
+    comparisonTable: [
       {
-        heading: "How Construction Companies Use These CRMs",
-        content: "<p>The primary use case in construction is bid pipeline management — tracking which RFPs you've received, where each opportunity is in your go/no-go and bid preparation process, and following up with owners and GCs after award. Both platforms handle this with custom pipeline stages (Qualified → Estimating → Bid Submitted → Award Pending → Won/Lost) and activity tracking. Relationship management is equally important: construction BD teams stay in front of the same 20–50 owner contacts for years. Both CRMs handle contact history, activity logging, and follow-up reminders well.</p>",
-        type: "text"
+        category: "Primary Function",
+        rows: [
+          { feature: "Core use case", tool1Value: "Photo organization and sharing", tool2Value: "Daily reporting and site documentation" },
+          { feature: "Photo management", tool1Value: "Purpose-built: GPS, tags, albums", tool2Value: "Photos attached to daily reports" },
+          { feature: "Daily log / report", tool1Value: "Not a reporting tool", tool2Value: "Purpose-built daily reporting" },
+          { feature: "Manpower tracking", tool1Value: "No", tool2Value: "Headcount by trade and hours" }
+        ]
       },
       {
-        heading: "Why Pipedrive Wins for Most Contractors",
-        content: "<p>Pipedrive's focused approach is its strength in construction. Construction BD teams are typically small (1–3 people), not technical, and don't have time to manage a complex CRM platform. Pipedrive's visual pipeline is the fastest way to see the status of every active opportunity at a glance. The activity-driven sales process (every deal has a next action scheduled) enforces the consistent follow-up that construction BD requires. BD staff typically have higher adoption rates with Pipedrive than Zoho CRM because Pipedrive doesn't try to do everything — it just surfaces the next call or meeting they need to make.</p>",
-        type: "text"
+        category: "Photo and Visual Documentation",
+        rows: [
+          { feature: "GPS tagging", tool1Value: "Automatic on every photo", tool2Value: "Via report location" },
+          { feature: "Photo organization", tool1Value: "Albums, tags, project feeds", tool2Value: "Tied to daily report structure" },
+          { feature: "Annotation tools", tool1Value: "Draw, arrows, text on photos", tool2Value: "Limited" },
+          { feature: "Client-shareable galleries", tool1Value: "One-click client sharing", tool2Value: "Not designed for client sharing" },
+          { feature: "Storage", tool1Value: "Unlimited photo storage", tool2Value: "Limited by plan" }
+        ]
       },
       {
-        heading: "When Zoho CRM Makes Sense",
-        content: "<p>Zoho CRM's advantage is breadth at low cost. If you want marketing automation (email campaigns to owner contacts), telephony (log calls directly in the CRM), and social CRM in one platform alongside sales pipeline management, Zoho delivers this at a price point HubSpot and Salesforce can't match. For contractors building out more comprehensive BD infrastructure — email newsletters, targeted campaigns by owner type, inbound lead tracking from a construction website — Zoho's included marketing tools are a meaningful cost advantage. The free tier (3 users) also makes Zoho accessible for very small contractors who want CRM without upfront cost.</p>",
-        type: "text"
+        category: "Reporting and Compliance",
+        rows: [
+          { feature: "Structured daily reports", tool1Value: "No", tool2Value: "Full daily log format" },
+          { feature: "Weather auto-fill", tool1Value: "No", tool2Value: "Automatic" },
+          { feature: "Equipment tracking", tool1Value: "No", tool2Value: "Equipment on site log" },
+          { feature: "Subcontractor daily reports", tool1Value: "No", tool2Value: "Sub-facing portal" }
+        ]
       },
       {
-        heading: "Decision Framework",
-        content: "<p><strong>Choose Pipedrive</strong> if your BD team is small, you want fast adoption, your primary need is bid pipeline visibility and follow-up activity tracking, and you don't need email marketing built in.</p><p><strong>Choose Zoho CRM</strong> if you want broader marketing capabilities in the same platform, need a free tier for a very small team, or want telephony integration at low cost. Also worth evaluating if you're already using other Zoho products (Zoho Books, Zoho Projects) and want platform consolidation.</p>",
-        type: "text"
+        category: "Pricing",
+        rows: [
+          { feature: "Starting price", tool1Value: "$49/month (1 user)", tool2Value: "Free plan; paid ~$15/user/mo" },
+          { feature: "Procore integration", tool1Value: "Native", tool2Value: "Native" }
+        ]
       }
     ],
-    verdict: "Pipedrive wins for sales pipeline focus and adoption simplicity — most construction BD teams will use it consistently. Zoho CRM wins on breadth and price — better if you want marketing automation alongside CRM without the HubSpot premium.",
+    sections: [
+      { heading: "Why CompanyCam Matters", content: "<p>Job site photos taken in the field get lost — they live on individual crew members phones, get texted to a group chat, or end up in a generic camera roll. When a dispute arises about existing conditions before work started, or whether a concrete pour was properly completed, you need that photo with a GPS location, timestamp, and project attribution. CompanyCam ensures every photo is immediately tagged, organized, and accessible. The client-shareable gallery differentiates contractors who send weekly photo updates from those who don't communicate.</p>", type: "text" },
+      { heading: "Why Raken Matters", content: "<p>Raken's daily reports create the legal paper trail that protects contractors when schedule disputes, delay claims, or change order disagreements arise. A daily log showing it rained 1.2 inches on the day the owner claims you should have been pouring concrete — with automatically populated NOAA weather data — is a defensible document. Manpower records corroborate T&M billings.</p>", type: "text" },
+      { heading: "The Case for Using Both", content: "<p>CompanyCam and Raken solve different documentation problems. CompanyCam handles the visual record. Raken handles the narrative record. Both integrate with Procore, and both have free or low-cost tiers that make the combined investment accessible for smaller contractors.</p>", type: "text" },
+      { heading: "Decision Framework", content: "<p><strong>Choose CompanyCam first</strong> if photos are getting lost, clients are asking for progress updates, or you need a searchable photo archive for claims. <strong>Choose Raken first</strong> if daily report quality is your primary risk — public work, federal contracts, or projects where delay claims are real. <strong>Use both</strong> if you can budget for it.</p>", type: "text" }
+    ],
+    verdict: "CompanyCam solves photo organization and visual documentation. Raken solves daily reporting and narrative documentation. They address different documentation gaps and neither fully replaces the other.",
     faqs: [
-      { question: "Does Pipedrive integrate with Procore?", answer: "Pipedrive does not have a native Procore integration. Contractors connecting the two typically use Zapier — for example, creating a Pipedrive deal when a Procore project is initiated, or updating a deal to 'Won' when a project is created. It's functional but requires Zapier setup and maintenance. If deep CRM/project management integration is a priority, HubSpot (which also lacks native Procore integration) and Salesforce (with third-party connectors) are in the same position." },
-      { question: "Does Zoho CRM integrate with QuickBooks?", answer: "Yes — Zoho CRM has a native QuickBooks integration through the Zoho Marketplace. The integration allows you to sync contacts, create invoices from deals, and view financial history within the CRM. For contractors using both Zoho CRM and QuickBooks, this sync reduces manual data entry between platforms." },
-      { question: "What is the best free CRM for a small contractor?", answer: "HubSpot CRM is the most capable free option — unlimited users, unlimited contacts, and basic pipeline management at no cost. Zoho CRM's free plan (3 users) is a good alternative for very small teams who want Zoho's broader feature set. Pipedrive does not have a free tier — only a 14-day trial. For a contractor with 1–2 BD staff who need basic pipeline tracking, HubSpot Free or Zoho Free will cover the workflow." },
-      { question: "How do construction companies typically set up their CRM pipeline stages?", answer: "Common construction bid pipeline stages: (1) Lead — owner/project identified, (2) Qualified — confirmed we want to bid and have a shot, (3) Estimating — estimate in progress, (4) Bid Submitted — awaiting award, (5) Under Review — shortlisted or in BAFO process, (6) Won / Lost. Some companies add a Pre-Qualification stage before Qualified. The key is having a clearly defined action that moves a deal from one stage to the next — not just a status label, but a completed deliverable (estimate submitted, reference call made, proposal presented)." }
+      { question: "Does CompanyCam have daily reporting?", answer: "CompanyCam has checklists and annotations but is not a structured daily reporting platform. It does not capture headcount by trade, equipment on site, work descriptions, or weather data in a format designed for delay claim documentation. For the structured daily log a GC needs for contract compliance, Raken or Procore's daily log module is more appropriate." },
+      { question: "Does Raken handle photo management?", answer: "Raken captures photos as attachments to daily reports. Photos are searchable by date and project, but Raken does not provide CompanyCam's GPS tagging, project album organization, annotation tools, or client-shareable galleries. For contractors who need robust photo organization beyond reports, CompanyCam fills the gap." },
+      { question: "Can I use CompanyCam and Raken with Procore?", answer: "Yes — both have native Procore integrations. CompanyCam photos sync to Procore's photos module, and Raken daily reports sync to Procore's daily log. Field staff use the more intuitive mobile apps while Procore remains the central project record." },
+      { question: "How does CompanyCam handle client photo sharing?", answer: "CompanyCam generates a shareable link to a curated photo gallery for a project. Clients can view the gallery without a CompanyCam account. This reduces the effort of client progress reporting from downloading photos and attaching to an email to sharing a single link." }
+    ],
+    published: false,
+    lastUpdated: new Date().toISOString()
+  },
+
+  // ─── Bridgit Bench vs Procore ──────────────────────────────────────────────
+  {
+    slug: "bridgit-bench-vs-procore",
+    toolId1: "bridgit-bench",
+    toolId2: "procore",
+    title: "Bridgit Bench vs Procore (2025): Construction Workforce Planning vs Project Management",
+    metaDescription: "Bridgit Bench vs Procore for construction workforce planning compared. Resource allocation, bench management, and labor forecasting for GCs.",
+    h1: "Bridgit Bench vs Procore: Workforce Planning vs Project Management",
+    introduction: "Bridgit Bench and Procore both track who is working on which project — but at fundamentally different levels. Procore handles resource allocation at the project level: assigning a superintendent or crew, logging hours against a cost code. Bridgit Bench is a workforce planning platform built specifically for construction — managing the allocation of salaried project managers, superintendents, and field supervisors across a portfolio, forecasting staffing needs 3–6 months out, and identifying gaps before they become hiring problems.",
+    comparisonTable: [
+      {
+        category: "Workforce Planning Scope",
+        rows: [
+          { feature: "Primary use case", tool1Value: "Construction workforce planning and allocation", tool2Value: "Full project management platform" },
+          { feature: "Staff allocation across projects", tool1Value: "Purpose-built visual allocation board", tool2Value: "Via workforce management module" },
+          { feature: "Utilization tracking", tool1Value: "Over/under-allocated views", tool2Value: "Not available" },
+          { feature: "Labor forecasting (3-6 months)", tool1Value: "Forward-looking staffing view", tool2Value: "Not available" },
+          { feature: "Field labor hours / timecards", tool1Value: "Not a timecard tool", tool2Value: "Full timecard module" }
+        ]
+      },
+      {
+        category: "Bench Management",
+        rows: [
+          { feature: "Upcoming project staffing", tool1Value: "Pre-award staffing planning", tool2Value: "Limited to active projects" },
+          { feature: "Skill/certification tracking", tool1Value: "Worker profiles with skills, certs", tool2Value: "Basic workforce profiles" },
+          { feature: "Vacancy and gap analysis", tool1Value: "Visual gap identification", tool2Value: "Not available" }
+        ]
+      },
+      {
+        category: "Integration",
+        rows: [
+          { feature: "Procore integration", tool1Value: "Native — pulls project data from Procore", tool2Value: "N/A" },
+          { feature: "Subcontractor management", tool1Value: "Internal staff only", tool2Value: "Full subcontractor portal" },
+          { feature: "Financial management", tool1Value: "No", tool2Value: "Full job cost and financials" }
+        ]
+      }
+    ],
+    sections: [
+      { heading: "The Problem Bridgit Bench Solves", content: "<p>Procore tells you who is assigned to a project today. Bridgit Bench answers a different question: if we win the three projects we are currently bidding, do we have the project management staff to run all of them? GCs above $20M typically have a bench problem — they are turning down work not because they lack capital or bonding capacity, but because they do not have project management staff to cover it. Bridgit Bench gives operations directors a visual allocation board showing every PM, superintendent, and field supervisor — their current assignments, projected end dates, and incoming pipeline that will need staff in 60-120 days.</p>", type: "text" },
+      { heading: "Procore Workforce Module vs. Bridgit", content: "<p>Procore's workforce module is designed for craft labor — tracking workers by trade, forecasting labor needs, managing crew-level assignments. It is not designed for managing the professional staff bench whose allocation decisions determine which projects you can run simultaneously. Bridgit Bench is built for that layer. The two tools address different staffing tiers and genuinely complement each other.</p>", type: "text" },
+      { heading: "The Procore Integration", content: "<p>Bridgit Bench pulls active project data from Procore automatically — project names, start/end dates, status. When a project schedule shifts in Procore, Bridgit Bench reflects the updated timeline. This eliminates the manual update burden that makes spreadsheet-based workforce planning stale within days.</p>", type: "text" },
+      { heading: "Decision Framework", content: "<p><strong>Bridgit Bench is worth evaluating</strong> if you are a GC above $15-20M managing 5+ concurrent projects and struggling with staffing visibility. <strong>Procore alone is sufficient</strong> if your workforce planning needs are simple — fewer than 5 active projects and a small management team.</p>", type: "text" }
+    ],
+    verdict: "Bridgit Bench handles professional staff workforce planning — a gap Procore does not fill. For GCs above $20M managing a growing portfolio of concurrent projects, Bridgit Bench solves a real staffing visibility problem.",
+    faqs: [
+      { question: "Does Procore have a workforce planning module?", answer: "Procore's workforce management module focuses on craft labor — assigning field workers to projects and tracking hours by trade. It is not designed for professional staff workforce planning across a portfolio. Bridgit Bench fills that gap." },
+      { question: "What size GC benefits from Bridgit Bench?", answer: "Bridgit Bench is most valuable for GCs managing 5+ concurrent projects with 10+ project managers and superintendents. Below that threshold, spreadsheets are manageable. Above it — typically $20M+ revenue — a dedicated workforce planning platform justifies the cost." },
+      { question: "Can Bridgit Bench forecast hiring needs?", answer: "Yes — the forward-looking allocation view shows when current projects will complete and when upcoming projects will need staffing. The gap between projected available staff and projected demand is visible months out, allowing operations directors to hire or restructure before a crisis." },
+      { question: "Does Bridgit Bench integrate with HR software?", answer: "Bridgit Bench integrates with Procore and some HRIS platforms. It is a workforce allocation tool, not an HR platform — it handles project staffing assignments, not payroll or compliance. It works alongside HR platforms like Rippling or Gusto, each handling a different layer of workforce management." }
+    ],
+    published: false,
+    lastUpdated: new Date().toISOString()
+  },
+
+  // ─── TouchPlan vs Procore ──────────────────────────────────────────────────
+  {
+    slug: "touchplan-vs-procore",
+    toolId1: "touchplan",
+    toolId2: "procore",
+    title: "TouchPlan vs Procore (2025): Lean Pull Planning vs Construction Project Management",
+    metaDescription: "TouchPlan vs Procore for construction scheduling compared. Lean pull planning, last planner system, and collaborative scheduling vs full PM platform.",
+    h1: "TouchPlan vs Procore: Lean Pull Planning vs Full Construction Project Management",
+    introduction: "TouchPlan and Procore both operate on construction job sites, but they solve different scheduling problems. Procore has a scheduling module with Gantt charts — adequate for overview project timelines but not for collaborative short-interval planning. TouchPlan is a lean construction planning platform built around the Last Planner System: collaborative phase planning, weekly work plan commitment tracking, and percent plan complete (PPC) metrics. For GCs running lean construction or IPD contracts, TouchPlan addresses a planning layer that Procore does not cover.",
+    comparisonTable: [
+      {
+        category: "Scheduling Approach",
+        rows: [
+          { feature: "Scheduling methodology", tool1Value: "Lean Last Planner System (pull planning)", tool2Value: "Traditional Gantt / CPM overview" },
+          { feature: "Collaborative planning sessions", tool1Value: "Digital pull planning board", tool2Value: "Not designed for collaborative sessions" },
+          { feature: "Weekly work plans", tool1Value: "6-week lookahead with commitments", tool2Value: "Manual via schedule view" },
+          { feature: "PPC tracking (percent plan complete)", tool1Value: "Automatic PPC metrics", tool2Value: "Not available" },
+          { feature: "Constraint identification", tool1Value: "Built-in constraint log", tool2Value: "Via RFI or issue log" }
+        ]
+      },
+      {
+        category: "Procore Platform Features",
+        rows: [
+          { feature: "Financial management", tool1Value: "No", tool2Value: "Full budget, contracts, change orders" },
+          { feature: "RFI / submittals", tool1Value: "No", tool2Value: "Full workflow" },
+          { feature: "Subcontractor coordination", tool1Value: "Sub-facing planning only", tool2Value: "Full sub portal" }
+        ]
+      },
+      {
+        category: "Lean Construction Support",
+        rows: [
+          { feature: "Phase scheduling (pull planning)", tool1Value: "Core feature", tool2Value: "Not available" },
+          { feature: "Root cause analysis for missed tasks", tool1Value: "Built-in reason codes", tool2Value: "No" },
+          { feature: "IPD/lean contract support", tool1Value: "Purpose-built", tool2Value: "Limited" }
+        ]
+      },
+      {
+        category: "Integration and Pricing",
+        rows: [
+          { feature: "Procore integration", tool1Value: "Native Procore connector", tool2Value: "N/A" },
+          { feature: "Primavera P6 import", tool1Value: "P6 schedule import", tool2Value: "Via connector" },
+          { feature: "Standalone availability", tool1Value: "Yes", tool2Value: "Full platform only" }
+        ]
+      }
+    ],
+    sections: [
+      { heading: "What the Last Planner System Is", content: "<p>The Last Planner System (LPS) is a lean construction method where foremen and field supervisors — the last planners in the planning chain — commit to what they will complete in the coming week. Those commitments are tracked against what actually gets done (percent plan complete, or PPC). When tasks are missed, the reason is recorded. Over time, this data reveals the most common planning disruptions. TouchPlan digitizes this process, replacing physical sticky notes on a whiteboard with a shared digital platform field crews update from their phones.</p>", type: "text" },
+      { heading: "Why Procore Does Not Replace TouchPlan", content: "<p>Procore's scheduling module generates Gantt charts and can track milestones, but it is not designed for collaborative pull planning sessions. PPC tracking, constraint logging with reason codes, and the collaborative commitment workflow that define the Last Planner System are not available in Procore. For GCs committed to lean construction — or working on IPD contracts that require it — TouchPlan provides a planning layer Procore cannot replicate.</p>", type: "text" },
+      { heading: "The Integration: TouchPlan + Procore", content: "<p>TouchPlan's native Procore integration pulls the master project milestone framework from Procore. Progress in TouchPlan can feed back to Procore's schedule module. The lean planning team uses TouchPlan's collaborative interface; the project management team maintains the overview timeline in Procore.</p>", type: "text" },
+      { heading: "Decision Framework", content: "<p><strong>TouchPlan is worth evaluating</strong> if you are a GC above $30M running a lean construction program, working on IPD contracts requiring collaborative planning, or have superintendents willing to adopt pull planning as a weekly discipline. <strong>Procore's scheduling module is sufficient</strong> for projects that do not use the Last Planner System.</p>", type: "text" }
+    ],
+    verdict: "TouchPlan extends Procore's scheduling with lean pull planning — collaborative phase planning, weekly work plan tracking, and PPC metrics Procore does not provide. Required for lean/IPD projects; valuable but optional for traditional delivery.",
+    faqs: [
+      { question: "What is the Last Planner System in construction?", answer: "The Last Planner System is a lean construction scheduling method where foremen and supervisors commit to what they will complete in the coming week. Those commitments are tracked against actual completions (percent plan complete, or PPC). When tasks are missed, the reason is recorded. Over time, this reveals the most common planning disruptions so teams can address root causes." },
+      { question: "Does TouchPlan replace Primavera P6?", answer: "No — TouchPlan and P6 serve different levels of the scheduling hierarchy. P6 generates the master CPM schedule with logic ties, critical path, and earned value. TouchPlan operates at the short-interval planning level — the 6-week lookahead and weekly work plans that implement the master schedule on the ground. TouchPlan can import the P6 master schedule as the framework for its phase plans." },
+      { question: "What is PPC in lean construction?", answer: "PPC stands for Percent Plan Complete — a metric measuring how many tasks committed to in the weekly work plan were actually completed. A high PPC (80%+) indicates reliable planning and good trade coordination. A low PPC indicates planning problems: late materials, incomplete predecessor work, or design issues. PPC is tracked weekly and trended over the project." },
+      { question: "Is TouchPlan used for residential construction?", answer: "TouchPlan is primarily used on complex commercial, healthcare, and infrastructure projects where the Last Planner System delivers meaningful schedule improvement. For residential construction, simpler tools like Buildertrend cover scheduling needs. TouchPlan's ROI typically requires the subcontractor coordination complexity found on larger commercial projects." }
     ],
     published: false,
     lastUpdated: new Date().toISOString()
