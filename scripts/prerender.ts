@@ -11,7 +11,8 @@ import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
 import { comparisonDetailPages } from "../app/data/comparisonData";
 import { guidePages } from "../app/data/guidePages";
-import { categories } from "../app/data/categoryTaxonomy";
+import { getCategoryBySlug } from "../app/data/categoryTaxonomy";
+import { getToolById } from "../app/data/toolDataset";
 import { categoryPages } from "../app/data/categoryContent";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app/data/editorial";
 
@@ -235,12 +236,86 @@ for (const trade of trades) {
 // Tool pages
 for (const tool of tools) {
   const desc = `${tool.name} is rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. ${tool.tagline}. Starting at ${tool.price}.`;
+  const toolCanonical = `${BASE_URL}/tools/${tool.slug}`;
+  const toolTrades = trades.filter((t) => tool.tradeIds.includes(t.id));
+  const tradeNames = toolTrades.map((t) => t.name).join(", ") || "construction";
+
+  const toolFaqs = [
+    {
+      question: `What is ${tool.name}?`,
+      answer: tool.description,
+    },
+    {
+      question: `How much does ${tool.name} cost?`,
+      answer: `${tool.name} starts at ${tool.price}. ${tool.priceNote}`,
+    },
+    {
+      question: `What trades is ${tool.name} best for?`,
+      answer: `${tool.name} is used by contractors in ${tradeNames}. ${tool.tagline}`,
+    },
+  ];
+
+  const toolBodyParts: string[] = [];
+  toolBodyParts.push(`<h1>${escHtml(tool.name)} Review (${currentYear})</h1>`);
+  toolBodyParts.push(`<p>${escHtml(tool.tagline)}</p>`);
+  toolBodyParts.push(`<p>${escHtml(tool.description)}</p>`);
+  toolBodyParts.push(
+    `<p>Rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. Starting at ${escHtml(tool.price)}. ${escHtml(tool.priceNote)}</p>`,
+  );
+
+  if (toolTrades.length > 0) {
+    toolBodyParts.push(`<h2>Trades ${escHtml(tool.name)} serves</h2>`);
+    toolBodyParts.push(
+      `<ul>${toolTrades
+        .map(
+          (t) =>
+            `<li><a href="${BASE_URL}/trades/${t.slug}">Best ${escHtml(t.name)} software</a></li>`,
+        )
+        .join("")}</ul>`,
+    );
+  }
+
+  if (tool.features.length > 0) {
+    toolBodyParts.push(`<h2>Key features</h2>`);
+    toolBodyParts.push(
+      `<ul>${tool.features.map((f) => `<li>${escHtml(f)}</li>`).join("")}</ul>`,
+    );
+  }
+
+  if (tool.pros.length > 0 || tool.cons.length > 0) {
+    toolBodyParts.push(`<h2>Pros and cons</h2>`);
+    if (tool.pros.length > 0) {
+      toolBodyParts.push(`<h3>Pros</h3>`);
+      toolBodyParts.push(
+        `<ul>${tool.pros.map((p) => `<li>${escHtml(p)}</li>`).join("")}</ul>`,
+      );
+    }
+    if (tool.cons.length > 0) {
+      toolBodyParts.push(`<h3>Cons</h3>`);
+      toolBodyParts.push(
+        `<ul>${tool.cons.map((c) => `<li>${escHtml(c)}</li>`).join("")}</ul>`,
+      );
+    }
+  }
+
+  toolBodyParts.push(`<h2>About ${escHtml(tool.name)}</h2>`);
+  toolBodyParts.push(
+    `<p>${escHtml(tool.name)} is a ${tool.category.toLowerCase()} rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. Founded in ${tool.yearFounded}, ${escHtml(tool.name)} is used by construction companies with ${escHtml(tool.companySize)} employees. Ratings are aggregated from G2, Capterra, Software Advice, and direct contractor submissions — see our <a href="${BASE_URL}/methodology">methodology</a>.</p>`,
+  );
+
+  toolBodyParts.push(`<h2>Frequently asked questions</h2>`);
+  for (const faq of toolFaqs) {
+    toolBodyParts.push(
+      `<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`,
+    );
+  }
+
   pages.push({
     path: `/tools/${tool.slug}`,
     title: `${tool.name} Review (${currentYear}) — Pricing, Features & Ratings | BUILTECH`,
     description: desc,
     ogType: "product",
-    canonical: `${BASE_URL}/tools/${tool.slug}`,
+    canonical: toolCanonical,
     schemas: [
       {
         "@context": "https://schema.org",
@@ -248,20 +323,59 @@ for (const tool of tools) {
         "name": tool.name,
         "description": tool.description,
         "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web, iOS, Android",
         "url": tool.website,
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": tool.rating.toFixed(1),
           "bestRating": "5",
-          "ratingCount": tool.reviewCount
+          "worstRating": "1",
+          "ratingCount": tool.reviewCount,
         },
         "offers": {
           "@type": "Offer",
           "price": tool.price.replace(/[^0-9.]/g, "") || "0",
-          "priceCurrency": "USD"
-        }
-      }
-    ]
+          "priceCurrency": "USD",
+          "description": `${tool.price} — ${tool.priceNote}`,
+        },
+        "featureList": tool.features.join(", "),
+        "datePublished": `${tool.yearFounded}`,
+        "publisher": PUBLISHER_SCHEMA,
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
+          ...(toolTrades[0]
+            ? [
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": toolTrades[0].name,
+                  "item": `${BASE_URL}/trades/${toolTrades[0].slug}`,
+                },
+              ]
+            : []),
+          {
+            "@type": "ListItem",
+            "position": toolTrades[0] ? 3 : 2,
+            "name": tool.name,
+            "item": toolCanonical,
+          },
+        ],
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": toolFaqs.map((f) => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+        })),
+      },
+    ],
+    staticBody: `<article>${toolBodyParts.join("\n")}</article>`,
   });
 }
 
@@ -354,48 +468,284 @@ for (const page of comparisonPages) {
 
 // Best-for pages
 for (const page of bestForPages) {
+  const bestForCanonical = `${BASE_URL}/best/${page.slug}`;
+  const trade = trades.find((t) => t.id === page.tradeId);
+  const topTools = trade ? tools.filter((t) => t.tradeIds.includes(trade.id)).slice(0, 6) : [];
+
+  const bestForFaqs = trade
+    ? [
+        {
+          question: `What is the best ${trade.name} software in ${currentYear}?`,
+          answer:
+            topTools.length > 0
+              ? `The best ${trade.name} software in ${currentYear} is ${topTools[0].name} (rated ${topTools[0].rating.toFixed(1)}/5), followed by ${topTools.slice(1, 3).map((t) => `${t.name} (${t.rating.toFixed(1)}/5)`).join(" and ")}. Rankings are based on aggregated contractor reviews and ratings.`
+              : page.description,
+        },
+        {
+          question: `How much does ${trade.name} software cost?`,
+          answer:
+            topTools.length > 0
+              ? `${trade.name} software pricing varies: ${topTools.slice(0, 3).map((t) => `${t.name} starts at ${t.price}`).join(", ")}. Most tools offer free trials or demos.`
+              : "Pricing varies by vendor. Most tools offer free trials.",
+        },
+        {
+          question: `What features should I look for in ${trade.name} software?`,
+          answer: trade.whyAI.slice(0, 3).join(" "),
+        },
+      ]
+    : [];
+
+  const bestForBodyParts: string[] = [];
+  bestForBodyParts.push(`<h1>${escHtml(page.title)}</h1>`);
+  bestForBodyParts.push(`<p>${escHtml(page.description)}</p>`);
+
+  if (trade) {
+    bestForBodyParts.push(`<h2>Why use software for ${escHtml(trade.name)}?</h2>`);
+    bestForBodyParts.push(
+      `<ul>${trade.whyAI.map((w) => `<li>${escHtml(w)}</li>`).join("")}</ul>`,
+    );
+
+    if (topTools.length > 0) {
+      bestForBodyParts.push(`<h2>Top-rated ${escHtml(trade.name)} software</h2>`);
+      bestForBodyParts.push(
+        `<ol>${topTools
+          .map(
+            (t) =>
+              `<li><a href="${BASE_URL}/tools/${t.slug}">${escHtml(t.name)}</a> — ${escHtml(t.tagline)} (rated ${t.rating.toFixed(1)}/5 by ${t.reviewCount.toLocaleString()} contractors, starting at ${escHtml(t.price)})</li>`,
+          )
+          .join("")}</ol>`,
+      );
+    }
+
+    bestForBodyParts.push(`<h2>About ${escHtml(trade.name)} software</h2>`);
+    bestForBodyParts.push(`<p>${escHtml(trade.overview)}</p>`);
+
+    bestForBodyParts.push(`<h2>Key challenges ${escHtml(trade.name)} companies face</h2>`);
+    bestForBodyParts.push(
+      `<ul>${trade.challenges.map((c) => `<li>${escHtml(c)}</li>`).join("")}</ul>`,
+    );
+  }
+
+  if (bestForFaqs.length > 0) {
+    bestForBodyParts.push(`<h2>Frequently asked questions</h2>`);
+    for (const faq of bestForFaqs) {
+      bestForBodyParts.push(
+        `<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`,
+      );
+    }
+  }
+
+  const bestForSchemas: object[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": page.title,
+      "description": page.description,
+      "url": bestForCanonical,
+      "mainEntityOfPage": bestForCanonical,
+      "keywords": page.keywords.join(", "),
+      "author": AUTHOR_SCHEMA,
+      "publisher": PUBLISHER_SCHEMA,
+      "datePublished": defaultDatePublished,
+      "dateModified": defaultDateModified,
+    },
+  ];
+
+  if (topTools.length > 0) {
+    bestForSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": page.title,
+      "description": page.description,
+      "numberOfItems": topTools.length,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": topTools.map((t, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": t.name,
+        "url": `${BASE_URL}/tools/${t.slug}`,
+      })),
+    });
+  }
+
+  if (trade) {
+    bestForSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": `Best ${trade.name} Software`,
+          "item": bestForCanonical,
+        },
+      ],
+    });
+  }
+
+  if (bestForFaqs.length > 0) {
+    bestForSchemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": bestForFaqs.map((f) => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+      })),
+    });
+  }
+
   pages.push({
     path: `/best/${page.slug}`,
     title: page.title,
     description: page.description,
     ogType: "article",
-    canonical: `${BASE_URL}/best/${page.slug}`,
-    schemas: [
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": page.title,
-        "description": page.description,
-        "author": AUTHOR_SCHEMA,
-        "publisher": PUBLISHER_SCHEMA,
-        "datePublished": defaultDatePublished,
-        "dateModified": defaultDateModified
-      }
-    ]
+    canonical: bestForCanonical,
+    schemas: bestForSchemas,
+    staticBody: `<article>${bestForBodyParts.join("\n")}</article>`,
   });
 }
 
 // Category pages
 for (const page of categoryPages) {
+  const categoryCanonical = `${BASE_URL}/categories/${page.slug}`;
+  const category = getCategoryBySlug(page.slug);
+  const categoryTools = (page.toolsToCompare || [])
+    .map((id) => getToolById(id))
+    .filter((t): t is NonNullable<typeof t> => t !== undefined)
+    .slice(0, 4);
+
+  const categoryFaqs =
+    page.faqs && page.faqs.length > 0
+      ? page.faqs
+      : category
+        ? [
+            {
+              question: `What is the best ${category.name.toLowerCase()} software in ${currentYear}?`,
+              answer:
+                categoryTools.length > 0
+                  ? `The best options for ${category.name.toLowerCase()} include ${categoryTools.slice(0, 3).map((t) => `${t.name} (rated ${t.rating.toFixed(1)}/5)`).join(", ")}. Rankings are based on contractor reviews and feature sets.`
+                  : page.introduction,
+            },
+            {
+              question: `What should I look for in ${category.name.toLowerCase()} software?`,
+              answer: `Key features include: ${page.comparisonTableColumns.slice(0, 3).map((c) => c.label).join(", ")}. Choose a tool that matches your specific workflow needs.`,
+            },
+            {
+              question: `How much does ${category.name.toLowerCase()} software cost?`,
+              answer:
+                categoryTools.length > 0
+                  ? `${category.name} software pricing varies: ${categoryTools.slice(0, 3).map((t) => `${t.name} starts at ${t.pricing}`).join(", ")}. Most offer free trials or demos.`
+                  : "Pricing varies by vendor. Most tools offer free trials to test functionality.",
+            },
+          ]
+        : [];
+
+  const categoryBodyParts: string[] = [];
+  categoryBodyParts.push(`<h1>${escHtml(page.h1)}</h1>`);
+  categoryBodyParts.push(`<div>${page.introduction}</div>`);
+
+  if (category) {
+    categoryBodyParts.push(`<h2>What is ${escHtml(category.name)}?</h2>`);
+    categoryBodyParts.push(`<p>${escHtml(category.description)}</p>`);
+  }
+
+  if (categoryTools.length > 0 && category) {
+    categoryBodyParts.push(`<h2>Top ${escHtml(category.name)} software</h2>`);
+    categoryBodyParts.push(
+      `<ol>${categoryTools
+        .map(
+          (t) =>
+            `<li><a href="${BASE_URL}/tools/${t.slug}">${escHtml(t.name)}</a> — ${escHtml(t.tagline)} (rated ${t.rating.toFixed(1)}/5 by ${t.reviewCount.toLocaleString()} contractors, starting at ${escHtml(t.pricing)})</li>`,
+        )
+        .join("")}</ol>`,
+    );
+  }
+
+  for (const section of page.sections) {
+    categoryBodyParts.push(`<h2>${escHtml(section.heading)}</h2>`);
+    categoryBodyParts.push(`<div>${section.content}</div>`);
+  }
+
+  if (categoryFaqs.length > 0) {
+    categoryBodyParts.push(`<h2>Frequently asked questions</h2>`);
+    for (const faq of categoryFaqs) {
+      categoryBodyParts.push(
+        `<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`,
+      );
+    }
+  }
+
+  const categorySchemas: object[] = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": page.title,
+      "description": page.metaDescription,
+      "url": categoryCanonical,
+      "mainEntityOfPage": categoryCanonical,
+      "author": AUTHOR_SCHEMA,
+      "publisher": PUBLISHER_SCHEMA,
+      "datePublished": page.lastUpdated,
+      "dateModified": page.lastUpdated,
+      "keywords": page.keywords.join(", "),
+    },
+  ];
+
+  if (categoryTools.length > 0) {
+    categorySchemas.push({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": page.title,
+      "description": page.metaDescription,
+      "numberOfItems": categoryTools.length,
+      "itemListOrder": "https://schema.org/ItemListOrderDescending",
+      "itemListElement": categoryTools.map((t, idx) => ({
+        "@type": "ListItem",
+        "position": idx + 1,
+        "name": t.name,
+        "url": `${BASE_URL}/tools/${t.slug}`,
+      })),
+    });
+  }
+
+  if (category) {
+    categorySchemas.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BASE_URL}/` },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": category.name,
+          "item": categoryCanonical,
+        },
+      ],
+    });
+  }
+
+  if (categoryFaqs.length > 0) {
+    categorySchemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": categoryFaqs.map((f) => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer },
+      })),
+    });
+  }
+
   pages.push({
     path: `/categories/${page.slug}`,
     title: page.title,
     description: page.metaDescription,
     ogType: "article",
-    canonical: `${BASE_URL}/categories/${page.slug}`,
-    schemas: [
-      {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": page.title,
-        "description": page.metaDescription,
-        "author": AUTHOR_SCHEMA,
-        "publisher": PUBLISHER_SCHEMA,
-        "datePublished": page.lastUpdated,
-        "dateModified": page.lastUpdated,
-        "keywords": page.keywords.join(", ")
-      }
-    ]
+    canonical: categoryCanonical,
+    schemas: categorySchemas,
+    staticBody: `<article>${categoryBodyParts.join("\n")}</article>`,
   });
 }
 

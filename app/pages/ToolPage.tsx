@@ -245,7 +245,7 @@ export function ToolPage() {
 
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
-                <h1 className="text-3xl font-bold text-white">{tool.name}</h1>
+                <h1 className="text-3xl font-bold text-white">{tool.name} Review ({currentYear})</h1>
                 {tool.verified && (
                   <div
                     className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium"
