@@ -112,10 +112,15 @@ export function Footer() {
             <h4 className="text-white text-sm font-semibold mb-4">Company</h4>
             <ul className="space-y-2.5">
               <li>
-                  <a href="/about" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                    About Us
-                  </a>
-                </li>
+                <Link to="/about" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link to="/methodology" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Methodology
+                </Link>
+              </li>
               <li>
                 <button onClick={openSubmitModal} className="text-sm hover:text-orange-400 transition-colors text-left" style={{ color: "#64748b" }}>
                   Submit a Tool

@@ -14,6 +14,8 @@ const BestForPage = lazy(() => import("./pages/BestForPage").then(m => ({ defaul
 const CategoryPage = lazy(() => import("./pages/CategoryPage").then(m => ({ default: m.CategoryPage })));
 const GuidePage = lazy(() => import("./pages/GuidePage").then(m => ({ default: m.GuidePage })));
 const GuidesIndexPage = lazy(() => import("./pages/GuidesIndexPage").then(m => ({ default: m.GuidesIndexPage })));
+const AboutPage = lazy(() => import("./pages/AboutPage").then(m => ({ default: m.AboutPage })));
+const MethodologyPage = lazy(() => import("./pages/MethodologyPage").then(m => ({ default: m.MethodologyPage })));
 
 function withSuspense(Component: React.LazyExoticComponent<React.ComponentType>) {
   return function SuspenseWrapper() {
@@ -35,6 +37,8 @@ export const router = createBrowserRouter([
       { path: "best/:slug", Component: withSuspense(BestForPage) },
       { path: "guides", Component: withSuspense(GuidesIndexPage) },
       { path: "guides/:slug", Component: withSuspense(GuidePage) },
+      { path: "about", Component: withSuspense(AboutPage) },
+      { path: "methodology", Component: withSuspense(MethodologyPage) },
       { path: "search", Component: withSuspense(SearchPage) },
       { path: "*", Component: withSuspense(NotFound) },
     ],

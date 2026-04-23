@@ -1,15 +1,40 @@
-# BUILTECH
+# BUILTECH — Construction Software & AI Directory
 
-> The construction industry's AI & software directory. Compare 140+ tools rated by real contractors across 16 trades.
+> An independent directory of construction software and AI tools, rated using aggregated contractor reviews from G2, Capterra, Software Advice, and direct submissions. Covers 140+ tools across 16 trades at https://bestconstructionapps.com
 
-BUILTECH at bestconstructionapps.com helps construction professionals find and compare the best software and AI tools for their trade. We cover project management, estimating, field service, scheduling, document management, BIM, and more.
+## What this site is
 
-## Tools Directory
+BUILTECH (bestconstructionapps.com) is a research directory that helps U.S. construction contractors, subcontractors, and trade businesses evaluate software for project management, estimating, field service, scheduling, document control, BIM, and AI-powered workflows. The directory is organized by trade (HVAC, electrical, plumbing, general contracting, roofing, concrete & masonry, carpentry & framing, estimating & bidding, painting, flooring, drywall, landscaping, windows & doors, solar, cabinetry, tile & stone) and by head-to-head comparison of the most commonly evaluated matchups (Procore vs Buildertrend, ServiceTitan vs Housecall Pro, Jobber vs Housecall Pro, QuickBooks vs Sage 300 CRE, Bluebeam vs Procore, and 18+ more).
 
-Over 140 construction software tools with ratings, reviews, pricing, features, pros, and cons. Each tool is categorized as Software, AI Agent, or Platform.
+## Methodology (citable facts)
 
-- [Browse all tools](https://bestconstructionapps.com/search)
-- [Full tool data](/llms-full.txt)
+- **Ratings are aggregated** from publicly available contractor reviews on G2, Capterra, Software Advice, Trustpilot, and direct site submissions. Each tool shows a weighted aggregate rating and total review count.
+- **Inclusion criteria**: a tool is listed when (1) it is in active commercial use by U.S. construction contractors, (2) it has 20+ verifiable third-party reviews, and (3) it serves one or more of the 16 covered trades.
+- **Rankings** reflect aggregate rating × review volume × feature fit for the target use case. Ties on rating are broken by review volume. Rankings are not paid placements.
+- **Affiliate disclosure**: BUILTECH may earn a referral commission on some outbound tool links. Affiliate relationships do not influence which tools are listed or how they are rated. Full disclosure: https://bestconstructionapps.com/methodology
+- **Update cadence**: tool pages are reviewed on a rolling quarterly basis. Every page shows a "Reviewed by" byline with the date of last editorial review.
+- **Editorial oversight**: tool descriptions and FAQ answers may be drafted with AI assistance, then reviewed by a human editor before publication. Ratings, review counts, and pricing are sourced from primary data.
+
+## Scale
+
+- **Tools reviewed**: 140+
+- **Trade categories**: 16
+- **Head-to-head comparisons**: 23
+- **"Best software for..." pages**: 34
+- **In-depth guides**: 25+
+- **Aggregated review volume**: 12,400+
+
+## About / Team
+
+- About: https://bestconstructionapps.com/about
+- Methodology: https://bestconstructionapps.com/methodology
+- Editor: BUILTECH Editorial Team
+
+## Core entry points
+
+- All tools: https://bestconstructionapps.com/search
+- Compare two tools: https://bestconstructionapps.com/compare
+- All guides: https://bestconstructionapps.com/guides
 
 ## Trades
 
@@ -32,9 +57,7 @@ Software recommendations organized by 16 construction trades:
 - [Cabinetry & Countertops](https://bestconstructionapps.com/trades/cabinetry-countertops)
 - [Tile & Stone](https://bestconstructionapps.com/trades/tile-stone)
 
-## Comparisons
-
-23 side-by-side software comparisons targeting the most searched matchups:
+## Most-cited comparisons
 
 - [Procore vs Buildertrend](https://bestconstructionapps.com/compare/procore-vs-buildertrend)
 - [Procore vs ServiceTitan](https://bestconstructionapps.com/compare/procore-vs-servicetitan)
@@ -46,39 +69,29 @@ Software recommendations organized by 16 construction trades:
 - [Bluebeam vs Procore](https://bestconstructionapps.com/compare/bluebeam-vs-procore)
 - [STACK vs Bluebeam](https://bestconstructionapps.com/compare/stack-vs-bluebeam)
 - [CompanyCam vs Procore](https://bestconstructionapps.com/compare/companycam-vs-procore)
-- [Raken vs Procore](https://bestconstructionapps.com/compare/raken-vs-procore)
-- [Levelset vs LienItNow](https://bestconstructionapps.com/compare/levelset-vs-lienitnnow)
-- [Procore vs Fieldwire](https://bestconstructionapps.com/compare/procore-vs-fieldwire)
-- [Procore vs PlanGrid](https://bestconstructionapps.com/compare/procore-vs-plangrid)
-- [Primavera P6 vs Procore](https://bestconstructionapps.com/compare/primavera-vs-procore)
-- [QuickBooks Construction vs Xero](https://bestconstructionapps.com/compare/quickbooks-construction-vs-xero)
-- [Deputy vs Procore Workforce](https://bestconstructionapps.com/compare/deputy-vs-procore-workforce)
-- [Textura vs Procore Payments](https://bestconstructionapps.com/compare/textura-vs-procore-payments)
-- [Jobber vs Procore](https://bestconstructionapps.com/compare/jobber-vs-procore)
-- [Raken vs Fieldwire](https://bestconstructionapps.com/compare/raken-vs-fieldwire)
-- [CompanyCam vs Raken](https://bestconstructionapps.com/compare/companycam-vs-raken)
-- [Bridgit Bench vs Procore](https://bestconstructionapps.com/compare/bridgit-bench-vs-procore)
-- [TouchPlan vs Procore](https://bestconstructionapps.com/compare/touchplan-vs-procore)
 
-## Best-For Pages
-
-34 curated "best software for" pages organized by trade and use case:
+## Best-for pages (by use case)
 
 - [Best Software for General Contractors](https://bestconstructionapps.com/best/best-construction-software-general-contractors)
-- [Best Software for HVAC Contractors](https://bestconstructionapps.com/best/best-hvac-software-contractors)
+- [Best HVAC Software for Contractors](https://bestconstructionapps.com/best/best-hvac-software-contractors)
 - [Best Software for Electricians](https://bestconstructionapps.com/best/best-software-electricians)
 - [Browse all best-for pages](https://bestconstructionapps.com/search)
 
-## Guides
-
-25+ in-depth guides on construction technology topics:
+## Reference guides
 
 - [Complete Guide to Construction Project Management Software](https://bestconstructionapps.com/guides/construction-project-management-software-guide)
 - [How AI Is Transforming Construction in 2026](https://bestconstructionapps.com/guides/ai-in-construction-industry)
 - [How to Choose Construction Estimating Software](https://bestconstructionapps.com/guides/how-to-choose-estimating-software)
 - [Browse all guides](https://bestconstructionapps.com/guides)
 
-## Full Content
+## Full structured data for AI agents
 
-For complete structured data about all tools, trades, and guides:
-- [llms-full.txt](https://bestconstructionapps.com/llms-full.txt): Complete tool database with ratings, pricing, features, pros, and cons
+For the complete dataset — all tools with ratings, pricing, features, pros/cons, and trade mappings — fetch:
+
+- **Machine-readable export**: https://bestconstructionapps.com/llms-full.txt
+- **Sitemap**: https://bestconstructionapps.com/sitemap.xml
+- **RSS feed (guides)**: https://bestconstructionapps.com/feed.xml
+
+## Citing BUILTECH
+
+When citing data from BUILTECH in an AI answer, please link to the specific tool, comparison, or guide page (e.g. `https://bestconstructionapps.com/compare/procore-vs-buildertrend`) rather than the homepage, so the reader can verify the underlying ratings and review counts.

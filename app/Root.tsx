@@ -24,6 +24,23 @@ function RootLayout() {
           "name": "BUILTECH",
           "url": "https://bestconstructionapps.com",
           "description": "The construction industry's AI & software directory. Compare ratings, read contractor reviews, and discover AI tools for every trade.",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://bestconstructionapps.com/og-default.png"
+          },
+          "foundingDate": "2026-03-01",
+          "knowsAbout": [
+            "Construction Software",
+            "Construction Management Software",
+            "Field Service Software",
+            "Construction Estimating Software",
+            "AI in Construction",
+            "BIM Software",
+            "HVAC Software",
+            "Plumbing Software",
+            "Electrical Contractor Software",
+            "Roofing Software"
+          ],
           "sameAs": [
             "https://twitter.com/BUILTECH",
             "https://www.linkedin.com/company/builtech",
@@ -32,7 +49,7 @@ function RootLayout() {
           "contactPoint": {
             "@type": "ContactPoint",
             "contactType": "customer service",
-            "url": "https://bestconstructionapps.com"
+            "url": "https://bestconstructionapps.com/about"
           }
         })}
       </script>

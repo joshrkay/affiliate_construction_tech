@@ -3,6 +3,8 @@ import { useMemo } from "react";
 import { ChevronRight, BookOpen, ArrowRight } from "lucide-react";
 import { getGuideBySlug, guidePages } from "../data/guidePages";
 import { tools, trades } from "../data/constructionData";
+import { PageByline } from "../components/PageByline";
+import { defaultAuthor } from "../data/editorial";
 
 export function GuidePage() {
   const { slug } = useParams();
@@ -72,14 +74,19 @@ export function GuidePage() {
           "headline": guide.title,
           "description": guide.description,
           "author": {
-            "@type": "Organization",
-            "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "@type": "Person",
+            "name": defaultAuthor.name,
+            "url": defaultAuthor.url,
+            "jobTitle": defaultAuthor.role
           },
           "publisher": {
             "@type": "Organization",
             "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "url": "https://bestconstructionapps.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bestconstructionapps.com/og-default.png"
+            }
           },
           "datePublished": guide.lastUpdated,
           "dateModified": guide.lastUpdated,
@@ -139,12 +146,10 @@ export function GuidePage() {
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {guide.title}
           </h1>
-          <p className="text-lg max-w-2xl" style={{ color: "#94a3b8" }}>
+          <p className="text-lg max-w-2xl mb-4" style={{ color: "#94a3b8" }}>
             {guide.description}
           </p>
-          <p className="text-sm mt-4" style={{ color: "#64748b" }}>
-            Last updated: {guide.lastUpdated}
-          </p>
+          <PageByline dateModified={guide.lastUpdated} datePublished={guide.lastUpdated} />
         </div>
       </div>
 

@@ -21,9 +21,11 @@ import {
 } from "../data/constructionData";
 import { ToolCard } from "../components/ToolCard";
 import { StarRating } from "../components/StarRating";
+import { PageByline } from "../components/PageByline";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
+import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 type FilterType = "All" | "Software" | "AI Agent" | "Platform";
 
@@ -105,6 +107,35 @@ export function TradePage() {
       <meta name="twitter:title" content={`Best ${trade.name} Software (${currentYear}) | BUILTECH`} />
       <meta name="twitter:description" content={metaDescription} />
       <meta name="twitter:image" content="https://bestconstructionapps.com/og-default.png" />
+
+      {/* Article Schema with author + dates for E-E-A-T */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": `Best ${trade.name} Software (${currentYear})`,
+          "description": metaDescription,
+          "url": canonicalUrl,
+          "mainEntityOfPage": canonicalUrl,
+          "author": {
+            "@type": "Person",
+            "name": defaultAuthor.name,
+            "url": defaultAuthor.url,
+            "jobTitle": defaultAuthor.role
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "BUILTECH",
+            "url": "https://bestconstructionapps.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bestconstructionapps.com/og-default.png"
+            }
+          },
+          "datePublished": defaultDatePublished,
+          "dateModified": defaultDateModified
+        })}
+      </script>
 
       {/* ItemList Schema for ranked tools */}
       <script type="application/ld+json">
@@ -217,6 +248,9 @@ export function TradePage() {
               <p className="mt-2 text-lg" style={{ color: "#94a3b8" }}>
                 {trade.tagline}
               </p>
+              <div className="mt-4">
+                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
+              </div>
             </div>
           </div>
 

@@ -26,11 +26,13 @@ export function HomePage() {
     if (searchQuery.trim()) navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
   };
 
+  const totalReviews = tools.reduce((sum, t) => sum + (t.reviewCount || 0), 0);
+  const aiToolCount = tools.filter((t) => t.category === "AI Agent").length;
   const stats = [
-    { label: "Tools & Platforms", value: "140+", icon: BarChart3 },
-    { label: "Verified Reviews", value: "12,400+", icon: Star },
-    { label: "Trade Categories", value: "8", icon: Users },
-    { label: "AI-Powered Tools", value: "35+", icon: Bot },
+    { label: "Tools & Platforms", value: `${tools.length}+`, icon: BarChart3 },
+    { label: "Aggregated Reviews", value: `${totalReviews.toLocaleString()}+`, icon: Star },
+    { label: "Trade Categories", value: `${trades.length}`, icon: Users },
+    { label: "AI-Powered Tools", value: `${aiToolCount}+`, icon: Bot },
   ];
 
   const featuredReviews = [
@@ -254,11 +256,11 @@ export function HomePage() {
             </p>
           </div>
           <Link
-            to="/"
+            to="/search"
             className="hidden md:flex items-center gap-1 text-sm font-medium"
             style={{ color: "#f97316" }}
           >
-            View all <ChevronRight className="w-4 h-4" />
+            View all tools <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
 

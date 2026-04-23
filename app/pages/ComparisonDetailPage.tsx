@@ -5,6 +5,8 @@ import { tools, trades, getTradeBySlug } from "../data/constructionData";
 import { comparisonPages, getComparisonBySlug } from "../data/seoPages";
 import { tradeCompareFeatures, toolCapabilityMap, CompareFeatureGroup } from "../data/comparisonData";
 import { StarRating } from "../components/StarRating";
+import { PageByline } from "../components/PageByline";
+import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const GENERIC_FEATURES: CompareFeatureGroup[] = [
   {
@@ -126,17 +128,22 @@ export function ComparisonDetailPage() {
           "description": comparison.description,
           "url": canonicalUrl,
           "author": {
-            "@type": "Organization",
-            "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "@type": "Person",
+            "name": defaultAuthor.name,
+            "url": defaultAuthor.url,
+            "jobTitle": defaultAuthor.role
           },
           "publisher": {
             "@type": "Organization",
             "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "url": "https://bestconstructionapps.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bestconstructionapps.com/og-default.png"
+            }
           },
-          "datePublished": "2026-03-11",
-          "dateModified": "2026-03-13",
+          "datePublished": defaultDatePublished,
+          "dateModified": defaultDateModified,
           "mainEntity": {
             "@type": "ItemList",
             "numberOfItems": selectedTools.length,
@@ -212,6 +219,9 @@ export function ComparisonDetailPage() {
                   {comparison.description}
                 </p>
               )}
+              <div className="mt-3">
+                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
+              </div>
             </div>
           </div>
         </div>
