@@ -1,5 +1,4 @@
 import { trades, tools } from "../data/constructionData";
-import { StarRating } from "../components/StarRating";
 import { TopRatedThisMonth } from "../components/TopRatedThisMonth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
@@ -33,42 +32,6 @@ export function HomePage() {
     { label: "Aggregated Reviews", value: `${totalReviews.toLocaleString()}+`, icon: Star },
     { label: "Trade Categories", value: `${trades.length}`, icon: Users },
     { label: "AI-Powered Tools", value: `${aiToolCount}+`, icon: Bot },
-  ];
-
-  const featuredReviews = [
-    {
-      quote:
-        "Togal.AI cut our takeoff time by 70%. We're bidding twice as many jobs now.",
-      author: "Chris B.",
-      role: "Chief Estimator",
-      company: "BuildRight Mechanical",
-      rating: 5,
-      tool: "Togal.AI",
-      toolSlug: "togal-ai",
-      avatarColor: "#7c3aed",
-    },
-    {
-      quote:
-        "Procore's analytics dashboard tells me which projects are at risk before they blow up.",
-      author: "Derek F.",
-      role: "VP of Operations",
-      company: "Apex General Contractors",
-      rating: 5,
-      tool: "Procore",
-      toolSlug: "procore",
-      avatarColor: "#065f46",
-    },
-    {
-      quote:
-        "ALICE found a construction sequence that compressed our hospital project by 8 months.",
-      author: "Michael O.",
-      role: "Director of Project Controls",
-      company: "Western Infrastructure Partners",
-      rating: 5,
-      tool: "ALICE Technologies",
-      toolSlug: "alice-technologies",
-      avatarColor: "#0f766e",
-    },
   ];
 
   const currentYear = new Date().getFullYear();
@@ -406,59 +369,6 @@ export function HomePage() {
                 ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Featured Reviews */}
-      <section className="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-bold" style={{ color: "#0f172a" }}>
-            What Contractors Are Saying
-          </h2>
-          <p className="text-sm mt-2" style={{ color: "#64748b" }}>
-            Real reviews from verified construction professionals
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {featuredReviews.map((review, idx) => (
-            <Link
-              key={idx}
-              to={`/tools/${review.toolSlug}#reviews`}
-              className="block p-6 rounded-2xl bg-white border shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5"
-              style={{ borderColor: "#e2e8f0" }}
-              aria-label={`Read ${review.tool} reviews`}
-            >
-              <StarRating rating={review.rating} size="sm" />
-              <p className="mt-4 text-sm leading-relaxed italic" style={{ color: "#374151" }}>
-                "{review.quote}"
-              </p>
-              <div className="mt-5 flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
-                  style={{ backgroundColor: review.avatarColor }}
-                >
-                  {review.author[0]}
-                </div>
-                <div>
-                  <p className="text-sm font-semibold" style={{ color: "#0f172a" }}>
-                    {review.author}
-                  </p>
-                  <p className="text-xs" style={{ color: "#64748b" }}>
-                    {review.role} · {review.company}
-                  </p>
-                </div>
-                <div className="ml-auto">
-                  <span
-                    className="text-xs px-2 py-1 rounded-full font-medium"
-                    style={{ backgroundColor: "#fff7ed", color: "#c2410c" }}
-                  >
-                    {review.tool}
-                  </span>
-                </div>
-              </div>
-            </Link>
-          ))}
         </div>
       </section>
 
