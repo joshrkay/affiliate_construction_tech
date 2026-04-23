@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npx tsx scripts/prerender.ts && npx tsx scripts/generate-sitemap.ts && npx tsx scripts/generate-llms-full.ts && npx tsx scripts/generate-feed.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gsc:report": "npx tsx scripts/gsc-weekly-report.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.82.0",
