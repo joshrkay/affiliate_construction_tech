@@ -93,6 +93,10 @@ entries.push({ loc: "/compare", changefreq: "monthly", priority: "0.6", lastmod:
 // Search page
 entries.push({ loc: "/search", changefreq: "monthly", priority: "0.5", lastmod: today });
 
+// About & Methodology (E-E-A-T pages)
+entries.push({ loc: "/about", changefreq: "monthly", priority: "0.6", lastmod: today });
+entries.push({ loc: "/methodology", changefreq: "monthly", priority: "0.6", lastmod: today });
+
 // Build XML
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

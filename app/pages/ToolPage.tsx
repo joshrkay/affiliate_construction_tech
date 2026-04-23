@@ -58,176 +58,7 @@ export function ToolPage() {
   const seedReviews = getReviewsForTool(tool.id);
   const userReviews = localReviews.filter((r) => r.toolId === tool.id);
 
-  const names = [
-    "Chris M.", "Derek S.", "Jordan K.", "Taylor B.", "Morgan R.", "Alex P.", "Sam T.", "Casey W.", "Riley J.", "Cameron H.",
-  ];
-  const roles = [
-    "Project Manager", "Superintendent", "Estimator", "Operations Manager", "Field Engineer", "Owner", "Foreman", "Director of Construction",
-  ];
-  const companies = [
-    "Summit Builders", "Apex Contractors", "North Ridge Construction", "Ironclad GC", "BlueLine Projects", "Pioneer Build Group", "Granite Field Services",
-  ];
-  // Tiered positive titles — strong for 5-star, moderate for 4-star
-  const strongPositiveTitles = [
-    "Excellent tool for our operation",
-    "One of the best investments we made",
-    "Transformed how our team works",
-    "Top-tier platform for our needs",
-    "Highly recommend for teams like ours",
-  ];
-  const moderatePositiveTitles = [
-    "Reliable in day-to-day execution",
-    "Good fit for our project workflow",
-    "Improved coordination across teams",
-    "Helped us standardize operations",
-    "Solid choice once you get it set up",
-  ];
-  const neutralTitles = [
-    "Mixed results after rollout",
-    "Works, but needs process discipline",
-    "Decent tool with room to improve",
-  ];
-  const negativeTitles = [
-    "Did not fit our workflow",
-    "Too many friction points for our team",
-    "Not the right choice for our jobs",
-  ];
-
-  // Type-aware content pools — matched to tool.type
-  const typeKey = tool.type.toLowerCase();
-  const isEstimatingTool = /estimat|takeoff|bidding/.test(typeKey);
-  const isFieldServiceTool = /field service|service management|home service|dispatch/.test(typeKey);
-  const isDocumentTool = /document|markup|photo|bim/.test(typeKey);
-  const isDesignTool = /design|solar|landscape.*management/.test(typeKey);
-  const isSchedulingTool = /scheduling|optimization|intelligence/.test(typeKey);
-
-  // Positive content pools by tool type
-  const shortPositive = isEstimatingTool ? [
-    "Takeoff speed improved significantly and our estimators are bidding more jobs.",
-    "Quantity extraction is faster and our first-pass accuracy went up.",
-    "We cut our estimating turnaround from days to hours on most projects.",
-  ] : isFieldServiceTool ? [
-    "Dispatch is smoother and our technicians get the right job details every time.",
-    "Scheduling and invoicing are faster, and cash flow improved noticeably.",
-    "Our service call completion rate went up after switching to this platform.",
-  ] : isDocumentTool ? [
-    "Markup and review cycles are faster with everything in one place.",
-    "Version control across teams improved and we stopped losing plan updates.",
-    "Document sharing between field and office is much cleaner now.",
-  ] : isDesignTool ? [
-    "Design iteration is faster and our proposals look more professional.",
-    "Our sales close rate improved after adopting this for client presentations.",
-    "The design tools saved us hours per project on layout and visualization.",
-  ] : isSchedulingTool ? [
-    "Schedule optimization helped us find time savings we would have missed.",
-    "Our planning team uses it for every project now to sequence work better.",
-    "Resource allocation improved and we reduced crew idle time on complex jobs.",
-  ] : [
-    "Setup took effort, but execution is smoother now.",
-    "Daily coordination improved and field updates are more consistent.",
-    "We reduced rework and handoff confusion after adoption.",
-  ];
-
-  const longPositive = isEstimatingTool ? [
-    "After rolling it out to our estimating team, we saw measurable improvements in takeoff consistency and bid turnaround. Estimators spend less time on manual counts and more time on pricing strategy. We are now bidding 30 to 40 percent more work with the same headcount.",
-    "The platform changed how our preconstruction team operates. Plan review is faster, quantity checks are more reliable, and we have a consistent process across estimators. It took a few weeks to learn, but the time savings have been significant on every project since.",
-  ] : isFieldServiceTool ? [
-    "Our dispatchers can now match the right technician to the right job based on skill and location. Invoicing happens on-site instead of days later, and customer follow-up is automated. The transition was work, but our average ticket and completion rates both improved.",
-    "Before this, our office team was buried in manual scheduling and paper invoices. Now technicians close jobs from the truck, customers get instant receipts, and our cash cycle shortened by two weeks. It took discipline to adopt, but it paid off within the first quarter.",
-  ] : isDocumentTool ? [
-    "Our review process went from scattered PDFs and email chains to a single workspace where markups, comments, and approvals live together. Teams across multiple offices stay on the same plan version, and our submittal tracking is much more reliable now.",
-    "The biggest win was eliminating version confusion on active plan sets. Our project engineers and subs are all working from the same documents, and RFI tracking is cleaner. It is not perfect for every edge case, but it solved our core coordination problems.",
-  ] : isDesignTool ? [
-    "The design workflow is significantly faster now. We go from site assessment to polished proposal in a fraction of the time it used to take. Customers respond well to the visual output and our close rate has improved noticeably since adoption.",
-    "This tool streamlined our entire design-to-proposal pipeline. Layout accuracy improved, material calculations are more reliable, and we can iterate on designs with customers in real time. The learning curve was worth it for the time saved per project.",
-  ] : isSchedulingTool ? [
-    "The scheduling engine found construction sequences and resource allocations that our planners would not have considered under deadline pressure. We used it to compare options and present data-backed plans to owners, which improved confidence in our timelines.",
-    "Our project controls team runs every new job through this platform now. It identifies schedule risks earlier and helps us model recovery options when delays happen. The biggest value is on complex, constrained projects where small sequencing changes save weeks.",
-  ] : [
-    "After the first few weeks of setup and training, our team started using it consistently across active jobs. We now have better visibility between office and field, fewer status surprises, and cleaner handoffs during weekly planning.",
-    "We were hesitant at first, but this has become part of our standard workflow. It improved communication, reduced duplicate entry, and gave project leads faster access to the information they actually need to make decisions.",
-  ];
-
-  const shortNeutral = isEstimatingTool ? [
-    "Faster on some plan types, but still requires manual cleanup on complex sheets.",
-    "Helpful for standard takeoffs, though accuracy varies with plan quality.",
-  ] : isFieldServiceTool ? [
-    "Dispatching works well, but some of the scheduling features feel overbuilt for our size.",
-    "Useful for job tracking, though our techs found the mobile app takes getting used to.",
-  ] : [
-    "It works for core tasks, but some workflows still feel clunky.",
-    "Useful in parts of our process, though adoption is uneven.",
-  ];
-
-  const longNeutral = isEstimatingTool ? [
-    "The platform speeds up quantity takeoff on well-formatted plans, but we still run into accuracy issues on older scans and non-standard layouts. It saves time on straightforward jobs, but complex projects still need heavy estimator involvement to verify results.",
-  ] : isFieldServiceTool ? [
-    "Dispatch and scheduling have improved for our team, but we still hit friction with some reporting features and the mobile app can be slow on older devices. It adds value for day-to-day operations, but needs internal process discipline to perform well.",
-  ] : [
-    "The platform helps in several areas, especially visibility and consistency, but we still hit friction in a few workflows. It is usable and has value, but it needs disciplined setup and internal standards to perform well.",
-  ];
-
-  const shortNegative = isEstimatingTool ? [
-    "Accuracy was not reliable enough for our project types and required too much rework.",
-    "The takeoff process did not improve over our previous manual workflow for our team.",
-  ] : isFieldServiceTool ? [
-    "Our technicians struggled with the mobile app and reverted to paper for most jobs.",
-    "The platform added overhead without improving our dispatch or invoicing speed.",
-  ] : [
-    "We had repeated issues and it slowed our team down.",
-    "The workflow did not match how we execute jobs.",
-  ];
-
-  const longNegative = isEstimatingTool ? [
-    "We tested this across several projects but found the automated results required too much manual correction to trust. Our estimators ended up spending nearly the same time verifying outputs as doing takeoffs manually. The concept is promising, but it did not deliver reliable savings for our project types.",
-  ] : isFieldServiceTool ? [
-    "We gave it a fair trial, but the platform added complexity to our dispatch and invoicing without clear improvement. Training was time-intensive, field adoption stayed low, and we did not see the efficiency gains needed to justify the cost compared to our previous setup.",
-  ] : [
-    "We gave it a fair trial, but the product introduced more process overhead than value for our team. Training burden was high, adoption stayed low, and we saw limited operational improvement compared with our previous workflow.",
-  ];
-
-  const targetTotal = Math.max(tool.reviewCount, userReviews.length + seedReviews.length);
-  const missingCount = Math.max(targetTotal - (userReviews.length + seedReviews.length), 0);
-
-  const generatedFallbackReviews: Review[] = Array.from({ length: missingCount }, (_, i) => {
-    const idx = i + 1;
-    const date = new Date(2026, 2, 1);
-    date.setDate(date.getDate() - (idx % 120));
-
-    // Deterministic star distribution centered around tool.rating.
-    const jitter = ((idx % 9) - 4) * 0.2;
-    const base = Math.max(1, Math.min(5, tool.rating + jitter));
-    const rating = Math.round(base * 10) / 10;
-
-    const isLong = idx % 3 === 0;
-    const isNegative = rating < 3;
-    const isNeutral = rating >= 3 && rating < 4;
-    const roundedRating = Math.round(rating);
-
-    const titlePool = isNegative ? negativeTitles
-      : isNeutral ? neutralTitles
-      : roundedRating >= 5 ? strongPositiveTitles
-      : moderatePositiveTitles;
-    const shortPool = isNegative ? shortNegative : isNeutral ? shortNeutral : shortPositive;
-    const longPool = isNegative ? longNegative : isNeutral ? longNeutral : longPositive;
-
-    return {
-      id: `${tool.id}-gen-${idx}`,
-      toolId: tool.id,
-      author: names[idx % names.length],
-      role: roles[idx % roles.length],
-      company: companies[idx % companies.length],
-      location: "United States",
-      date: date.toISOString().slice(0, 10),
-      rating,
-      title: titlePool[idx % titlePool.length],
-      content: `${tool.name}: ${isLong ? longPool[idx % longPool.length] : shortPool[idx % shortPool.length]}`,
-      helpful: isNegative ? 1 + (idx % 6) : 2 + (idx % 15),
-      avatarColor: tool.logoColor,
-    };
-  });
-
-  const reviews = [...userReviews, ...seedReviews, ...generatedFallbackReviews];
+  const reviews = [...userReviews, ...seedReviews];
   const toolTrades = trades.filter((t) => tool.tradeIds.includes(t.id));
   const relatedTools = allTools
     .filter((t) => t.id !== tool.id && t.tradeIds.some((tid) => tool.tradeIds.includes(tid)))
@@ -455,7 +286,7 @@ export function ToolPage() {
                   <StarRating rating={tool.rating} size="lg" />
                   <span className="text-white font-bold text-xl">{tool.rating.toFixed(1)}</span>
                   <span style={{ color: "#64748b" }}>
-                    ({displayedReviewTotal.toLocaleString()} reviews)
+                    ({tool.reviewCount.toLocaleString()} aggregated reviews)
                   </span>
                 </div>
 
@@ -627,7 +458,7 @@ export function ToolPage() {
             <section id="reviews">
               <div className="flex items-center justify-between mb-5">
                 <h2 className="text-lg font-bold" style={{ color: "#0f172a" }}>
-                  User Reviews
+                  Reviews from BUILTECH readers
                 </h2>
                 <button
                   className="text-sm font-medium px-4 py-2 rounded-xl border hover:bg-white transition-colors"
@@ -637,6 +468,10 @@ export function ToolPage() {
                   Write a Review
                 </button>
               </div>
+
+              <p className="text-xs mb-4" style={{ color: "#64748b" }}>
+                The {tool.rating.toFixed(1)}/5 headline rating is aggregated from {tool.reviewCount.toLocaleString()} reviews across G2, Capterra, Software Advice, and direct submissions. The reviews below are first-party reviews submitted by BUILTECH readers. <Link to="/methodology" className="underline" style={{ color: "#f97316" }}>How we rate tools</Link>.
+              </p>
 
               {userReviews.length > 0 && (
                 <div
@@ -650,16 +485,16 @@ export function ToolPage() {
                 </div>
               )}
 
-              {/* Rating Summary */}
+              {/* Rating Summary (first-party) */}
               <div className="bg-white rounded-2xl border p-6 mb-5" style={{ borderColor: "#e2e8f0" }}>
                 <div className="flex gap-8 items-center">
                   <div className="text-center shrink-0">
                     <p className="text-5xl font-bold" style={{ color: "#0f172a" }}>
-                      {tool.rating.toFixed(1)}
+                      {displayedReviewTotal > 0 ? (reviews.reduce((s, r) => s + r.rating, 0) / displayedReviewTotal).toFixed(1) : "—"}
                     </p>
-                    <StarRating rating={tool.rating} size="md" />
+                    {displayedReviewTotal > 0 && <StarRating rating={reviews.reduce((s, r) => s + r.rating, 0) / displayedReviewTotal} size="md" />}
                     <p className="text-xs mt-1" style={{ color: "#64748b" }}>
-                      {displayedReviewTotal.toLocaleString()} reviews
+                      {displayedReviewTotal.toLocaleString()} BUILTECH review{displayedReviewTotal === 1 ? "" : "s"}
                     </p>
                   </div>
                   <div className="flex-1">

@@ -5,6 +5,8 @@ import { getCategoryBySlug } from "../data/categoryTaxonomy";
 import { getToolsByCategory, getToolById } from "../data/toolDataset";
 import { categoryPages } from "../data/categoryContent";
 import { StarRating } from "../components/StarRating";
+import { PageByline } from "../components/PageByline";
+import { defaultAuthor } from "../data/editorial";
 
 export function CategoryPage() {
   const { slug } = useParams();
@@ -101,14 +103,19 @@ export function CategoryPage() {
           "headline": categoryPage.title,
           "description": categoryPage.metaDescription,
           "author": {
-            "@type": "Organization",
-            "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "@type": "Person",
+            "name": defaultAuthor.name,
+            "url": defaultAuthor.url,
+            "jobTitle": defaultAuthor.role
           },
           "publisher": {
             "@type": "Organization",
             "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "url": "https://bestconstructionapps.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bestconstructionapps.com/og-default.png"
+            }
           },
           "datePublished": categoryPage.lastUpdated,
           "dateModified": categoryPage.lastUpdated,
@@ -192,9 +199,10 @@ export function CategoryPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {categoryPage.h1}
           </h1>
-          <p className="text-lg max-w-2xl" style={{ color: "#94a3b8" }}>
+          <p className="text-lg max-w-2xl mb-4" style={{ color: "#94a3b8" }}>
             {categoryPage.introduction}
           </p>
+          <PageByline dateModified={categoryPage.lastUpdated} datePublished={categoryPage.lastUpdated} />
         </div>
       </div>
 

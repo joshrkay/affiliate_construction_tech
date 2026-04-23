@@ -13,11 +13,29 @@ import { comparisonDetailPages } from "../app/data/comparisonData";
 import { guidePages } from "../app/data/guidePages";
 import { categories } from "../app/data/categoryTaxonomy";
 import { categoryPages } from "../app/data/categoryContent";
+import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app/data/editorial";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
 const template = readFileSync(resolve(DIST, "index.html"), "utf-8");
 const currentYear = new Date().getFullYear();
+
+const AUTHOR_SCHEMA = {
+  "@type": "Person",
+  name: defaultAuthor.name,
+  url: defaultAuthor.url,
+  jobTitle: defaultAuthor.role,
+};
+
+const PUBLISHER_SCHEMA = {
+  "@type": "Organization",
+  name: "BUILTECH",
+  url: BASE_URL,
+  logo: {
+    "@type": "ImageObject",
+    url: `${BASE_URL}/og-default.png`,
+  },
+};
 
 interface PageMeta {
   path: string;
@@ -113,7 +131,29 @@ pages.push({
       "@type": "Organization",
       "name": "BUILTECH",
       "url": BASE_URL,
-      "description": "The construction industry's AI & software directory. Compare ratings, read contractor reviews, and discover AI tools for every trade."
+      "description": "The construction industry's AI & software directory. Compare ratings, read contractor reviews, and discover AI tools for every trade.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${BASE_URL}/og-default.png`
+      },
+      "foundingDate": "2026-03-01",
+      "knowsAbout": [
+        "Construction Software",
+        "Construction Management Software",
+        "Field Service Software",
+        "Construction Estimating Software",
+        "AI in Construction",
+        "BIM Software",
+        "HVAC Software",
+        "Plumbing Software",
+        "Electrical Contractor Software",
+        "Roofing Software"
+      ],
+      "sameAs": [
+        "https://twitter.com/BUILTECH",
+        "https://www.linkedin.com/company/builtech",
+        "https://www.youtube.com/@BUILTECH"
+      ]
     }
   ]
 });
@@ -121,13 +161,47 @@ pages.push({
 // Trade pages
 for (const trade of trades) {
   const tradeTools = tools.filter(t => t.tradeIds.includes(trade.id));
+  const topTool = [...tradeTools].sort((a, b) => b.rating - a.rating)[0];
   const desc = `Compare the top ${tradeTools.length} ${trade.name} software tools rated by real contractors. Find AI-powered and traditional solutions for ${trade.name} businesses in ${currentYear}.`;
+  const tradeCanonical = `${BASE_URL}/trades/${trade.slug}`;
+  const tradeFaqs = [
+    {
+      question: `What is ${trade.name} software?`,
+      answer: trade.overview,
+    },
+    {
+      question: `What are the key challenges in ${trade.name}?`,
+      answer: trade.challenges.join(". ") + ".",
+    },
+    {
+      question: `Why should ${trade.name} companies use AI software?`,
+      answer: trade.whyAI.join(" "),
+    },
+    {
+      question: `What is the best ${trade.name} software in ${currentYear}?`,
+      answer: topTool
+        ? `The top-rated ${trade.name} software in ${currentYear} is ${topTool.name} with a ${topTool.rating.toFixed(1)}/5 rating from ${topTool.reviewCount.toLocaleString()} reviews. Other top options include ${tradeTools.slice(1, 4).map((t) => t.name).join(", ")}.`
+        : `See our ranked list of ${trade.name} software.`,
+    },
+  ];
   pages.push({
     path: `/trades/${trade.slug}`,
     title: `Best ${trade.name} Software (${currentYear}) — Top AI & Tools | BUILTECH`,
     description: desc,
-    canonical: `${BASE_URL}/trades/${trade.slug}`,
+    canonical: tradeCanonical,
     schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": `Best ${trade.name} Software (${currentYear})`,
+        "description": desc,
+        "url": tradeCanonical,
+        "mainEntityOfPage": tradeCanonical,
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
+        "datePublished": defaultDatePublished,
+        "dateModified": defaultDateModified
+      },
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
@@ -144,6 +218,15 @@ for (const trade of trades) {
             "name": t.name,
             "url": `${BASE_URL}/tools/${t.slug}`
           }))
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": tradeFaqs.map((f) => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+        }))
       }
     ]
   });
@@ -193,8 +276,10 @@ for (const page of comparisonDetailPages) {
       "name": page.title,
       "description": page.metaDescription,
       "url": `${BASE_URL}/compare/${page.slug}`,
-      "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-      "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL }
+      "author": AUTHOR_SCHEMA,
+      "publisher": PUBLISHER_SCHEMA,
+      "datePublished": defaultDatePublished,
+      "dateModified": defaultDateModified
     }
   ];
 
@@ -260,8 +345,8 @@ for (const page of comparisonPages) {
         "name": page.title,
         "description": page.description,
         "url": `${BASE_URL}/compare/${page.slug}`,
-        "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-        "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL }
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA
       }
     ]
   });
@@ -281,10 +366,10 @@ for (const page of bestForPages) {
         "@type": "Article",
         "headline": page.title,
         "description": page.description,
-        "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-        "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-        "datePublished": "2026-03-11",
-        "dateModified": "2026-03-13"
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
+        "datePublished": defaultDatePublished,
+        "dateModified": defaultDateModified
       }
     ]
   });
@@ -304,8 +389,8 @@ for (const page of categoryPages) {
         "@type": "Article",
         "headline": page.title,
         "description": page.metaDescription,
-        "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-        "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
         "datePublished": page.lastUpdated,
         "dateModified": page.lastUpdated,
         "keywords": page.keywords.join(", ")
@@ -328,8 +413,8 @@ for (const guide of guidePages) {
         "@type": "Article",
         "headline": guide.title,
         "description": guide.description,
-        "author": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
-        "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL },
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
         "datePublished": guide.lastUpdated,
         "dateModified": guide.lastUpdated
       }
@@ -350,7 +435,8 @@ pages.push({
       "name": `Construction Software Guides & Resources (${currentYear})`,
       "description": "In-depth guides on construction software, AI technology, and implementation.",
       "url": `${BASE_URL}/guides`,
-      "publisher": { "@type": "Organization", "name": "BUILTECH", "url": BASE_URL }
+      "publisher": PUBLISHER_SCHEMA,
+      "dateModified": defaultDateModified
     }
   ]
 });
@@ -369,6 +455,48 @@ pages.push({
   title: `Search Construction Software & AI Tools | BUILTECH`,
   description: "Search and discover 140+ construction software tools. Find the best solutions for your trade by features, price, and ratings.",
   canonical: `${BASE_URL}/search`,
+});
+
+// About page (E-E-A-T anchor)
+pages.push({
+  path: "/about",
+  title: `About BUILTECH — Who We Are & How We Evaluate Construction Software`,
+  description: `BUILTECH is an independent construction technology directory tracking ${tools.length}+ software tools and AI platforms across ${trades.length} trades. Learn how we source ratings, evaluate tools, and keep the directory current.`,
+  ogType: "website",
+  canonical: `${BASE_URL}/about`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About BUILTECH",
+      "url": `${BASE_URL}/about`,
+      "description": `Independent construction technology directory covering ${tools.length}+ software tools across ${trades.length} trades.`,
+      "publisher": PUBLISHER_SCHEMA
+    }
+  ]
+});
+
+// Methodology page (E-E-A-T anchor)
+pages.push({
+  path: "/methodology",
+  title: `BUILTECH Methodology — How We Evaluate Construction Software`,
+  description: `How BUILTECH sources ratings, scores tools, handles affiliate relationships, and keeps listings current across ${tools.length}+ construction software and AI platforms.`,
+  ogType: "article",
+  canonical: `${BASE_URL}/methodology`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "BUILTECH Methodology",
+      "description": `How BUILTECH sources ratings, scores tools, handles affiliate relationships, and keeps listings current.`,
+      "url": `${BASE_URL}/methodology`,
+      "mainEntityOfPage": `${BASE_URL}/methodology`,
+      "author": AUTHOR_SCHEMA,
+      "publisher": PUBLISHER_SCHEMA,
+      "datePublished": defaultDatePublished,
+      "dateModified": defaultDateModified
+    }
+  ]
 });
 
 // Generate all pages

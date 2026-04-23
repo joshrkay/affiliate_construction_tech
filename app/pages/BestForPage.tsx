@@ -4,6 +4,8 @@ import { ChevronRight, Star, ExternalLink, Check } from "lucide-react";
 import { tools, trades, getTradeBySlug, getToolsForTrade } from "../data/constructionData";
 import { bestForPages, getBestForBySlug } from "../data/seoPages";
 import { StarRating } from "../components/StarRating";
+import { PageByline } from "../components/PageByline";
+import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 export function BestForPage() {
   const { slug } = useParams();
@@ -83,17 +85,22 @@ export function BestForPage() {
           "headline": page.title,
           "description": page.description,
           "author": {
-            "@type": "Organization",
-            "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "@type": "Person",
+            "name": defaultAuthor.name,
+            "url": defaultAuthor.url,
+            "jobTitle": defaultAuthor.role
           },
           "publisher": {
             "@type": "Organization",
             "name": "BUILTECH",
-            "url": "https://bestconstructionapps.com"
+            "url": "https://bestconstructionapps.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://bestconstructionapps.com/og-default.png"
+            }
           },
-          "datePublished": "2026-03-11",
-          "dateModified": "2026-03-13",
+          "datePublished": defaultDatePublished,
+          "dateModified": defaultDateModified,
           "mainEntityOfPage": canonicalUrl
         })}
       </script>
@@ -172,9 +179,10 @@ export function BestForPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Best <span style={{ color: "#fb923c" }}>{trade.name}</span> Software ({new Date().getFullYear()})
           </h1>
-          <p className="text-lg max-w-2xl" style={{ color: "#94a3b8" }}>
+          <p className="text-lg max-w-2xl mb-4" style={{ color: "#94a3b8" }}>
             {page.description}
           </p>
+          <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
         </div>
       </div>
 
