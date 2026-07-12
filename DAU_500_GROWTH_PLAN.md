@@ -133,3 +133,20 @@ Each item below states the problem (with where it lives in the codebase), the fi
 | 9 | #10 Freshness loops | Low | 20–50/day return traffic |
 
 A realistic path: ~250–300/day from long-tail organic (blog + pricing + comparisons), ~100 from email/return visits, ~50–100 from tools/Reddit/AI-search citations = **500 DAU in roughly 6–9 months** of consistent execution, with #1, #6, and #7 as the prerequisites that make the rest count.
+
+---
+
+## Implementation Status (2026-07-12)
+
+| Item | Status |
+|------|--------|
+| #1 Full-body SSR prerendering | ✅ Done — all 351 routes ship complete HTML; also fixed 16 comparison pages that showed "Comparison Not Found" to visitors |
+| #2 Blog shipped | ✅ Done — /blog live with markdown pipeline, sitemap/feed/prerender wiring; content production per CONTENT_CALENDAR.md still to execute |
+| #3 Free tools | ✅ Done — /cost-calculator live; quiz idea still open |
+| #4 Email capture | ✅ Infrastructure done — set `NEWSLETTER_FORM_ACTION` in app/config/newsletter.ts to your provider endpoint to activate (RSS fallback shows until then) |
+| #5 Pricing pages | ✅ Done — /pricing index + 78 per-tool pages |
+| #6 Review integrity | ✅ Done — fabricated AggregateRating markup removed sitewide; reader reviews now persist |
+| #7 Authorship / E-E-A-T | ⚠️ Needs owner input — a real named author with credentials can't be invented; add to app/data/editorial.ts. Hands-on screenshots also require trial accounts |
+| #8 Field-service coverage | ✅ Partially done — 7 comparisons (incl. both SERP-tracked Housecall Pro pages) now fully wired to directory data; adding new tools (FieldPulse, Workiz, Service Fusion) needs sourced ratings data first |
+| #9 Original data asset | ✅ First asset done — Pricing Index with Dataset schema; survey idea still open |
+| #10 Freshness loops | ✅ Done — /updates changelog, last-updated stamps on tool pages, homepage promo strip; date stamps now only change with real content updates |

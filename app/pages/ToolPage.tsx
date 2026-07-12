@@ -31,6 +31,8 @@ import { ToolCard } from "../components/ToolCard";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
+import { PageByline } from "../components/PageByline";
+import { defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
   "AI Agent": { bg: "#faf5ff", text: "#7c3aed", border: "#e9d5ff" },
@@ -295,6 +297,10 @@ export function ToolPage() {
                     </Link>
                   ))}
                 </div>
+              </div>
+
+              <div className="mt-4">
+                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
               </div>
             </div>
 

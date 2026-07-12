@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import { parseFrontmatter, renderMarkdown, readingMinutes } from "../lib/markdown";
 
 export interface BlogPost {

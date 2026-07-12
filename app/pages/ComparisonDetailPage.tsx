@@ -481,8 +481,14 @@ export function ComparisonDetailPage() {
         {detail?.verdict && (
           <div className="mt-4 max-w-3xl p-6 rounded-2xl border" style={{ backgroundColor: "#f0fdf4", borderColor: "#bbf7d0" }}>
             <h2 className="text-xl font-bold mb-3" style={{ color: "#14532d" }}>Our Verdict</h2>
-            <p className="text-[15px] leading-relaxed mb-3" style={{ color: "#166534" }}>{detail.verdict.bestFor}</p>
-            <p className="text-[15px] leading-relaxed" style={{ color: "#166534" }}>{detail.verdict.recommendation}</p>
+            {typeof detail.verdict === "string" ? (
+              <p className="text-[15px] leading-relaxed" style={{ color: "#166534" }}>{detail.verdict}</p>
+            ) : (
+              <>
+                <p className="text-[15px] leading-relaxed mb-3" style={{ color: "#166534" }}>{detail.verdict.bestFor}</p>
+                <p className="text-[15px] leading-relaxed" style={{ color: "#166534" }}>{detail.verdict.recommendation}</p>
+              </>
+            )}
           </div>
         )}
 
