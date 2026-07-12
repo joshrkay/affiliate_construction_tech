@@ -506,6 +506,34 @@ pages.push({
   ]
 });
 
+// Cost calculator
+pages.push({
+  path: "/cost-calculator",
+  title: `Construction Software Cost Calculator (${currentYear}) — Estimate Your Annual Spend | BUILTECH`,
+  description: "Free calculator: estimate what construction software will actually cost your team per month and per year, using real list prices from our directory.",
+  canonical: `${BASE_URL}/cost-calculator`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Construction Software Cost Calculator",
+      "url": `${BASE_URL}/cost-calculator`,
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": PUBLISHER_SCHEMA
+    }
+  ]
+});
+
+// Updates page
+pages.push({
+  path: "/updates",
+  title: `Latest Updates — What's New on BUILTECH`,
+  description: "New tools, refreshed reviews, corrected pricing, and site improvements — everything that changed recently on BUILTECH.",
+  canonical: `${BASE_URL}/updates`,
+});
+
 // Top Rated page
 pages.push({
   path: "/top-rated",

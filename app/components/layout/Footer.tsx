@@ -85,6 +85,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/cost-calculator" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Cost Calculator
+                </Link>
+              </li>
+              <li>
+                <Link to="/updates" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  What's New
+                </Link>
+              </li>
+              <li>
                 <Link to="/guides/construction-software-pricing-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                   Pricing Guide
                 </Link>

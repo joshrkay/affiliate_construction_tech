@@ -131,6 +131,12 @@ entries.push({ loc: "/pricing", changefreq: "weekly", priority: "0.8", lastmod: 
 // Top rated page
 entries.push({ loc: "/top-rated", changefreq: "weekly", priority: "0.7", lastmod: today });
 
+// Cost calculator
+entries.push({ loc: "/cost-calculator", changefreq: "monthly", priority: "0.7", lastmod: today });
+
+// Updates page
+entries.push({ loc: "/updates", changefreq: "weekly", priority: "0.6", lastmod: today });
+
 // Search page
 entries.push({ loc: "/search", changefreq: "monthly", priority: "0.5", lastmod: today });
 

@@ -207,6 +207,42 @@ export function HomePage() {
         </div>
       </div>
 
+      {/* Free research tools */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+        <div className="grid sm:grid-cols-3 gap-4">
+          {[
+            {
+              to: "/cost-calculator",
+              title: "Cost Calculator",
+              desc: "Estimate what software will cost your team per month and year.",
+            },
+            {
+              to: "/pricing",
+              title: "Pricing Index",
+              desc: `Real starting prices for ${tools.length} tools — no demo required.`,
+            },
+            {
+              to: "/updates",
+              title: "What's New",
+              desc: "Latest tools, refreshed data, and site improvements.",
+            },
+          ].map((card) => (
+            <Link
+              key={card.to}
+              to={card.to}
+              className="bg-white rounded-2xl border p-5 shadow-sm hover:shadow-md transition-shadow"
+              style={{ borderColor: "#e2e8f0" }}
+            >
+              <h3 className="font-bold mb-1" style={{ color: "#0f172a" }}>{card.title}</h3>
+              <p className="text-sm" style={{ color: "#64748b" }}>{card.desc}</p>
+              <span className="inline-block mt-2 text-sm font-medium" style={{ color: "#f97316" }}>
+                Open →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Browse by Trade */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex items-center justify-between mb-8">
