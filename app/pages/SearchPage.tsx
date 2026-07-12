@@ -472,7 +472,9 @@ export function SearchPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [response, setResponse] = useState<AISearchResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [apiKey, setApiKey] = useState<string | null>(() => localStorage.getItem(API_KEY_STORAGE));
+  const [apiKey, setApiKey] = useState<string | null>(() =>
+    typeof localStorage === "undefined" ? null : localStorage.getItem(API_KEY_STORAGE)
+  );
   const [showKeyModal, setShowKeyModal] = useState(false);
   const [showAllTools, setShowAllTools] = useState(false);
   const [conversationHistory, setConversationHistory] = useState<Array<{ q: string; ts: number }>>([]);

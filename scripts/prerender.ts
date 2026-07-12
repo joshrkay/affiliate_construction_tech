@@ -7,6 +7,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
+import { pathToFileURL } from "url";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
 import { comparisonDetailPages } from "../app/data/comparisonData";
@@ -18,6 +19,11 @@ import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
 const template = readFileSync(resolve(DIST, "index.html"), "utf-8");
+if (!template.includes('<div id="root"></div>')) {
+  throw new Error(
+    "dist/index.html is already prerendered — run `vite build` first to regenerate a clean template before running prerender."
+  );
+}
 const currentYear = new Date().getFullYear();
 
 const AUTHOR_SCHEMA = {
@@ -44,11 +50,9 @@ interface PageMeta {
   ogType?: string;
   canonical: string;
   schemas?: object[];
-  /** Static article body injected before #root for crawler visibility */
-  staticBody?: string;
 }
 
-function buildHtml(meta: PageMeta): string {
+function buildHtml(meta: PageMeta, appHtml: string): string {
   const ogType = meta.ogType || "website";
 
   // Replace the generic title and description with route-specific ones
@@ -75,12 +79,10 @@ function buildHtml(meta: PageMeta): string {
   ].join("\n    ");
   html = html.replace("</head>", `    ${additionalTags}\n  </head>`);
 
-  // Inject static body content before #root so crawlers see article text without JS
-  if (meta.staticBody) {
-    html = html.replace(
-      '<div id="root"></div>',
-      `<div id="static-content" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap" aria-hidden="true">${meta.staticBody}</div><div id="root"></div>`
-    );
+  // Inject the server-rendered page body so crawlers (including AI crawlers
+  // that don't execute JavaScript) see the full content
+  if (appHtml) {
+    html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
   }
 
   return html;
@@ -295,37 +297,13 @@ for (const page of comparisonDetailPages) {
     });
   }
 
-  // Build static article body for crawler visibility
-  const bodyParts: string[] = [];
-
-  bodyParts.push(`<h1>${escHtml(page.h1)}</h1>`);
-  bodyParts.push(`<div>${page.introduction}</div>`);
-
-  for (const section of page.sections) {
-    bodyParts.push(`<h2>${escHtml(section.heading)}</h2>`);
-    bodyParts.push(`<div>${section.content}</div>`);
-  }
-
-  const verdictText = typeof page.verdict === "string"
-    ? page.verdict
-    : `${page.verdict.bestFor} ${page.verdict.recommendation}`;
-  bodyParts.push(`<h2>Verdict</h2><p>${escHtml(verdictText)}</p>`);
-
-  if (page.faqs && page.faqs.length > 0) {
-    bodyParts.push("<h2>Frequently Asked Questions</h2>");
-    for (const faq of page.faqs) {
-      bodyParts.push(`<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`);
-    }
-  }
-
   pages.push({
     path: `/compare/${page.slug}`,
     title: page.title,
     description: page.metaDescription,
     ogType: "article",
     canonical: `${BASE_URL}/compare/${page.slug}`,
-    schemas,
-    staticBody: `<article>${bodyParts.join("\n")}</article>`
+    schemas
   });
 }
 
@@ -499,12 +477,24 @@ pages.push({
   ]
 });
 
-// Generate all pages
+// Generate all pages with full server-rendered bodies
+const serverEntry = pathToFileURL(resolve(import.meta.dirname, "..", "dist-server", "entry-server.js")).href;
+const { render } = await import(serverEntry);
+
 let count = 0;
+let failed = 0;
 for (const page of pages) {
-  const html = buildHtml(page);
+  let appHtml = "";
+  try {
+    appHtml = await render(page.path);
+  } catch (err) {
+    failed++;
+    console.error(`SSR failed for ${page.path}: ${(err as Error).message}`);
+  }
+  const html = buildHtml(page, appHtml);
   writePage(page.path, html);
   count++;
 }
 
-console.log(`Pre-rendered ${count} pages with SEO metadata → ${DIST}`);
+console.log(`Pre-rendered ${count} pages (full HTML bodies${failed ? `, ${failed} SSR failures` : ""}) → ${DIST}`);
+if (failed > 0) process.exit(1);
