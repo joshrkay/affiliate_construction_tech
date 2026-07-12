@@ -982,7 +982,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "servicetitan-vs-housecallpro",
     toolId1: "servicetitan",
-    toolId2: "housecallpro",
+    toolId2: "housecall-pro",
     title: "ServiceTitan vs HouseCall Pro (2025): Which Field Service Platform Is Right for Your Shop?",
     metaDescription: "ServiceTitan vs HouseCall Pro: honest comparison for HVAC, plumbing, and electrical contractors. Real pricing, feature gaps, and the 5-tech decision point explained.",
     h1: "ServiceTitan vs HouseCall Pro: Field Service Platform Comparison (2025)",
@@ -1058,7 +1058,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "jobber-vs-housecallpro",
     toolId1: "jobber",
-    toolId2: "housecallpro",
+    toolId2: "housecall-pro",
     title: "Jobber vs HouseCall Pro (2025): Small Contractor Software Compared",
     metaDescription: "Jobber vs HouseCall Pro: which is right for your small service business? Honest comparison of pricing, features, and which platform fits 1–8 tech operations.",
     h1: "Jobber vs HouseCall Pro: Which Is Right for Your Service Business? (2025)",
@@ -1200,7 +1200,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ========== QUICKBOOKS VS SAGE 300 ==========
   {
     slug: "quickbooks-vs-sage-300",
-    toolId1: "quickbooks",
+    toolId1: "quickbooks-contractors",
     toolId2: "sage-300",
     title: "QuickBooks vs Sage 300 CRE (2025): Construction Accounting Compared",
     metaDescription: "QuickBooks vs Sage 300 CRE: which construction accounting platform is right for your company? Honest breakdown of when to upgrade from QuickBooks to Sage.",
@@ -1272,7 +1272,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ========== BLUEBEAM VS PROCORE ==========
   {
     slug: "bluebeam-vs-procore",
-    toolId1: "bluebeam",
+    toolId1: "bluebeam-revu",
     toolId2: "procore",
     title: "Bluebeam vs Procore (2025): Document Management for Construction Compared",
     metaDescription: "Bluebeam vs Procore for construction document management. Honest comparison of PDF markup, plan management, and when you need each platform.",
@@ -1334,7 +1334,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "stack-vs-bluebeam",
     toolId1: "stack",
-    toolId2: "bluebeam",
+    toolId2: "bluebeam-revu",
     title: "Stack vs Bluebeam (2025): Construction Takeoff and Estimating Compared",
     metaDescription: "Stack vs Bluebeam for construction takeoff. Which is better for quantity extraction, estimating, and digital plan review? Honest comparison for commercial estimators.",
     h1: "Stack vs Bluebeam: Construction Takeoff Compared (2025)",
@@ -1593,7 +1593,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "procore-vs-fieldwire",
     toolId1: "procore",
-    toolId2: "fieldwire",
+    toolId2: "fieldwire-pro",
     title: "Procore vs Fieldwire (2025): Which Field Management Platform Is Right for Your Job Site?",
     metaDescription: "Procore vs Fieldwire compared for GCs and specialty contractors. Pricing, plan markup, task management, and mobile performance compared side by side.",
     h1: "Procore vs Fieldwire: Field Management Compared for Construction Teams",
@@ -1602,38 +1602,38 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Platform Scope",
         rows: [
-          { feature: "Primary use case", tool1Value: "Full project management platform", tool2Value: "Field task and plan management" },
-          { feature: "Field access", tool1Value: "Module within broader platform", tool2Value: "Core product focus" },
-          { feature: "Office + field coordination", tool1Value: "✅ Full PM suite", tool2Value: "⚠️ Field-focused, limited financials" },
-          { feature: "Standalone field use", tool1Value: "⚠️ Requires full Procore subscription", tool2Value: "✅ Designed for this" }
+          { label: "Primary use case", tool1: "Full project management platform", tool2: "Field task and plan management" },
+          { label: "Field access", tool1: "Module within broader platform", tool2: "Core product focus" },
+          { label: "Office + field coordination", tool1: "✅ Full PM suite", tool2: "⚠️ Field-focused, limited financials" },
+          { label: "Standalone field use", tool1: "⚠️ Requires full Procore subscription", tool2: "✅ Designed for this" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Pricing model", tool1Value: "Annual contract, custom quote", tool2Value: "$0–$54/user/month (tiered)" },
-          { feature: "Starting cost", tool1Value: "$9,000–$15,000+/year for GCs", tool2Value: "Free plan available; Pro from $54/user/mo" },
-          { feature: "Unlimited users", tool1Value: "✅ Per-project or company pricing", tool2Value: "❌ Per-user pricing" },
-          { feature: "Free tier", tool1Value: "❌ No", tool2Value: "✅ Yes (5 users, 3 projects)" }
+          { label: "Pricing model", tool1: "Annual contract, custom quote", tool2: "$0–$54/user/month (tiered)" },
+          { label: "Starting cost", tool1: "$9,000–$15,000+/year for GCs", tool2: "Free plan available; Pro from $54/user/mo" },
+          { label: "Unlimited users", tool1: "✅ Per-project or company pricing", tool2: "❌ Per-user pricing" },
+          { label: "Free tier", tool1: "❌ No", tool2: "✅ Yes (5 users, 3 projects)" }
         ]
       },
       {
         category: "Field Features",
         rows: [
-          { feature: "Plan/drawing management", tool1Value: "✅ Full version control, hyperlinks", tool2Value: "✅ Fast upload, markup, versioning" },
-          { feature: "Task management", tool1Value: "⚠️ Via punch list and RFIs", tool2Value: "✅ Purpose-built task boards" },
-          { feature: "Mobile offline mode", tool1Value: "✅ Yes", tool2Value: "✅ Yes — strong offline" },
-          { feature: "Photo documentation", tool1Value: "✅ Yes", tool2Value: "✅ Yes" },
-          { feature: "Daily reports", tool1Value: "✅ Full daily logs", tool2Value: "✅ Simple daily reports" }
+          { label: "Plan/drawing management", tool1: "✅ Full version control, hyperlinks", tool2: "✅ Fast upload, markup, versioning" },
+          { label: "Task management", tool1: "⚠️ Via punch list and RFIs", tool2: "✅ Purpose-built task boards" },
+          { label: "Mobile offline mode", tool1: "✅ Yes", tool2: "✅ Yes — strong offline" },
+          { label: "Photo documentation", tool1: "✅ Yes", tool2: "✅ Yes" },
+          { label: "Daily reports", tool1: "✅ Full daily logs", tool2: "✅ Simple daily reports" }
         ]
       },
       {
         category: "Integrations & Ecosystem",
         rows: [
-          { feature: "Accounting integration", tool1Value: "✅ QuickBooks, Sage, Viewpoint", tool2Value: "⚠️ Limited" },
-          { feature: "Procore integration", tool1Value: "N/A", tool2Value: "✅ Native Procore connector" },
-          { feature: "BIM support", tool1Value: "✅ Full BIM viewer", tool2Value: "⚠️ Basic 3D support" },
-          { feature: "API access", tool1Value: "✅ Full API", tool2Value: "✅ API available" }
+          { label: "Accounting integration", tool1: "✅ QuickBooks, Sage, Viewpoint", tool2: "⚠️ Limited" },
+          { label: "Procore integration", tool1: "N/A", tool2: "✅ Native Procore connector" },
+          { label: "BIM support", tool1: "✅ Full BIM viewer", tool2: "⚠️ Basic 3D support" },
+          { label: "API access", tool1: "✅ Full API", tool2: "✅ API available" }
         ]
       }
     ],
@@ -1683,37 +1683,37 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Platform & Positioning",
         rows: [
-          { feature: "Current product status", tool1Value: "Active — full PM platform", tool2Value: "Migrated to Autodesk Build / ACC" },
-          { feature: "Primary strength", tool1Value: "End-to-end project management", tool2Value: "Drawing management and field access" },
-          { feature: "Full financials", tool1Value: "✅ Budget, contracts, change orders", tool2Value: "⚠️ Via Autodesk Cost Management" },
-          { feature: "RFI management", tool1Value: "✅ Full workflow", tool2Value: "✅ In Autodesk Build" }
+          { label: "Current product status", tool1: "Active — full PM platform", tool2: "Migrated to Autodesk Build / ACC" },
+          { label: "Primary strength", tool1: "End-to-end project management", tool2: "Drawing management and field access" },
+          { label: "Full financials", tool1: "✅ Budget, contracts, change orders", tool2: "⚠️ Via Autodesk Cost Management" },
+          { label: "RFI management", tool1: "✅ Full workflow", tool2: "✅ In Autodesk Build" }
         ]
       },
       {
         category: "Drawing & Document Management",
         rows: [
-          { feature: "Drawing upload and versioning", tool1Value: "✅ Full version control", tool2Value: "✅ Best-in-class (PlanGrid origin)" },
-          { feature: "Hyperlinked drawings", tool1Value: "✅ Yes", tool2Value: "✅ Yes" },
-          { feature: "Markup tools", tool1Value: "✅ Full markup suite", tool2Value: "✅ Full markup suite" },
-          { feature: "Offline access", tool1Value: "✅ Yes", tool2Value: "✅ Yes" },
-          { feature: "Sheet set comparison", tool1Value: "✅ Yes", tool2Value: "✅ Yes" }
+          { label: "Drawing upload and versioning", tool1: "✅ Full version control", tool2: "✅ Best-in-class (PlanGrid origin)" },
+          { label: "Hyperlinked drawings", tool1: "✅ Yes", tool2: "✅ Yes" },
+          { label: "Markup tools", tool1: "✅ Full markup suite", tool2: "✅ Full markup suite" },
+          { label: "Offline access", tool1: "✅ Yes", tool2: "✅ Yes" },
+          { label: "Sheet set comparison", tool1: "✅ Yes", tool2: "✅ Yes" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Pricing model", tool1Value: "Annual contract, custom quote", tool2Value: "Per-user, annual subscription" },
-          { feature: "Typical GC cost", tool1Value: "$9,000–$20,000+/year", tool2Value: "$500–$1,000+/user/year (Autodesk Build)" },
-          { feature: "Unlimited users", tool1Value: "✅ Most plans", tool2Value: "❌ Per-user" },
-          { feature: "Free trial", tool1Value: "✅ Demo available", tool2Value: "✅ 30-day trial" }
+          { label: "Pricing model", tool1: "Annual contract, custom quote", tool2: "Per-user, annual subscription" },
+          { label: "Typical GC cost", tool1: "$9,000–$20,000+/year", tool2: "$500–$1,000+/user/year (Autodesk Build)" },
+          { label: "Unlimited users", tool1: "✅ Most plans", tool2: "❌ Per-user" },
+          { label: "Free trial", tool1: "✅ Demo available", tool2: "✅ 30-day trial" }
         ]
       },
       {
         category: "Ecosystem Lock-in",
         rows: [
-          { feature: "BIM 360 / ACC integration", tool1Value: "✅ Procore BIM connector", tool2Value: "✅ Native — same Autodesk ecosystem" },
-          { feature: "Autodesk Revit integration", tool1Value: "⚠️ Via connector", tool2Value: "✅ Native" },
-          { feature: "Accounting integrations", tool1Value: "✅ QuickBooks, Sage, Viewpoint, CMiC", tool2Value: "⚠️ Limited outside Autodesk" }
+          { label: "BIM 360 / ACC integration", tool1: "✅ Procore BIM connector", tool2: "✅ Native — same Autodesk ecosystem" },
+          { label: "Autodesk Revit integration", tool1: "⚠️ Via connector", tool2: "✅ Native" },
+          { label: "Accounting integrations", tool1: "✅ QuickBooks, Sage, Viewpoint, CMiC", tool2: "⚠️ Limited outside Autodesk" }
         ]
       }
     ],
@@ -1753,7 +1753,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ─── Primavera vs Procore ───────────────────────────────────────────────────
   {
     slug: "primavera-vs-procore",
-    toolId1: "primavera",
+    toolId1: "oracle-primavera",
     toolId2: "procore",
     title: "Primavera P6 vs Procore (2025): Scheduling vs Project Management for Large Construction",
     metaDescription: "Primavera P6 vs Procore compared. Enterprise scheduling vs. full project management platform — when GCs need both, and which to prioritize.",
@@ -1763,36 +1763,36 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Core Functionality",
         rows: [
-          { feature: "Primary function", tool1Value: "CPM scheduling and schedule analysis", tool2Value: "Full project management platform" },
-          { feature: "Critical path scheduling", tool1Value: "✅ Industry gold standard", tool2Value: "⚠️ Basic Gantt only" },
-          { feature: "Earned value management", tool1Value: "✅ Full EVM", tool2Value: "❌ Not available" },
-          { feature: "Resource leveling", tool1Value: "✅ Advanced", tool2Value: "❌ Not available" },
-          { feature: "Financial management", tool1Value: "❌ Not a financial tool", tool2Value: "✅ Full budget, contracts, change orders" }
+          { label: "Primary function", tool1: "CPM scheduling and schedule analysis", tool2: "Full project management platform" },
+          { label: "Critical path scheduling", tool1: "✅ Industry gold standard", tool2: "⚠️ Basic Gantt only" },
+          { label: "Earned value management", tool1: "✅ Full EVM", tool2: "❌ Not available" },
+          { label: "Resource leveling", tool1: "✅ Advanced", tool2: "❌ Not available" },
+          { label: "Financial management", tool1: "❌ Not a financial tool", tool2: "✅ Full budget, contracts, change orders" }
         ]
       },
       {
         category: "User & Adoption Profile",
         rows: [
-          { feature: "Typical user", tool1Value: "Schedulers, project controls engineers", tool2Value: "PMs, field supervisors, office staff" },
-          { feature: "Learning curve", tool1Value: "High — requires P6 training/certification", tool2Value: "Moderate" },
-          { feature: "Field crew usability", tool1Value: "❌ Not designed for field use", tool2Value: "✅ Mobile-first field apps" },
-          { feature: "Subcontractor access", tool1Value: "❌ Typically internal only", tool2Value: "✅ Subcontractor portal" }
+          { label: "Typical user", tool1: "Schedulers, project controls engineers", tool2: "PMs, field supervisors, office staff" },
+          { label: "Learning curve", tool1: "High — requires P6 training/certification", tool2: "Moderate" },
+          { label: "Field crew usability", tool1: "❌ Not designed for field use", tool2: "✅ Mobile-first field apps" },
+          { label: "Subcontractor access", tool1: "❌ Typically internal only", tool2: "✅ Subcontractor portal" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Pricing model", tool1Value: "Named user license, annual", tool2Value: "Annual contract, custom quote" },
-          { feature: "Starting cost", tool1Value: "$2,500–$5,000+/user/year", tool2Value: "$9,000–$20,000+/year for GCs" },
-          { feature: "Cloud vs. on-premise", tool1Value: "Both (OPPM Cloud or on-prem)", tool2Value: "Cloud only" }
+          { label: "Pricing model", tool1: "Named user license, annual", tool2: "Annual contract, custom quote" },
+          { label: "Starting cost", tool1: "$2,500–$5,000+/user/year", tool2: "$9,000–$20,000+/year for GCs" },
+          { label: "Cloud vs. on-premise", tool1: "Both (OPPM Cloud or on-prem)", tool2: "Cloud only" }
         ]
       },
       {
         category: "Integration",
         rows: [
-          { feature: "Procore integration", tool1Value: "✅ Native Procore connector", tool2Value: "✅ Primavera connector available" },
-          { feature: "Microsoft Project import", tool1Value: "✅ P6 imports .mpp files", tool2Value: "⚠️ Limited" },
-          { feature: "ERP integration", tool1Value: "✅ SAP, Oracle integrations", tool2Value: "✅ QuickBooks, Sage, Viewpoint" }
+          { label: "Procore integration", tool1: "✅ Native Procore connector", tool2: "✅ Primavera connector available" },
+          { label: "Microsoft Project import", tool1: "✅ P6 imports .mpp files", tool2: "⚠️ Limited" },
+          { label: "ERP integration", tool1: "✅ SAP, Oracle integrations", tool2: "✅ QuickBooks, Sage, Viewpoint" }
         ]
       }
     ],
@@ -1842,37 +1842,37 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Construction-Specific Features",
         rows: [
-          { feature: "Job costing", tool1Value: "✅ Full job cost tracking", tool2Value: "⚠️ Via Projects add-on" },
-          { feature: "Progress billing (AIA G702)", tool1Value: "✅ Available", tool2Value: "❌ Not available natively" },
-          { feature: "Certified payroll", tool1Value: "✅ With Enhanced Payroll", tool2Value: "❌ Not available" },
-          { feature: "Retainage tracking", tool1Value: "✅ Yes", tool2Value: "⚠️ Manual workarounds" },
-          { feature: "WIP schedule", tool1Value: "⚠️ Manual or via add-on", tool2Value: "❌ Not available" }
+          { label: "Job costing", tool1: "✅ Full job cost tracking", tool2: "⚠️ Via Projects add-on" },
+          { label: "Progress billing (AIA G702)", tool1: "✅ Available", tool2: "❌ Not available natively" },
+          { label: "Certified payroll", tool1: "✅ With Enhanced Payroll", tool2: "❌ Not available" },
+          { label: "Retainage tracking", tool1: "✅ Yes", tool2: "⚠️ Manual workarounds" },
+          { label: "WIP schedule", tool1: "⚠️ Manual or via add-on", tool2: "❌ Not available" }
         ]
       },
       {
         category: "General Accounting",
         rows: [
-          { feature: "Bank reconciliation", tool1Value: "✅ Good", tool2Value: "✅ Excellent" },
-          { feature: "Accounts payable", tool1Value: "✅ Full", tool2Value: "✅ Full" },
-          { feature: "Multi-currency", tool1Value: "⚠️ Limited tiers", tool2Value: "✅ All plans" },
-          { feature: "Reporting", tool1Value: "✅ 100+ reports", tool2Value: "✅ Strong standard reports" }
+          { label: "Bank reconciliation", tool1: "✅ Good", tool2: "✅ Excellent" },
+          { label: "Accounts payable", tool1: "✅ Full", tool2: "✅ Full" },
+          { label: "Multi-currency", tool1: "⚠️ Limited tiers", tool2: "✅ All plans" },
+          { label: "Reporting", tool1: "✅ 100+ reports", tool2: "✅ Strong standard reports" }
         ]
       },
       {
         category: "Pricing (2025)",
         rows: [
-          { feature: "Starting price", tool1Value: "$35/month (Simple Start)", tool2Value: "$15/month (Early plan)" },
-          { feature: "Best-fit contractor plan", tool1Value: "$85/month (Plus) or $200/month (Advanced)", tool2Value: "$78/month (Growing)" },
-          { feature: "Payroll included", tool1Value: "⚠️ Add-on ($50–$130+/mo)", tool2Value: "⚠️ Add-on (Gusto integration)" },
-          { feature: "User limits", tool1Value: "1–25 users depending on plan", tool2Value: "Unlimited users all plans" }
+          { label: "Starting price", tool1: "$35/month (Simple Start)", tool2: "$15/month (Early plan)" },
+          { label: "Best-fit contractor plan", tool1: "$85/month (Plus) or $200/month (Advanced)", tool2: "$78/month (Growing)" },
+          { label: "Payroll included", tool1: "⚠️ Add-on ($50–$130+/mo)", tool2: "⚠️ Add-on (Gusto integration)" },
+          { label: "User limits", tool1: "1–25 users depending on plan", tool2: "Unlimited users all plans" }
         ]
       },
       {
         category: "Ecosystem & Integrations",
         rows: [
-          { feature: "Construction PM integrations", tool1Value: "✅ Procore, Buildertrend, Jobber", tool2Value: "⚠️ Fewer native connectors" },
-          { feature: "Payroll integrations", tool1Value: "✅ QuickBooks Payroll native", tool2Value: "✅ Gusto, ADP via integration" },
-          { feature: "App marketplace", tool1Value: "✅ 750+ apps", tool2Value: "✅ 1,000+ apps" }
+          { label: "Construction PM integrations", tool1: "✅ Procore, Buildertrend, Jobber", tool2: "⚠️ Fewer native connectors" },
+          { label: "Payroll integrations", tool1: "✅ QuickBooks Payroll native", tool2: "✅ Gusto, ADP via integration" },
+          { label: "App marketplace", tool1: "✅ 750+ apps", tool2: "✅ 1,000+ apps" }
         ]
       }
     ],
@@ -1922,37 +1922,37 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Scheduling Capabilities",
         rows: [
-          { feature: "Crew scheduling", tool1Value: "⚠️ Via workforce management module", tool2Value: "✅ Purpose-built shift scheduling" },
-          { feature: "Multi-site scheduling", tool1Value: "✅ Via project structure", tool2Value: "✅ Location-based scheduling" },
-          { feature: "Schedule templates", tool1Value: "❌ Limited", tool2Value: "✅ Repeating schedule templates" },
-          { feature: "Last-minute shift changes", tool1Value: "⚠️ Manual updates", tool2Value: "✅ Real-time notifications, shift swaps" },
-          { feature: "Availability management", tool1Value: "❌ No", tool2Value: "✅ Worker availability tracking" }
+          { label: "Crew scheduling", tool1: "⚠️ Via workforce management module", tool2: "✅ Purpose-built shift scheduling" },
+          { label: "Multi-site scheduling", tool1: "✅ Via project structure", tool2: "✅ Location-based scheduling" },
+          { label: "Schedule templates", tool1: "❌ Limited", tool2: "✅ Repeating schedule templates" },
+          { label: "Last-minute shift changes", tool1: "⚠️ Manual updates", tool2: "✅ Real-time notifications, shift swaps" },
+          { label: "Availability management", tool1: "❌ No", tool2: "✅ Worker availability tracking" }
         ]
       },
       {
         category: "Time & Attendance",
         rows: [
-          { feature: "Clock in/out", tool1Value: "✅ Via time tracking module", tool2Value: "✅ GPS-verified clock in/out" },
-          { feature: "Geofencing", tool1Value: "✅ Project-based location", tool2Value: "✅ Location-based clock enforcement" },
-          { feature: "Break tracking", tool1Value: "❌ Not available", tool2Value: "✅ Automated break compliance" },
-          { feature: "Overtime alerts", tool1Value: "⚠️ Via reports", tool2Value: "✅ Real-time overtime warnings" }
+          { label: "Clock in/out", tool1: "✅ Via time tracking module", tool2: "✅ GPS-verified clock in/out" },
+          { label: "Geofencing", tool1: "✅ Project-based location", tool2: "✅ Location-based clock enforcement" },
+          { label: "Break tracking", tool1: "❌ Not available", tool2: "✅ Automated break compliance" },
+          { label: "Overtime alerts", tool1: "⚠️ Via reports", tool2: "✅ Real-time overtime warnings" }
         ]
       },
       {
         category: "Compliance & Payroll",
         rows: [
-          { feature: "Labor law compliance", tool1Value: "❌ Not a compliance tool", tool2Value: "✅ Built-in state/local rule enforcement" },
-          { feature: "Break law compliance (CA, NY)", tool1Value: "❌ No", tool2Value: "✅ Automated compliance rules" },
-          { feature: "Payroll export", tool1Value: "✅ Via Procore payroll integration", tool2Value: "✅ Native Gusto, ADP, QuickBooks export" },
-          { feature: "Job cost integration", tool1Value: "✅ Native job cost tracking", tool2Value: "⚠️ Via integration" }
+          { label: "Labor law compliance", tool1: "❌ Not a compliance tool", tool2: "✅ Built-in state/local rule enforcement" },
+          { label: "Break law compliance (CA, NY)", tool1: "❌ No", tool2: "✅ Automated compliance rules" },
+          { label: "Payroll export", tool1: "✅ Via Procore payroll integration", tool2: "✅ Native Gusto, ADP, QuickBooks export" },
+          { label: "Job cost integration", tool1: "✅ Native job cost tracking", tool2: "⚠️ Via integration" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Starting price", tool1Value: "Included in Procore subscription", tool2Value: "$4.50/user/month (Scheduling)" },
-          { feature: "Full workforce platform", tool1Value: "N/A (PM platform, not workforce)", tool2Value: "$6/user/month (Premium)" },
-          { feature: "Standalone use", tool1Value: "❌ Part of full Procore platform", tool2Value: "✅ Standalone workforce platform" }
+          { label: "Starting price", tool1: "Included in Procore subscription", tool2: "$4.50/user/month (Scheduling)" },
+          { label: "Full workforce platform", tool1: "N/A (PM platform, not workforce)", tool2: "$6/user/month (Premium)" },
+          { label: "Standalone use", tool1: "❌ Part of full Procore platform", tool2: "✅ Standalone workforce platform" }
         ]
       }
     ],
@@ -2002,37 +2002,37 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Payment Management Core",
         rows: [
-          { feature: "Primary function", tool1Value: "Dedicated subcontractor payment platform", tool2Value: "Payment management within PM platform" },
-          { feature: "Invoice submission portal", tool1Value: "✅ Sub-facing portal", tool2Value: "✅ Via Procore subcontractor portal" },
-          { feature: "Pay application routing", tool1Value: "✅ Full workflow automation", tool2Value: "✅ Via Procore financials" },
-          { feature: "Lien waiver collection", tool1Value: "✅ Automated conditional/unconditional", tool2Value: "✅ Via Procore compliance" },
-          { feature: "Payment compliance holds", tool1Value: "✅ Block payment if waiver missing", tool2Value: "✅ Compliance module" }
+          { label: "Primary function", tool1: "Dedicated subcontractor payment platform", tool2: "Payment management within PM platform" },
+          { label: "Invoice submission portal", tool1: "✅ Sub-facing portal", tool2: "✅ Via Procore subcontractor portal" },
+          { label: "Pay application routing", tool1: "✅ Full workflow automation", tool2: "✅ Via Procore financials" },
+          { label: "Lien waiver collection", tool1: "✅ Automated conditional/unconditional", tool2: "✅ Via Procore compliance" },
+          { label: "Payment compliance holds", tool1: "✅ Block payment if waiver missing", tool2: "✅ Compliance module" }
         ]
       },
       {
         category: "Compliance & Risk",
         rows: [
-          { feature: "Joint check management", tool1Value: "✅ Built-in", tool2Value: "⚠️ Limited" },
-          { feature: "Compliance document tracking", tool1Value: "✅ Insurance, license, W-9", tool2Value: "✅ Via compliance module" },
-          { feature: "Subcontractor prequalification", tool1Value: "⚠️ Basic", tool2Value: "✅ Procore Prequalification module" },
-          { feature: "Retainage management", tool1Value: "✅ Full retainage workflow", tool2Value: "✅ Full retainage workflow" },
-          { feature: "Stored materials billing", tool1Value: "✅ Yes", tool2Value: "✅ Yes" }
+          { label: "Joint check management", tool1: "✅ Built-in", tool2: "⚠️ Limited" },
+          { label: "Compliance document tracking", tool1: "✅ Insurance, license, W-9", tool2: "✅ Via compliance module" },
+          { label: "Subcontractor prequalification", tool1: "⚠️ Basic", tool2: "✅ Procore Prequalification module" },
+          { label: "Retainage management", tool1: "✅ Full retainage workflow", tool2: "✅ Full retainage workflow" },
+          { label: "Stored materials billing", tool1: "✅ Yes", tool2: "✅ Yes" }
         ]
       },
       {
         category: "Owner & Lender Integration",
         rows: [
-          { feature: "Owner draw request portal", tool1Value: "✅ Full owner draw workflow", tool2Value: "⚠️ Via Procore Owner Portal" },
-          { feature: "Lender/bank integration", tool1Value: "✅ Used by major lenders", tool2Value: "⚠️ Less adoption in banking" },
-          { feature: "Title company integration", tool1Value: "✅ Some title company adoption", tool2Value: "❌ Limited" }
+          { label: "Owner draw request portal", tool1: "✅ Full owner draw workflow", tool2: "⚠️ Via Procore Owner Portal" },
+          { label: "Lender/bank integration", tool1: "✅ Used by major lenders", tool2: "⚠️ Less adoption in banking" },
+          { label: "Title company integration", tool1: "✅ Some title company adoption", tool2: "❌ Limited" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Pricing model", tool1Value: "Per-project or enterprise contract", tool2Value: "Included with Procore Financial Management" },
-          { feature: "Subcontractor fees", tool1Value: "⚠️ Subs may be charged to use portal", tool2Value: "✅ No sub fees for portal access" },
-          { feature: "Standalone availability", tool1Value: "✅ Works without other Oracle products", tool2Value: "❌ Part of Procore platform" }
+          { label: "Pricing model", tool1: "Per-project or enterprise contract", tool2: "Included with Procore Financial Management" },
+          { label: "Subcontractor fees", tool1: "⚠️ Subs may be charged to use portal", tool2: "✅ No sub fees for portal access" },
+          { label: "Standalone availability", tool1: "✅ Works without other Oracle products", tool2: "❌ Part of Procore platform" }
         ]
       }
     ],
@@ -2082,28 +2082,28 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Business Model Fit",
         rows: [
-          { feature: "Best for", tool1Value: "Service contractors, recurring work, small jobs", tool2Value: "GCs, specialty subs, project-based construction" },
-          { feature: "Job duration", tool1Value: "Hours to days", tool2Value: "Weeks to years" },
-          { feature: "Subcontractor management", tool1Value: "Not designed for subs", tool2Value: "Full subcontractor portal" },
-          { feature: "Service scheduling", tool1Value: "Calendar, dispatch, recurring jobs", tool2Value: "Not a service scheduling tool" },
-          { feature: "Construction RFIs/submittals", tool1Value: "No", tool2Value: "Full workflow" }
+          { label: "Best for", tool1: "Service contractors, recurring work, small jobs", tool2: "GCs, specialty subs, project-based construction" },
+          { label: "Job duration", tool1: "Hours to days", tool2: "Weeks to years" },
+          { label: "Subcontractor management", tool1: "Not designed for subs", tool2: "Full subcontractor portal" },
+          { label: "Service scheduling", tool1: "Calendar, dispatch, recurring jobs", tool2: "Not a service scheduling tool" },
+          { label: "Construction RFIs/submittals", tool1: "No", tool2: "Full workflow" }
         ]
       },
       {
         category: "Core Features",
         rows: [
-          { feature: "Quoting/estimating", tool1Value: "On-site quote creation, approval", tool2Value: "Via estimating module" },
-          { feature: "Job scheduling", tool1Value: "Drag-and-drop dispatch calendar", tool2Value: "Project schedule/Gantt" },
-          { feature: "Invoicing", tool1Value: "Same-day, auto-invoice options", tool2Value: "Progress billing, AIA" },
-          { feature: "Job costing", tool1Value: "Basic job profitability", tool2Value: "Full job cost tracking by cost code" }
+          { label: "Quoting/estimating", tool1: "On-site quote creation, approval", tool2: "Via estimating module" },
+          { label: "Job scheduling", tool1: "Drag-and-drop dispatch calendar", tool2: "Project schedule/Gantt" },
+          { label: "Invoicing", tool1: "Same-day, auto-invoice options", tool2: "Progress billing, AIA" },
+          { label: "Job costing", tool1: "Basic job profitability", tool2: "Full job cost tracking by cost code" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Starting price", tool1Value: "$49/month (Core — 1 user)", tool2Value: "$9,000–$15,000+/year" },
-          { feature: "5-user team", tool1Value: "$149–$249/month", tool2Value: "$9,000–$15,000+/year (unlimited users)" },
-          { feature: "Free trial", tool1Value: "14-day free trial", tool2Value: "Demo available" }
+          { label: "Starting price", tool1: "$49/month (Core — 1 user)", tool2: "$9,000–$15,000+/year" },
+          { label: "5-user team", tool1: "$149–$249/month", tool2: "$9,000–$15,000+/year (unlimited users)" },
+          { label: "Free trial", tool1: "14-day free trial", tool2: "Demo available" }
         ]
       }
     ],
@@ -2137,37 +2137,37 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Primary Function",
         rows: [
-          { feature: "Core use case", tool1Value: "Daily reporting and documentation", tool2Value: "Task management and plan access" },
-          { feature: "Daily logs/reports", tool1Value: "Purpose-built — 5-min daily reports", tool2Value: "Basic daily reports" },
-          { feature: "Task management", tool1Value: "Limited", tool2Value: "Purpose-built task boards" },
-          { feature: "Plan/drawing access", tool1Value: "Not a plan tool", tool2Value: "Full plan markup and versioning" },
-          { feature: "Punch list", tool1Value: "Via observation tool", tool2Value: "Dedicated punch list workflow" }
+          { label: "Core use case", tool1: "Daily reporting and documentation", tool2: "Task management and plan access" },
+          { label: "Daily logs/reports", tool1: "Purpose-built — 5-min daily reports", tool2: "Basic daily reports" },
+          { label: "Task management", tool1: "Limited", tool2: "Purpose-built task boards" },
+          { label: "Plan/drawing access", tool1: "Not a plan tool", tool2: "Full plan markup and versioning" },
+          { label: "Punch list", tool1: "Via observation tool", tool2: "Dedicated punch list workflow" }
         ]
       },
       {
         category: "Daily Reporting",
         rows: [
-          { feature: "Report completion time", tool1Value: "~5 minutes via mobile voice/text", tool2Value: "~10-15 minutes" },
-          { feature: "Manpower tracking", tool1Value: "Headcount by trade, hours", tool2Value: "Basic" },
-          { feature: "Equipment tracking", tool1Value: "Equipment on site log", tool2Value: "Not available" },
-          { feature: "Weather auto-fill", tool1Value: "Automatic weather data", tool2Value: "Manual entry" },
-          { feature: "Subcontractor daily reports", tool1Value: "Sub-facing reporting portal", tool2Value: "Limited" }
+          { label: "Report completion time", tool1: "~5 minutes via mobile voice/text", tool2: "~10-15 minutes" },
+          { label: "Manpower tracking", tool1: "Headcount by trade, hours", tool2: "Basic" },
+          { label: "Equipment tracking", tool1: "Equipment on site log", tool2: "Not available" },
+          { label: "Weather auto-fill", tool1: "Automatic weather data", tool2: "Manual entry" },
+          { label: "Subcontractor daily reports", tool1: "Sub-facing reporting portal", tool2: "Limited" }
         ]
       },
       {
         category: "Field Coordination",
         rows: [
-          { feature: "Drawing markup", tool1Value: "No", tool2Value: "Full markup suite" },
-          { feature: "Offline plan access", tool1Value: "No", tool2Value: "Yes" },
-          { feature: "Photo documentation", tool1Value: "Tied to daily report", tool2Value: "Tied to tasks/issues" }
+          { label: "Drawing markup", tool1: "No", tool2: "Full markup suite" },
+          { label: "Offline plan access", tool1: "No", tool2: "Yes" },
+          { label: "Photo documentation", tool1: "Tied to daily report", tool2: "Tied to tasks/issues" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Starting price", tool1Value: "Free plan; paid from ~$15/user/mo", tool2Value: "Free (5 users, 3 projects); Pro $54/user/mo" },
-          { feature: "Procore integration", tool1Value: "Native", tool2Value: "Native" },
-          { feature: "Free tier", tool1Value: "Limited free plan", tool2Value: "Yes — up to 5 users" }
+          { label: "Starting price", tool1: "Free plan; paid from ~$15/user/mo", tool2: "Free (5 users, 3 projects); Pro $54/user/mo" },
+          { label: "Procore integration", tool1: "Native", tool2: "Native" },
+          { label: "Free tier", tool1: "Limited free plan", tool2: "Yes — up to 5 users" }
         ]
       }
     ],
@@ -2201,36 +2201,36 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Primary Function",
         rows: [
-          { feature: "Core use case", tool1Value: "Photo organization and sharing", tool2Value: "Daily reporting and site documentation" },
-          { feature: "Photo management", tool1Value: "Purpose-built: GPS, tags, albums", tool2Value: "Photos attached to daily reports" },
-          { feature: "Daily log / report", tool1Value: "Not a reporting tool", tool2Value: "Purpose-built daily reporting" },
-          { feature: "Manpower tracking", tool1Value: "No", tool2Value: "Headcount by trade and hours" }
+          { label: "Core use case", tool1: "Photo organization and sharing", tool2: "Daily reporting and site documentation" },
+          { label: "Photo management", tool1: "Purpose-built: GPS, tags, albums", tool2: "Photos attached to daily reports" },
+          { label: "Daily log / report", tool1: "Not a reporting tool", tool2: "Purpose-built daily reporting" },
+          { label: "Manpower tracking", tool1: "No", tool2: "Headcount by trade and hours" }
         ]
       },
       {
         category: "Photo and Visual Documentation",
         rows: [
-          { feature: "GPS tagging", tool1Value: "Automatic on every photo", tool2Value: "Via report location" },
-          { feature: "Photo organization", tool1Value: "Albums, tags, project feeds", tool2Value: "Tied to daily report structure" },
-          { feature: "Annotation tools", tool1Value: "Draw, arrows, text on photos", tool2Value: "Limited" },
-          { feature: "Client-shareable galleries", tool1Value: "One-click client sharing", tool2Value: "Not designed for client sharing" },
-          { feature: "Storage", tool1Value: "Unlimited photo storage", tool2Value: "Limited by plan" }
+          { label: "GPS tagging", tool1: "Automatic on every photo", tool2: "Via report location" },
+          { label: "Photo organization", tool1: "Albums, tags, project feeds", tool2: "Tied to daily report structure" },
+          { label: "Annotation tools", tool1: "Draw, arrows, text on photos", tool2: "Limited" },
+          { label: "Client-shareable galleries", tool1: "One-click client sharing", tool2: "Not designed for client sharing" },
+          { label: "Storage", tool1: "Unlimited photo storage", tool2: "Limited by plan" }
         ]
       },
       {
         category: "Reporting and Compliance",
         rows: [
-          { feature: "Structured daily reports", tool1Value: "No", tool2Value: "Full daily log format" },
-          { feature: "Weather auto-fill", tool1Value: "No", tool2Value: "Automatic" },
-          { feature: "Equipment tracking", tool1Value: "No", tool2Value: "Equipment on site log" },
-          { feature: "Subcontractor daily reports", tool1Value: "No", tool2Value: "Sub-facing portal" }
+          { label: "Structured daily reports", tool1: "No", tool2: "Full daily log format" },
+          { label: "Weather auto-fill", tool1: "No", tool2: "Automatic" },
+          { label: "Equipment tracking", tool1: "No", tool2: "Equipment on site log" },
+          { label: "Subcontractor daily reports", tool1: "No", tool2: "Sub-facing portal" }
         ]
       },
       {
         category: "Pricing",
         rows: [
-          { feature: "Starting price", tool1Value: "$49/month (1 user)", tool2Value: "Free plan; paid ~$15/user/mo" },
-          { feature: "Procore integration", tool1Value: "Native", tool2Value: "Native" }
+          { label: "Starting price", tool1: "$49/month (1 user)", tool2: "Free plan; paid ~$15/user/mo" },
+          { label: "Procore integration", tool1: "Native", tool2: "Native" }
         ]
       }
     ],
@@ -2264,27 +2264,27 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Workforce Planning Scope",
         rows: [
-          { feature: "Primary use case", tool1Value: "Construction workforce planning and allocation", tool2Value: "Full project management platform" },
-          { feature: "Staff allocation across projects", tool1Value: "Purpose-built visual allocation board", tool2Value: "Via workforce management module" },
-          { feature: "Utilization tracking", tool1Value: "Over/under-allocated views", tool2Value: "Not available" },
-          { feature: "Labor forecasting (3-6 months)", tool1Value: "Forward-looking staffing view", tool2Value: "Not available" },
-          { feature: "Field labor hours / timecards", tool1Value: "Not a timecard tool", tool2Value: "Full timecard module" }
+          { label: "Primary use case", tool1: "Construction workforce planning and allocation", tool2: "Full project management platform" },
+          { label: "Staff allocation across projects", tool1: "Purpose-built visual allocation board", tool2: "Via workforce management module" },
+          { label: "Utilization tracking", tool1: "Over/under-allocated views", tool2: "Not available" },
+          { label: "Labor forecasting (3-6 months)", tool1: "Forward-looking staffing view", tool2: "Not available" },
+          { label: "Field labor hours / timecards", tool1: "Not a timecard tool", tool2: "Full timecard module" }
         ]
       },
       {
         category: "Bench Management",
         rows: [
-          { feature: "Upcoming project staffing", tool1Value: "Pre-award staffing planning", tool2Value: "Limited to active projects" },
-          { feature: "Skill/certification tracking", tool1Value: "Worker profiles with skills, certs", tool2Value: "Basic workforce profiles" },
-          { feature: "Vacancy and gap analysis", tool1Value: "Visual gap identification", tool2Value: "Not available" }
+          { label: "Upcoming project staffing", tool1: "Pre-award staffing planning", tool2: "Limited to active projects" },
+          { label: "Skill/certification tracking", tool1: "Worker profiles with skills, certs", tool2: "Basic workforce profiles" },
+          { label: "Vacancy and gap analysis", tool1: "Visual gap identification", tool2: "Not available" }
         ]
       },
       {
         category: "Integration",
         rows: [
-          { feature: "Procore integration", tool1Value: "Native — pulls project data from Procore", tool2Value: "N/A" },
-          { feature: "Subcontractor management", tool1Value: "Internal staff only", tool2Value: "Full subcontractor portal" },
-          { feature: "Financial management", tool1Value: "No", tool2Value: "Full job cost and financials" }
+          { label: "Procore integration", tool1: "Native — pulls project data from Procore", tool2: "N/A" },
+          { label: "Subcontractor management", tool1: "Internal staff only", tool2: "Full subcontractor portal" },
+          { label: "Financial management", tool1: "No", tool2: "Full job cost and financials" }
         ]
       }
     ],
@@ -2318,35 +2318,35 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       {
         category: "Scheduling Approach",
         rows: [
-          { feature: "Scheduling methodology", tool1Value: "Lean Last Planner System (pull planning)", tool2Value: "Traditional Gantt / CPM overview" },
-          { feature: "Collaborative planning sessions", tool1Value: "Digital pull planning board", tool2Value: "Not designed for collaborative sessions" },
-          { feature: "Weekly work plans", tool1Value: "6-week lookahead with commitments", tool2Value: "Manual via schedule view" },
-          { feature: "PPC tracking (percent plan complete)", tool1Value: "Automatic PPC metrics", tool2Value: "Not available" },
-          { feature: "Constraint identification", tool1Value: "Built-in constraint log", tool2Value: "Via RFI or issue log" }
+          { label: "Scheduling methodology", tool1: "Lean Last Planner System (pull planning)", tool2: "Traditional Gantt / CPM overview" },
+          { label: "Collaborative planning sessions", tool1: "Digital pull planning board", tool2: "Not designed for collaborative sessions" },
+          { label: "Weekly work plans", tool1: "6-week lookahead with commitments", tool2: "Manual via schedule view" },
+          { label: "PPC tracking (percent plan complete)", tool1: "Automatic PPC metrics", tool2: "Not available" },
+          { label: "Constraint identification", tool1: "Built-in constraint log", tool2: "Via RFI or issue log" }
         ]
       },
       {
         category: "Procore Platform Features",
         rows: [
-          { feature: "Financial management", tool1Value: "No", tool2Value: "Full budget, contracts, change orders" },
-          { feature: "RFI / submittals", tool1Value: "No", tool2Value: "Full workflow" },
-          { feature: "Subcontractor coordination", tool1Value: "Sub-facing planning only", tool2Value: "Full sub portal" }
+          { label: "Financial management", tool1: "No", tool2: "Full budget, contracts, change orders" },
+          { label: "RFI / submittals", tool1: "No", tool2: "Full workflow" },
+          { label: "Subcontractor coordination", tool1: "Sub-facing planning only", tool2: "Full sub portal" }
         ]
       },
       {
         category: "Lean Construction Support",
         rows: [
-          { feature: "Phase scheduling (pull planning)", tool1Value: "Core feature", tool2Value: "Not available" },
-          { feature: "Root cause analysis for missed tasks", tool1Value: "Built-in reason codes", tool2Value: "No" },
-          { feature: "IPD/lean contract support", tool1Value: "Purpose-built", tool2Value: "Limited" }
+          { label: "Phase scheduling (pull planning)", tool1: "Core feature", tool2: "Not available" },
+          { label: "Root cause analysis for missed tasks", tool1: "Built-in reason codes", tool2: "No" },
+          { label: "IPD/lean contract support", tool1: "Purpose-built", tool2: "Limited" }
         ]
       },
       {
         category: "Integration and Pricing",
         rows: [
-          { feature: "Procore integration", tool1Value: "Native Procore connector", tool2Value: "N/A" },
-          { feature: "Primavera P6 import", tool1Value: "P6 schedule import", tool2Value: "Via connector" },
-          { feature: "Standalone availability", tool1Value: "Yes", tool2Value: "Full platform only" }
+          { label: "Procore integration", tool1: "Native Procore connector", tool2: "N/A" },
+          { label: "Primavera P6 import", tool1: "P6 schedule import", tool2: "Via connector" },
+          { label: "Standalone availability", tool1: "Yes", tool2: "Full platform only" }
         ]
       }
     ],

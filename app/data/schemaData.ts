@@ -80,13 +80,6 @@ export function generateProductSchema(toolId: string) {
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: tool.rating.toString(),
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: tool.reviewCount.toString(),
-    },
   };
 }
 

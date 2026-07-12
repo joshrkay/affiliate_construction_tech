@@ -31,6 +31,8 @@ import { ToolCard } from "../components/ToolCard";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
+import { PageByline } from "../components/PageByline";
+import { defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
   "AI Agent": { bg: "#faf5ff", text: "#7c3aed", border: "#e9d5ff" },
@@ -147,13 +149,6 @@ export function ToolPage() {
             "price": tool.price.replace(/[^0-9.]/g, "") || "0",
             "priceCurrency": "USD",
             "description": `${tool.price} — ${tool.priceNote}`
-          },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": tool.rating.toFixed(1),
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": tool.reviewCount
           },
           "featureList": tool.features.join(", "),
           "datePublished": `${tool.yearFounded}`,
@@ -303,6 +298,10 @@ export function ToolPage() {
                   ))}
                 </div>
               </div>
+
+              <div className="mt-4">
+                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
+              </div>
             </div>
 
             {/* CTA */}
@@ -317,6 +316,13 @@ export function ToolPage() {
               <p className="text-xs mt-1 leading-relaxed" style={{ color: "#64748b" }}>
                 {tool.priceNote}
               </p>
+              <Link
+                to={`/pricing/${tool.slug}`}
+                className="block mt-2 text-xs underline underline-offset-2"
+                style={{ color: "#fb923c" }}
+              >
+                Full pricing breakdown →
+              </Link>
               <a
                 href={tool.website}
                 target="_blank"

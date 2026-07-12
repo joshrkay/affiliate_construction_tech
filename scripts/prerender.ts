@@ -7,6 +7,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { resolve, dirname } from "path";
+import { pathToFileURL } from "url";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
 import { comparisonDetailPages } from "../app/data/comparisonData";
@@ -14,10 +15,16 @@ import { guidePages } from "../app/data/guidePages";
 import { categories } from "../app/data/categoryTaxonomy";
 import { categoryPages } from "../app/data/categoryContent";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app/data/editorial";
+import { loadBlogPostMeta } from "./lib/blogMeta";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
 const template = readFileSync(resolve(DIST, "index.html"), "utf-8");
+if (!template.includes('<div id="root"></div>')) {
+  throw new Error(
+    "dist/index.html is already prerendered — run `vite build` first to regenerate a clean template before running prerender."
+  );
+}
 const currentYear = new Date().getFullYear();
 
 const AUTHOR_SCHEMA = {
@@ -44,11 +51,9 @@ interface PageMeta {
   ogType?: string;
   canonical: string;
   schemas?: object[];
-  /** Static article body injected before #root for crawler visibility */
-  staticBody?: string;
 }
 
-function buildHtml(meta: PageMeta): string {
+function buildHtml(meta: PageMeta, appHtml: string): string {
   const ogType = meta.ogType || "website";
 
   // Replace the generic title and description with route-specific ones
@@ -75,12 +80,10 @@ function buildHtml(meta: PageMeta): string {
   ].join("\n    ");
   html = html.replace("</head>", `    ${additionalTags}\n  </head>`);
 
-  // Inject static body content before #root so crawlers see article text without JS
-  if (meta.staticBody) {
-    html = html.replace(
-      '<div id="root"></div>',
-      `<div id="static-content" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap" aria-hidden="true">${meta.staticBody}</div><div id="root"></div>`
-    );
+  // Inject the server-rendered page body so crawlers (including AI crawlers
+  // that don't execute JavaScript) see the full content
+  if (appHtml) {
+    html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
   }
 
   return html;
@@ -249,12 +252,6 @@ for (const tool of tools) {
         "description": tool.description,
         "applicationCategory": "BusinessApplication",
         "url": tool.website,
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": tool.rating.toFixed(1),
-          "bestRating": "5",
-          "ratingCount": tool.reviewCount
-        },
         "offers": {
           "@type": "Offer",
           "price": tool.price.replace(/[^0-9.]/g, "") || "0",
@@ -295,37 +292,13 @@ for (const page of comparisonDetailPages) {
     });
   }
 
-  // Build static article body for crawler visibility
-  const bodyParts: string[] = [];
-
-  bodyParts.push(`<h1>${escHtml(page.h1)}</h1>`);
-  bodyParts.push(`<div>${page.introduction}</div>`);
-
-  for (const section of page.sections) {
-    bodyParts.push(`<h2>${escHtml(section.heading)}</h2>`);
-    bodyParts.push(`<div>${section.content}</div>`);
-  }
-
-  const verdictText = typeof page.verdict === "string"
-    ? page.verdict
-    : `${page.verdict.bestFor} ${page.verdict.recommendation}`;
-  bodyParts.push(`<h2>Verdict</h2><p>${escHtml(verdictText)}</p>`);
-
-  if (page.faqs && page.faqs.length > 0) {
-    bodyParts.push("<h2>Frequently Asked Questions</h2>");
-    for (const faq of page.faqs) {
-      bodyParts.push(`<h3>${escHtml(faq.question)}</h3><p>${escHtml(faq.answer)}</p>`);
-    }
-  }
-
   pages.push({
     path: `/compare/${page.slug}`,
     title: page.title,
     description: page.metaDescription,
     ogType: "article",
     canonical: `${BASE_URL}/compare/${page.slug}`,
-    schemas,
-    staticBody: `<article>${bodyParts.join("\n")}</article>`
+    schemas
   });
 }
 
@@ -441,6 +414,134 @@ pages.push({
   ]
 });
 
+// Blog posts
+const blogPosts = loadBlogPostMeta();
+for (const post of blogPosts) {
+  pages.push({
+    path: `/blog/${post.slug}`,
+    title: `${post.title} | BUILTECH`,
+    description: post.description,
+    ogType: "article",
+    canonical: `${BASE_URL}/blog/${post.slug}`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.description,
+        "url": `${BASE_URL}/blog/${post.slug}`,
+        "mainEntityOfPage": `${BASE_URL}/blog/${post.slug}`,
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
+        "datePublished": post.date,
+        "dateModified": post.date
+      }
+    ]
+  });
+}
+
+// Blog index
+pages.push({
+  path: "/blog",
+  title: `Construction Tech Blog — News, Reviews & Buying Advice | BUILTECH`,
+  description: "Practical articles on construction software, AI tools, pricing, and buying decisions — written for contractors, estimators, and project managers.",
+  canonical: `${BASE_URL}/blog`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "BUILTECH Construction Tech Blog",
+      "url": `${BASE_URL}/blog`,
+      "publisher": PUBLISHER_SCHEMA
+    }
+  ]
+});
+
+// Pricing pages
+for (const tool of tools) {
+  const isCustom = /custom|contact/i.test(tool.price);
+  pages.push({
+    path: `/pricing/${tool.slug}`,
+    title: `${tool.name} Pricing (${currentYear}) — Cost, Plans & Cheaper Alternatives | BUILTECH`,
+    description: `${tool.name} pricing in ${currentYear}: starts at ${tool.price}. ${tool.priceNote}`,
+    ogType: "article",
+    canonical: `${BASE_URL}/pricing/${tool.slug}`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `How much does ${tool.name} cost?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": isCustom
+                ? `${tool.name} does not publish list pricing — quotes are custom per company. ${tool.priceNote}`
+                : `${tool.name} starts at ${tool.price}. ${tool.priceNote}`
+            }
+          }
+        ]
+      }
+    ]
+  });
+}
+
+// Pricing index
+pages.push({
+  path: "/pricing",
+  title: `Construction Software Pricing Index (${currentYear}) — Real Starting Prices | BUILTECH`,
+  description: `Starting prices and pricing models for ${tools.length} construction software tools in one table — project management, estimating, field service, and more.`,
+  canonical: `${BASE_URL}/pricing`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": `Construction Software Pricing Index (${currentYear})`,
+      "description": `Starting prices and pricing models for ${tools.length} construction software tools, maintained by BUILTECH.`,
+      "url": `${BASE_URL}/pricing`,
+      "creator": PUBLISHER_SCHEMA,
+      "license": `${BASE_URL}/about`
+    }
+  ]
+});
+
+// Cost calculator
+pages.push({
+  path: "/cost-calculator",
+  title: `Construction Software Cost Calculator (${currentYear}) — Estimate Your Annual Spend | BUILTECH`,
+  description: "Free calculator: estimate what construction software will actually cost your team per month and per year, using real list prices from our directory.",
+  canonical: `${BASE_URL}/cost-calculator`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Construction Software Cost Calculator",
+      "url": `${BASE_URL}/cost-calculator`,
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": PUBLISHER_SCHEMA
+    }
+  ]
+});
+
+// Updates page
+pages.push({
+  path: "/updates",
+  title: `Latest Updates — What's New on BUILTECH`,
+  description: "New tools, refreshed reviews, corrected pricing, and site improvements — everything that changed recently on BUILTECH.",
+  canonical: `${BASE_URL}/updates`,
+});
+
+// Top Rated page
+pages.push({
+  path: "/top-rated",
+  title: `Top Rated Construction Software This Month (${currentYear}) | BUILTECH`,
+  description: "The highest-rated construction software and AI tools this month, ranked by contractor ratings across every trade.",
+  canonical: `${BASE_URL}/top-rated`,
+});
+
 // Compare page
 pages.push({
   path: "/compare",
@@ -499,12 +600,24 @@ pages.push({
   ]
 });
 
-// Generate all pages
+// Generate all pages with full server-rendered bodies
+const serverEntry = pathToFileURL(resolve(import.meta.dirname, "..", "dist-server", "entry-server.js")).href;
+const { render } = await import(serverEntry);
+
 let count = 0;
+let failed = 0;
 for (const page of pages) {
-  const html = buildHtml(page);
+  let appHtml = "";
+  try {
+    appHtml = await render(page.path);
+  } catch (err) {
+    failed++;
+    console.error(`SSR failed for ${page.path}: ${(err as Error).message}`);
+  }
+  const html = buildHtml(page, appHtml);
   writePage(page.path, html);
   count++;
 }
 
-console.log(`Pre-rendered ${count} pages with SEO metadata → ${DIST}`);
+console.log(`Pre-rendered ${count} pages (full HTML bodies${failed ? `, ${failed} SSR failures` : ""}) → ${DIST}`);
+if (failed > 0) process.exit(1);

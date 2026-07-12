@@ -205,8 +205,9 @@ export interface ComparisonDetailPage {
   sections: {
     heading: string
     content: string
+    type?: string
   }[]
-  verdict?: {
+  verdict?: string | {
     bestFor: string
     recommendation: string
   }

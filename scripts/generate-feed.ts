@@ -5,6 +5,7 @@
 import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { guidePages } from "../app/data/guidePages";
+import { loadBlogPostMeta } from "./lib/blogMeta";
 
 const BASE_URL = "https://bestconstructionapps.com";
 
@@ -17,20 +18,37 @@ function escapeXml(str: string): string {
     .replace(/'/g, "&apos;");
 }
 
-// Sort guides by lastUpdated descending
-const sorted = [...guidePages].sort(
-  (a, b) => new Date(b.lastUpdated).getTime() - new Date(a.lastUpdated).getTime()
+// Merge guides and blog posts, sorted by date descending
+const feedEntries = [
+  ...guidePages.map((g) => ({
+    title: g.title,
+    link: `${BASE_URL}/guides/${g.slug}`,
+    description: g.description,
+    date: g.lastUpdated,
+    category: g.category,
+  })),
+  ...loadBlogPostMeta().map((p) => ({
+    title: p.title,
+    link: `${BASE_URL}/blog/${p.slug}`,
+    description: p.description,
+    date: p.date,
+    category: "Blog",
+  })),
+];
+
+const sorted = feedEntries.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 );
 
-const items = sorted.map((guide) => {
-  const pubDate = new Date(guide.lastUpdated).toUTCString();
+const items = sorted.map((entry) => {
+  const pubDate = new Date(entry.date).toUTCString();
   return `    <item>
-      <title>${escapeXml(guide.title)}</title>
-      <link>${BASE_URL}/guides/${guide.slug}</link>
-      <description>${escapeXml(guide.description)}</description>
+      <title>${escapeXml(entry.title)}</title>
+      <link>${entry.link}</link>
+      <description>${escapeXml(entry.description)}</description>
       <pubDate>${pubDate}</pubDate>
-      <guid isPermaLink="true">${BASE_URL}/guides/${guide.slug}</guid>
-      <category>${escapeXml(guide.category)}</category>
+      <guid isPermaLink="true">${entry.link}</guid>
+      <category>${escapeXml(entry.category)}</category>
     </item>`;
 });
 

@@ -37,13 +37,24 @@ interface AppContextType {
 
 const AppContext = createContext<AppContextType | null>(null);
 
+const REVIEWS_STORAGE_KEY = "builtech-user-reviews";
+
+function loadStoredReviews(): Review[] {
+  if (typeof localStorage === "undefined") return [];
+  try {
+    return JSON.parse(localStorage.getItem(REVIEWS_STORAGE_KEY) || "[]");
+  } catch {
+    return [];
+  }
+}
+
 export function AppProvider({ children }: { children: ReactNode }) {
   const [compareList, setCompareList] = useState<Tool[]>([]);
   const [compareTradeSlug, setCompareTradeSlug] = useState<string | null>(null);
   const [reviewModalOpen, setReviewModalOpen] = useState(false);
   const [reviewToolId, setReviewToolId] = useState<string | null>(null);
   const [submitModalOpen, setSubmitModalOpen] = useState(false);
-  const [localReviews, setLocalReviews] = useState<Review[]>([]);
+  const [localReviews, setLocalReviews] = useState<Review[]>(loadStoredReviews);
 
   const addToCompare = useCallback((tool: Tool) => {
     setCompareList((prev) => {
@@ -81,7 +92,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const closeSubmitModal = useCallback(() => setSubmitModalOpen(false), []);
 
   const addLocalReview = useCallback((review: Review) => {
-    setLocalReviews((prev) => [review, ...prev]);
+    setLocalReviews((prev) => {
+      const next = [review, ...prev];
+      try {
+        localStorage.setItem(REVIEWS_STORAGE_KEY, JSON.stringify(next));
+      } catch {
+        // storage full or unavailable — keep the review in memory
+      }
+      return next;
+    });
   }, []);
 
   return (

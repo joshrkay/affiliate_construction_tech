@@ -143,11 +143,6 @@ export function CategoryPage() {
                 "name": t.name,
                 "description": t.tagline,
                 "applicationCategory": "BusinessApplication",
-                "aggregateRating": {
-                  "@type": "AggregateRating",
-                  "ratingValue": t.rating.toFixed(1),
-                  "ratingCount": t.reviewCount
-                },
                 "offers": {
                   "@type": "Offer",
                   "price": t.pricing.replace(/[^0-9.]/g, "") || "0",

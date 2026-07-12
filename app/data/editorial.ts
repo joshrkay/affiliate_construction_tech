@@ -22,9 +22,10 @@ export const authors: Record<string, Author> = {
 export const defaultAuthor = authors["builtech-editorial"];
 
 // Default publication + modification dates used when a page has no specific dates.
-// Keep `datePublished` stable across redeploys; bump `dateModified` when content changes.
+// Keep `datePublished` stable across redeploys; bump `dateModified` when content
+// actually changes (per /methodology it must reflect editorial review, not rebuilds).
 export const defaultDatePublished = "2026-03-11";
-export const defaultDateModified = new Date().toISOString().slice(0, 10);
+export const defaultDateModified = "2026-07-12";
 
 export function authorSchema(author: Author = defaultAuthor) {
   return {
