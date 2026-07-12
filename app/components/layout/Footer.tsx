@@ -80,6 +80,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link to="/pricing" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Pricing Index
+                </Link>
+              </li>
+              <li>
                 <Link to="/guides/construction-software-pricing-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                   Pricing Guide
                 </Link>

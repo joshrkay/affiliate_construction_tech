@@ -317,6 +317,13 @@ export function ToolPage() {
               <p className="text-xs mt-1 leading-relaxed" style={{ color: "#64748b" }}>
                 {tool.priceNote}
               </p>
+              <Link
+                to={`/pricing/${tool.slug}`}
+                className="block mt-2 text-xs underline underline-offset-2"
+                style={{ color: "#fb923c" }}
+              >
+                Full pricing breakdown →
+              </Link>
               <a
                 href={tool.website}
                 target="_blank"

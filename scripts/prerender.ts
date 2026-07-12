@@ -463,6 +463,55 @@ pages.push({
   ]
 });
 
+// Pricing pages
+for (const tool of tools) {
+  const isCustom = /custom|contact/i.test(tool.price);
+  pages.push({
+    path: `/pricing/${tool.slug}`,
+    title: `${tool.name} Pricing (${currentYear}) — Cost, Plans & Cheaper Alternatives | BUILTECH`,
+    description: `${tool.name} pricing in ${currentYear}: starts at ${tool.price}. ${tool.priceNote}`,
+    ogType: "article",
+    canonical: `${BASE_URL}/pricing/${tool.slug}`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": `How much does ${tool.name} cost?`,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": isCustom
+                ? `${tool.name} does not publish list pricing — quotes are custom per company. ${tool.priceNote}`
+                : `${tool.name} starts at ${tool.price}. ${tool.priceNote}`
+            }
+          }
+        ]
+      }
+    ]
+  });
+}
+
+// Pricing index
+pages.push({
+  path: "/pricing",
+  title: `Construction Software Pricing Index (${currentYear}) — Real Starting Prices | BUILTECH`,
+  description: `Starting prices and pricing models for ${tools.length} construction software tools in one table — project management, estimating, field service, and more.`,
+  canonical: `${BASE_URL}/pricing`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "Dataset",
+      "name": `Construction Software Pricing Index (${currentYear})`,
+      "description": `Starting prices and pricing models for ${tools.length} construction software tools, maintained by BUILTECH.`,
+      "url": `${BASE_URL}/pricing`,
+      "creator": PUBLISHER_SCHEMA,
+      "license": `${BASE_URL}/about`
+    }
+  ]
+});
+
 // Top Rated page
 pages.push({
   path: "/top-rated",

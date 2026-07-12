@@ -117,6 +117,17 @@ entries.push({ loc: "/guides", changefreq: "weekly", priority: "0.7", lastmod: t
 // Compare tool page
 entries.push({ loc: "/compare", changefreq: "monthly", priority: "0.6", lastmod: today });
 
+// Pricing pages
+for (const tool of tools) {
+  entries.push({
+    loc: `/pricing/${tool.slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: today,
+  });
+}
+entries.push({ loc: "/pricing", changefreq: "weekly", priority: "0.8", lastmod: today });
+
 // Top rated page
 entries.push({ loc: "/top-rated", changefreq: "weekly", priority: "0.7", lastmod: today });
 
