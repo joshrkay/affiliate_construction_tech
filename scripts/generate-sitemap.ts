@@ -6,8 +6,10 @@ import { writeFileSync } from "fs";
 import { resolve } from "path";
 import { tools, trades } from "../app/data/constructionData";
 import { comparisonPages, bestForPages } from "../app/data/seoPages";
+import { comparisonDetailPages } from "../app/data/comparisonData";
 import { guidePages } from "../app/data/guidePages";
 import { categoryPages } from "../app/data/categoryContent";
+import { loadBlogPostMeta } from "./lib/blogMeta";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const today = new Date().toISOString().slice(0, 10);
@@ -54,6 +56,31 @@ for (const page of comparisonPages) {
   });
 }
 
+// Editorial comparison pages not covered by seoPages
+const seoComparisonSlugs = new Set(comparisonPages.map((p) => p.slug));
+for (const page of comparisonDetailPages) {
+  if (seoComparisonSlugs.has(page.slug)) continue;
+  entries.push({
+    loc: `/compare/${page.slug}`,
+    changefreq: "monthly",
+    priority: "0.7",
+    lastmod: page.lastUpdated || today,
+  });
+}
+
+// Blog posts
+for (const post of loadBlogPostMeta()) {
+  entries.push({
+    loc: `/blog/${post.slug}`,
+    changefreq: "monthly",
+    priority: "0.8",
+    lastmod: post.date,
+  });
+}
+
+// Blog index
+entries.push({ loc: "/blog", changefreq: "weekly", priority: "0.7", lastmod: today });
+
 // Best-for pages
 for (const page of bestForPages) {
   entries.push({
@@ -89,6 +116,9 @@ entries.push({ loc: "/guides", changefreq: "weekly", priority: "0.7", lastmod: t
 
 // Compare tool page
 entries.push({ loc: "/compare", changefreq: "monthly", priority: "0.6", lastmod: today });
+
+// Top rated page
+entries.push({ loc: "/top-rated", changefreq: "weekly", priority: "0.7", lastmod: today });
 
 // Search page
 entries.push({ loc: "/search", changefreq: "monthly", priority: "0.5", lastmod: today });

@@ -15,6 +15,7 @@ import { guidePages } from "../app/data/guidePages";
 import { categories } from "../app/data/categoryTaxonomy";
 import { categoryPages } from "../app/data/categoryContent";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app/data/editorial";
+import { loadBlogPostMeta } from "./lib/blogMeta";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
@@ -417,6 +418,57 @@ pages.push({
       "dateModified": defaultDateModified
     }
   ]
+});
+
+// Blog posts
+const blogPosts = loadBlogPostMeta();
+for (const post of blogPosts) {
+  pages.push({
+    path: `/blog/${post.slug}`,
+    title: `${post.title} | BUILTECH`,
+    description: post.description,
+    ogType: "article",
+    canonical: `${BASE_URL}/blog/${post.slug}`,
+    schemas: [
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.description,
+        "url": `${BASE_URL}/blog/${post.slug}`,
+        "mainEntityOfPage": `${BASE_URL}/blog/${post.slug}`,
+        "author": AUTHOR_SCHEMA,
+        "publisher": PUBLISHER_SCHEMA,
+        "datePublished": post.date,
+        "dateModified": post.date
+      }
+    ]
+  });
+}
+
+// Blog index
+pages.push({
+  path: "/blog",
+  title: `Construction Tech Blog — News, Reviews & Buying Advice | BUILTECH`,
+  description: "Practical articles on construction software, AI tools, pricing, and buying decisions — written for contractors, estimators, and project managers.",
+  canonical: `${BASE_URL}/blog`,
+  schemas: [
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "BUILTECH Construction Tech Blog",
+      "url": `${BASE_URL}/blog`,
+      "publisher": PUBLISHER_SCHEMA
+    }
+  ]
+});
+
+// Top Rated page
+pages.push({
+  path: "/top-rated",
+  title: `Top Rated Construction Software This Month (${currentYear}) | BUILTECH`,
+  description: "The highest-rated construction software and AI tools this month, ranked by contractor ratings across every trade.",
+  canonical: `${BASE_URL}/top-rated`,
 });
 
 // Compare page

@@ -65,6 +65,11 @@ export function Footer() {
             <h4 className="text-white text-sm font-semibold mb-4">Resources</h4>
             <ul className="space-y-2.5">
               <li>
+                <Link to="/blog" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link to="/guides" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                   All Guides
                 </Link>

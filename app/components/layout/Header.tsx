@@ -79,7 +79,7 @@ export function Header() {
             </div>
 
             <Link
-              to="/"
+              to="/top-rated"
               className="px-3 py-2 rounded-lg text-sm transition-colors"
               style={{ color: "#94a3b8" }}
             >
@@ -87,11 +87,11 @@ export function Header() {
             </Link>
 
             <Link
-              to="/"
+              to="/blog"
               className="px-3 py-2 rounded-lg text-sm transition-colors"
               style={{ color: "#94a3b8" }}
             >
-              AI Tools
+              Blog
             </Link>
 
             <Link
@@ -223,6 +223,14 @@ export function Header() {
             </Link>
           ))}
           <div className="pt-3 flex flex-col gap-2">
+            <Link
+              to="/blog"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-lg border text-sm font-medium"
+              style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
+              onClick={() => setMobileOpen(false)}
+            >
+              Blog
+            </Link>
             <Link
               to="/compare"
               className="flex items-center justify-center gap-2 py-2.5 rounded-lg border text-sm font-medium"
