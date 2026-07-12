@@ -2,12 +2,16 @@ import { Link } from "react-router";
 import { HardHat, Twitter, Linkedin, Youtube } from "lucide-react";
 import { trades } from "../../data/constructionData";
 import { useApp } from "../../context/AppContext";
+import { NewsletterSignup } from "../NewsletterSignup";
 
 export function Footer() {
   const { openSubmitModal, openReviewModal } = useApp();
   return (
     <footer style={{ backgroundColor: "#0c1a2e" }} className="border-t" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div className="mb-10 pb-10 border-b max-w-xl" style={{ borderColor: "#1e3a5f" }}>
+          <NewsletterSignup variant="footer" />
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="md:col-span-1">

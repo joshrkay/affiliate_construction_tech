@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { ChevronRight, Megaphone } from "lucide-react";
 import { siteUpdates } from "../data/siteUpdates";
+import { NewsletterSignup } from "../components/NewsletterSignup";
 
 export function UpdatesPage() {
   return (
@@ -62,6 +63,9 @@ export function UpdatesPage() {
               )}
             </div>
           ))}
+        </div>
+        <div className="mt-8">
+          <NewsletterSignup />
         </div>
       </div>
     </>

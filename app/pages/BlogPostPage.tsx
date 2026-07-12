@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { ChevronRight, Clock } from "lucide-react";
 import { blogPosts, getBlogPostBySlug } from "../data/blogPosts";
 import { PageByline } from "../components/PageByline";
+import { NewsletterSignup } from "../components/NewsletterSignup";
 import { defaultAuthor } from "../data/editorial";
 
 export function BlogPostPage() {
@@ -101,6 +102,10 @@ export function BlogPostPage() {
           style={{ borderColor: "#e2e8f0", color: "#374151" }}
           dangerouslySetInnerHTML={{ __html: post.html }}
         />
+
+        <div className="mt-8">
+          <NewsletterSignup />
+        </div>
 
         {/* Related posts */}
         {related.length > 0 && (
