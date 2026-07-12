@@ -982,7 +982,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "servicetitan-vs-housecallpro",
     toolId1: "servicetitan",
-    toolId2: "housecallpro",
+    toolId2: "housecall-pro",
     title: "ServiceTitan vs HouseCall Pro (2025): Which Field Service Platform Is Right for Your Shop?",
     metaDescription: "ServiceTitan vs HouseCall Pro: honest comparison for HVAC, plumbing, and electrical contractors. Real pricing, feature gaps, and the 5-tech decision point explained.",
     h1: "ServiceTitan vs HouseCall Pro: Field Service Platform Comparison (2025)",
@@ -1058,7 +1058,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "jobber-vs-housecallpro",
     toolId1: "jobber",
-    toolId2: "housecallpro",
+    toolId2: "housecall-pro",
     title: "Jobber vs HouseCall Pro (2025): Small Contractor Software Compared",
     metaDescription: "Jobber vs HouseCall Pro: which is right for your small service business? Honest comparison of pricing, features, and which platform fits 1–8 tech operations.",
     h1: "Jobber vs HouseCall Pro: Which Is Right for Your Service Business? (2025)",
@@ -1200,7 +1200,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ========== QUICKBOOKS VS SAGE 300 ==========
   {
     slug: "quickbooks-vs-sage-300",
-    toolId1: "quickbooks",
+    toolId1: "quickbooks-contractors",
     toolId2: "sage-300",
     title: "QuickBooks vs Sage 300 CRE (2025): Construction Accounting Compared",
     metaDescription: "QuickBooks vs Sage 300 CRE: which construction accounting platform is right for your company? Honest breakdown of when to upgrade from QuickBooks to Sage.",
@@ -1272,7 +1272,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ========== BLUEBEAM VS PROCORE ==========
   {
     slug: "bluebeam-vs-procore",
-    toolId1: "bluebeam",
+    toolId1: "bluebeam-revu",
     toolId2: "procore",
     title: "Bluebeam vs Procore (2025): Document Management for Construction Compared",
     metaDescription: "Bluebeam vs Procore for construction document management. Honest comparison of PDF markup, plan management, and when you need each platform.",
@@ -1334,7 +1334,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "stack-vs-bluebeam",
     toolId1: "stack",
-    toolId2: "bluebeam",
+    toolId2: "bluebeam-revu",
     title: "Stack vs Bluebeam (2025): Construction Takeoff and Estimating Compared",
     metaDescription: "Stack vs Bluebeam for construction takeoff. Which is better for quantity extraction, estimating, and digital plan review? Honest comparison for commercial estimators.",
     h1: "Stack vs Bluebeam: Construction Takeoff Compared (2025)",
@@ -1593,7 +1593,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   {
     slug: "procore-vs-fieldwire",
     toolId1: "procore",
-    toolId2: "fieldwire",
+    toolId2: "fieldwire-pro",
     title: "Procore vs Fieldwire (2025): Which Field Management Platform Is Right for Your Job Site?",
     metaDescription: "Procore vs Fieldwire compared for GCs and specialty contractors. Pricing, plan markup, task management, and mobile performance compared side by side.",
     h1: "Procore vs Fieldwire: Field Management Compared for Construction Teams",
@@ -1753,7 +1753,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
   // ─── Primavera vs Procore ───────────────────────────────────────────────────
   {
     slug: "primavera-vs-procore",
-    toolId1: "primavera",
+    toolId1: "oracle-primavera",
     toolId2: "procore",
     title: "Primavera P6 vs Procore (2025): Scheduling vs Project Management for Large Construction",
     metaDescription: "Primavera P6 vs Procore compared. Enterprise scheduling vs. full project management platform — when GCs need both, and which to prioritize.",
