@@ -148,13 +148,6 @@ export function ToolPage() {
             "priceCurrency": "USD",
             "description": `${tool.price} — ${tool.priceNote}`
           },
-          "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": tool.rating.toFixed(1),
-            "bestRating": "5",
-            "worstRating": "1",
-            "ratingCount": tool.reviewCount
-          },
           "featureList": tool.features.join(", "),
           "datePublished": `${tool.yearFounded}`,
           "publisher": {

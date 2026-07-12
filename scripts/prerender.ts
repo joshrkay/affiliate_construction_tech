@@ -252,12 +252,6 @@ for (const tool of tools) {
         "description": tool.description,
         "applicationCategory": "BusinessApplication",
         "url": tool.website,
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": tool.rating.toFixed(1),
-          "bestRating": "5",
-          "ratingCount": tool.reviewCount
-        },
         "offers": {
           "@type": "Offer",
           "price": tool.price.replace(/[^0-9.]/g, "") || "0",
