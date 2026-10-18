@@ -5,7 +5,7 @@ import { blogPosts } from "../data/blogPosts";
 export function BlogIndexPage() {
   return (
     <>
-      <title>Construction Tech Blog — News, Reviews & Buying Advice | BUILTECH</title>
+      <title>Construction Tech Blog: News, Reviews & Buying Advice</title>
       <meta
         name="description"
         content="Practical articles on construction software, AI tools, pricing, and buying decisions — written for contractors, estimators, and project managers."

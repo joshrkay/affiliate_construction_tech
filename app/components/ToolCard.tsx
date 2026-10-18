@@ -1,8 +1,11 @@
 import { Link } from "react-router";
-import { ArrowRight, CheckCircle, GitCompareArrows, Plus, Check } from "lucide-react";
+import { ArrowRight, CheckCircle, GitCompareArrows, Check } from "lucide-react";
 import { Tool } from "../data/constructionData";
 import { StarRating } from "./StarRating";
 import { useApp } from "../context/AppContext";
+import { OutboundCta } from "./OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
+import { ToolLogo } from "./ToolLogo";
 
 interface ToolCardProps {
   tool: Tool;
@@ -33,11 +36,17 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
   };
 
   return (
-    <Link
-      to={`/tools/${tool.slug}`}
-      className="group block bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border overflow-hidden"
+    <div
+      className="group relative bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border overflow-hidden"
       style={{ borderColor: inCompare ? "#f97316" : "#e2e8f0" }}
     >
+      {/* Stretched link: the whole card opens the review, while the compare
+          toggle and the vendor CTA sit above it as real, separate controls. */}
+      <Link
+        to={`/tools/${tool.slug}`}
+        className="absolute inset-0 z-0"
+        aria-label={`${tool.name} review`}
+      />
       {inCompare && (
         <div
           className="h-1 w-full"
@@ -60,21 +69,13 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
           )}
 
           {/* Logo */}
-          <div
-            className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-sm"
-            style={{ backgroundColor: tool.logoColor }}
-          >
-            {tool.logoInitials}
-          </div>
+          <ToolLogo tool={tool} className="shrink-0 w-12 h-12 rounded-xl shadow-sm" />
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className="text-sm font-semibold" style={{ color: "#0f172a" }}>
                 {tool.name}
               </h3>
-              {tool.verified && (
-                <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#0891b2" }} />
-              )}
             </div>
             <p className="text-xs mt-0.5 truncate" style={{ color: "#64748b" }}>
               {tool.tagline}
@@ -85,7 +86,7 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
           <button
             onClick={handleCompareToggle}
             title={inCompare ? "Remove from compare" : compareMax ? "Compare list full (max 4)" : "Add to compare"}
-            className="shrink-0 w-8 h-8 rounded-lg flex items-center justify-center border transition-all"
+            className="relative z-10 shrink-0 w-8 h-8 rounded-lg flex items-center justify-center border transition-all"
             style={{
               backgroundColor: inCompare ? "#fff7ed" : "white",
               borderColor: inCompare ? "#f97316" : "#e2e8f0",
@@ -130,7 +131,7 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
               {tool.description}
             </p>
 
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-4 flex items-center justify-between gap-3">
               <div>
                 <p className="text-xs" style={{ color: "#94a3b8" }}>
                   Starting at
@@ -139,13 +140,22 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
                   {tool.price}
                 </p>
               </div>
-              <div className="flex items-center gap-1 text-xs font-medium" style={{ color: "#f97316" }}>
-                View Details <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+              <div className="flex items-center gap-3">
+                <span className="hidden sm:flex items-center gap-1 text-xs font-medium" style={{ color: "#64748b" }}>
+                  Review <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+                <OutboundCta
+                  tool={tool}
+                  placement="tool_card"
+                  label={getShortCtaLabel(tool)}
+                  size="sm"
+                  className="relative z-10 rounded-lg"
+                />
               </div>
             </div>
           </>
         )}
       </div>
-    </Link>
+    </div>
   );
 }

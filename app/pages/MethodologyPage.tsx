@@ -9,7 +9,7 @@ export function MethodologyPage() {
 
   return (
     <>
-      <title>BUILTECH Methodology — How We Evaluate Construction Software</title>
+      <title>How BUILTECH Rates Construction Software</title>
       <meta
         name="description"
         content="How BUILTECH sources ratings, scores tools, handles affiliate relationships, and keeps listings current across 140+ construction software and AI platforms."

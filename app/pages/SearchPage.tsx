@@ -16,20 +16,21 @@ import {
   AITradeMatch,
   parseIntent,
 } from "../services/aiSearch";
+import { ToolLogo } from "../components/ToolLogo";
 
 // ─── Local storage key ────────────────────────────────────────────────────────
 const API_KEY_STORAGE = "builtech_openai_key";
 
 // ─── Quick search suggestions ─────────────────────────────────────────────────
 const QUICK_QUERIES = [
-  { label: "Best scheduling app for HVAC tech", icon: "🌡️" },
-  { label: "AI estimating software for roofing", icon: "🤖" },
-  { label: "Free invoicing for small painting crew", icon: "🎨" },
-  { label: "Dispatch software for plumbers", icon: "🔧" },
-  { label: "Solar design software with permit automation", icon: "☀️" },
-  { label: "QuickBooks integration for electricians", icon: "⚡" },
-  { label: "Photo documentation for contractors", icon: "📸" },
-  { label: "Job costing for landscaping", icon: "🌿" },
+  { label: "Best scheduling app for HVAC tech", icon: "" },
+  { label: "AI estimating software for roofing", icon: "" },
+  { label: "Free invoicing for small painting crew", icon: "" },
+  { label: "Dispatch software for plumbers", icon: "" },
+  { label: "Solar design software with permit automation", icon: "" },
+  { label: "QuickBooks integration for electricians", icon: "" },
+  { label: "Photo documentation for contractors", icon: "" },
+  { label: "Job costing for landscaping", icon: "" },
 ];
 
 // ─── Relevance bar component ──────────────────────────────────────────────────
@@ -132,10 +133,7 @@ function TopPickCard({ match, query }: { match: AIToolMatch; query: string }) {
       </div>
 
       <div className="flex items-start gap-4">
-        <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold shrink-0 shadow-lg"
-          style={{ backgroundColor: tool.logoColor }}>
-          {tool.logoInitials}
-        </div>
+        <ToolLogo tool={tool} className="w-14 h-14 rounded-2xl shrink-0 shadow-lg" />
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <Link
@@ -175,7 +173,7 @@ function TopPickCard({ match, query }: { match: AIToolMatch; query: string }) {
               <Link key={t.id} to={`/trades/${t.slug}`}
                 className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full border transition-colors hover:border-orange-300"
                 style={{ borderColor: "#e2e8f0", color: "#64748b" }}>
-                {t.emoji} {t.name}
+                {t.name}
               </Link>
             ))}
           </div>
@@ -243,12 +241,7 @@ function ToolMatchCard({ match, rank }: { match: AIToolMatch; rank: number }) {
             {rank}
           </div>
 
-          <div
-            className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0"
-            style={{ backgroundColor: tool.logoColor }}
-          >
-            {tool.logoInitials}
-          </div>
+          <ToolLogo tool={tool} className="w-11 h-11 rounded-xl shrink-0" />
 
           <div className="flex-1 min-w-0">
             <div className="flex items-start justify-between gap-2">
@@ -311,7 +304,7 @@ function ToolMatchCard({ match, rank }: { match: AIToolMatch; rank: number }) {
                 <span className="text-xs font-semibold" style={{ color: "#0f172a" }}>{tool.price}</span>
                 <div className="flex gap-1">
                   {tradeBadges.slice(0, 2).map((t) => (
-                    <span key={t.id} className="text-xs">{t.emoji}</span>
+                    <span key={t.id} className="text-xs">{t.name}</span>
                   ))}
                 </div>
               </div>
@@ -529,14 +522,9 @@ export function SearchPage() {
       {/* ── AI Header ─────────────────────────────────────────────────── */}
       <div
         className="relative overflow-hidden"
-        style={{ background: "linear-gradient(135deg, #0c1a2e 0%, #0f172a 50%, #150a2e 100%)" }}
+        style={{ backgroundColor: "#0c1a2e" }}
       >
-        {/* Grid pattern */}
-        <div className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: "radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)", backgroundSize: "32px 32px" }} />
-        {/* AI glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 opacity-20 blur-3xl rounded-full"
-          style={{ backgroundColor: "#f97316" }} />
+
 
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           {/* Breadcrumb */}
@@ -637,7 +625,6 @@ export function SearchPage() {
                   backgroundColor: rawQuery === q.label ? "rgba(249,115,22,0.1)" : "transparent",
                 }}
               >
-                <span>{q.icon}</span>
                 {q.label}
               </button>
             ))}
@@ -721,7 +708,6 @@ export function SearchPage() {
                     className="flex items-center gap-2 text-xs px-2 py-1.5 rounded-lg transition-colors hover:bg-slate-50"
                     style={{ color: "#64748b" }}
                   >
-                    <span>{t.emoji}</span>
                     {t.name}
                   </Link>
                 ))}
@@ -864,7 +850,6 @@ export function SearchPage() {
                             className="flex items-center gap-3 p-4 bg-white rounded-2xl border transition-all hover:shadow-md hover:border-orange-200 group"
                             style={{ borderColor: "#e2e8f0" }}
                           >
-                            <span className="text-2xl">{tm.trade.emoji}</span>
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-semibold" style={{ color: "#0f172a" }}>{tm.trade.name}</p>
                               <p className="text-xs" style={{ color: "#94a3b8" }}>{tradeToolCount} tools · {tm.explanation}</p>
@@ -918,7 +903,7 @@ export function SearchPage() {
                         <button key={q.label} onClick={() => { setInputValue(q.label); handleSearch(q.label); }}
                           className="flex items-center gap-1.5 px-3 py-2 rounded-xl border text-sm transition-colors hover:border-orange-300"
                           style={{ borderColor: "#e2e8f0", color: "#374151" }}>
-                          {q.icon} {q.label}
+                          {q.label}
                         </button>
                       ))}
                     </div>
@@ -963,7 +948,6 @@ export function SearchPage() {
                         className="flex items-center gap-3 p-3.5 bg-white rounded-xl border transition-all hover:shadow-md hover:border-orange-200 group"
                         style={{ borderColor: "#e2e8f0" }}
                       >
-                        <span className="text-xl">{trade.emoji}</span>
                         <div className="min-w-0">
                           <p className="text-sm font-semibold truncate" style={{ color: "#0f172a" }}>{trade.name}</p>
                           <p className="text-xs" style={{ color: "#94a3b8" }}>

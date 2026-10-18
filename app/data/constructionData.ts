@@ -31,7 +31,23 @@ export interface Tool {
   pros: string[];
   cons: string[];
   website: string;
+  /**
+   * Visitor-facing affiliate tracking link (what a reader clicks). Only set this
+   * once the vendor has approved BUILTECH into their program and issued a link.
+   * Until then outbound CTAs fall back to `website` with UTM attribution.
+   */
   affiliateUrl?: string;
+  /**
+   * Owner-facing: where BUILTECH applies to the vendor's affiliate/referral
+   * program. Never shown to visitors.
+   */
+  affiliateProgramUrl?: string;
+  /**
+   * Set when this entry duplicates another tool (same product listed twice).
+   * The page stays reachable but canonicalizes to the primary slug and is
+   * excluded from the sitemap and machine-readable exports.
+   */
+  duplicateOf?: string;
   logoColor: string;
   logoInitials: string;
   overallRank?: number;
@@ -587,7 +603,7 @@ export const tools: Tool[] = [
       "Support quality can vary by issue complexity and account tier",
     ],
     website: "https://procore.com",
-    affiliateUrl: "https://www.procore.com/partners/affiliate",
+    affiliateProgramUrl: "https://www.procore.com/partners/affiliate",
     logoColor: "#e63b2e",
     logoInitials: "PC",
     overallRank: 1,
@@ -633,7 +649,7 @@ export const tools: Tool[] = [
       "Accounting depth may still require tighter processes in QuickBooks or ERP",
     ],
     website: "https://buildertrend.com",
-    affiliateUrl: "https://buildertrend.com/partners/affiliate",
+    affiliateProgramUrl: "https://buildertrend.com/partners/affiliate",
     logoColor: "#0e7490",
     logoInitials: "BT",
     overallRank: 4,
@@ -778,7 +794,7 @@ export const tools: Tool[] = [
       "Frequent product updates require ongoing retraining",
     ],
     website: "https://servicetitan.com",
-    affiliateUrl: "https://www.servicetitan.com/referral-program",
+    affiliateProgramUrl: "https://www.servicetitan.com/referral-program",
     logoColor: "#ff6900",
     logoInitials: "ST",
     overallRank: 5,
@@ -789,6 +805,7 @@ export const tools: Tool[] = [
   {
     id: "fieldedge",
     slug: "fieldedge",
+    duplicateOf: "field-edge",
     name: "FieldEdge",
     tagline: "Field service software for HVAC & plumbing",
     description:
@@ -1247,7 +1264,7 @@ export const tools: Tool[] = [
       "GPS tracking requires higher tier",
     ],
     website: "https://getjobber.com",
-    affiliateUrl: "https://getjobber.com/partners/affiliate",
+    affiliateProgramUrl: "https://getjobber.com/partners/affiliate",
     logoColor: "#f97316",
     logoInitials: "JB",
     overallRank: 15,
@@ -1574,7 +1591,7 @@ export const tools: Tool[] = [
       "Limited integrations",
     ],
     website: "https://housecallpro.com",
-    affiliateUrl: "https://housecallpro.com/affiliates",
+    affiliateProgramUrl: "https://housecallpro.com/affiliates",
     logoColor: "#10b981",
     logoInitials: "HC",
     overallRank: 22,
@@ -1856,6 +1873,7 @@ export const tools: Tool[] = [
   {
     id: "procore-construction",
     slug: "procore-construction",
+    duplicateOf: "procore",
     name: "Procore Construction Cloud",
     tagline: "The #1 construction management platform",
     description:
@@ -1945,51 +1963,6 @@ export const tools: Tool[] = [
     companySize: "50-100",
   },
   {
-    id: "jobber",
-    slug: "jobber",
-    name: "Jobber",
-    tagline: "Field service management for home service businesses",
-    description:
-      "Jobber is field service management software for home service businesses. It helps with scheduling, invoicing, and customer management.",
-    category: "Software",
-    type: "Field Service Management",
-    price: "$29-$249/user/month",
-    priceNote: "Core, Grow, Scale plans",
-    rating: 4.3,
-    reviewCount: 4521,
-    tradeIds: ["hvac", "plumbing", "electrical", "roofing", "landscaping-irrigation"],
-    features: [
-      "Scheduling & Dispatch",
-      "Customer Management",
-      "Quoting & Invoicing",
-      "Online Booking",
-      "Mobile App",
-      "Client Portal",
-      "Payments",
-      "Marketing",
-    ],
-    pros: [
-      "Easy to use",
-      "Affordable entry",
-      "Great mobile app",
-      "Online booking",
-      "Strong integrations",
-    ],
-    cons: [
-      "Limited job costing",
-      "Not for large teams",
-      "Basic reporting",
-      "Can get expensive at scale",
-    ],
-    website: "https://getjobber.com",
-    logoColor: "#0ea5e9",
-    logoInitials: "JB",
-    overallRank: 8,
-    verified: true,
-    yearFounded: 2011,
-    companySize: "100-500",
-  },
-  {
     id: "scene7",
     slug: "scene7",
     name: "Scene7",
@@ -2037,6 +2010,7 @@ export const tools: Tool[] = [
   {
     id: "stack",
     slug: "stack",
+    duplicateOf: "stack-takeoff",
     name: "STACK",
     tagline: "Cloud-based construction takeoff and estimating",
     description:
@@ -2757,6 +2731,7 @@ export const tools: Tool[] = [
   {
     id: "buildxact-pro",
     slug: "buildxact-pro",
+    duplicateOf: "buildxact",
     name: "Buildxact PRO",
     tagline: "Advanced construction estimating",
     description:
@@ -2802,6 +2777,7 @@ export const tools: Tool[] = [
   {
     id: "stack-takeoff-pro",
     slug: "stack-takeoff-pro",
+    duplicateOf: "stack-takeoff",
     name: "STACK Takeoff PRO",
     tagline: "Professional takeoff and estimating",
     description:
@@ -3068,51 +3044,6 @@ export const tools: Tool[] = [
     verified: true,
     yearFounded: 2015,
     companySize: "50-100",
-  },
-  {
-    id: "knowify",
-    slug: "knowify",
-    name: "Knowify",
-    tagline: "Job costing and project management for contractors",
-    description:
-      "Knowify is construction job costing and project management software designed for contractors who need to track profitability.",
-    category: "Software",
-    type: "Construction Management",
-    price: "$49/user/month",
-    priceNote: "Annual billing required",
-    rating: 4.3,
-    reviewCount: 456,
-    tradeIds: ["general-contracting", "carpentry-framing", "flooring", "painting-coatings"],
-    features: [
-      "Job Costing",
-      "Project Management",
-      "Client Management",
-      "Time Tracking",
-      "Invoicing",
-      "Budget vs Actual",
-      "Work Orders",
-      "Mobile Access",
-    ],
-    pros: [
-      "Excellent job costing",
-      "Good for small contractors",
-      "Affordable pricing",
-      "Easy to use",
-      "QuickBooks integration",
-    ],
-    cons: [
-      "Annual billing only",
-      "Limited features",
-      "Not for large teams",
-      "Fewer integrations",
-    ],
-    website: "https://knowify.com",
-    logoColor: "#6366f1",
-    logoInitials: "KF",
-    overallRank: 52,
-    verified: true,
-    yearFounded: 2015,
-    companySize: "11-50",
   },
   {
     id: "arpac",
@@ -3700,51 +3631,6 @@ export const tools: Tool[] = [
     companySize: "1-10",
   },
   {
-    id: "stack-takeoff",
-    slug: "stack-takeoff",
-    name: "STACK",
-    tagline: "Cloud-based construction takeoff & estimating",
-    description:
-      "STACK is cloud-based construction takeoff and estimating software. Features include digital takeoffs, pre-built templates, and real-time collaboration.",
-    category: "Software",
-    type: "Takeoff & Estimating",
-    price: "$59/user/month",
-    priceNote: "Annual or monthly",
-    rating: 4.5,
-    reviewCount: 1247,
-    tradeIds: ["general-contracting", "electrical", "hvac", "plumbing", "roofing", "concrete-masonry"],
-    features: [
-      "Digital Takeoff",
-      "Cloud-Based",
-      "Estimating",
-      "Pre-Built Templates",
-      "Real-Time Collaboration",
-      "Material Pricing",
-      "Labor Rates",
-      "Reporting",
-    ],
-    pros: [
-      "Cloud-based (access anywhere)",
-      "Easy collaboration",
-      "Good templates",
-      "Mobile friendly",
-      "Regular updates",
-    ],
-    cons: [
-      "Monthly cost",
-      "Learning curve",
-      "Internet required",
-      "Limited accounting",
-    ],
-    website: "https://stackct.com",
-    logoColor: "#22c55e",
-    logoInitials: "ST",
-    overallRank: 66,
-    verified: true,
-    yearFounded: 2014,
-    companySize: "50-100",
-  },
-  {
     id: "pro-estimate",
     slug: "pro-estimate",
     name: "ProEst",
@@ -3832,51 +3718,6 @@ export const tools: Tool[] = [
     overallRank: 68,
     verified: true,
     yearFounded: 2020,
-    companySize: "11-50",
-  },
-  {
-    id: "buildxact",
-    slug: "buildxact",
-    name: "Buildxact",
-    tagline: "Job management for trade contractors",
-    description:
-      "Buildxact is job management software designed for trade contractors. Combines estimating with job management.",
-    category: "Software",
-    type: "Job Management",
-    price: "$49/user/month",
-    priceNote: "Monthly billing",
-    rating: 4.1,
-    reviewCount: 345,
-    tradeIds: ["general-contracting", "hvac", "plumbing", "electrical"],
-    features: [
-      "Estimating",
-      "Job Management",
-      "Scheduling",
-      "Invoicing",
-      "Client Management",
-      "Time Tracking",
-      "Materials Pricing",
-      "Reporting",
-    ],
-    pros: [
-      "Estimating + job management",
-      "Easy to use",
-      "Good for trades",
-      "Affordable",
-      "Good support",
-    ],
-    cons: [
-      "Limited features",
-      "Not for large teams",
-      "Fewer integrations",
-      "Mainly UK/Australia",
-    ],
-    website: "https://buildxact.com",
-    logoColor: "#6366f1",
-    logoInitials: "BX",
-    overallRank: 69,
-    verified: true,
-    yearFounded: 2012,
     companySize: "11-50",
   },
   {

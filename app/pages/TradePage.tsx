@@ -22,10 +22,14 @@ import {
 import { ToolCard } from "../components/ToolCard";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { bestForPages } from "../data/seoPages";
+import { getShortCtaLabel } from "../lib/outbound";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 type FilterType = "All" | "Software" | "AI Agent" | "Platform";
 
@@ -70,6 +74,45 @@ export function TradePage() {
 
   const currentYear = new Date().getFullYear();
   const canonicalUrl = `https://bestconstructionapps.com/trades/${slug}`;
+
+  const topPickCard = topTool ? (
+    <div
+      className="rounded-2xl p-6 border"
+      style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <TrendingUp className="w-4 h-4" style={{ color: "#d97706" }} />
+        <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#d97706" }}>
+          Top Pick for {trade.name}
+        </span>
+      </div>
+      <div className="flex items-center gap-3 mb-3">
+        <ToolLogo tool={topTool} className="w-11 h-11 rounded-xl" />
+        <div>
+          <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
+            {topTool.name}
+          </p>
+          <p className="text-xs" style={{ color: "#64748b" }}>
+            {topTool.type} · from {topTool.price}
+          </p>
+        </div>
+      </div>
+      <StarRating rating={topTool.rating} showValue />
+      <p className="text-xs mt-3 leading-relaxed" style={{ color: "#374151" }}>
+        {topTool.tagline}. Highest-rated of {tradeTools.length} {trade.name} tools, based on{" "}
+        {topTool.reviewCount.toLocaleString()} contractor reviews.
+      </p>
+      <OutboundCta tool={topTool} placement="trade_top_pick" className="mt-4 w-full" />
+      <Link
+        to={`/tools/${topTool.slug}`}
+        className="mt-2 flex items-center justify-center gap-1.5 py-2 rounded-xl text-sm font-medium transition-colors hover:bg-amber-100"
+        style={{ color: "#92400e" }}
+      >
+        Read the full review <ArrowRight className="w-4 h-4" />
+      </Link>
+      <AffiliateDisclosure className="mt-3" />
+    </div>
+  ) : null;
   const metaDescription = `Compare the top ${tradeTools.length} ${trade.name} software tools rated by real contractors. Find AI-powered and traditional solutions for ${trade.name} businesses in ${currentYear}.`;
 
   // Build FAQ content from trade data
@@ -94,7 +137,7 @@ export function TradePage() {
 
   return (
     <div>
-      <title>Best {trade.name} Software ({currentYear}) — Top AI & Tools | BUILTECH</title>
+      <title>Best {trade.name} Software ({currentYear}): Top Picks Ranked</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={`Best ${trade.name} Software (${currentYear}) — Top AI & Tools`} />
@@ -193,92 +236,56 @@ export function TradePage() {
       </script>
 
       {/* Hero */}
-      <div className="relative overflow-hidden" style={{ backgroundColor: "#0c1a2e" }}>
-        <div
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage: `url(${trade.imageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(to right, #0c1a2e 50%, ${trade.accentColor}22 100%)`,
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="border-b" style={{ backgroundColor: "#fbfaf7", borderColor: "#e7e2d8" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: "#64748b" }}>
-            <Link to="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
+          <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: "#8a8378" }}>
+            <Link to="/" className="hover:underline">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Trades</span>
+            <Link to="/best" className="hover:underline">Trades</Link>
             <ChevronRight className="w-4 h-4" />
-            <span style={{ color: "#fb923c" }}>{trade.name}</span>
+            <span style={{ color: "#1a1714" }}>{trade.name}</span>
           </nav>
 
-          <div className="flex items-start gap-5">
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shrink-0 shadow-lg"
-              style={{ backgroundColor: `${trade.accentColor}33` }}
-            >
-              {trade.emoji}
-            </div>
-            <div>
-              <div
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full mb-3"
-                style={{ backgroundColor: `${trade.accentColor}22`, color: "#fb923c" }}
-              >
-                <BarChart3 className="w-3.5 h-3.5" />
-                {tradeTools.length} Tools Reviewed
-              </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">
-                Best AI & Software for{" "}
-                <span style={{ color: "#fb923c" }}>{trade.name}</span>
-              </h1>
-              <p className="mt-2 text-lg" style={{ color: "#94a3b8" }}>
-                {trade.tagline}
-              </p>
-              <div className="mt-4">
-                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
-              </div>
-            </div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: "#9a3412" }}>
+            {tradeTools.length} tools ranked · updated{" "}
+            {new Date(defaultDateModified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          </p>
+          <h1 className="font-serif text-3xl md:text-5xl font-medium leading-tight tracking-tight" style={{ color: "#1a1714" }}>
+            Best {trade.name} Software, Ranked
+          </h1>
+          <p className="mt-4 text-lg max-w-2xl" style={{ color: "#4b4640" }}>
+            {tradeTools.length} tools rated on aggregated contractor reviews.{" "}
+            {topTool ? `Top pick: ${topTool.name} (${topTool.rating.toFixed(1)}/5 from ${topTool.reviewCount.toLocaleString()} reviews).` : ""}
+          </p>
+          <div className="mt-4">
+            <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} variant="light" />
           </div>
 
           {/* Quick stats */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-3 text-sm">
             {[
-              { label: "Tools Listed", value: tradeTools.length.toString() },
-              { label: "Avg. Rating", value: avgRating.toFixed(1) + " ★" },
-              { label: "AI Tools", value: aiTools.length.toString() },
-              { label: "Top Pick", value: topTool?.name || "—" },
+              { label: "Tools ranked", value: tradeTools.length.toString() },
+              { label: "Average rating", value: avgRating.toFixed(1) + " / 5" },
+              { label: "Top pick", value: topTool?.name || "—" },
+              { label: "Starting price of top pick", value: topTool?.price || "—" },
             ].map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 rounded-xl border"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.04)",
-                  borderColor: "rgba(255,255,255,0.08)",
-                }}
-              >
-                <p className="text-xs" style={{ color: "#64748b" }}>
-                  {stat.label}
-                </p>
-                <p className="text-white font-bold mt-0.5 text-lg">{stat.value}</p>
+              <div key={stat.label}>
+                <dt className="text-xs" style={{ color: "#8a8378" }}>{stat.label}</dt>
+                <dd className="font-semibold" style={{ color: "#1a1714" }}>{stat.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-10">
+          <div className="lg:col-span-2 min-w-0 space-y-10">
+            {/* Top pick first on phones (the sidebar renders below the fold there) */}
+            <div className="lg:hidden">{topPickCard}</div>
+
             {/* What is this trade */}
             <section className="bg-white rounded-2xl border p-8" style={{ borderColor: "#e2e8f0" }}>
               <h2 className="text-xl font-bold mb-4" style={{ color: "#0f172a" }}>
@@ -303,14 +310,8 @@ export function TradePage() {
               </ul>
             </section>
 
-            {/* Why AI & Software */}
-            <section
-              className="rounded-2xl p-8 border"
-              style={{
-                background: "linear-gradient(135deg, #0c1a2e 0%, #1e1b4b 100%)",
-                borderColor: "#1e3a5f",
-              }}
-            >
+            {/* Where software pays off */}
+            <section className="bg-white rounded-2xl p-8 border" style={{ borderColor: "#e2e8f0" }}>
               <div className="flex items-center gap-3 mb-5">
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center"
@@ -318,8 +319,8 @@ export function TradePage() {
                 >
                   <Zap className="w-5 h-5" style={{ color: "#f97316" }} />
                 </div>
-                <h2 className="text-xl font-bold text-white">
-                  Why AI & Software Matter for {trade.name}
+                <h2 className="text-xl font-bold" style={{ color: "#0f172a" }}>
+                  Where software pays off in {trade.name}
                 </h2>
               </div>
               <div className="space-y-4">
@@ -331,7 +332,7 @@ export function TradePage() {
                     >
                       {idx + 1}
                     </div>
-                    <p className="text-sm leading-relaxed" style={{ color: "#cbd5e1" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
                       {point}
                     </p>
                   </div>
@@ -419,48 +420,9 @@ export function TradePage() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Top Pick */}
-            {topTool && (
-              <div
-                className="rounded-2xl p-6 border"
-                style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <TrendingUp className="w-4 h-4" style={{ color: "#d97706" }} />
-                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#d97706" }}>
-                    Top Pick
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: topTool.logoColor }}
-                  >
-                    {topTool.logoInitials}
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
-                      {topTool.name}
-                    </p>
-                    <p className="text-xs" style={{ color: "#64748b" }}>
-                      {topTool.type}
-                    </p>
-                  </div>
-                </div>
-                <StarRating rating={topTool.rating} showValue />
-                <p className="text-xs mt-3 leading-relaxed" style={{ color: "#374151" }}>
-                  {topTool.tagline}
-                </p>
-                <Link
-                  to={`/tools/${topTool.slug}`}
-                  className="mt-4 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:brightness-110"
-                  style={{ backgroundColor: "#d97706" }}
-                >
-                  View Details <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            )}
+          <div className="min-w-0 space-y-6">
+            {/* Top Pick (desktop) */}
+            <div className="hidden lg:block lg:sticky lg:top-20">{topPickCard}</div>
 
             {/* AI Tools */}
             {aiTools.length > 0 && (
@@ -481,12 +443,7 @@ export function TradePage() {
                       to={`/tools/${tool.slug}`}
                       className="flex items-center gap-3 group"
                     >
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0"
-                        style={{ backgroundColor: tool.logoColor }}
-                      >
-                        {tool.logoInitials}
-                      </div>
+                      <ToolLogo tool={tool} className="w-8 h-8 rounded-lg shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold group-hover:text-purple-700 transition-colors" style={{ color: "#1e293b" }}>
                           {tool.name}
@@ -524,6 +481,29 @@ export function TradePage() {
               </div>
             </div>
 
+            {/* Best-of lists for this trade */}
+            {bestForPages.some((p) => p.tradeId === trade.id) && (
+              <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>
+                <h3 className="text-sm font-semibold mb-3" style={{ color: "#0f172a" }}>
+                  Best-of lists for {trade.name}
+                </h3>
+                <ul className="space-y-2">
+                  {bestForPages
+                    .filter((p) => p.tradeId === trade.id)
+                    .map((p) => (
+                      <li key={p.slug}>
+                        <Link to={`/best/${p.slug}`} className="text-sm hover:underline" style={{ color: "#c2410c" }}>
+                          {p.title.replace(/\s*\(\d{4}\)\s*$/, "")}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+                <Link to="/best" className="mt-3 inline-block text-xs font-medium hover:underline" style={{ color: "#64748b" }}>
+                  All best-of lists →
+                </Link>
+              </div>
+            )}
+
             {/* Other Trades */}
             <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>
               <h3 className="text-sm font-semibold mb-4" style={{ color: "#0f172a" }}>
@@ -547,7 +527,6 @@ export function TradePage() {
                       className="flex items-center gap-2 text-sm py-1.5 hover:text-orange-500 transition-colors"
                       style={{ color: "#374151" }}
                     >
-                      <span>{t.emoji}</span>
                       <span>{t.name}</span>
                       <ChevronRight className="w-3.5 h-3.5 ml-auto" style={{ color: "#cbd5e1" }} />
                     </Link>
@@ -582,11 +561,12 @@ function RankedToolRow({
   const cat = catColors[tool.category] || catColors["Software"];
 
   return (
-    <Link
-      to={`/tools/${tool.slug}`}
-      className="group flex items-center gap-4 bg-white rounded-2xl border p-4 hover:shadow-lg transition-all duration-200"
+    <div
+      className="group relative flex items-center gap-4 bg-white rounded-2xl border p-4 hover:shadow-lg transition-all duration-200"
       style={{ borderColor: "#e2e8f0" }}
     >
+      {/* Stretched link: the row opens the review; compare + vendor CTA sit above it */}
+      <Link to={`/tools/${tool.slug}`} className="absolute inset-0 z-0" aria-label={`${tool.name} review`} />
       {/* Rank */}
       <div
         className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0"
@@ -600,12 +580,7 @@ function RankedToolRow({
       </div>
 
       {/* Logo */}
-      <div
-        className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-sm"
-        style={{ backgroundColor: tool.logoColor }}
-      >
-        {tool.logoInitials}
-      </div>
+      <ToolLogo tool={tool} className="w-11 h-11 rounded-xl shrink-0 shadow-sm" />
 
       {/* Info */}
       <div className="flex-1 min-w-0">
@@ -613,9 +588,6 @@ function RankedToolRow({
           <p className="font-semibold text-sm" style={{ color: "#0f172a" }}>
             {tool.name}
           </p>
-          {tool.verified && (
-            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#0891b2" }} />
-          )}
           <span
             className="text-xs px-2 py-0.5 rounded-full font-medium"
             style={{ backgroundColor: cat.bg, color: cat.text }}
@@ -637,7 +609,7 @@ function RankedToolRow({
         </div>
       </div>
 
-      {/* Price + Arrow */}
+      {/* Price + actions */}
       <div className="text-right shrink-0 flex flex-col items-end gap-2">
         <div>
           <p className="text-xs" style={{ color: "#94a3b8" }}>
@@ -647,6 +619,13 @@ function RankedToolRow({
             {tool.price}
           </p>
         </div>
+        <OutboundCta
+          tool={tool}
+          placement="tool_card"
+          label={getShortCtaLabel(tool)}
+          size="sm"
+          className="relative z-10 rounded-lg"
+        />
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -654,7 +633,7 @@ function RankedToolRow({
             if (!compareMax) onToggleCompare();
           }}
           title={inCompare ? "Remove from compare" : compareMax ? "Compare list full" : "Add to compare"}
-          className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border transition-all"
+          className="relative z-10 flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border transition-all"
           style={{
             backgroundColor: inCompare ? "#fff7ed" : "white",
             borderColor: inCompare ? "#f97316" : "#e2e8f0",
@@ -666,11 +645,7 @@ function RankedToolRow({
           {inCompare ? <Check className="w-3.5 h-3.5" /> : <GitCompareArrows className="w-3.5 h-3.5" />}
           {inCompare ? "Added" : "Compare"}
         </button>
-        <ArrowRight
-          className="w-4 h-4 ml-auto group-hover:translate-x-0.5 transition-transform"
-          style={{ color: "#f97316" }}
-        />
       </div>
-    </Link>
+    </div>
   );
 }

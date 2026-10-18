@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { HardHat, Twitter, Linkedin, Youtube } from "lucide-react";
+import { HardHat } from "lucide-react";
 import { trades } from "../../data/constructionData";
 import { useApp } from "../../context/AppContext";
 import { NewsletterSignup } from "../NewsletterSignup";
@@ -25,24 +25,14 @@ export function Footer() {
               <div>
                 <p className="text-white font-bold text-sm">BUILTECH</p>
                 <p className="text-xs" style={{ color: "#64748b" }}>
-                  AI & Software Directory
+                  Construction software reviews
                 </p>
               </div>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>
-              The construction industry's most trusted directory for AI tools, software platforms, and technology reviews — organized by trade.
+              Independent reviews and rankings of construction software, organized by trade. Ratings are aggregated from public contractor reviews; vendors cannot pay for placement.
             </p>
-            <div className="flex gap-3 mt-5">
-              {[Twitter, Linkedin, Youtube].map((Icon, i) => (
-                <button
-                  key={i}
-                  className="w-8 h-8 rounded-lg flex items-center justify-center transition-colors hover:bg-white/10"
-                  style={{ backgroundColor: "#1e3a5f" }}
-                >
-                  <Icon className="w-4 h-4" style={{ color: "#64748b" }} />
-                </button>
-              ))}
-            </div>
+
           </div>
 
           {/* Trades */}
@@ -56,7 +46,6 @@ export function Footer() {
                     className="text-sm flex items-center gap-2 hover:text-orange-400 transition-colors"
                     style={{ color: "#64748b" }}
                   >
-                    <span className="text-xs">{trade.emoji}</span>
                     {trade.name}
                   </Link>
                 </li>
@@ -99,12 +88,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/guides/construction-software-pricing-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                  Pricing Guide
+                <Link to="/guides/construction-software-roi" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Software ROI Guide
                 </Link>
               </li>
               <li>
-                <Link to="/guides/ai-construction-tools-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                <Link to="/guides/best-ai-construction-tools" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                   AI Tools Guide
                 </Link>
               </li>
@@ -124,8 +113,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/guides/construction-software-for-small-contractors" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
-                  Small Contractor Guide
+                <Link to="/guides/general-contractor-software-guide" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  General Contractor Guide
+                </Link>
+              </li>
+              <li>
+                <Link to="/best" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Best Software Lists
+                </Link>
+              </li>
+              <li>
+                <Link to="/categories" className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  Software Categories
                 </Link>
               </li>
             </ul>
@@ -156,15 +155,13 @@ export function Footer() {
                 </button>
               </li>
               {[
-                { label: "Advertise", href: "/advertise" },
-                { label: "Review Guidelines", href: "/review-guidelines" },
                 { label: "Privacy Policy", href: "/privacy" },
-                { label: "Terms of Service", href: "/terms" },
+                { label: "Terms of Use", href: "/terms" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
+                  <Link to={href} className="text-sm hover:text-orange-400 transition-colors" style={{ color: "#64748b" }}>
                     {label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

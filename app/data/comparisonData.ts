@@ -790,7 +790,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== PROCORE VS SERVICETITAN ==========
@@ -882,7 +882,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== JOBBER VS SERVICETITAN ==========
@@ -975,7 +975,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== SERVICETITAN VS HOUSECALL PRO ==========
@@ -1051,7 +1051,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Does HouseCall Pro have a price book?", answer: "Yes, but it's more basic than ServiceTitan's. HouseCall Pro lets you build service packages and save common job types. ServiceTitan's price book is more sophisticated — it enforces pricing at the tech level, tracks good/better/best presentation, and feeds directly into revenue-per-tech reporting. If price enforcement is a core priority, ServiceTitan's price book is meaningfully better." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== JOBBER VS HOUSECALL PRO ==========
@@ -1122,7 +1122,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can I switch from Jobber to HouseCall Pro later?", answer: "Yes — switching is manageable. Export your customer list and job history from Jobber, import into HouseCall Pro. The transition takes a weekend and your team needs 1–2 days to get comfortable with the new interface. Most contractors who outgrow Jobber make the switch without major disruption." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== BUILDERTREND VS JOBTREAD ==========
@@ -1194,7 +1194,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Which has better customer support?", answer: "JobTread consistently receives better customer support ratings. Being a smaller, newer company means faster response times and more direct access to the team. Buildertrend's support has improved but still lags JobTread on responsiveness according to most recent reviews." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== QUICKBOOKS VS SAGE 300 ==========
@@ -1266,7 +1266,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can I integrate Procore with both QuickBooks and Sage?", answer: "Yes — Procore has certified integrations for both QuickBooks Online, QuickBooks Desktop, and Sage 300 CRE. The Procore-Sage integration is generally considered more robust for complex commercial job costing, with deeper cost code mapping and committed cost tracking. Both integrations require initial configuration — budget 8–16 hours for setup and testing." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== BLUEBEAM VS PROCORE ==========
@@ -1327,7 +1327,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "What is a Bluebeam Studio Session?", answer: "A Studio Session is Bluebeam's multi-user collaboration feature. Multiple users can simultaneously mark up, annotate, and comment on the same PDF set in real time. Each user's markups are visible to others immediately. For design review meetings, submittal reviews, and coordinated estimating, Studio Sessions eliminate the version control problem of emailing marked-up PDFs back and forth." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== STACK VS BLUEBEAM ==========
@@ -1395,7 +1395,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Which is better for a team with multiple estimators?", answer: "Bluebeam's Studio Sessions allow multiple estimators to work on the same plan set simultaneously — an advantage for large bids where different estimators cover different disciplines at the same time. Stack has limited multi-user concurrent editing. If simultaneous collaborative takeoff is important, Bluebeam has the stronger feature." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== COMPANYCAM VS PROCORE ==========
@@ -1456,7 +1456,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "What does CompanyCam do that my phone camera doesn't?", answer: "Your phone camera takes unorganized photos mixed with personal content with no project tagging. CompanyCam automatically tags every photo with project, GPS, timestamp, and photographer, then syncs to a shared team timeline. You can generate a photo report in one tap. For dispute protection and client communication, the organization difference is significant." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== RAKEN VS PROCORE ==========
@@ -1524,7 +1524,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can Raken replace Procore?", answer: "No — Raken does daily reports, toolbox talks, and time cards. It doesn't do RFI management, submittals, bid management, or the project controls that Procore provides. Raken is a field reporting specialist, not a project management platform. For Procore users, Raken is a complement to Procore's daily log, not a replacement for the platform." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== LEVELSET VS LIENITNNOW ==========
@@ -1586,7 +1586,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can I use both Levelset and LienItNow?", answer: "Yes, though it's unusual. Some contractors use LienItNow for one-off filings in states where Levelset's pricing isn't justified, and Levelset for their primary markets. More commonly, contractors choose one or the other based on their total filing volume and the subscription vs. per-filing cost math." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Procore vs Fieldwire ───────────────────────────────────────────────────
@@ -1667,7 +1667,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Is Procore worth the cost for a $3M GC?", answer: "At $3M revenue, Procore's cost ($9,000–15,000+/year) represents 0.3–0.5% of revenue — meaningful but not prohibitive if you have multiple simultaneous projects generating coordination overhead. The more honest question is whether your team will actually use it. Procore requires consistent data entry from PMs and field staff. Companies under $3M with 1–2 active projects often find that simpler tools like Buildertrend or Fieldwire + QuickBooks cover their needs for less." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Procore vs PlanGrid ────────────────────────────────────────────────────
@@ -1747,7 +1747,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "What happened to PlanGrid pricing?", answer: "Legacy PlanGrid offered per-seat pricing starting around $39–$119/user/month depending on sheet count and tier. That pricing no longer applies — Autodesk Build pricing is structured differently as part of Autodesk Construction Cloud. Contact Autodesk for current ACC pricing, which varies by modules selected and team size." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Primavera vs Procore ───────────────────────────────────────────────────
@@ -1826,7 +1826,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "How much does Primavera P6 cost?", answer: "Oracle Primavera P6 licensing is typically $2,500–$5,000+ per named user per year for the professional desktop version. Oracle Primavera Cloud (subscription) is priced differently. P6 Professional is available as a standalone or within the Oracle Construction and Engineering suite. Budget for training costs — a scheduler who isn't P6-proficient will not get value from the software." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── QuickBooks Construction vs Xero ───────────────────────────────────────
@@ -1906,7 +1906,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Which is better for a one-person contractor: QuickBooks or Xero?", answer: "For a sole proprietor or owner-operator without job cost complexity, Xero's simpler interface and lower starting price ($15/month vs. $35/month) can work well. The deciding factor is still whether you need job costing — even small GCs benefit from tracking which jobs are profitable. If your work is simple service calls or straightforward T&M projects, Xero is viable. If you're managing multi-phase projects with multiple cost codes, QuickBooks wins." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Deputy vs Procore (Workforce Scheduling) ───────────────────────────────
@@ -1986,7 +1986,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can I use Deputy without Procore?", answer: "Yes — Deputy is a standalone workforce management platform. It does not require Procore. Contractors who use QuickBooks and a simpler PM tool (or no PM tool) can use Deputy for scheduling and time tracking, then export hours to QuickBooks Payroll or a third-party payroll platform. Deputy's $4.50–$6/user/month pricing makes it accessible for smaller contractors who don't justify the cost of Procore." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Textura vs Procore (Subcontractor Payments) ────────────────────────────
@@ -2066,7 +2066,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Does Procore replace Textura for large commercial GCs?", answer: "For GCs working with institutional owners and lenders who have adopted Textura, no — Procore cannot replace Textura in the owner/lender draw workflow. Textura's lender integration is its irreplaceable value in institutional commercial construction. For GCs doing private owner work where the owner doesn't require Textura, Procore's financial and payment modules cover the workflow without Textura's additional cost and complexity." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Jobber vs Procore ─────────────────────────────────────────────────────
@@ -2121,7 +2121,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Does Jobber integrate with QuickBooks?", answer: "Yes — Jobber has a native QuickBooks Online integration that syncs invoices, clients, and payments bidirectionally. Invoices created in Jobber flow to QuickBooks automatically, and payment records sync back, eliminating double-entry." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Raken vs Fieldwire ────────────────────────────────────────────────────
@@ -2185,7 +2185,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Can subs use Raken without the GC requiring it?", answer: "Yes — subcontractors can use Raken independently for their own daily reports and documentation regardless of what the GC uses. Many specialty subs use Raken for delay claim protection and T&M documentation even when the GC is on a different platform." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── CompanyCam vs Raken ───────────────────────────────────────────────────
@@ -2248,7 +2248,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "How does CompanyCam handle client photo sharing?", answer: "CompanyCam generates a shareable link to a curated photo gallery for a project. Clients can view the gallery without a CompanyCam account. This reduces the effort of client progress reporting from downloading photos and attaching to an email to sharing a single link." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── Bridgit Bench vs Procore ──────────────────────────────────────────────
@@ -2302,7 +2302,7 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Does Bridgit Bench integrate with HR software?", answer: "Bridgit Bench integrates with Procore and some HRIS platforms. It is a workforce allocation tool, not an HR platform — it handles project staffing assignments, not payroll or compliance. It works alongside HR platforms like Rippling or Gusto, each handling a different layer of workforce management." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ─── TouchPlan vs Procore ──────────────────────────────────────────────────
@@ -2364,6 +2364,6 @@ export const comparisonDetailPages: ComparisonDetailPage[] = [
       { question: "Is TouchPlan used for residential construction?", answer: "TouchPlan is primarily used on complex commercial, healthcare, and infrastructure projects where the Last Planner System delivers meaningful schedule improvement. For residential construction, simpler tools like Buildertrend cover scheduling needs. TouchPlan's ROI typically requires the subcontractor coordination complexity found on larger commercial projects." }
     ],
     published: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   }
 ];

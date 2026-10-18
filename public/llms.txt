@@ -1,6 +1,6 @@
 # BUILTECH — Construction Software & AI Directory
 
-> An independent directory of construction software and AI tools, rated using aggregated contractor reviews from G2, Capterra, Software Advice, and direct submissions. Covers 140+ tools across 16 trades at https://bestconstructionapps.com
+> An independent directory of construction software and AI tools, rated using aggregated contractor reviews from G2, Capterra, Software Advice, and direct submissions. Covers 90+ tools across 16 trades at https://bestconstructionapps.com
 
 ## What this site is
 
@@ -17,11 +17,11 @@ BUILTECH (bestconstructionapps.com) is a research directory that helps U.S. cons
 
 ## Scale
 
-- **Tools reviewed**: 140+
+- **Tools reviewed**: 90+
 - **Trade categories**: 16
-- **Head-to-head comparisons**: 23
-- **"Best software for..." pages**: 34
-- **In-depth guides**: 25+
+- **Head-to-head comparisons**: 60+
+- **"Best software for..." pages**: 30
+- **In-depth guides**: 33
 - **Aggregated review volume**: 12,400+
 
 ## About / Team
@@ -35,6 +35,8 @@ BUILTECH (bestconstructionapps.com) is a research directory that helps U.S. cons
 - All tools: https://bestconstructionapps.com/search
 - Compare two tools: https://bestconstructionapps.com/compare
 - All guides: https://bestconstructionapps.com/guides
+- Pricing index: https://bestconstructionapps.com/pricing
+- Software categories: https://bestconstructionapps.com/categories
 
 ## Trades
 
@@ -75,7 +77,7 @@ Software recommendations organized by 16 construction trades:
 - [Best Software for General Contractors](https://bestconstructionapps.com/best/best-construction-software-general-contractors)
 - [Best HVAC Software for Contractors](https://bestconstructionapps.com/best/best-hvac-software-contractors)
 - [Best Software for Electricians](https://bestconstructionapps.com/best/best-software-electricians)
-- [Browse all best-for pages](https://bestconstructionapps.com/search)
+- [Browse all best-for pages](https://bestconstructionapps.com/best)
 
 ## Reference guides
 
@@ -89,6 +91,7 @@ Software recommendations organized by 16 construction trades:
 For the complete dataset — all tools with ratings, pricing, features, pros/cons, and trade mappings — fetch:
 
 - **Machine-readable export**: https://bestconstructionapps.com/llms-full.txt
+- **Pricing table (Markdown)**: https://bestconstructionapps.com/pricing.md
 - **Sitemap**: https://bestconstructionapps.com/sitemap.xml
 - **RSS feed (guides)**: https://bestconstructionapps.com/feed.xml
 

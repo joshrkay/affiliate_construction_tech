@@ -6,7 +6,11 @@ import { getComparisonBySlug } from "../data/seoPages";
 import { tradeCompareFeatures, toolCapabilityMap, CompareFeatureGroup, comparisonDetailPages } from "../data/comparisonData";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
+import { shortTitle } from "../lib/seo";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 const GENERIC_FEATURES: CompareFeatureGroup[] = [
   {
@@ -136,15 +140,17 @@ export function ComparisonDetailPage() {
   }
 
   const canonicalUrl = `https://bestconstructionapps.com/compare/${slug}`;
-  const pageTitle = comparison?.title ?? detail!.title;
+  const pageTitle = shortTitle(comparison?.title ?? detail!.title);
   const pageDescription = comparison?.description ?? detail!.metaDescription;
   const name1 = hasToolData ? selectedTools[0].name : toolDisplayName(detail!.toolId1);
   const name2 = hasToolData ? selectedTools[1].name : toolDisplayName(detail!.toolId2);
 
   let verdictText = "";
+  let winner: (typeof tools)[number] | null = null;
   if (hasToolData) {
     const higherRatedTool = selectedTools[0].rating >= selectedTools[1].rating ? selectedTools[0] : selectedTools[1];
     const lowerRatedTool = selectedTools[0].rating >= selectedTools[1].rating ? selectedTools[1] : selectedTools[0];
+    winner = higherRatedTool;
     verdictText = `${higherRatedTool.name} is rated ${higherRatedTool.rating.toFixed(1)}/5 (${higherRatedTool.reviewCount.toLocaleString()} reviews) vs ${lowerRatedTool.name} at ${lowerRatedTool.rating.toFixed(1)}/5 (${lowerRatedTool.reviewCount.toLocaleString()} reviews). ${higherRatedTool.name} starts at ${higherRatedTool.price} while ${lowerRatedTool.name} starts at ${lowerRatedTool.price}.`;
   }
 
@@ -253,7 +259,7 @@ export function ComparisonDetailPage() {
               </h1>
               {trade ? (
                 <p className="mt-1" style={{ color: "#94a3b8" }}>
-                  {trade.emoji} {trade.name} — {pageDescription}
+                  {trade.name} — {pageDescription}
                 </p>
               ) : (
                 <p className="mt-1" style={{ color: "#94a3b8" }}>
@@ -271,10 +277,23 @@ export function ComparisonDetailPage() {
       {/* AI-extractable Verdict Summary */}
       {verdictText && (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="p-4 rounded-xl mb-6" style={{ backgroundColor: "#f8fafc" }}>
+          <div className="p-5 rounded-xl mb-6 border" style={{ backgroundColor: "#fff7ed", borderColor: "#fed7aa" }}>
             <p className="text-sm leading-relaxed" style={{ color: "#475569" }}>
               <strong style={{ color: "#0f172a" }}>Quick Verdict:</strong> {verdictText}
             </p>
+            {winner && (
+              <div className="mt-4 flex flex-col sm:flex-row sm:items-center gap-3">
+                <OutboundCta tool={winner} placement="comparison_verdict" />
+                <Link
+                  to={`/tools/${winner.slug}`}
+                  className="text-sm font-medium underline underline-offset-2"
+                  style={{ color: "#c2410c" }}
+                >
+                  Read the full {winner.name} review
+                </Link>
+              </div>
+            )}
+            <AffiliateDisclosure className="mt-3" />
           </div>
         </div>
       )}
@@ -303,12 +322,7 @@ export function ComparisonDetailPage() {
                   style={{ borderColor: "#e2e8f0" }}
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0"
-                      style={{ backgroundColor: tool.logoColor }}
-                    >
-                      {tool.logoInitials}
-                    </div>
+                    <ToolLogo tool={tool} className="w-14 h-14 rounded-xl shrink-0" />
                     <div className="flex-1">
                       <h2 className="text-xl font-bold" style={{ color: "#0f172a" }}>{tool.name}</h2>
                       <span
@@ -336,15 +350,12 @@ export function ComparisonDetailPage() {
                     >
                       Full Review
                     </Link>
-                    <a
-                      href={tool.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-1 flex-1 py-2.5 rounded-xl text-sm font-medium text-white"
-                      style={{ backgroundColor: "#f97316" }}
-                    >
-                      Visit <ExternalLink className="w-4 h-4" />
-                    </a>
+                    <OutboundCta
+                      tool={tool}
+                      placement="comparison_card"
+                      label={getShortCtaLabel(tool)}
+                      className="flex-1"
+                    />
                   </div>
                 </div>
               );

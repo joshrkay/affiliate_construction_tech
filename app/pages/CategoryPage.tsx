@@ -3,9 +3,13 @@ import { useMemo } from "react";
 import { ChevronRight, Star, ExternalLink, Check } from "lucide-react";
 import { getCategoryBySlug } from "../data/categoryTaxonomy";
 import { getToolsByCategory, getToolById } from "../data/toolDataset";
+import { getToolBySlug as getDirectoryTool } from "../data/constructionData";
 import { categoryPages } from "../data/categoryContent";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
+import { shortTitle } from "../lib/seo";
 import { defaultAuthor } from "../data/editorial";
 
 export function CategoryPage() {
@@ -80,7 +84,7 @@ export function CategoryPage() {
 
   return (
     <>
-      <title>{categoryPage.title}</title>
+      <title>{shortTitle(categoryPage.title)}</title>
       <meta name="description" content={categoryPage.metaDescription} />
       <meta name="keywords" content={categoryPage.keywords.join(", ")} />
       <link rel="canonical" href={canonicalUrl} />
@@ -300,34 +304,22 @@ export function CategoryPage() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Link
-                      to={`/tools/${tool.slug}`}
-                      className="flex-1 py-2 rounded-lg border text-sm font-medium text-center transition-colors hover:bg-gray-50"
-                      style={{ borderColor: "#e2e8f0", color: "#374151" }}
-                    >
-                      Details
-                    </Link>
-                    {tool.affiliateUrl ? (
-                      <a
-                        href={tool.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-2 rounded-lg text-sm font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
+                    {getDirectoryTool(tool.slug) && (
+                      <Link
+                        to={`/tools/${tool.slug}`}
+                        className="flex-1 py-2 rounded-lg border text-sm font-medium text-center transition-colors hover:bg-gray-50"
+                        style={{ borderColor: "#e2e8f0", color: "#374151" }}
                       >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
-                    ) : (
-                      <a
-                        href={tool.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-2 rounded-lg text-sm font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
-                      >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
+                        Details
+                      </Link>
                     )}
+                    <OutboundCta
+                      tool={tool}
+                      placement="category_card"
+                      label={getShortCtaLabel(tool)}
+                      size="sm"
+                      className="flex-1 rounded-lg !py-2"
+                    />
                   </div>
                 </div>
               ))}
@@ -401,7 +393,8 @@ export function CategoryPage() {
             <div className="flex flex-wrap gap-3">
               {categoryPage.relatedCategories.slice(0, 5).map((catId) => {
                 const relatedCat = getCategoryBySlug(catId);
-                return relatedCat ? (
+                const hasPage = categoryPages.some((cp) => cp.slug === catId);
+                return relatedCat && hasPage ? (
                   <Link
                     key={catId}
                     to={`/categories/${catId}`}

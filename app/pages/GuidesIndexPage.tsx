@@ -38,7 +38,7 @@ export function GuidesIndexPage() {
 
   const canonicalUrl = "https://bestconstructionapps.com/guides";
   const currentYear = new Date().getFullYear();
-  const pageTitle = `Construction Software Guides & Resources | BUILTECH`;
+  const pageTitle = `Construction Software Guides & Buying Advice`;
   const pageDescription =
     "In-depth guides on construction software, AI technology, estimating, project management, and implementation. Written for contractors and construction professionals.";
 
@@ -111,22 +111,6 @@ export function GuidesIndexPage() {
         className="relative overflow-hidden"
         style={{ backgroundColor: "#0c1a2e" }}
       >
-        {/* Background grid pattern */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.12) 0%, transparent 60%)",
-          }}
-        />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 md:py-20">
           {/* Breadcrumb */}
@@ -149,13 +133,11 @@ export function GuidesIndexPage() {
               <BookOpen className="w-6 h-6" style={{ color: "#f97316" }} />
             </div>
             <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">
-                Construction Software{" "}
-                <span style={{ color: "#fb923c" }}>Guides & Resources</span>
+              <h1 className="font-serif text-3xl md:text-4xl font-medium text-white">
+                Guides and buying advice
               </h1>
               <p className="mt-2 text-lg" style={{ color: "#94a3b8" }}>
-                In-depth guides to help you evaluate, choose, and implement
-                the right construction technology for your business.
+                How to choose, what it costs, and how to roll it out without losing the crew.
               </p>
             </div>
           </div>

@@ -336,7 +336,6 @@ export function SubmitToolModal() {
                         color: selected ? "#f97316" : "#64748b",
                       }}
                     >
-                      <span>{trade.emoji}</span>
                       <span className="truncate">{trade.name}</span>
                     </button>
                   );

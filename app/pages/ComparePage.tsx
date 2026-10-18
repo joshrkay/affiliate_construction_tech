@@ -6,13 +6,13 @@ import {
   Minus,
   ChevronRight,
   ArrowLeft,
-  ExternalLink,
   Star,
   GitCompareArrows,
   Plus,
   SlidersHorizontal,
 } from "lucide-react";
 import { tools, trades, getTradeBySlug } from "../data/constructionData";
+import { comparisonPages } from "../data/seoPages";
 import {
   tradeCompareFeatures,
   toolCapabilityMap,
@@ -20,8 +20,11 @@ import {
   comparisonDetailPages,
 } from "../data/comparisonData";
 import { StarRating } from "../components/StarRating";
+import { OutboundCta } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { useApp } from "../context/AppContext";
 import { motion, AnimatePresence } from "motion/react";
+import { ToolLogo } from "../components/ToolLogo";
 
 const MAX_TOOLS = 4;
 
@@ -99,7 +102,6 @@ function TradeStep({
               className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl"
               style={{ backgroundColor: "#fff7ed" }}
             >
-              {trade.emoji}
             </div>
             <div>
               <p className="text-sm font-semibold leading-tight" style={{ color: "#0f172a" }}>
@@ -189,7 +191,7 @@ function ToolStep({
           </p>
           <h2 className="text-2xl font-bold" style={{ color: "#0f172a" }}>
             {trade ? (
-              <>Select tools to compare &nbsp;{trade.emoji} {trade.name}</>
+              <>Select tools to compare — {trade.name}</>
             ) : (
               "Select tools to compare"
             )}
@@ -254,12 +256,7 @@ function ToolStep({
               }}
             >
               {/* Logo */}
-              <div
-                className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0"
-                style={{ backgroundColor: tool.logoColor }}
-              >
-                {tool.logoInitials}
-              </div>
+              <ToolLogo tool={tool} className="w-11 h-11 rounded-xl shrink-0" />
 
               {/* Info */}
               <div className="flex-1 min-w-0">
@@ -491,6 +488,29 @@ export function ComparePage() {
                 </Link>
               ))}
             </div>
+
+            {/* Every other head-to-head page, so none is orphaned */}
+            {(() => {
+              const detailSlugs = new Set(comparisonDetailPages.map((p) => p.slug));
+              const rest = comparisonPages.filter((p) => !detailSlugs.has(p.slug));
+              if (rest.length === 0) return null;
+              return (
+                <>
+                  <h3 className="text-base font-semibold mt-10 mb-3" style={{ color: "#0f172a" }}>
+                    All head-to-head comparisons
+                  </h3>
+                  <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm">
+                    {rest.map((p) => (
+                      <li key={p.slug} className="mb-2 break-inside-avoid">
+                        <Link to={`/compare/${p.slug}`} className="hover:underline" style={{ color: "#c2410c" }}>
+                          {p.title.replace(/\s*\(\d{4}\).*$/, "")}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              );
+            })()}
           </div>
         </div>
       </div>
@@ -620,7 +640,7 @@ export function ComparePage() {
                 {trade ? (
                   <p className="mt-1" style={{ color: "#94a3b8" }}>
                     Side-by-side for{" "}
-                    <span className="text-white font-medium">{trade.emoji} {trade.name}</span> —
+                    <span className="text-white font-medium">{trade.name}</span> —
                     trade-specific features highlighted
                   </p>
                 ) : (
@@ -681,12 +701,7 @@ export function ComparePage() {
                     style={{ borderColor: "#e2e8f0" }}
                   >
                     <div className="flex items-start gap-3 mb-3">
-                      <div
-                        className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0"
-                        style={{ backgroundColor: tool.logoColor }}
-                      >
-                        {tool.logoInitials}
-                      </div>
+                      <ToolLogo tool={tool} className="w-11 h-11 rounded-xl shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
                           {tool.name}
@@ -725,15 +740,13 @@ export function ComparePage() {
                       >
                         Details
                       </Link>
-                      <a
-                        href={tool.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-1.5 rounded-lg text-xs font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
-                      >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
+                      <OutboundCta
+                        tool={tool}
+                        placement="compare_builder"
+                        label={getShortCtaLabel(tool)}
+                        size="sm"
+                        className="flex-1 rounded-lg !py-1.5"
+                      />
                     </div>
 
                     <button
@@ -908,12 +921,7 @@ export function ComparePage() {
                     className="flex items-center gap-3 p-3 rounded-xl border bg-white text-left hover:shadow-md transition-all group"
                     style={{ borderColor: "#e2e8f0" }}
                   >
-                    <div
-                      className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-xs shrink-0"
-                      style={{ backgroundColor: tool.logoColor }}
-                    >
-                      {tool.logoInitials}
-                    </div>
+                    <ToolLogo tool={tool} className="w-9 h-9 rounded-lg shrink-0" />
                     <div className="flex-1 min-w-0">
                       <p className="text-xs font-semibold truncate" style={{ color: "#0f172a" }}>
                         {tool.name}

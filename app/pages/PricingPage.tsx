@@ -4,7 +4,9 @@ import { ChevronRight, DollarSign, ExternalLink, Check } from "lucide-react";
 import { tools, trades } from "../data/constructionData";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 /**
  * Per-tool pricing page targeting "[tool] pricing" / "[tool] cost" queries —
@@ -34,7 +36,7 @@ export function PricingPage() {
     );
   }
 
-  const canonicalUrl = `https://bestconstructionapps.com/pricing/${tool.slug}`;
+  const canonicalUrl = `https://bestconstructionapps.com/pricing/${tool.duplicateOf ?? tool.slug}`;
   const year = new Date().getFullYear();
   const isCustom = /custom|contact/i.test(tool.price);
   const toolTrades = trades.filter((t) => tool.tradeIds.includes(t.id));
@@ -60,7 +62,8 @@ export function PricingPage() {
 
   return (
     <>
-      <title>{`${tool.name} Pricing (${year}) — Cost, Plans & Cheaper Alternatives | BUILTECH`}</title>
+      <title>{`${tool.name} Pricing (${year}): Plans, Costs & Alternatives`}</title>
+      {tool.duplicateOf && <meta name="robots" content="noindex, follow" />}
       <meta
         name="description"
         content={`${tool.name} pricing in ${year}: starts at ${tool.price}. ${tool.priceNote} Compare cost against ${alternatives.slice(0, 3).map((a) => a.name).join(", ")} and more.`}
@@ -93,12 +96,7 @@ export function PricingPage() {
             <span style={{ color: "#fb923c" }}>{tool.name}</span>
           </nav>
           <div className="flex items-start gap-4">
-            <div
-              className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0"
-              style={{ backgroundColor: tool.logoColor }}
-            >
-              {tool.logoInitials}
-            </div>
+            <ToolLogo tool={tool} className="w-14 h-14 rounded-xl shrink-0" />
             <div>
               <h1 className="text-3xl font-bold text-white">{tool.name} Pricing ({year})</h1>
               <div className="flex items-center gap-2 mt-2">
@@ -131,16 +129,9 @@ export function PricingPage() {
               </p>
               <p className="text-sm" style={{ color: "#374151" }}>{tool.priceNote}</p>
             </div>
-            <a
-              href={tool.affiliateUrl || tool.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-medium text-white"
-              style={{ backgroundColor: "#f97316" }}
-            >
-              Visit {tool.name} <ExternalLink className="w-4 h-4" />
-            </a>
+            <OutboundCta tool={tool} placement="pricing_hero" size="lg" />
           </div>
+          <AffiliateDisclosure className="mt-4" />
         </div>
 
         {/* What you get */}
