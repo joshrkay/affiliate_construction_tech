@@ -75,7 +75,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["project-scheduling", "cost-tracking"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -121,7 +121,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -232,7 +232,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["customer-payment-collection", "financial-management", "project-budget-tracking"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -278,7 +278,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -389,7 +389,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["tool-tracking", "maintenance-management", "project-budget-tracking"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -500,7 +500,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["project-scheduling", "customer-invoicing", "warranty-management"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -611,7 +611,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["field-crew-scheduling", "project-estimating", "customer-invoicing"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -722,7 +722,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["project-scheduling", "project-estimating", "time-tracking"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -833,7 +833,7 @@ export const categoryPages: CategoryPage[] = [
     relatedCategories: ["customer-invoicing", "project-scheduling", "photo-documentation"],
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -874,7 +874,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -914,7 +914,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -954,7 +954,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -994,7 +994,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1035,7 +1035,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: true,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1076,7 +1076,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1116,7 +1116,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1157,7 +1157,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1197,7 +1197,7 @@ export const categoryPages: CategoryPage[] = [
 
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -1429,7 +1429,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["procore", "quickbooks", "zoho-books", "primavera-p6"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== FIELD TIME TRACKING ==========
@@ -1538,7 +1538,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["deputy", "freshbooks", "quickbooks-construction", "procore"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== BID MANAGEMENT ==========
@@ -1633,7 +1633,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["procore", "buildertrend", "stack"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== QUALITY ASSURANCE ==========
@@ -1742,7 +1742,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["fieldwire", "plangrid", "procore", "jobber"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== AI-POWERED PROJECT MANAGEMENT ==========
@@ -1837,7 +1837,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["procore", "monday-construction", "clickup"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== CUSTOMER PAYMENT COLLECTION ==========
@@ -1946,7 +1946,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["square", "stripe", "housecallpro", "quickbooks-construction"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   // ========== MATERIAL TAKEOFF ==========
@@ -1983,7 +1983,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["project-estimating", "bid-management", "commercial-estimating"],
     relatedTools: ["stack", "bluebeam", "procore"],
-    published: true, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: "2026-07-12"
   },
 
   // ========== COMMERCIAL ESTIMATING ==========
@@ -2020,7 +2020,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["project-estimating", "material-takeoff", "bid-management"],
     relatedTools: ["procore", "stack", "bluebeam"],
-    published: true, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: "2026-07-12"
   },
 
   // ========== SALES LEAD GENERATION ==========
@@ -2057,7 +2057,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["customer-relationship-management", "customer-retention-retention", "business-analytics-reporting"],
     relatedTools: ["salesforce-construction", "pipedrive", "zoho-crm"],
-    published: true, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: "2026-07-12"
   },
 
   // ========== ELECTRICAL MANAGEMENT ==========
@@ -2094,7 +2094,7 @@ export const categoryPages: CategoryPage[] = [
     ],
     relatedCategories: ["hvac-management", "plumbing-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
-    published: true, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2155,7 +2155,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["hvac-management", "electrical-management", "field-crew-scheduling"],
     relatedTools: ["servicetitan", "housecallpro", "jobber"],
-    published: true, featured: false, lastUpdated: new Date().toISOString()
+    published: true, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2216,7 +2216,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["field-crew-scheduling", "photo-documentation", "project-document-management"],
     relatedTools: ["procore", "iauditor", "assignar"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2277,7 +2277,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["bid-management", "project-document-management", "financial-management"],
     relatedTools: ["levelset", "docusign", "lienitnnow"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2338,7 +2338,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["project-estimating", "financial-management", "field-time-tracking"],
     relatedTools: ["procore", "zapier", "make"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2399,7 +2399,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["photo-documentation", "field-crew-scheduling", "field-time-tracking"],
     relatedTools: ["companycam", "raken", "fieldwire"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   // ========== LANDSCAPE MANAGEMENT ==========
@@ -2472,7 +2472,7 @@ export const categoryPages: CategoryPage[] = [
     relatedTools: ["jobber", "housecallpro", "servicetitan", "buildertrend"],
     published: true,
     featured: false,
-    lastUpdated: new Date().toISOString()
+    lastUpdated: "2026-07-12"
   },
 
   {
@@ -2533,7 +2533,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["ai-powered-project-management", "project-document-management", "bid-management"],
     relatedTools: ["procore", "document-crunch", "corecon"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2594,7 +2594,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["financial-management", "payroll-management", "field-time-tracking"],
     relatedTools: ["quickbooks", "sage-300", "lcp-tracker"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2650,7 +2650,7 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["payroll-management", "tax-reporting", "field-time-tracking"],
     relatedTools: ["gusto", "rippling", "docusign"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   },
 
   {
@@ -2711,6 +2711,6 @@ export const categoryPages: CategoryPage[] = [
 
     relatedCategories: ["financial-management", "project-estimating", "field-time-tracking"],
     relatedTools: ["procore", "sage-300", "power-bi"],
-    published: false, featured: false, lastUpdated: new Date().toISOString()
+    published: false, featured: false, lastUpdated: "2026-07-12"
   }
 ];

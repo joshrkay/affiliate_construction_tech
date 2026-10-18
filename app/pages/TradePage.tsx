@@ -236,78 +236,46 @@ export function TradePage() {
       </script>
 
       {/* Hero */}
-      <div className="relative overflow-hidden" style={{ backgroundColor: "#0c1a2e" }}>
-        <div
-          className="absolute inset-0 opacity-25"
-          style={{
-            backgroundImage: `url(${trade.imageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background: `linear-gradient(to right, #0c1a2e 50%, ${trade.accentColor}22 100%)`,
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="border-b" style={{ backgroundColor: "#fbfaf7", borderColor: "#e7e2d8" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
           {/* Breadcrumb */}
-          <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: "#64748b" }}>
-            <Link to="/" className="hover:text-white transition-colors">
-              Home
-            </Link>
+          <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: "#8a8378" }}>
+            <Link to="/" className="hover:underline">Home</Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Trades</span>
+            <Link to="/best" className="hover:underline">Trades</Link>
             <ChevronRight className="w-4 h-4" />
-            <span style={{ color: "#fb923c" }}>{trade.name}</span>
+            <span style={{ color: "#1a1714" }}>{trade.name}</span>
           </nav>
 
-          <div className="flex items-start gap-5">
-            <div>
-              <div
-                className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full mb-3"
-                style={{ backgroundColor: `${trade.accentColor}22`, color: "#fb923c" }}
-              >
-                <BarChart3 className="w-3.5 h-3.5" />
-                {tradeTools.length} Tools Reviewed
-              </div>
-              <h1 className="font-serif text-3xl md:text-4xl font-medium text-white">
-                Best {trade.name} Software, Ranked
-              </h1>
-              <p className="mt-2 text-lg" style={{ color: "#94a3b8" }}>
-                {tradeTools.length} tools rated on aggregated contractor reviews. Top pick: {topTool?.name}.
-              </p>
-              <div className="mt-4">
-                <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
-              </div>
-            </div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-3" style={{ color: "#9a3412" }}>
+            {tradeTools.length} tools ranked · updated{" "}
+            {new Date(defaultDateModified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}
+          </p>
+          <h1 className="font-serif text-3xl md:text-5xl font-medium leading-tight tracking-tight" style={{ color: "#1a1714" }}>
+            Best {trade.name} Software, Ranked
+          </h1>
+          <p className="mt-4 text-lg max-w-2xl" style={{ color: "#4b4640" }}>
+            {tradeTools.length} tools rated on aggregated contractor reviews.{" "}
+            {topTool ? `Top pick: ${topTool.name} (${topTool.rating.toFixed(1)}/5 from ${topTool.reviewCount.toLocaleString()} reviews).` : ""}
+          </p>
+          <div className="mt-4">
+            <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} variant="light" />
           </div>
 
           {/* Quick stats */}
-          <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <dl className="mt-8 flex flex-wrap gap-x-10 gap-y-3 text-sm">
             {[
-              { label: "Tools Listed", value: tradeTools.length.toString() },
-              { label: "Avg. Rating", value: avgRating.toFixed(1) + " ★" },
-              { label: "AI Tools", value: aiTools.length.toString() },
-              { label: "Top Pick", value: topTool?.name || "—" },
+              { label: "Tools ranked", value: tradeTools.length.toString() },
+              { label: "Average rating", value: avgRating.toFixed(1) + " / 5" },
+              { label: "Top pick", value: topTool?.name || "—" },
+              { label: "Starting price of top pick", value: topTool?.price || "—" },
             ].map((stat) => (
-              <div
-                key={stat.label}
-                className="p-4 rounded-xl border"
-                style={{
-                  backgroundColor: "rgba(255,255,255,0.04)",
-                  borderColor: "rgba(255,255,255,0.08)",
-                }}
-              >
-                <p className="text-xs" style={{ color: "#64748b" }}>
-                  {stat.label}
-                </p>
-                <p className="text-white font-bold mt-0.5 text-lg">{stat.value}</p>
+              <div key={stat.label}>
+                <dt className="text-xs" style={{ color: "#8a8378" }}>{stat.label}</dt>
+                <dd className="font-semibold" style={{ color: "#1a1714" }}>{stat.value}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -342,14 +310,8 @@ export function TradePage() {
               </ul>
             </section>
 
-            {/* Why AI & Software */}
-            <section
-              className="rounded-2xl p-8 border"
-              style={{
-                background: "linear-gradient(135deg, #0c1a2e 0%, #1e1b4b 100%)",
-                borderColor: "#1e3a5f",
-              }}
-            >
+            {/* Where software pays off */}
+            <section className="bg-white rounded-2xl p-8 border" style={{ borderColor: "#e2e8f0" }}>
               <div className="flex items-center gap-3 mb-5">
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center"
@@ -357,8 +319,8 @@ export function TradePage() {
                 >
                   <Zap className="w-5 h-5" style={{ color: "#f97316" }} />
                 </div>
-                <h2 className="text-xl font-bold text-white">
-                  Why AI & Software Matter for {trade.name}
+                <h2 className="text-xl font-bold" style={{ color: "#0f172a" }}>
+                  Where software pays off in {trade.name}
                 </h2>
               </div>
               <div className="space-y-4">
@@ -370,7 +332,7 @@ export function TradePage() {
                     >
                       {idx + 1}
                     </div>
-                    <p className="text-sm leading-relaxed" style={{ color: "#cbd5e1" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "#374151" }}>
                       {point}
                     </p>
                   </div>
