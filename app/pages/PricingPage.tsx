@@ -35,7 +35,7 @@ export function PricingPage() {
     );
   }
 
-  const canonicalUrl = `https://bestconstructionapps.com/pricing/${tool.slug}`;
+  const canonicalUrl = `https://bestconstructionapps.com/pricing/${tool.duplicateOf ?? tool.slug}`;
   const year = new Date().getFullYear();
   const isCustom = /custom|contact/i.test(tool.price);
   const toolTrades = trades.filter((t) => tool.tradeIds.includes(t.id));
@@ -61,7 +61,8 @@ export function PricingPage() {
 
   return (
     <>
-      <title>{`${tool.name} Pricing (${year}) — Cost, Plans & Cheaper Alternatives | BUILTECH`}</title>
+      <title>{`${tool.name} Pricing (${year}): Plans, Costs & Alternatives`}</title>
+      {tool.duplicateOf && <meta name="robots" content="noindex, follow" />}
       <meta
         name="description"
         content={`${tool.name} pricing in ${year}: starts at ${tool.price}. ${tool.priceNote} Compare cost against ${alternatives.slice(0, 3).map((a) => a.name).join(", ")} and more.`}

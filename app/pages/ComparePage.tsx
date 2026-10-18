@@ -12,6 +12,7 @@ import {
   SlidersHorizontal,
 } from "lucide-react";
 import { tools, trades, getTradeBySlug } from "../data/constructionData";
+import { comparisonPages } from "../data/seoPages";
 import {
   tradeCompareFeatures,
   toolCapabilityMap,
@@ -492,6 +493,29 @@ export function ComparePage() {
                 </Link>
               ))}
             </div>
+
+            {/* Every other head-to-head page, so none is orphaned */}
+            {(() => {
+              const detailSlugs = new Set(comparisonDetailPages.map((p) => p.slug));
+              const rest = comparisonPages.filter((p) => !detailSlugs.has(p.slug));
+              if (rest.length === 0) return null;
+              return (
+                <>
+                  <h3 className="text-base font-semibold mt-10 mb-3" style={{ color: "#0f172a" }}>
+                    All head-to-head comparisons
+                  </h3>
+                  <ul className="columns-1 sm:columns-2 lg:columns-3 gap-6 text-sm">
+                    {rest.map((p) => (
+                      <li key={p.slug} className="mb-2 break-inside-avoid">
+                        <Link to={`/compare/${p.slug}`} className="hover:underline" style={{ color: "#c2410c" }}>
+                          {p.title.replace(/\s*\(\d{4}\).*$/, "")}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              );
+            })()}
           </div>
         </div>
       </div>

@@ -6,6 +6,7 @@ import { tools, trades } from "../data/constructionData";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
+import { shortTitle } from "../lib/seo";
 import { defaultAuthor } from "../data/editorial";
 
 export function GuidePage() {
@@ -53,7 +54,7 @@ export function GuidePage() {
 
   return (
     <>
-      <title>{guide.title}</title>
+      <title>{shortTitle(guide.title)}</title>
       <meta name="description" content={guide.description} />
       <meta name="keywords" content={guide.keywords.join(", ")} />
       <link rel="canonical" href={canonicalUrl} />

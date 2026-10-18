@@ -38,7 +38,7 @@ export function GuidesIndexPage() {
 
   const canonicalUrl = "https://bestconstructionapps.com/guides";
   const currentYear = new Date().getFullYear();
-  const pageTitle = `Construction Software Guides & Resources | BUILTECH`;
+  const pageTitle = `Construction Software Guides & Buying Advice`;
   const pageDescription =
     "In-depth guides on construction software, AI technology, estimating, project management, and implementation. Written for contractors and construction professionals.";
 

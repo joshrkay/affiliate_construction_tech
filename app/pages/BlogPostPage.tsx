@@ -27,7 +27,7 @@ export function BlogPostPage() {
 
   return (
     <>
-      <title>{`${post.title} | BUILTECH`}</title>
+      <title>{post.title}</title>
       <meta name="description" content={post.description} />
       {post.keywords.length > 0 && <meta name="keywords" content={post.keywords.join(", ")} />}
       <link rel="canonical" href={canonicalUrl} />

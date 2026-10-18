@@ -176,7 +176,7 @@ export function TopRatedPage() {
                 className="bg-white rounded-2xl border p-6 transition-all hover:shadow-lg"
                 style={{ borderColor: "#e2e8f0" }}
               >
-                <div className="flex items-center gap-6">
+                <div className="flex flex-wrap items-center gap-4 sm:gap-6">
                   {/* Rank */}
                   <div
                     className="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shrink-0"
@@ -198,7 +198,7 @@ export function TopRatedPage() {
 
                   {/* Info */}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
                       <Link
                         to={`/tools/${tool.slug}`}
                         className="text-xl font-bold hover:text-orange-500 transition-colors"
@@ -228,7 +228,7 @@ export function TopRatedPage() {
                     <p className="text-sm mb-2" style={{ color: "#64748b" }}>
                       {tool.description}
                     </p>
-                    <div className="flex items-center gap-4">
+                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                       <div className="flex items-center gap-2">
                         <StarRating rating={tool.currentRating} size="md" />
                         <span className="text-lg font-bold" style={{ color: "#0f172a" }}>

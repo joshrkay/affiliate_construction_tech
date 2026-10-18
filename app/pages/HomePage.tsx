@@ -39,7 +39,7 @@ export function HomePage() {
 
   return (
     <div>
-      <title>BUILTECH — Best AI & Construction Software Directory ({currentYear})</title>
+      <title>Best Construction Software, Ranked by Trade ({currentYear})</title>
       <meta name="description" content="Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade." />
       <link rel="canonical" href="https://bestconstructionapps.com/" />
       <meta property="og:title" content={`BUILTECH — Best AI & Construction Software Directory (${currentYear})`} />

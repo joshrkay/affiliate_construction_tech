@@ -16,6 +16,7 @@ import { categories } from "../app/data/categoryTaxonomy";
 import { categoryPages } from "../app/data/categoryContent";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../app/data/editorial";
 import { loadBlogPostMeta } from "./lib/blogMeta";
+import { shortTitle } from "../app/lib/seo";
 
 const BASE_URL = "https://bestconstructionapps.com";
 const DIST = resolve(import.meta.dirname, "..", "dist");
@@ -113,7 +114,7 @@ const pages: PageMeta[] = [];
 // Homepage (already has index.html, but we'll update it with schemas)
 pages.push({
   path: "/",
-  title: `BUILTECH — Best AI & Construction Software Directory (${currentYear})`,
+  title: `Best Construction Software, Ranked by Trade (${currentYear})`,
   description: "Compare 140+ construction software tools rated by real contractors. Find the best AI-powered estimating, project management, field service, and scheduling software for your trade.",
   canonical: `${BASE_URL}/`,
   schemas: [
@@ -189,7 +190,7 @@ for (const trade of trades) {
   ];
   pages.push({
     path: `/trades/${trade.slug}`,
-    title: `Best ${trade.name} Software (${currentYear}) — Top AI & Tools | BUILTECH`,
+    title: `Best ${trade.name} Software (${currentYear}): Top Picks Ranked`,
     description: desc,
     canonical: tradeCanonical,
     schemas: [
@@ -240,10 +241,10 @@ for (const tool of tools) {
   const desc = `${tool.name} is rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. ${tool.tagline}. Starting at ${tool.price}.`;
   pages.push({
     path: `/tools/${tool.slug}`,
-    title: `${tool.name} Review (${currentYear}) — Pricing, Features & Ratings | BUILTECH`,
+    title: `${tool.name} Review (${currentYear}): Pricing, Pros & Cons`,
     description: desc,
     ogType: "product",
-    canonical: `${BASE_URL}/tools/${tool.slug}`,
+    canonical: `${BASE_URL}/tools/${tool.duplicateOf ?? tool.slug}`,
     schemas: [
       {
         "@context": "https://schema.org",
@@ -294,7 +295,7 @@ for (const page of comparisonDetailPages) {
 
   pages.push({
     path: `/compare/${page.slug}`,
-    title: page.title,
+    title: shortTitle(page.title),
     description: page.metaDescription,
     ogType: "article",
     canonical: `${BASE_URL}/compare/${page.slug}`,
@@ -307,7 +308,7 @@ for (const page of comparisonPages) {
   if (detailSlugs.has(page.slug)) continue;
   pages.push({
     path: `/compare/${page.slug}`,
-    title: page.title,
+    title: shortTitle(page.title),
     description: page.description,
     ogType: "article",
     canonical: `${BASE_URL}/compare/${page.slug}`,
@@ -329,7 +330,7 @@ for (const page of comparisonPages) {
 for (const page of bestForPages) {
   pages.push({
     path: `/best/${page.slug}`,
-    title: page.title,
+    title: shortTitle(page.title),
     description: page.description,
     ogType: "article",
     canonical: `${BASE_URL}/best/${page.slug}`,
@@ -352,7 +353,7 @@ for (const page of bestForPages) {
 for (const page of categoryPages) {
   pages.push({
     path: `/categories/${page.slug}`,
-    title: page.title,
+    title: shortTitle(page.title),
     description: page.metaDescription,
     ogType: "article",
     canonical: `${BASE_URL}/categories/${page.slug}`,
@@ -376,7 +377,7 @@ for (const page of categoryPages) {
 for (const guide of guidePages) {
   pages.push({
     path: `/guides/${guide.slug}`,
-    title: guide.title,
+    title: shortTitle(guide.title),
     description: guide.description,
     ogType: "article",
     canonical: `${BASE_URL}/guides/${guide.slug}`,
@@ -398,7 +399,7 @@ for (const guide of guidePages) {
 // Guides index
 pages.push({
   path: "/guides",
-  title: `Construction Software Guides & Resources | BUILTECH`,
+  title: `Construction Software Guides & Buying Advice`,
   description: "In-depth guides on construction software, AI technology, estimating, project management, and implementation. Written for contractors and construction professionals.",
   canonical: `${BASE_URL}/guides`,
   schemas: [
@@ -419,7 +420,7 @@ const blogPosts = loadBlogPostMeta();
 for (const post of blogPosts) {
   pages.push({
     path: `/blog/${post.slug}`,
-    title: `${post.title} | BUILTECH`,
+    title: post.title,
     description: post.description,
     ogType: "article",
     canonical: `${BASE_URL}/blog/${post.slug}`,
@@ -443,7 +444,7 @@ for (const post of blogPosts) {
 // Blog index
 pages.push({
   path: "/blog",
-  title: `Construction Tech Blog — News, Reviews & Buying Advice | BUILTECH`,
+  title: `Construction Tech Blog: News, Reviews & Buying Advice`,
   description: "Practical articles on construction software, AI tools, pricing, and buying decisions — written for contractors, estimators, and project managers.",
   canonical: `${BASE_URL}/blog`,
   schemas: [
@@ -462,10 +463,10 @@ for (const tool of tools) {
   const isCustom = /custom|contact/i.test(tool.price);
   pages.push({
     path: `/pricing/${tool.slug}`,
-    title: `${tool.name} Pricing (${currentYear}) — Cost, Plans & Cheaper Alternatives | BUILTECH`,
+    title: `${tool.name} Pricing (${currentYear}): Plans, Costs & Alternatives`,
     description: `${tool.name} pricing in ${currentYear}: starts at ${tool.price}. ${tool.priceNote}`,
     ogType: "article",
-    canonical: `${BASE_URL}/pricing/${tool.slug}`,
+    canonical: `${BASE_URL}/pricing/${tool.duplicateOf ?? tool.slug}`,
     schemas: [
       {
         "@context": "https://schema.org",
@@ -490,7 +491,7 @@ for (const tool of tools) {
 // Pricing index
 pages.push({
   path: "/pricing",
-  title: `Construction Software Pricing Index (${currentYear}) — Real Starting Prices | BUILTECH`,
+  title: `Construction Software Pricing Index (${currentYear})`,
   description: `Starting prices and pricing models for ${tools.length} construction software tools in one table — project management, estimating, field service, and more.`,
   canonical: `${BASE_URL}/pricing`,
   schemas: [
@@ -509,7 +510,7 @@ pages.push({
 // Cost calculator
 pages.push({
   path: "/cost-calculator",
-  title: `Construction Software Cost Calculator (${currentYear}) — Estimate Your Annual Spend | BUILTECH`,
+  title: `Construction Software Cost Calculator (${currentYear})`,
   description: "Free calculator: estimate what construction software will actually cost your team per month and per year, using real list prices from our directory.",
   canonical: `${BASE_URL}/cost-calculator`,
   schemas: [
@@ -529,7 +530,7 @@ pages.push({
 // Updates page
 pages.push({
   path: "/updates",
-  title: `Latest Updates — What's New on BUILTECH`,
+  title: `What's New on BUILTECH`,
   description: "New tools, refreshed reviews, corrected pricing, and site improvements — everything that changed recently on BUILTECH.",
   canonical: `${BASE_URL}/updates`,
 });
@@ -537,7 +538,7 @@ pages.push({
 // Top Rated page
 pages.push({
   path: "/top-rated",
-  title: `Top Rated Construction Software This Month (${currentYear}) | BUILTECH`,
+  title: `Top Rated Construction Software (${currentYear})`,
   description: "The highest-rated construction software and AI tools this month, ranked by contractor ratings across every trade.",
   canonical: `${BASE_URL}/top-rated`,
 });
@@ -545,7 +546,7 @@ pages.push({
 // Compare page
 pages.push({
   path: "/compare",
-  title: `Compare Construction Software Side by Side | BUILTECH`,
+  title: `Compare Construction Software Side by Side`,
   description: "Compare construction software tools side by side. Features, pricing, ratings, and reviews to help you choose the right platform for your trade.",
   canonical: `${BASE_URL}/compare`,
 });
@@ -553,7 +554,7 @@ pages.push({
 // Search page
 pages.push({
   path: "/search",
-  title: `Search Construction Software & AI Tools | BUILTECH`,
+  title: `Search Construction Software & AI Tools`,
   description: "Search and discover 140+ construction software tools. Find the best solutions for your trade by features, price, and ratings.",
   canonical: `${BASE_URL}/search`,
 });
@@ -561,7 +562,7 @@ pages.push({
 // About page (E-E-A-T anchor)
 pages.push({
   path: "/about",
-  title: `About BUILTECH — Who We Are & How We Evaluate Construction Software`,
+  title: `About BUILTECH: How We Evaluate Construction Software`,
   description: `BUILTECH is an independent construction technology directory tracking ${tools.length}+ software tools and AI platforms across ${trades.length} trades. Learn how we source ratings, evaluate tools, and keep the directory current.`,
   ogType: "website",
   canonical: `${BASE_URL}/about`,
@@ -580,7 +581,7 @@ pages.push({
 // Methodology page (E-E-A-T anchor)
 pages.push({
   path: "/methodology",
-  title: `BUILTECH Methodology — How We Evaluate Construction Software`,
+  title: `How BUILTECH Rates Construction Software`,
   description: `How BUILTECH sources ratings, scores tools, handles affiliate relationships, and keeps listings current across ${tools.length}+ construction software and AI platforms.`,
   ogType: "article",
   canonical: `${BASE_URL}/methodology`,
@@ -598,6 +599,32 @@ pages.push({
       "dateModified": defaultDateModified
     }
   ]
+});
+
+// Hub + legal pages
+pages.push({
+  path: "/best",
+  title: `Best Construction Software by Trade and Use Case (${currentYear})`,
+  description: `${bestForPages.length} ranked lists of the best construction software for specific trades and jobs: HVAC, plumbing, electrical, roofing, estimating, scheduling, and more.`,
+  canonical: `${BASE_URL}/best`,
+});
+pages.push({
+  path: "/categories",
+  title: `Construction Software Categories (${currentYear})`,
+  description: `Construction software categories explained: what the software does, which tools lead each category, and what to check before you buy.`,
+  canonical: `${BASE_URL}/categories`,
+});
+pages.push({
+  path: "/privacy",
+  title: `Privacy Policy`,
+  description: `What BUILTECH collects when you visit bestconstructionapps.com, how analytics and affiliate links work, and how to contact us.`,
+  canonical: `${BASE_URL}/privacy`,
+});
+pages.push({
+  path: "/terms",
+  title: `Terms of Use`,
+  description: `Terms for using bestconstructionapps.com: editorial independence, affiliate disclosure, accuracy of pricing and ratings, and limits of liability.`,
+  canonical: `${BASE_URL}/terms`,
 });
 
 // Generate all pages with full server-rendered bodies

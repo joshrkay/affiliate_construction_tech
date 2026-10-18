@@ -27,7 +27,7 @@ export function PricingIndexPage() {
 
   return (
     <>
-      <title>Construction Software Pricing Index (2026) — Real Starting Prices | BUILTECH</title>
+      <title>Construction Software Pricing Index (2026)</title>
       <meta
         name="description"
         content={`Starting prices and pricing models for ${tools.length} construction software tools in one table — project management, estimating, field service, and more. Updated continuously.`}
@@ -55,6 +55,10 @@ export function PricingIndexPage() {
                 Starting prices and pricing models for {tools.length} construction software tools —
                 because most vendors make you sit through a demo to hear a number.
               </p>
+          <p className="text-xs mt-3" style={{ color: "#64748b" }}>
+            Machine-readable version for AI assistants and spreadsheets:{" "}
+            <a href="/pricing.md" className="underline" style={{ color: "#fb923c" }}>/pricing.md</a>
+          </p>
             </div>
           </div>
         </div>

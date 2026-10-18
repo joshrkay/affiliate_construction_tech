@@ -10,9 +10,11 @@ import { comparisonDetailPages } from "../app/data/comparisonData";
 import { guidePages } from "../app/data/guidePages";
 import { categoryPages } from "../app/data/categoryContent";
 import { loadBlogPostMeta } from "./lib/blogMeta";
+import { defaultDateModified } from "../app/data/editorial";
 
 const BASE_URL = "https://bestconstructionapps.com";
-const today = new Date().toISOString().slice(0, 10);
+// Pages only claim a new modification date when editorial content actually changes.
+const today = defaultDateModified;
 
 interface SitemapEntry {
   loc: string;
@@ -36,8 +38,9 @@ for (const trade of trades) {
   });
 }
 
-// Tool pages
+// Tool pages (duplicates canonicalize elsewhere and are left out)
 for (const tool of tools) {
+  if (tool.duplicateOf) continue;
   entries.push({
     loc: `/tools/${tool.slug}`,
     changefreq: "weekly",
@@ -82,6 +85,7 @@ for (const post of loadBlogPostMeta()) {
 entries.push({ loc: "/blog", changefreq: "weekly", priority: "0.7", lastmod: today });
 
 // Best-for pages
+entries.push({ loc: "/best", changefreq: "monthly", priority: "0.7", lastmod: today });
 for (const page of bestForPages) {
   entries.push({
     loc: `/best/${page.slug}`,
@@ -92,12 +96,13 @@ for (const page of bestForPages) {
 }
 
 // Category pages
+entries.push({ loc: "/categories", changefreq: "monthly", priority: "0.6", lastmod: today });
 for (const page of categoryPages) {
   entries.push({
     loc: `/categories/${page.slug}`,
     changefreq: "monthly",
     priority: "0.8",
-    lastmod: page.lastUpdated,
+    lastmod: today,
   });
 }
 
@@ -119,6 +124,7 @@ entries.push({ loc: "/compare", changefreq: "monthly", priority: "0.6", lastmod:
 
 // Pricing pages
 for (const tool of tools) {
+  if (tool.duplicateOf) continue;
   entries.push({
     loc: `/pricing/${tool.slug}`,
     changefreq: "monthly",
@@ -143,6 +149,8 @@ entries.push({ loc: "/search", changefreq: "monthly", priority: "0.5", lastmod: 
 // About & Methodology (E-E-A-T pages)
 entries.push({ loc: "/about", changefreq: "monthly", priority: "0.6", lastmod: today });
 entries.push({ loc: "/methodology", changefreq: "monthly", priority: "0.6", lastmod: today });
+entries.push({ loc: "/privacy", changefreq: "yearly", priority: "0.2", lastmod: today });
+entries.push({ loc: "/terms", changefreq: "yearly", priority: "0.2", lastmod: today });
 
 // Build XML
 const xml = `<?xml version="1.0" encoding="UTF-8"?>

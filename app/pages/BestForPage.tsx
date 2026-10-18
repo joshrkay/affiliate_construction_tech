@@ -7,6 +7,7 @@ import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
+import { shortTitle } from "../lib/seo";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 export function BestForPage() {
@@ -64,7 +65,7 @@ export function BestForPage() {
 
   return (
     <>
-      <title>{page.title}</title>
+      <title>{shortTitle(page.title)}</title>
       <meta name="description" content={page.description} />
       <meta name="keywords" content={page.keywords.join(", ")} />
       <link rel="canonical" href={canonicalUrl} />

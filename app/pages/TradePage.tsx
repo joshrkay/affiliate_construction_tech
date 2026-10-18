@@ -23,6 +23,7 @@ import { ToolCard } from "../components/ToolCard";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { bestForPages } from "../data/seoPages";
 import { getShortCtaLabel } from "../lib/outbound";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
@@ -140,7 +141,7 @@ export function TradePage() {
 
   return (
     <div>
-      <title>Best {trade.name} Software ({currentYear}) — Top AI & Tools | BUILTECH</title>
+      <title>Best {trade.name} Software ({currentYear}): Top Picks Ranked</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
       <meta property="og:title" content={`Best ${trade.name} Software (${currentYear}) — Top AI & Tools`} />
@@ -533,6 +534,29 @@ export function TradePage() {
                 ))}
               </div>
             </div>
+
+            {/* Best-of lists for this trade */}
+            {bestForPages.some((p) => p.tradeId === trade.id) && (
+              <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>
+                <h3 className="text-sm font-semibold mb-3" style={{ color: "#0f172a" }}>
+                  Best-of lists for {trade.name}
+                </h3>
+                <ul className="space-y-2">
+                  {bestForPages
+                    .filter((p) => p.tradeId === trade.id)
+                    .map((p) => (
+                      <li key={p.slug}>
+                        <Link to={`/best/${p.slug}`} className="text-sm hover:underline" style={{ color: "#c2410c" }}>
+                          {p.title.replace(/\s*\(\d{4}\)\s*$/, "")}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+                <Link to="/best" className="mt-3 inline-block text-xs font-medium hover:underline" style={{ color: "#64748b" }}>
+                  All best-of lists →
+                </Link>
+              </div>
+            )}
 
             {/* Other Trades */}
             <div className="rounded-2xl p-6 bg-white border" style={{ borderColor: "#e2e8f0" }}>

@@ -29,7 +29,7 @@ emit("");
 emit(`## Tools (${tools.length} total)`);
 emit("");
 
-for (const tool of tools) {
+for (const tool of tools.filter((t) => !t.duplicateOf)) {
   emit(`### ${tool.name}`);
   emit("");
   emit(`- **URL:** ${BASE_URL}/tools/${tool.slug}`);

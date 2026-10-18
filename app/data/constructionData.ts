@@ -42,6 +42,12 @@ export interface Tool {
    * program. Never shown to visitors.
    */
   affiliateProgramUrl?: string;
+  /**
+   * Set when this entry duplicates another tool (same product listed twice).
+   * The page stays reachable but canonicalizes to the primary slug and is
+   * excluded from the sitemap and machine-readable exports.
+   */
+  duplicateOf?: string;
   logoColor: string;
   logoInitials: string;
   overallRank?: number;
@@ -799,6 +805,7 @@ export const tools: Tool[] = [
   {
     id: "fieldedge",
     slug: "fieldedge",
+    duplicateOf: "field-edge",
     name: "FieldEdge",
     tagline: "Field service software for HVAC & plumbing",
     description:
@@ -2047,6 +2054,7 @@ export const tools: Tool[] = [
   {
     id: "stack",
     slug: "stack",
+    duplicateOf: "stack-takeoff",
     name: "STACK",
     tagline: "Cloud-based construction takeoff and estimating",
     description:
@@ -3708,51 +3716,6 @@ export const tools: Tool[] = [
     verified: true,
     yearFounded: 2017,
     companySize: "1-10",
-  },
-  {
-    id: "stack-takeoff",
-    slug: "stack-takeoff",
-    name: "STACK",
-    tagline: "Cloud-based construction takeoff & estimating",
-    description:
-      "STACK is cloud-based construction takeoff and estimating software. Features include digital takeoffs, pre-built templates, and real-time collaboration.",
-    category: "Software",
-    type: "Takeoff & Estimating",
-    price: "$59/user/month",
-    priceNote: "Annual or monthly",
-    rating: 4.5,
-    reviewCount: 1247,
-    tradeIds: ["general-contracting", "electrical", "hvac", "plumbing", "roofing", "concrete-masonry"],
-    features: [
-      "Digital Takeoff",
-      "Cloud-Based",
-      "Estimating",
-      "Pre-Built Templates",
-      "Real-Time Collaboration",
-      "Material Pricing",
-      "Labor Rates",
-      "Reporting",
-    ],
-    pros: [
-      "Cloud-based (access anywhere)",
-      "Easy collaboration",
-      "Good templates",
-      "Mobile friendly",
-      "Regular updates",
-    ],
-    cons: [
-      "Monthly cost",
-      "Learning curve",
-      "Internet required",
-      "Limited accounting",
-    ],
-    website: "https://stackct.com",
-    logoColor: "#22c55e",
-    logoInitials: "ST",
-    overallRank: 66,
-    verified: true,
-    yearFounded: 2014,
-    companySize: "50-100",
   },
   {
     id: "pro-estimate",

@@ -76,7 +76,7 @@ export function CostCalculatorPage() {
 
   return (
     <>
-      <title>Construction Software Cost Calculator (2026) — Estimate Your Annual Spend | BUILTECH</title>
+      <title>Construction Software Cost Calculator (2026)</title>
       <meta
         name="description"
         content="Free calculator: estimate what construction software will actually cost your team per month and per year. Compare real list prices across project management, estimating, and field service tools."

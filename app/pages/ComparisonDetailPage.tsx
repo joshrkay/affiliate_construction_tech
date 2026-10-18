@@ -8,6 +8,7 @@ import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
+import { shortTitle } from "../lib/seo";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const GENERIC_FEATURES: CompareFeatureGroup[] = [
@@ -138,7 +139,7 @@ export function ComparisonDetailPage() {
   }
 
   const canonicalUrl = `https://bestconstructionapps.com/compare/${slug}`;
-  const pageTitle = comparison?.title ?? detail!.title;
+  const pageTitle = shortTitle(comparison?.title ?? detail!.title);
   const pageDescription = comparison?.description ?? detail!.metaDescription;
   const name1 = hasToolData ? selectedTools[0].name : toolDisplayName(detail!.toolId1);
   const name2 = hasToolData ? selectedTools[1].name : toolDisplayName(detail!.toolId2);

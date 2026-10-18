@@ -12,7 +12,7 @@ export function AboutPage() {
 
   return (
     <>
-      <title>About BUILTECH — Who We Are & How We Evaluate Construction Software</title>
+      <title>About BUILTECH: How We Evaluate Construction Software</title>
       <meta
         name="description"
         content={`BUILTECH is an independent construction technology directory tracking ${tools.length}+ software tools and AI platforms across ${trades.length} trades. Learn how we source ratings, evaluate tools, and keep the directory current.`}

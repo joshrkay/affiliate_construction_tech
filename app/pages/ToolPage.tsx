@@ -33,7 +33,7 @@ import { useApp } from "../context/AppContext";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getCtaLabel } from "../lib/outbound";
-import { comparisonPages } from "../data/seoPages";
+import { comparisonPages, bestForPages } from "../data/seoPages";
 import { defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
@@ -126,15 +126,16 @@ export function ToolPage() {
   };
 
   const currentYear = new Date().getFullYear();
-  const canonicalUrl = `https://bestconstructionapps.com/tools/${slug}`;
+  const canonicalUrl = `https://bestconstructionapps.com/tools/${tool.duplicateOf ?? slug}`;
   const metaDescription = `${tool.name} is rated ${tool.rating.toFixed(1)}/5 by ${tool.reviewCount.toLocaleString()} contractors. ${tool.tagline}. Starting at ${tool.price}.`;
   const tradeNames = toolTrades.map((t) => t.name).join(", ");
 
   return (
     <div>
-      <title>{tool.name} Review ({currentYear}) — Pricing, Features & Ratings | BUILTECH</title>
+      <title>{tool.name} Review ({currentYear}): Pricing, Pros & Cons</title>
       <meta name="description" content={metaDescription} />
       <link rel="canonical" href={canonicalUrl} />
+      {tool.duplicateOf && <meta name="robots" content="noindex, follow" />}
       <meta property="og:title" content={`${tool.name} Review (${currentYear}) — Pricing, Features & Ratings`} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="product" />
@@ -671,6 +672,27 @@ export function ToolPage() {
                 ))}
               </div>
             </div>
+
+            {/* Best-of lists where this tool competes */}
+            {toolTrades[0] && bestForPages.some((p) => p.tradeId === toolTrades[0].id) && (
+              <div className="bg-white rounded-2xl border p-6" style={{ borderColor: "#e2e8f0" }}>
+                <h3 className="font-bold text-sm mb-3" style={{ color: "#0f172a" }}>
+                  Ranked lists for {toolTrades[0].name}
+                </h3>
+                <ul className="space-y-2">
+                  {bestForPages
+                    .filter((p) => p.tradeId === toolTrades[0].id)
+                    .slice(0, 4)
+                    .map((p) => (
+                      <li key={p.slug}>
+                        <Link to={`/best/${p.slug}`} className="text-sm hover:underline" style={{ color: "#c2410c" }}>
+                          {p.title.replace(/\s*\(\d{4}\)\s*$/, "")}
+                        </Link>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            )}
 
             {/* Related Tools */}
             {relatedTools.length > 0 && (
