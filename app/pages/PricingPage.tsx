@@ -4,6 +4,7 @@ import { ChevronRight, DollarSign, ExternalLink, Check } from "lucide-react";
 import { tools, trades } from "../data/constructionData";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 /**
@@ -131,16 +132,9 @@ export function PricingPage() {
               </p>
               <p className="text-sm" style={{ color: "#374151" }}>{tool.priceNote}</p>
             </div>
-            <a
-              href={tool.affiliateUrl || tool.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-sm font-medium text-white"
-              style={{ backgroundColor: "#f97316" }}
-            >
-              Visit {tool.name} <ExternalLink className="w-4 h-4" />
-            </a>
+            <OutboundCta tool={tool} placement="pricing_hero" size="lg" />
           </div>
+          <AffiliateDisclosure className="mt-4" />
         </div>
 
         {/* What you get */}

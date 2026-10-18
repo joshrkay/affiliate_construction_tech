@@ -6,7 +6,6 @@ import {
   Minus,
   ChevronRight,
   ArrowLeft,
-  ExternalLink,
   Star,
   GitCompareArrows,
   Plus,
@@ -20,6 +19,8 @@ import {
   comparisonDetailPages,
 } from "../data/comparisonData";
 import { StarRating } from "../components/StarRating";
+import { OutboundCta } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { useApp } from "../context/AppContext";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -725,15 +726,13 @@ export function ComparePage() {
                       >
                         Details
                       </Link>
-                      <a
-                        href={tool.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-1.5 rounded-lg text-xs font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
-                      >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
+                      <OutboundCta
+                        tool={tool}
+                        placement="compare_builder"
+                        label={getShortCtaLabel(tool)}
+                        size="sm"
+                        className="flex-1 rounded-lg !py-1.5"
+                      />
                     </div>
 
                     <button

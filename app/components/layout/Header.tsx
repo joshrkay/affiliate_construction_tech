@@ -151,19 +151,19 @@ export function Header() {
               </button>
             )}
             <button
-              onClick={openSubmitModal}
-              className="text-sm px-4 py-2 rounded-lg border transition-colors hover:bg-white/5"
-              style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
-            >
-              Submit Tool
-            </button>
-            <button
               onClick={() => openReviewModal()}
-              className="text-sm px-4 py-2 rounded-lg font-medium text-white transition-all hover:brightness-110"
-              style={{ backgroundColor: "#f97316" }}
+              className="text-sm px-3 py-2 rounded-lg transition-colors hover:bg-white/5"
+              style={{ color: "#94a3b8" }}
             >
               Write a Review
             </button>
+            <Link
+              to="/top-rated"
+              className="text-sm px-4 py-2 rounded-lg font-medium text-white transition-all hover:brightness-110"
+              style={{ backgroundColor: "#f97316" }}
+            >
+              Find Your Software
+            </Link>
           </div>
 
           {/* Mobile Toggle */}
@@ -240,20 +240,30 @@ export function Header() {
               <GitCompareArrows className="w-4 h-4" />
               Compare Tools {compareList.length > 0 && `(${compareList.length})`}
             </Link>
-            <button
-              onClick={() => { openSubmitModal(); setMobileOpen(false); }}
-              className="w-full text-sm px-4 py-2.5 rounded-lg border font-medium"
-              style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
-            >
-              Submit a Tool
-            </button>
-            <button
-              onClick={() => { openReviewModal(); setMobileOpen(false); }}
-              className="w-full text-sm px-4 py-2.5 rounded-lg font-medium text-white"
+            <Link
+              to="/top-rated"
+              className="w-full text-sm px-4 py-2.5 rounded-lg font-medium text-white text-center"
               style={{ backgroundColor: "#f97316" }}
+              onClick={() => setMobileOpen(false)}
             >
-              Write a Review
-            </button>
+              Find Your Software
+            </Link>
+            <div className="flex gap-2">
+              <button
+                onClick={() => { openReviewModal(); setMobileOpen(false); }}
+                className="flex-1 text-sm px-4 py-2.5 rounded-lg border font-medium"
+                style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
+              >
+                Write a Review
+              </button>
+              <button
+                onClick={() => { openSubmitModal(); setMobileOpen(false); }}
+                className="flex-1 text-sm px-4 py-2.5 rounded-lg border font-medium"
+                style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
+              >
+                Submit a Tool
+              </button>
+            </div>
           </div>
         </div>
       )}

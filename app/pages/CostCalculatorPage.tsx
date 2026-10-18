@@ -2,6 +2,8 @@ import { Link } from "react-router";
 import { useMemo, useState } from "react";
 import { ChevronRight, Calculator, Users, ExternalLink } from "lucide-react";
 import { tools } from "../data/constructionData";
+import { OutboundCta } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 
 interface ParsedPrice {
   low: number; // monthly $, per user when perUser
@@ -214,15 +216,13 @@ export function CostCalculatorPage() {
                     </td>
                   )}
                   <td className="px-4 py-3">
-                    <a
-                      href={tool.affiliateUrl || tool.website}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs font-medium whitespace-nowrap"
-                      style={{ color: "#f97316" }}
-                    >
-                      Visit <ExternalLink className="w-3 h-3" />
-                    </a>
+                    <OutboundCta
+                      tool={tool}
+                      placement="cost_calculator"
+                      variant="link"
+                      label={getShortCtaLabel(tool)}
+                      className="text-xs whitespace-nowrap"
+                    />
                   </td>
                 </tr>
               ))}

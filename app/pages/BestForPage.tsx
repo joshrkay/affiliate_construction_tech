@@ -5,6 +5,8 @@ import { tools, trades, getTradeBySlug, getToolsForTrade } from "../data/constru
 import { bestForPages, getBestForBySlug } from "../data/seoPages";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 export function BestForPage() {
@@ -277,19 +279,19 @@ export function BestForPage() {
                 >
                   Details
                 </Link>
-                <a
-                  href={tool.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-1 flex-1 py-2 rounded-lg text-sm font-medium text-white"
-                  style={{ backgroundColor: "#f97316" }}
-                >
-                  Visit <ExternalLink className="w-3 h-3" />
-                </a>
+                <OutboundCta
+                  tool={tool}
+                  placement="best_for_card"
+                  label={getShortCtaLabel(tool)}
+                  size="sm"
+                  className="flex-1 rounded-lg !py-2"
+                />
               </div>
             </div>
           ))}
         </div>
+
+        <AffiliateDisclosure className="mt-4" />
 
         {/* More Tools CTA */}
         {trade.toolIds.length > 6 && (

@@ -4,6 +4,8 @@ import { ChevronRight, BookOpen, ArrowRight } from "lucide-react";
 import { getGuideBySlug, guidePages } from "../data/guidePages";
 import { tools, trades } from "../data/constructionData";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { defaultAuthor } from "../data/editorial";
 
 export function GuidePage() {
@@ -157,7 +159,7 @@ export function GuidePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 min-w-0 space-y-8">
             {/* Sections */}
             {guide.sections.map((section, idx) => (
               <div key={idx} className="bg-white rounded-2xl border p-6" style={{ borderColor: "#e2e8f0" }}>
@@ -192,7 +194,7 @@ export function GuidePage() {
           </div>
 
           {/* Sidebar */}
-          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-24 self-start">
+          <div className="lg:col-span-1 min-w-0 space-y-6 lg:sticky lg:top-24 self-start">
             {/* Related Tools Card */}
             {relatedTools.length > 0 && (
               <div className="bg-white rounded-2xl border p-5" style={{ borderColor: "#e2e8f0" }}>
@@ -245,24 +247,67 @@ export function GuidePage() {
               </div>
             )}
 
-            {/* CTA Card */}
-            <div className="rounded-2xl p-5" style={{ backgroundColor: "#0c1a2e" }}>
-              <div className="flex items-center gap-2 mb-3">
-                <BookOpen className="w-5 h-5" style={{ color: "#f97316" }} />
-                <h3 className="text-sm font-semibold text-white">Explore More Guides</h3>
+            {/* Top picks CTA — the guide's related tools, ranked, with a real next step */}
+            {relatedTools.length > 0 ? (
+              <div className="rounded-2xl p-5" style={{ backgroundColor: "#0c1a2e" }}>
+                <h3 className="text-sm font-semibold text-white mb-1">Ready to pick one?</h3>
+                <p className="text-xs mb-4" style={{ color: "#94a3b8" }}>
+                  Top-rated tools for this guide. Most offer a free trial or demo.
+                </p>
+                <div className="space-y-2.5">
+                  {[...relatedTools]
+                    .sort((a, b) => b.rating - a.rating)
+                    .slice(0, 3)
+                    .map((tool, idx) => (
+                      <div key={tool.id} className="flex items-center gap-3">
+                        <span className="text-xs font-bold w-4 shrink-0" style={{ color: "#fb923c" }}>
+                          {idx + 1}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-sm font-medium text-white truncate">{tool.name}</p>
+                          <p className="text-xs" style={{ color: "#94a3b8" }}>
+                            {tool.rating.toFixed(1)} ★ · from {tool.price}
+                          </p>
+                        </div>
+                        <OutboundCta
+                          tool={tool}
+                          placement="guide_top_picks"
+                          label={getShortCtaLabel(tool)}
+                          size="sm"
+                          className="rounded-lg shrink-0"
+                        />
+                      </div>
+                    ))}
+                </div>
+                <AffiliateDisclosure variant="dark" className="mt-4" />
+                <Link
+                  to="/guides"
+                  className="mt-3 flex items-center justify-center gap-1.5 text-xs font-medium hover:underline"
+                  style={{ color: "#94a3b8" }}
+                >
+                  <BookOpen className="w-3.5 h-3.5" />
+                  Browse all guides
+                </Link>
               </div>
-              <p className="text-sm mb-4" style={{ color: "#94a3b8" }}>
-                Browse our full library of construction technology guides, how-tos, and industry insights.
-              </p>
-              <Link
-                to="/guides"
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-medium text-white"
-                style={{ backgroundColor: "#f97316" }}
-              >
-                View All Guides
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
+            ) : (
+              <div className="rounded-2xl p-5" style={{ backgroundColor: "#0c1a2e" }}>
+                <div className="flex items-center gap-2 mb-3">
+                  <BookOpen className="w-5 h-5" style={{ color: "#f97316" }} />
+                  <h3 className="text-sm font-semibold text-white">Not sure which tool fits?</h3>
+                </div>
+                <p className="text-sm mb-4" style={{ color: "#94a3b8" }}>
+                  See the highest-rated construction software, ranked by contractor reviews.
+                </p>
+                <Link
+                  to="/top-rated"
+                  className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-sm font-medium text-white"
+                  style={{ backgroundColor: "#f97316" }}
+                >
+                  See Top-Rated Tools
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

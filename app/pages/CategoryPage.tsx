@@ -6,6 +6,8 @@ import { getToolsByCategory, getToolById } from "../data/toolDataset";
 import { categoryPages } from "../data/categoryContent";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { defaultAuthor } from "../data/editorial";
 
 export function CategoryPage() {
@@ -307,27 +309,13 @@ export function CategoryPage() {
                     >
                       Details
                     </Link>
-                    {tool.affiliateUrl ? (
-                      <a
-                        href={tool.affiliateUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-2 rounded-lg text-sm font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
-                      >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
-                    ) : (
-                      <a
-                        href={tool.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-1 flex-1 py-2 rounded-lg text-sm font-medium text-white"
-                        style={{ backgroundColor: "#f97316" }}
-                      >
-                        Visit <ExternalLink className="w-3 h-3" />
-                      </a>
-                    )}
+                    <OutboundCta
+                      tool={tool}
+                      placement="category_card"
+                      label={getShortCtaLabel(tool)}
+                      size="sm"
+                      className="flex-1 rounded-lg !py-2"
+                    />
                   </div>
                 </div>
               ))}

@@ -22,6 +22,8 @@ import {
 import { ToolCard } from "../components/ToolCard";
 import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
 import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
@@ -70,6 +72,50 @@ export function TradePage() {
 
   const currentYear = new Date().getFullYear();
   const canonicalUrl = `https://bestconstructionapps.com/trades/${slug}`;
+
+  const topPickCard = topTool ? (
+    <div
+      className="rounded-2xl p-6 border"
+      style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
+    >
+      <div className="flex items-center gap-2 mb-3">
+        <TrendingUp className="w-4 h-4" style={{ color: "#d97706" }} />
+        <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#d97706" }}>
+          Top Pick for {trade.name}
+        </span>
+      </div>
+      <div className="flex items-center gap-3 mb-3">
+        <div
+          className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm"
+          style={{ backgroundColor: topTool.logoColor }}
+        >
+          {topTool.logoInitials}
+        </div>
+        <div>
+          <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
+            {topTool.name}
+          </p>
+          <p className="text-xs" style={{ color: "#64748b" }}>
+            {topTool.type} · from {topTool.price}
+          </p>
+        </div>
+      </div>
+      <StarRating rating={topTool.rating} showValue />
+      <p className="text-xs mt-3 leading-relaxed" style={{ color: "#374151" }}>
+        {topTool.tagline}. Highest-rated of {tradeTools.length} {trade.name} tools, based on{" "}
+        {topTool.reviewCount.toLocaleString()} contractor reviews.
+      </p>
+      <OutboundCta tool={topTool} placement="trade_top_pick" className="mt-4 w-full" />
+      <Link
+        to={`/tools/${topTool.slug}`}
+        className="mt-2 flex items-center justify-center gap-1.5 py-2 rounded-xl text-sm font-medium transition-colors hover:bg-amber-100"
+        style={{ color: "#92400e" }}
+      >
+        Read the full review <ArrowRight className="w-4 h-4" />
+      </Link>
+      <AffiliateDisclosure className="mt-3" />
+    </div>
+  ) : null;
   const metaDescription = `Compare the top ${tradeTools.length} ${trade.name} software tools rated by real contractors. Find AI-powered and traditional solutions for ${trade.name} businesses in ${currentYear}.`;
 
   // Build FAQ content from trade data
@@ -278,7 +324,10 @@ export function TradePage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-10">
+          <div className="lg:col-span-2 min-w-0 space-y-10">
+            {/* Top pick first on phones (the sidebar renders below the fold there) */}
+            <div className="lg:hidden">{topPickCard}</div>
+
             {/* What is this trade */}
             <section className="bg-white rounded-2xl border p-8" style={{ borderColor: "#e2e8f0" }}>
               <h2 className="text-xl font-bold mb-4" style={{ color: "#0f172a" }}>
@@ -419,48 +468,9 @@ export function TradePage() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Top Pick */}
-            {topTool && (
-              <div
-                className="rounded-2xl p-6 border"
-                style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
-              >
-                <div className="flex items-center gap-2 mb-3">
-                  <TrendingUp className="w-4 h-4" style={{ color: "#d97706" }} />
-                  <span className="text-xs font-semibold uppercase tracking-wider" style={{ color: "#d97706" }}>
-                    Top Pick
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: topTool.logoColor }}
-                  >
-                    {topTool.logoInitials}
-                  </div>
-                  <div>
-                    <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
-                      {topTool.name}
-                    </p>
-                    <p className="text-xs" style={{ color: "#64748b" }}>
-                      {topTool.type}
-                    </p>
-                  </div>
-                </div>
-                <StarRating rating={topTool.rating} showValue />
-                <p className="text-xs mt-3 leading-relaxed" style={{ color: "#374151" }}>
-                  {topTool.tagline}
-                </p>
-                <Link
-                  to={`/tools/${topTool.slug}`}
-                  className="mt-4 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:brightness-110"
-                  style={{ backgroundColor: "#d97706" }}
-                >
-                  View Details <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            )}
+          <div className="min-w-0 space-y-6">
+            {/* Top Pick (desktop) */}
+            <div className="hidden lg:block lg:sticky lg:top-20">{topPickCard}</div>
 
             {/* AI Tools */}
             {aiTools.length > 0 && (
@@ -582,11 +592,12 @@ function RankedToolRow({
   const cat = catColors[tool.category] || catColors["Software"];
 
   return (
-    <Link
-      to={`/tools/${tool.slug}`}
-      className="group flex items-center gap-4 bg-white rounded-2xl border p-4 hover:shadow-lg transition-all duration-200"
+    <div
+      className="group relative flex items-center gap-4 bg-white rounded-2xl border p-4 hover:shadow-lg transition-all duration-200"
       style={{ borderColor: "#e2e8f0" }}
     >
+      {/* Stretched link: the row opens the review; compare + vendor CTA sit above it */}
+      <Link to={`/tools/${tool.slug}`} className="absolute inset-0 z-0" aria-label={`${tool.name} review`} />
       {/* Rank */}
       <div
         className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm shrink-0"
@@ -637,7 +648,7 @@ function RankedToolRow({
         </div>
       </div>
 
-      {/* Price + Arrow */}
+      {/* Price + actions */}
       <div className="text-right shrink-0 flex flex-col items-end gap-2">
         <div>
           <p className="text-xs" style={{ color: "#94a3b8" }}>
@@ -647,6 +658,13 @@ function RankedToolRow({
             {tool.price}
           </p>
         </div>
+        <OutboundCta
+          tool={tool}
+          placement="tool_card"
+          label={getShortCtaLabel(tool)}
+          size="sm"
+          className="relative z-10 rounded-lg"
+        />
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -654,7 +672,7 @@ function RankedToolRow({
             if (!compareMax) onToggleCompare();
           }}
           title={inCompare ? "Remove from compare" : compareMax ? "Compare list full" : "Add to compare"}
-          className="flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border transition-all"
+          className="relative z-10 flex items-center gap-1.5 text-xs px-2.5 py-1.5 rounded-lg border transition-all"
           style={{
             backgroundColor: inCompare ? "#fff7ed" : "white",
             borderColor: inCompare ? "#f97316" : "#e2e8f0",
@@ -666,11 +684,7 @@ function RankedToolRow({
           {inCompare ? <Check className="w-3.5 h-3.5" /> : <GitCompareArrows className="w-3.5 h-3.5" />}
           {inCompare ? "Added" : "Compare"}
         </button>
-        <ArrowRight
-          className="w-4 h-4 ml-auto group-hover:translate-x-0.5 transition-transform"
-          style={{ color: "#f97316" }}
-        />
       </div>
-    </Link>
+    </div>
   );
 }

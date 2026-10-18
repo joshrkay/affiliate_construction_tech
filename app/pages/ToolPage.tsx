@@ -6,7 +6,6 @@ import {
   XCircle,
   Star,
   ThumbsUp,
-  ExternalLink,
   Shield,
   Calendar,
   Building2,
@@ -32,6 +31,9 @@ import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { PageByline } from "../components/PageByline";
+import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
+import { getCtaLabel } from "../lib/outbound";
+import { comparisonPages } from "../data/seoPages";
 import { defaultDatePublished, defaultDateModified } from "../data/editorial";
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
@@ -67,6 +69,16 @@ export function ToolPage() {
     .slice(0, 3);
 
   const catStyle = categoryColors[tool.category] || categoryColors["Software"];
+
+  // Prefer an editorial head-to-head page; fall back to the compare builder.
+  const compareTarget = relatedTools[0]
+    ? (() => {
+        const editorial = comparisonPages.find(
+          (c) => c.tools.includes(tool.id) && c.tools.includes(relatedTools[0].id),
+        );
+        return editorial ? `/compare/${editorial.slug}` : `/compare?tools=${tool.id},${relatedTools[0].id}`;
+      })()
+    : null;
 
   const displayedReviewTotal = reviews.length;
 
@@ -306,7 +318,7 @@ export function ToolPage() {
 
             {/* CTA */}
             <div
-              className="shrink-0 p-5 rounded-2xl border text-center md:w-52"
+              className="shrink-0 p-5 rounded-2xl border text-center md:w-60"
               style={{ backgroundColor: "rgba(255,255,255,0.04)", borderColor: "#1e3a5f" }}
             >
               <p className="text-xs" style={{ color: "#64748b" }}>
@@ -323,22 +335,7 @@ export function ToolPage() {
               >
                 Full pricing breakdown →
               </Link>
-              <a
-                href={tool.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-1.5 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:brightness-110"
-                style={{ backgroundColor: "#f97316" }}
-              >
-                Visit Website <ExternalLink className="w-3.5 h-3.5" />
-              </a>
-              <button
-                onClick={() => openReviewModal(tool.id)}
-                className="mt-2 w-full py-2.5 rounded-xl text-sm font-medium border transition-colors hover:bg-white/5"
-                style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
-              >
-                Write a Review
-              </button>
+              <OutboundCta tool={tool} placement="tool_hero" className="mt-4 w-full" />
               <button
                 onClick={handleCompareToggle}
                 disabled={compareMax}
@@ -354,6 +351,14 @@ export function ToolPage() {
                   <><GitCompareArrows className="w-4 h-4" /> Add to Compare</>
                 )}
               </button>
+              <button
+                onClick={() => openReviewModal(tool.id)}
+                className="mt-3 text-xs underline underline-offset-2 hover:text-white transition-colors"
+                style={{ color: "#94a3b8" }}
+              >
+                Used {tool.name}? Write a review
+              </button>
+              <AffiliateDisclosure variant="dark" className="mt-3 text-left" />
             </div>
           </div>
         </div>
@@ -363,7 +368,7 @@ export function ToolPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid lg:grid-cols-3 gap-10">
           {/* Main */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 min-w-0 space-y-8">
             {/* AI-extractable Summary */}
             <p className="text-sm leading-relaxed mb-6 p-4 rounded-xl" style={{ backgroundColor: "#f8fafc", color: "#475569" }}>
               {tool.name} is a {tool.category.toLowerCase()} rated {tool.rating.toFixed(1)}/5 by {tool.reviewCount.toLocaleString()}+ contractors. Starting at {tool.price}, it provides {tool.features.slice(0, 3).join(", ").toLowerCase()} for {tradeNames.toLowerCase()} professionals. Founded in {tool.yearFounded}, {tool.name} is used by construction companies with {tool.companySize}+ employees.
@@ -458,6 +463,35 @@ export function ToolPage() {
                   ))}
                 </ul>
               </div>
+            </section>
+
+            {/* Bottom line + CTA at the natural decision point */}
+            <section
+              className="rounded-2xl border p-7"
+              style={{ backgroundColor: "#0c1a2e", borderColor: "#1e3a5f" }}
+            >
+              <h2 className="text-lg font-bold text-white mb-3">
+                Bottom Line: Is {tool.name} Right for You?
+              </h2>
+              <p className="text-sm leading-relaxed" style={{ color: "#cbd5e1" }}>
+                {tool.name} is a fit if {tool.pros[0] ? tool.pros[0].charAt(0).toLowerCase() + tool.pros[0].slice(1) : "its feature set matches your workflow"} matters more to you than {tool.cons[0] ? tool.cons[0].charAt(0).toLowerCase() + tool.cons[0].slice(1) : "the switching cost"}.
+                {" "}Rated {tool.rating.toFixed(1)}/5 across {tool.reviewCount.toLocaleString()} contractor reviews, starting at {tool.price}.
+                {toolTrades[0] ? ` Best suited to ${tradeNames} contractors.` : ""}
+              </p>
+              <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
+                <OutboundCta tool={tool} placement="tool_bottom_line" size="lg" />
+                {relatedTools[0] && compareTarget && (
+                  <Link
+                    to={compareTarget}
+                    className="inline-flex items-center justify-center gap-1.5 px-5 py-3.5 rounded-xl text-sm font-medium border transition-colors hover:bg-white/5"
+                    style={{ color: "#cbd5e1", borderColor: "#1e3a5f" }}
+                  >
+                    <GitCompareArrows className="w-4 h-4" />
+                    Compare with {relatedTools[0].name}
+                  </Link>
+                )}
+              </div>
+              <AffiliateDisclosure variant="dark" className="mt-4" />
             </section>
 
             {/* Reviews */}
@@ -578,7 +612,7 @@ export function ToolPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-6">
             {/* Quick Info */}
             <div className="bg-white rounded-2xl border p-6" style={{ borderColor: "#e2e8f0" }}>
               <h3 className="font-bold text-sm mb-4" style={{ color: "#0f172a" }}>
@@ -610,15 +644,7 @@ export function ToolPage() {
                   </div>
                 ))}
               </div>
-              <a
-                href={tool.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-medium text-white transition-all hover:brightness-110"
-                style={{ backgroundColor: "#f97316" }}
-              >
-                Visit {tool.name} <ExternalLink className="w-3.5 h-3.5" />
-              </a>
+              <OutboundCta tool={tool} placement="tool_sidebar" className="mt-4 w-full" />
             </div>
 
             {/* Trades */}
@@ -662,6 +688,22 @@ export function ToolPage() {
           </div>
         </div>
       </div>
+
+      {/* Mobile sticky CTA — the hero CTA box scrolls away on phones */}
+      {compareList.length === 0 && (
+        <div
+          className="md:hidden fixed bottom-0 left-0 right-0 z-40 border-t px-4 py-3 flex items-center gap-3"
+          style={{ backgroundColor: "rgba(12,26,46,0.97)", borderColor: "#1e3a5f" }}
+        >
+          <div className="min-w-0 flex-1">
+            <p className="text-white text-sm font-semibold truncate">{tool.name}</p>
+            <p className="text-xs truncate" style={{ color: "#94a3b8" }}>
+              {tool.rating.toFixed(1)} ★ · from {tool.price}
+            </p>
+          </div>
+          <OutboundCta tool={tool} placement="tool_sticky" label={getCtaLabel(tool)} className="shrink-0" />
+        </div>
+      )}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { TopRatedThisMonth } from "../components/TopRatedThisMonth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useApp } from "../context/AppContext";
+import { defaultDateModified } from "../data/editorial";
 import {
   Search,
   TrendingUp,
@@ -166,6 +167,27 @@ export function HomePage() {
               </button>
             </div>
 
+            {/* Primary paths: pick a trade (researching) or jump to the ranked list (ready) */}
+            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+              <a
+                href="#trades"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-all hover:brightness-110"
+                style={{ backgroundColor: "#f97316" }}
+              >
+                Find Software for My Trade <ArrowRight className="w-4 h-4" />
+              </a>
+              <Link
+                to="/top-rated"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold border transition-colors hover:bg-white/5"
+                style={{ color: "#e2e8f0", borderColor: "#1e3a5f" }}
+              >
+                See the Top-Rated Tools
+              </Link>
+            </div>
+            <p className="mt-3 text-xs" style={{ color: "#64748b" }}>
+              Independent rankings. No paid placement. Updated {new Date(defaultDateModified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}.
+            </p>
+
             {/* Quick filters */}
             <div className="mt-4 flex flex-wrap gap-2">
               {["AI Agents", "Project Management", "Estimating", "Field Service", "BIM"].map((tag) => (
@@ -244,7 +266,7 @@ export function HomePage() {
       </section>
 
       {/* Browse by Trade */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section id="trades" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-2xl font-bold" style={{ color: "#0f172a" }}>
@@ -413,27 +435,38 @@ export function HomePage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <Shield className="w-10 h-10 mx-auto mb-4" style={{ color: "#f97316" }} />
           <h2 className="text-3xl font-bold text-white">
-            Have experience with construction software?
+            Still deciding? Start with the shortlist.
           </h2>
           <p className="mt-3" style={{ color: "#94a3b8" }}>
-            Your review helps other contractors make better decisions. Share your honest experience and help the industry grow smarter.
+            Pick your trade, compare up to four tools side by side, and check real starting prices before you book a single demo.
           </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => openReviewModal()}
+            <Link
+              to="/top-rated"
               className="px-6 py-3 rounded-xl font-medium text-white transition-all hover:brightness-110"
               style={{ backgroundColor: "#f97316" }}
             >
-              Write a Review
-            </button>
-            <button
-              onClick={openSubmitModal}
+              See Top-Rated Tools
+            </Link>
+            <Link
+              to="/cost-calculator"
               className="px-6 py-3 rounded-xl font-medium border transition-colors hover:bg-white/5"
-              style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
+              style={{ color: "#e2e8f0", borderColor: "#1e3a5f" }}
             >
-              Submit a Tool
-            </button>
+              Estimate My Software Cost
+            </Link>
           </div>
+          <p className="mt-8 text-sm" style={{ color: "#64748b" }}>
+            Already use one of these tools?{" "}
+            <button onClick={() => openReviewModal()} className="underline underline-offset-2 hover:text-white transition-colors">
+              Write a review
+            </button>{" "}
+            or{" "}
+            <button onClick={openSubmitModal} className="underline underline-offset-2 hover:text-white transition-colors">
+              submit a tool
+            </button>
+            .
+          </p>
         </div>
       </section>
     </div>
