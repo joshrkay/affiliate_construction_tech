@@ -8,6 +8,7 @@ import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
 import { shortTitle } from "../lib/seo";
 import { defaultAuthor } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 export function GuidePage() {
   const { slug } = useParams();
@@ -209,12 +210,7 @@ export function GuidePage() {
                       to={`/tools/${tool.slug}`}
                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
                     >
-                      <div
-                        className="w-9 h-9 rounded-lg flex items-center justify-center text-white font-bold text-xs"
-                        style={{ backgroundColor: tool.logoColor }}
-                      >
-                        {tool.logoInitials}
-                      </div>
+                      <ToolLogo tool={tool} className="w-9 h-9 rounded-lg" />
                       <div className="flex-1 min-w-0">
                         <p className="text-sm font-medium truncate" style={{ color: "#0f172a" }}>{tool.name}</p>
                         <p className="text-xs truncate" style={{ color: "#64748b" }}>{tool.tagline}</p>
@@ -239,7 +235,6 @@ export function GuidePage() {
                       to={`/trades/${trade.slug}`}
                       className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
                     >
-                      <span className="text-lg">{trade.emoji}</span>
                       <span className="text-sm font-medium" style={{ color: "#0f172a" }}>{trade.name}</span>
                       <ArrowRight className="w-4 h-4 ml-auto shrink-0" style={{ color: "#94a3b8" }} />
                     </Link>

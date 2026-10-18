@@ -9,6 +9,7 @@ import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
 import { shortTitle } from "../lib/seo";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 export function BestForPage() {
   const { slug } = useParams();
@@ -225,12 +226,7 @@ export function BestForPage() {
                   >
                     {idx + 1}
                   </div>
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center text-white font-bold text-sm"
-                    style={{ backgroundColor: tool.logoColor }}
-                  >
-                    {tool.logoInitials}
-                  </div>
+                  <ToolLogo tool={tool} className="w-10 h-10 rounded-xl" />
                 </div>
                 <span
                   className="text-xs px-2 py-1 rounded-full font-medium"

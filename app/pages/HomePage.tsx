@@ -1,21 +1,10 @@
 import { trades, tools } from "../data/constructionData";
-import { TopRatedThisMonth } from "../components/TopRatedThisMonth";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
 import { useApp } from "../context/AppContext";
 import { defaultDateModified } from "../data/editorial";
-import {
-  Search,
-  TrendingUp,
-  Shield,
-  Zap,
-  Star,
-  ChevronRight,
-  ArrowRight,
-  Bot,
-  BarChart3,
-  Users,
-} from "lucide-react";
+import { Search, Shield, ArrowRight, ChevronRight } from "lucide-react";
+import { ToolLogo } from "../components/ToolLogo";
 
 export function HomePage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -27,13 +16,10 @@ export function HomePage() {
   };
 
   const totalReviews = tools.reduce((sum, t) => sum + (t.reviewCount || 0), 0);
-  const aiToolCount = tools.filter((t) => t.category === "AI Agent").length;
-  const stats = [
-    { label: "Tools & Platforms", value: `${tools.length}+`, icon: BarChart3 },
-    { label: "Aggregated Reviews", value: `${totalReviews.toLocaleString()}+`, icon: Star },
-    { label: "Trade Categories", value: `${trades.length}`, icon: Users },
-    { label: "AI-Powered Tools", value: `${aiToolCount}+`, icon: Bot },
-  ];
+  const highestRated = tools
+    .filter((t) => !t.duplicateOf && t.reviewCount >= 100)
+    .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
+    .slice(0, 8);
 
   const currentYear = new Date().getFullYear();
 
@@ -101,133 +87,70 @@ export function HomePage() {
       </script>
 
       {/* Hero */}
-      <section
-        className="relative overflow-hidden py-20 md:py-28"
-        style={{ backgroundColor: "#0c1a2e" }}
-      >
-        {/* Background grid pattern */}
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)`,
-            backgroundSize: "40px 40px",
-          }}
-        />
-        {/* Gradient overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at 70% 50%, rgba(249,115,22,0.12) 0%, transparent 60%)",
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-b" style={{ backgroundColor: "#fbfaf7", borderColor: "#e7e2d8" }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-3xl">
-            {/* Badge */}
-            <div
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6"
-              style={{ backgroundColor: "rgba(249,115,22,0.15)", color: "#fb923c" }}
-            >
-              <Zap className="w-3.5 h-3.5" />
-              The Construction Industry's AI & Software Directory
-            </div>
-
-            <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
-            >
-              Find the Best
-              <span style={{ color: "#f97316" }}> AI & Software</span>
-              <br />
-              for Construction
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] mb-5" style={{ color: "#9a3412" }}>
+              Independent reviews · {trades.length} trades · {tools.filter((t) => !t.duplicateOf).length} tools
+            </p>
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.5rem] font-medium leading-[1.08] tracking-tight" style={{ color: "#1a1714" }}>
+              Construction software, ranked by the contractors who actually use it.
             </h1>
-            <p className="mt-5 text-lg leading-relaxed" style={{ color: "#94a3b8" }}>
-              Compare ratings, read real contractor reviews, and discover the tools transforming every trade — from AI estimating to intelligent scheduling and field management.
+            <p className="mt-6 text-lg md:text-xl leading-relaxed max-w-2xl" style={{ color: "#4b4640" }}>
+              Pick your trade, see the tools that rank highest on {totalReviews.toLocaleString()} aggregated contractor reviews, check real starting prices, and compare before you book a demo. Vendors can't pay for placement.
             </p>
 
-            {/* Search */}
-            <div className="mt-8 flex gap-3 max-w-xl">
-              <div className="flex-1 flex items-center gap-3 px-4 bg-white/10 backdrop-blur rounded-xl border" style={{ borderColor: "rgba(255,255,255,0.1)" }}>
-                <Search className="w-4 h-4 shrink-0" style={{ color: "#64748b" }} />
-                <input
-                  type="text"
-                  placeholder="Search tools, trades, or features..."
-                  className="flex-1 bg-transparent py-3 text-sm text-white placeholder-slate-500 outline-none"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                />
-              </div>
-              <button
-                onClick={handleSearch}
-                className="px-5 py-3 rounded-xl font-medium text-sm text-white shrink-0 hover:brightness-110 transition-all"
-                style={{ backgroundColor: "#f97316" }}
-              >
-                Search
-              </button>
-            </div>
-
-            {/* Primary paths: pick a trade (researching) or jump to the ranked list (ready) */}
-            <div className="mt-6 flex flex-col sm:flex-row gap-3">
+            <div className="mt-8 flex flex-col sm:flex-row gap-3">
               <a
                 href="#trades"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white transition-all hover:brightness-110"
-                style={{ backgroundColor: "#f97316" }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold text-white transition-colors"
+                style={{ backgroundColor: "#c2410c" }}
               >
-                Find Software for My Trade <ArrowRight className="w-4 h-4" />
+                Find software for my trade <ArrowRight className="w-4 h-4" />
               </a>
               <Link
                 to="/top-rated"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold border transition-colors hover:bg-white/5"
-                style={{ color: "#e2e8f0", borderColor: "#1e3a5f" }}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg font-semibold border transition-colors hover:bg-white"
+                style={{ color: "#1a1714", borderColor: "#cfc8bb" }}
               >
-                See the Top-Rated Tools
+                See the highest-rated tools
               </Link>
             </div>
-            <p className="mt-3 text-xs" style={{ color: "#64748b" }}>
-              Independent rankings. No paid placement. Updated {new Date(defaultDateModified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}.
-            </p>
 
-            {/* Quick filters */}
-            <div className="mt-4 flex flex-wrap gap-2">
-              {["AI Agents", "Project Management", "Estimating", "Field Service", "BIM"].map((tag) => (
-                <button
-                  key={tag}
-                  onClick={() => navigate(`/search?q=${encodeURIComponent(tag)}`)}
-                  className="px-3 py-1 rounded-full text-xs border transition-colors hover:bg-white/10"
-                  style={{ color: "#64748b", borderColor: "#1e3a5f" }}
-                >
-                  {tag}
-                </button>
-              ))}
-            </div>
+            <form
+              className="mt-8 flex gap-2 max-w-xl"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+              }}
+            >
+              <div className="flex-1 flex items-center gap-3 px-4 bg-white rounded-lg border" style={{ borderColor: "#cfc8bb" }}>
+                <Search className="w-4 h-4 shrink-0" style={{ color: "#8a8378" }} />
+                <input
+                  type="text"
+                  placeholder="Search a tool, trade, or feature"
+                  className="flex-1 bg-transparent py-3 text-sm outline-none"
+                  style={{ color: "#1a1714" }}
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </div>
+              <button
+                type="submit"
+                className="px-5 py-3 rounded-lg font-medium text-sm border transition-colors hover:bg-white"
+                style={{ color: "#1a1714", borderColor: "#cfc8bb" }}
+              >
+                Search
+              </button>
+            </form>
+            <p className="mt-4 text-xs" style={{ color: "#8a8378" }}>
+              Ratings aggregated from G2, Capterra, Software Advice, and reader reviews. Last reviewed{" "}
+              {new Date(defaultDateModified).toLocaleDateString("en-US", { month: "long", year: "numeric" })}.{" "}
+              <Link to="/methodology" className="underline underline-offset-2">How we rate tools</Link>
+            </p>
           </div>
         </div>
       </section>
-
-      {/* Stats Bar */}
-      <div style={{ backgroundColor: "#0f2133" }} className="border-b" >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="flex items-center gap-3">
-                <div
-                  className="w-9 h-9 rounded-lg flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: "rgba(249,115,22,0.15)" }}
-                >
-                  <stat.icon className="w-4 h-4" style={{ color: "#f97316" }} />
-                </div>
-                <div>
-                  <p className="text-white font-bold text-lg leading-tight">{stat.value}</p>
-                  <p className="text-xs" style={{ color: "#64748b" }}>
-                    {stat.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Free research tools */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
@@ -241,7 +164,7 @@ export function HomePage() {
             {
               to: "/pricing",
               title: "Pricing Index",
-              desc: `Real starting prices for ${tools.length} tools — no demo required.`,
+              desc: `Real starting prices for ${tools.filter((t) => !t.duplicateOf).length} tools. No demo required.`,
             },
             {
               to: "/updates",
@@ -269,11 +192,11 @@ export function HomePage() {
       <section id="trades" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 scroll-mt-20">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h2 className="text-2xl font-bold" style={{ color: "#0f172a" }}>
-              Browse by Trade
+            <h2 className="font-serif text-2xl md:text-3xl font-medium" style={{ color: "#1a1714" }}>
+              Start with your trade
             </h2>
-            <p className="text-sm mt-1" style={{ color: "#64748b" }}>
-              Explore AI tools and software tailored to your specific trade
+            <p className="text-sm mt-1" style={{ color: "#8a8378" }}>
+              An HVAC shop and a custom home builder need different software. Rankings change by trade.
             </p>
           </div>
           <Link
@@ -285,149 +208,67 @@ export function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-          {trades.map((trade) => (
-            <Link
-              key={trade.id}
-              to={`/trades/${trade.slug}`}
-              className="group relative overflow-hidden rounded-2xl p-5 text-white transition-all duration-300 hover:scale-[1.02] hover:shadow-xl"
-              style={{ backgroundColor: "#0c1a2e" }}
-            >
-              {/* Background image */}
-              <div
-                className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity"
-                style={{
-                  backgroundImage: `url(${trade.imageUrl})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
-              />
-              {/* Gradient overlay */}
-              <div
-                className="absolute inset-0"
-                style={{
-                  background: `linear-gradient(135deg, ${trade.accentColor}44 0%, #0c1a2ebb 100%)`,
-                }}
-              />
-
-              <div className="relative">
-                <span className="text-3xl mb-3 block">{trade.emoji}</span>
-                <h3 className="font-semibold text-sm">{trade.name}</h3>
-                <p className="text-xs mt-1 opacity-70">{trade.tagline}</p>
-                <div className="mt-3 flex items-center gap-1 text-xs opacity-60 group-hover:opacity-100 transition-opacity" style={{ color: "#fb923c" }}>
-                  <span>{tools.filter((t) => t.tradeIds.includes(trade.id)).length} tools</span>
-                  <ArrowRight className="w-3 h-3" />
-                </div>
-              </div>
-            </Link>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          {trades.map((trade) => {
+            const count = tools.filter((t) => !t.duplicateOf && t.tradeIds.includes(trade.id)).length;
+            const top = tools
+              .filter((t) => !t.duplicateOf && t.tradeIds.includes(trade.id))
+              .sort((a, b) => b.rating - a.rating)[0];
+            return (
+              <Link
+                key={trade.id}
+                to={`/trades/${trade.slug}`}
+                className="group flex flex-col bg-white rounded-lg border p-5 transition-colors hover:border-orange-300"
+                style={{ borderColor: "#e7e2d8" }}
+              >
+                <h3 className="font-serif text-lg font-medium" style={{ color: "#1a1714" }}>{trade.name}</h3>
+                <p className="text-xs mt-1" style={{ color: "#8a8378" }}>
+                  {count} tools ranked{top ? ` · top pick ${top.name}` : ""}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#c2410c" }}>
+                  See rankings <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </section>
 
-      {/* Top Rated Tools */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        <div className="flex items-center justify-between">
-          <div></div>
-          <Link
-            to="/top-rated"
-            className="flex items-center gap-1 text-sm font-medium hover:text-orange-500 transition-colors"
-            style={{ color: "#f97316" }}
-          >
-            View All Top Rated <ArrowRight className="w-4 h-4" />
+      {/* Highest rated, computed from the directory (no hand-written "monthly" data) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="flex items-end justify-between mb-6">
+          <div>
+            <h2 className="font-serif text-2xl md:text-3xl font-medium" style={{ color: "#1a1714" }}>
+              Highest-rated across all trades
+            </h2>
+            <p className="text-sm mt-1" style={{ color: "#8a8378" }}>
+              Tools with at least 100 aggregated reviews, ranked by rating.
+            </p>
+          </div>
+          <Link to="/top-rated" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium" style={{ color: "#c2410c" }}>
+            Full list <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
-      </div>
-      <TopRatedThisMonth />
-
-      {/* AI Spotlight */}
-      <section
-        className="py-16"
-        style={{
-          background: "linear-gradient(135deg, #0c1a2e 0%, #1e1b4b 100%)",
-        }}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-5"
-                style={{ backgroundColor: "rgba(124,58,237,0.2)", color: "#c084fc" }}
-              >
-                <Bot className="w-3.5 h-3.5" />
-                AI Agent Spotlight
+        <ol className="divide-y bg-white rounded-lg border" style={{ borderColor: "#e7e2d8" }}>
+          {highestRated.map((tool, idx) => (
+            <li key={tool.id} className="flex items-center gap-4 px-4 py-3">
+              <span className="w-6 text-sm font-semibold tabular-nums" style={{ color: "#8a8378" }}>{idx + 1}</span>
+              <ToolLogo tool={tool} className="w-10 h-10 rounded-lg" />
+              <div className="flex-1 min-w-0">
+                <Link to={`/tools/${tool.slug}`} className="font-medium hover:underline" style={{ color: "#1a1714" }}>
+                  {tool.name}
+                </Link>
+                <p className="text-xs truncate" style={{ color: "#8a8378" }}>
+                  {tool.type} · from {tool.price}
+                </p>
               </div>
-              <h2 className="text-3xl font-bold text-white leading-tight">
-                AI is Reshaping
-                <br />
-                <span style={{ color: "#c084fc" }}>How Construction Works</span>
-              </h2>
-              <p className="mt-4 leading-relaxed" style={{ color: "#94a3b8" }}>
-                From computer vision takeoffs that cut estimating time by 70% to AI scheduling platforms that find optimal construction sequences — artificial intelligence is delivering measurable ROI across every phase of construction.
-              </p>
-              <div className="mt-6 grid grid-cols-2 gap-4">
-                {[
-                  { stat: "70%", label: "Faster Takeoffs with AI" },
-                  { stat: "35%", label: "Fewer Safety Incidents" },
-                  { stat: "15%", label: "Schedule Compression" },
-                  { stat: "28%", label: "Higher Average Ticket" },
-                ].map((item) => (
-                  <div key={item.label} className="p-4 rounded-xl" style={{ backgroundColor: "rgba(255,255,255,0.05)" }}>
-                    <p className="text-2xl font-bold" style={{ color: "#c084fc" }}>
-                      {item.stat}
-                    </p>
-                    <p className="text-xs mt-1" style={{ color: "#94a3b8" }}>
-                      {item.label}
-                    </p>
-                  </div>
-                ))}
+              <div className="text-right shrink-0">
+                <p className="font-semibold tabular-nums" style={{ color: "#1a1714" }}>{tool.rating.toFixed(1)}</p>
+                <p className="text-xs" style={{ color: "#8a8378" }}>{tool.reviewCount.toLocaleString()} reviews</p>
               </div>
-              <Link
-                to="/trades/estimating-bidding"
-                className="inline-flex items-center gap-2 mt-6 px-5 py-3 rounded-xl font-medium text-sm text-white transition-all hover:brightness-110"
-                style={{ backgroundColor: "#7c3aed" }}
-              >
-                Explore AI Tools <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-            <div className="space-y-4">
-              {tools
-                .filter((t) => t.category === "AI Agent")
-                .map((tool) => (
-                  <Link
-                    key={tool.id}
-                    to={`/tools/${tool.slug}`}
-                    className="flex items-center gap-4 p-4 rounded-xl border transition-colors hover:bg-white/5"
-                    style={{ backgroundColor: "rgba(255,255,255,0.03)", borderColor: "rgba(255,255,255,0.08)" }}
-                  >
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0"
-                      style={{ backgroundColor: tool.logoColor }}
-                    >
-                      {tool.logoInitials}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-white text-sm font-semibold">{tool.name}</p>
-                      <p className="text-xs truncate" style={{ color: "#64748b" }}>
-                        {tool.type}
-                      </p>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <div className="flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5" style={{ color: "#f59e0b", fill: "#f59e0b" }} />
-                        <span className="text-white text-sm font-bold">{tool.rating}</span>
-                      </div>
-                      <span
-                        className="text-xs px-2 py-0.5 rounded-full"
-                        style={{ backgroundColor: "rgba(124,58,237,0.2)", color: "#c084fc" }}
-                      >
-                        AI Agent
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-            </div>
-          </div>
-        </div>
+            </li>
+          ))}
+        </ol>
       </section>
 
       {/* CTA Section */}

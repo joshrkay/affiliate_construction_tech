@@ -135,6 +135,15 @@
 
   html {
     font-size: var(--font-size);
+    font-family: "Source Sans 3", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  }
+
+  .font-serif,
+  h1,
+  h2 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-variation-settings: "opsz" 72;
+    letter-spacing: -0.01em;
   }
 
   h1 {

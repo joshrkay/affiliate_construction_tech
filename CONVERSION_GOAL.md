@@ -86,6 +86,9 @@ Done in this pass (branch `claude/conversion-cro`, see audit for detail):
 - [x] Comparison pages: winner CTA in the Quick Verdict.
 - [x] Guide pages: dead-end "Explore More Guides" replaced with ranked top picks + CTAs.
 - [x] Header and homepage: primary CTA is now "Find Your Software", not "Write a Review".
+- [x] Technical SEO: 0 orphan pages (was 78), 0 broken internal links (was 7 sitewide + 13), titles under 65 chars, honest sitemap dates, duplicate products canonicalized, `/best` and `/categories` hubs, privacy and terms pages.
+- [x] AI search: `/pricing.md` for agents, `llms.txt` corrected.
+- [x] De-slop: real vendor logos, no emoji, no gradient/dot-grid heroes, no fabricated "monthly" rating changes, serif editorial typography, honest homepage copy.
 
 Next, in order:
 1. Owner prerequisites above (deploy, programs, GA4 key event, newsletter provider).

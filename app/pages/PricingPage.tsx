@@ -6,6 +6,7 @@ import { StarRating } from "../components/StarRating";
 import { PageByline } from "../components/PageByline";
 import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 /**
  * Per-tool pricing page targeting "[tool] pricing" / "[tool] cost" queries —
@@ -95,12 +96,7 @@ export function PricingPage() {
             <span style={{ color: "#fb923c" }}>{tool.name}</span>
           </nav>
           <div className="flex items-start gap-4">
-            <div
-              className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0"
-              style={{ backgroundColor: tool.logoColor }}
-            >
-              {tool.logoInitials}
-            </div>
+            <ToolLogo tool={tool} className="w-14 h-14 rounded-xl shrink-0" />
             <div>
               <h1 className="text-3xl font-bold text-white">{tool.name} Pricing ({year})</h1>
               <div className="flex items-center gap-2 mt-2">

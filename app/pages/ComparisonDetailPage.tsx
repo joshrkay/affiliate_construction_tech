@@ -10,6 +10,7 @@ import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
 import { shortTitle } from "../lib/seo";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 const GENERIC_FEATURES: CompareFeatureGroup[] = [
   {
@@ -258,7 +259,7 @@ export function ComparisonDetailPage() {
               </h1>
               {trade ? (
                 <p className="mt-1" style={{ color: "#94a3b8" }}>
-                  {trade.emoji} {trade.name} — {pageDescription}
+                  {trade.name} — {pageDescription}
                 </p>
               ) : (
                 <p className="mt-1" style={{ color: "#94a3b8" }}>
@@ -321,12 +322,7 @@ export function ComparisonDetailPage() {
                   style={{ borderColor: "#e2e8f0" }}
                 >
                   <div className="flex items-start gap-4 mb-4">
-                    <div
-                      className="w-14 h-14 rounded-xl flex items-center justify-center text-white font-bold text-lg shrink-0"
-                      style={{ backgroundColor: tool.logoColor }}
-                    >
-                      {tool.logoInitials}
-                    </div>
+                    <ToolLogo tool={tool} className="w-14 h-14 rounded-xl shrink-0" />
                     <div className="flex-1">
                       <h2 className="text-xl font-bold" style={{ color: "#0f172a" }}>{tool.name}</h2>
                       <span

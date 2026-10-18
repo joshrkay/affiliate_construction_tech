@@ -1,275 +1,84 @@
 import { Link } from "react-router";
+import { ChevronRight } from "lucide-react";
+import { tools, trades } from "../data/constructionData";
 import { StarRating } from "../components/StarRating";
-import { TrendingUp, TrendingDown, Minus, Star, ChevronRight } from "lucide-react";
+import { ToolLogo } from "../components/ToolLogo";
+import { PageByline } from "../components/PageByline";
+import { OutboundCta } from "../components/OutboundCta";
+import { AffiliateDisclosure } from "../components/OutboundCta";
+import { getShortCtaLabel } from "../lib/outbound";
+import { defaultDateModified, defaultDatePublished } from "../data/editorial";
 
-// Monthly top rated data
-const monthlyData = [
-  {
-    toolId: "togal-ai",
-    slug: "togal-ai",
-    name: "Togal.AI",
-    logoColor: "#7c3aed",
-    logoInitials: "TG",
-    category: "AI Agent",
-    type: "AI Takeoff",
-    currentRating: 4.8,
-    previousRating: 4.5,
-    reviewCount: 387,
-    description: "AI-powered takeoff software that automatically detects and measures electrical components on architectural plans.",
-  },
-  {
-    toolId: "bluebeam-revu",
-    slug: "bluebeam-revu",
-    name: "Bluebeam Revu",
-    logoColor: "#00adef",
-    logoInitials: "BB",
-    category: "Software",
-    type: "Document Management",
-    currentRating: 4.7,
-    previousRating: 4.6,
-    reviewCount: 2341,
-    description: "Professional PDF solution for construction document management, markup, and collaboration.",
-  },
-  {
-    toolId: "procore",
-    slug: "procore",
-    name: "Procore",
-    logoColor: "#e63b2e",
-    logoInitials: "PC",
-    category: "Platform",
-    type: "Project Management",
-    currentRating: 4.6,
-    previousRating: 4.7,
-    reviewCount: 1842,
-    description: "The #1 construction management platform used by over 7 million users worldwide.",
-  },
-  {
-    toolId: "servicetitan",
-    slug: "servicetitan",
-    name: "ServiceTitan",
-    logoColor: "#ff6900",
-    logoInitials: "ST",
-    category: "Platform",
-    type: "Field Service Management",
-    currentRating: 4.6,
-    previousRating: 4.5,
-    reviewCount: 1567,
-    description: "Comprehensive field service management platform for home and commercial service businesses.",
-  },
-  {
-    toolId: "autodesk-construction-cloud",
-    slug: "autodesk-construction-cloud",
-    name: "Autodesk Construction Cloud",
-    logoColor: "#1a56db",
-    logoInitials: "ACC",
-    category: "Platform",
-    type: "BIM & Project Management",
-    currentRating: 4.5,
-    previousRating: 4.5,
-    reviewCount: 1204,
-    description: "Connect workflows, teams, and data from design to construction.",
-  },
-  {
-    toolId: "jobtread",
-    slug: "jobtread",
-    name: "JobTread",
-    logoColor: "#0d9488",
-    logoInitials: "JT",
-    category: "Software",
-    type: "Project Management",
-    currentRating: 4.5,
-    previousRating: 4.3,
-    reviewCount: 612,
-    description: "End-to-end construction management platform for contractors.",
-  },
-  {
-    toolId: "jobber",
-    slug: "jobber",
-    name: "Jobber",
-    logoColor: "#0ea5e9",
-    logoInitials: "JB",
-    category: "Software",
-    type: "Field Service Management",
-    currentRating: 4.3,
-    previousRating: 4.2,
-    reviewCount: 4521,
-    description: "Field service management software for home service businesses.",
-  },
-  {
-    toolId: "buildertrend",
-    slug: "buildertrend",
-    name: "Buildertrend",
-    logoColor: "#10b981",
-    logoInitials: "BT",
-    category: "Software",
-    type: "Construction Management",
-    currentRating: 4.5,
-    previousRating: 4.4,
-    reviewCount: 2134,
-    description: "Construction management software designed for home builders and remodelers.",
-  },
-  {
-    toolId: "stack-takeoff",
-    slug: "stack-takeoff",
-    name: "STACK Takeoff",
-    logoColor: "#0d9488",
-    logoInitials: "ST",
-    category: "Software",
-    type: "Takeoff & Estimating",
-    currentRating: 4.4,
-    previousRating: 4.3,
-    reviewCount: 1823,
-    description: "Cloud-based construction takeoff and estimating software.",
-  },
-  {
-    toolId: "housecall-pro",
-    slug: "housecall-pro",
-    name: "Housecall Pro",
-    logoColor: "#10b981",
-    logoInitials: "HC",
-    category: "Software",
-    type: "Field Service Management",
-    currentRating: 4.4,
-    previousRating: 4.3,
-    reviewCount: 2847,
-    description: "All-in-one field service management platform for home service businesses.",
-  },
-];
+const MIN_REVIEWS = 100;
 
-const MONTH_LABEL = "March 2026";
-
+/** Highest-rated tools in the directory, computed from the same data every other page uses. */
 export function TopRatedPage() {
+  const year = new Date().getFullYear();
+  const ranked = tools
+    .filter((t) => !t.duplicateOf && t.reviewCount >= MIN_REVIEWS)
+    .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
+    .slice(0, 20);
+  const tradeName = (id: string) => trades.find((t) => t.id === id)?.name;
+
   return (
     <div className="min-h-screen" style={{ backgroundColor: "#f8fafc" }}>
-      {/* Header */}
+      <title>Top Rated Construction Software ({year})</title>
+      <meta name="description" content={`The ${ranked.length} highest-rated construction software tools with at least ${MIN_REVIEWS} aggregated contractor reviews, with starting prices and the trades each one fits.`} />
+      <link rel="canonical" href="https://bestconstructionapps.com/top-rated" />
+
       <div className="bg-white border-b" style={{ borderColor: "#e2e8f0" }}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex items-center gap-2 mb-2">
-            <Star className="w-5 h-5" style={{ color: "#f97316" }} />
-            <span
-              className="text-xs font-semibold uppercase tracking-wider"
-              style={{ color: "#f97316" }}
-            >
-              {MONTH_LABEL}
-            </span>
-          </div>
-          <h1 className="text-3xl font-bold mb-2" style={{ color: "#0f172a" }}>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <h1 className="font-serif text-3xl md:text-4xl font-medium mb-3" style={{ color: "#1a1714" }}>
             Top Rated Construction Software
           </h1>
-          <p className="text-lg" style={{ color: "#64748b" }}>
-            The highest-rated construction software tools based on verified contractor reviews.
+          <p className="text-lg max-w-2xl mb-4" style={{ color: "#4b4640" }}>
+            Every tool in the directory with at least {MIN_REVIEWS} aggregated contractor reviews, ranked by rating. Ties go to the tool with more reviews.
           </p>
+          <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} variant="light" />
         </div>
       </div>
 
-      {/* Rankings */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="space-y-4">
-          {monthlyData.map((tool, idx) => {
-            const delta = tool.currentRating - tool.previousRating;
-            const isUp = delta > 0;
-            const isDown = delta < 0;
-
-            return (
-              <div
-                key={tool.toolId}
-                className="bg-white rounded-2xl border p-6 transition-all hover:shadow-lg"
-                style={{ borderColor: "#e2e8f0" }}
-              >
-                <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-                  {/* Rank */}
-                  <div
-                    className="w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold shrink-0"
-                    style={{
-                      backgroundColor: idx === 0 ? "#fff7ed" : idx < 3 ? "#f8fafc" : "#f8fafc",
-                      color: idx === 0 ? "#f97316" : idx < 3 ? "#0f172a" : "#94a3b8",
-                    }}
-                  >
-                    {idx + 1}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <ol className="space-y-3">
+          {ranked.map((tool, idx) => (
+            <li key={tool.id} className="bg-white rounded-xl border p-4 sm:p-5" style={{ borderColor: "#e2e8f0" }}>
+              <div className="flex flex-wrap items-center gap-4">
+                <span className="w-8 text-lg font-semibold tabular-nums shrink-0" style={{ color: idx < 3 ? "#c2410c" : "#94a3b8" }}>
+                  {idx + 1}
+                </span>
+                <ToolLogo tool={tool} className="w-12 h-12 rounded-lg" />
+                <div className="flex-1 min-w-[12rem]">
+                  <Link to={`/tools/${tool.slug}`} className="text-lg font-semibold hover:underline" style={{ color: "#0f172a" }}>
+                    {tool.name}
+                  </Link>
+                  <p className="text-sm" style={{ color: "#64748b" }}>{tool.tagline}</p>
+                  <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm">
+                    <span className="flex items-center gap-1.5">
+                      <StarRating rating={tool.rating} size="sm" />
+                      <strong style={{ color: "#0f172a" }}>{tool.rating.toFixed(1)}</strong>
+                    </span>
+                    <span style={{ color: "#94a3b8" }}>{tool.reviewCount.toLocaleString()} reviews</span>
+                    <span style={{ color: "#94a3b8" }}>from {tool.price}</span>
+                    <span style={{ color: "#94a3b8" }}>
+                      {tool.tradeIds.slice(0, 2).map(tradeName).filter(Boolean).join(", ")}
+                    </span>
                   </div>
-
-                  {/* Logo */}
-                  <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg shrink-0"
-                    style={{ backgroundColor: tool.logoColor }}
-                  >
-                    {tool.logoInitials}
-                  </div>
-
-                  {/* Info */}
-                  <div className="flex-1 min-w-0">
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-1">
-                      <Link
-                        to={`/tools/${tool.slug}`}
-                        className="text-xl font-bold hover:text-orange-500 transition-colors"
-                        style={{ color: "#0f172a" }}
-                      >
-                        {tool.name}
-                      </Link>
-                      <span
-                        className="inline-block text-xs px-2 py-0.5 rounded-full font-medium"
-                        style={{
-                          backgroundColor: "#f0fdf4",
-                          color: "#15803d",
-                        }}
-                      >
-                        {tool.category}
-                      </span>
-                      <span
-                        className="inline-block text-xs px-2 py-0.5 rounded-full font-medium"
-                        style={{
-                          backgroundColor: "#eff6ff",
-                          color: "#1d4ed8",
-                        }}
-                      >
-                        {tool.type}
-                      </span>
-                    </div>
-                    <p className="text-sm mb-2" style={{ color: "#64748b" }}>
-                      {tool.description}
-                    </p>
-                    <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                      <div className="flex items-center gap-2">
-                        <StarRating rating={tool.currentRating} size="md" />
-                        <span className="text-lg font-bold" style={{ color: "#0f172a" }}>
-                          {tool.currentRating.toFixed(1)}
-                        </span>
-                        {isUp && (
-                          <span className="flex items-center gap-1 text-xs" style={{ color: "#15803d" }}>
-                            <TrendingUp className="w-3 h-3" /> +{delta.toFixed(1)}
-                          </span>
-                        )}
-                        {isDown && (
-                          <span className="flex items-center gap-1 text-xs" style={{ color: "#b91c1c" }}>
-                            <TrendingDown className="w-3 h-3" /> {delta.toFixed(1)}
-                          </span>
-                        )}
-                      </div>
-                      <span className="text-sm" style={{ color: "#94a3b8" }}>
-                        {tool.reviewCount.toLocaleString()} reviews
-                      </span>
-                    </div>
-                  </div>
-
-                  {/* CTA */}
+                </div>
+                <div className="flex items-center gap-2 shrink-0">
                   <Link
                     to={`/tools/${tool.slug}`}
-                    className="flex items-center gap-1 px-4 py-2 rounded-lg font-medium transition-colors hover:bg-orange-50"
-                    style={{ color: "#f97316" }}
+                    className="inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium border"
+                    style={{ color: "#374151", borderColor: "#e2e8f0" }}
                   >
-                    View Details
-                    <ChevronRight className="w-4 h-4" />
+                    Review <ChevronRight className="w-4 h-4" />
                   </Link>
+                  <OutboundCta tool={tool} placement="tool_card" label={getShortCtaLabel(tool)} size="sm" className="rounded-lg" />
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom note */}
-        <p className="text-center text-sm mt-8" style={{ color: "#94a3b8" }}>
-          Rankings updated monthly • Based on verified contractor reviews • {MONTH_LABEL}
-        </p>
+            </li>
+          ))}
+        </ol>
+        <AffiliateDisclosure className="mt-6" />
       </div>
     </div>
   );

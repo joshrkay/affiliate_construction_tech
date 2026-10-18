@@ -25,12 +25,12 @@ export function Footer() {
               <div>
                 <p className="text-white font-bold text-sm">BUILTECH</p>
                 <p className="text-xs" style={{ color: "#64748b" }}>
-                  AI & Software Directory
+                  Construction software reviews
                 </p>
               </div>
             </div>
             <p className="text-sm leading-relaxed" style={{ color: "#64748b" }}>
-              The construction industry's most trusted directory for AI tools, software platforms, and technology reviews — organized by trade.
+              Independent reviews and rankings of construction software, organized by trade. Ratings are aggregated from public contractor reviews; vendors cannot pay for placement.
             </p>
 
           </div>
@@ -46,7 +46,6 @@ export function Footer() {
                     className="text-sm flex items-center gap-2 hover:text-orange-400 transition-colors"
                     style={{ color: "#64748b" }}
                   >
-                    <span className="text-xs">{trade.emoji}</span>
                     {trade.name}
                   </Link>
                 </li>

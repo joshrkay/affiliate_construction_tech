@@ -5,6 +5,7 @@ import { StarRating } from "./StarRating";
 import { useApp } from "../context/AppContext";
 import { OutboundCta } from "./OutboundCta";
 import { getShortCtaLabel } from "../lib/outbound";
+import { ToolLogo } from "./ToolLogo";
 
 interface ToolCardProps {
   tool: Tool;
@@ -68,21 +69,13 @@ export function ToolCard({ tool, rank, compact = false }: ToolCardProps) {
           )}
 
           {/* Logo */}
-          <div
-            className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-sm shadow-sm"
-            style={{ backgroundColor: tool.logoColor }}
-          >
-            {tool.logoInitials}
-          </div>
+          <ToolLogo tool={tool} className="shrink-0 w-12 h-12 rounded-xl shadow-sm" />
 
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <h3 className="text-sm font-semibold" style={{ color: "#0f172a" }}>
                 {tool.name}
               </h3>
-              {tool.verified && (
-                <CheckCircle className="w-4 h-4 shrink-0" style={{ color: "#0891b2" }} />
-              )}
             </div>
             <p className="text-xs mt-0.5 truncate" style={{ color: "#64748b" }}>
               {tool.tagline}

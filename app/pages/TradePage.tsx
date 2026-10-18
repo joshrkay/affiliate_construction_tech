@@ -29,6 +29,7 @@ import { NotFound } from "./NotFound";
 import { useState } from "react";
 import { useApp } from "../context/AppContext";
 import { defaultAuthor, defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 type FilterType = "All" | "Software" | "AI Agent" | "Platform";
 
@@ -86,12 +87,7 @@ export function TradePage() {
         </span>
       </div>
       <div className="flex items-center gap-3 mb-3">
-        <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm"
-          style={{ backgroundColor: topTool.logoColor }}
-        >
-          {topTool.logoInitials}
-        </div>
+        <ToolLogo tool={topTool} className="w-11 h-11 rounded-xl" />
         <div>
           <p className="font-bold text-sm" style={{ color: "#0f172a" }}>
             {topTool.name}
@@ -269,12 +265,6 @@ export function TradePage() {
           </nav>
 
           <div className="flex items-start gap-5">
-            <div
-              className="w-16 h-16 rounded-2xl flex items-center justify-center text-4xl shrink-0 shadow-lg"
-              style={{ backgroundColor: `${trade.accentColor}33` }}
-            >
-              {trade.emoji}
-            </div>
             <div>
               <div
                 className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full mb-3"
@@ -283,12 +273,11 @@ export function TradePage() {
                 <BarChart3 className="w-3.5 h-3.5" />
                 {tradeTools.length} Tools Reviewed
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">
-                Best AI & Software for{" "}
-                <span style={{ color: "#fb923c" }}>{trade.name}</span>
+              <h1 className="font-serif text-3xl md:text-4xl font-medium text-white">
+                Best {trade.name} Software, Ranked
               </h1>
               <p className="mt-2 text-lg" style={{ color: "#94a3b8" }}>
-                {trade.tagline}
+                {tradeTools.length} tools rated on aggregated contractor reviews. Top pick: {topTool?.name}.
               </p>
               <div className="mt-4">
                 <PageByline dateModified={defaultDateModified} datePublished={defaultDatePublished} />
@@ -492,12 +481,7 @@ export function TradePage() {
                       to={`/tools/${tool.slug}`}
                       className="flex items-center gap-3 group"
                     >
-                      <div
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0"
-                        style={{ backgroundColor: tool.logoColor }}
-                      >
-                        {tool.logoInitials}
-                      </div>
+                      <ToolLogo tool={tool} className="w-8 h-8 rounded-lg shrink-0" />
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold group-hover:text-purple-700 transition-colors" style={{ color: "#1e293b" }}>
                           {tool.name}
@@ -581,7 +565,6 @@ export function TradePage() {
                       className="flex items-center gap-2 text-sm py-1.5 hover:text-orange-500 transition-colors"
                       style={{ color: "#374151" }}
                     >
-                      <span>{t.emoji}</span>
                       <span>{t.name}</span>
                       <ChevronRight className="w-3.5 h-3.5 ml-auto" style={{ color: "#cbd5e1" }} />
                     </Link>
@@ -635,12 +618,7 @@ function RankedToolRow({
       </div>
 
       {/* Logo */}
-      <div
-        className="w-11 h-11 rounded-xl flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-sm"
-        style={{ backgroundColor: tool.logoColor }}
-      >
-        {tool.logoInitials}
-      </div>
+      <ToolLogo tool={tool} className="w-11 h-11 rounded-xl shrink-0 shadow-sm" />
 
       {/* Info */}
       <div className="flex-1 min-w-0">
@@ -648,9 +626,6 @@ function RankedToolRow({
           <p className="font-semibold text-sm" style={{ color: "#0f172a" }}>
             {tool.name}
           </p>
-          {tool.verified && (
-            <CheckCircle2 className="w-3.5 h-3.5 shrink-0" style={{ color: "#0891b2" }} />
-          )}
           <span
             className="text-xs px-2 py-0.5 rounded-full font-medium"
             style={{ backgroundColor: cat.bg, color: cat.text }}

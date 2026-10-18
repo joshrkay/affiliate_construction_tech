@@ -35,6 +35,7 @@ import { OutboundCta, AffiliateDisclosure } from "../components/OutboundCta";
 import { getCtaLabel } from "../lib/outbound";
 import { comparisonPages, bestForPages } from "../data/seoPages";
 import { defaultDatePublished, defaultDateModified } from "../data/editorial";
+import { ToolLogo } from "../components/ToolLogo";
 
 const categoryColors: Record<string, { bg: string; text: string; border: string }> = {
   "AI Agent": { bg: "#faf5ff", text: "#7c3aed", border: "#e9d5ff" },
@@ -244,25 +245,11 @@ export function ToolPage() {
 
           <div className="flex flex-col md:flex-row md:items-start gap-6">
             {/* Logo */}
-            <div
-              className="w-20 h-20 rounded-2xl flex items-center justify-center text-white font-bold text-xl shrink-0 shadow-lg"
-              style={{ backgroundColor: tool.logoColor }}
-            >
-              {tool.logoInitials}
-            </div>
+            <ToolLogo tool={tool} className="w-20 h-20 rounded-2xl shrink-0 shadow-lg" />
 
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-3 mb-2">
                 <h1 className="text-3xl font-bold text-white">{tool.name}</h1>
-                {tool.verified && (
-                  <div
-                    className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium"
-                    style={{ backgroundColor: "rgba(8,145,178,0.2)", color: "#22d3ee" }}
-                  >
-                    <Shield className="w-3 h-3" />
-                    Verified
-                  </div>
-                )}
                 {tool.overallRank && tool.overallRank <= 5 && (
                   <div
                     className="flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium"
@@ -306,7 +293,7 @@ export function ToolPage() {
                       className="flex items-center gap-1 text-xs px-2.5 py-1 rounded-full border hover:bg-white/5 transition-colors"
                       style={{ borderColor: "#1e3a5f", color: "#94a3b8" }}
                     >
-                      {t.emoji} {t.name}
+                      {t.name}
                     </Link>
                   ))}
                 </div>
@@ -626,10 +613,6 @@ export function ToolPage() {
                   { label: "Price", value: tool.price },
                   { label: "Founded", value: tool.yearFounded.toString() },
                   { label: "Company Size", value: tool.companySize + " emp." },
-                  {
-                    label: "Verified",
-                    value: tool.verified ? "✓ Verified Listing" : "Unverified",
-                  },
                 ].map((item) => (
                   <div
                     key={item.label}
@@ -660,7 +643,6 @@ export function ToolPage() {
                     to={`/trades/${t.slug}`}
                     className="flex items-center gap-2.5 py-2 group"
                   >
-                    <span className="text-lg">{t.emoji}</span>
                     <span
                       className="text-sm group-hover:text-orange-500 transition-colors"
                       style={{ color: "#374151" }}

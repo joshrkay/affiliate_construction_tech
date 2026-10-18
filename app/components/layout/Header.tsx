@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { Menu, X, HardHat, ChevronDown, GitCompareArrows, Search, Sparkles } from "lucide-react";
+import { Menu, X, HardHat, ChevronDown, GitCompareArrows, Search } from "lucide-react";
 import { trades } from "../../data/constructionData";
 import { useApp } from "../../context/AppContext";
 
@@ -39,7 +39,7 @@ export function Header() {
             <div className="flex flex-col leading-none">
               <span className="text-white font-bold text-sm tracking-wide">BUILTECH</span>
               <span className="text-xs" style={{ color: "#94a3b8" }}>
-                AI & Software Directory
+                Construction software reviews
               </span>
             </div>
           </Link>
@@ -70,7 +70,6 @@ export function Header() {
                       style={{ color: "#cbd5e1" }}
                       onClick={() => setTradesOpen(false)}
                     >
-                      <span className="text-base">{trade.emoji}</span>
                       <span>{trade.name}</span>
                     </Link>
                   ))}
@@ -121,13 +120,13 @@ export function Header() {
                   className="flex items-center gap-2 px-3 rounded-lg border"
                   style={{ backgroundColor: "rgba(255,255,255,0.06)", borderColor: "#1e3a5f" }}
                 >
-                  <Sparkles className="w-3.5 h-3.5 shrink-0" style={{ color: "#f97316" }} />
+                  <Search className="w-3.5 h-3.5 shrink-0" style={{ color: "#94a3b8" }} />
                   <input
                     autoFocus
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Ask AI about tools…"
+                    placeholder="Search tools…"
                     className="bg-transparent py-2 text-sm text-white placeholder-slate-500 outline-none w-52"
                   />
                 </div>
@@ -146,8 +145,8 @@ export function Header() {
                 className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs border transition-all hover:bg-white/10"
                 style={{ color: "#94a3b8", borderColor: "#1e3a5f" }}
               >
-                <Sparkles className="w-3.5 h-3.5" style={{ color: "#f97316" }} />
-                AI Search
+                <Search className="w-3.5 h-3.5" />
+                Search
               </button>
             )}
             <button
@@ -218,7 +217,6 @@ export function Header() {
               style={{ color: "#cbd5e1" }}
               onClick={() => setMobileOpen(false)}
             >
-              <span>{trade.emoji}</span>
               <span>{trade.name}</span>
             </Link>
           ))}
